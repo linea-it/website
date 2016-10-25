@@ -1,0 +1,360 @@
+/*
+Theme Name: LIneA 2.4
+Theme URI: http://www.mairus.com.br
+Author: Mairus Webber
+Author URI: http://www.plutaodesign.com.br
+Description: Tema desenvolvido para o site do LIneA - Laboratório Interinstitucional de eAstronomia.
+Version: 2.5
+License: Copyright @copy; LIneA 2015 - All rights reserved
+License URI: 
+Tags: LIneA, Laboratório, Interinstitucional, eAstronomia, astronomia, observatório, nacional
+Text Domain: LIneA
+
+*/
+
+body {
+	background: #000;
+	font-family: 'Open Sans', sans-serif, helvetica, arial;
+	color: #fff;
+	margin: 0px;
+}
+img, img a {
+	border: 0px;
+}
+a {
+	color: #bff;
+	text-decoration: none;
+}
+a:hover {
+	color: #bff;
+	text-decoration: underline;	
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0px;
+	padding: 0px;
+}
+.clearboth {
+	clear: both;
+}
+.clearright {
+	clear: right;
+}
+.tudo {
+	max-width: 100%;
+}
+@media (min-width:768px) {
+	.header {
+	}
+	.header a img.logo-linea {
+		float: left;
+		margin: 23px 0px 23px 20px;
+	}
+	.header div.busca {
+		float: right;
+		margin: 55px 10px 0px 0px;
+		font-size: 14px;
+	}
+	.header div.busca div {
+		float: left;
+		margin-left: 5px;
+	}
+	.sociais {
+		float: right;
+		padding: 10px 10px 0px 0px;
+	}
+	.sociais img {
+		margin: 3px;
+	}
+	.campo-busca {
+		padding-top: 1px;
+	}
+}
+@media (max-width:767px) {
+	.header {
+	text-align: center;
+	}
+	.header a img.logo-linea {
+		margin: 31px 20px 0px 20px;
+	}
+	.header p {
+		margin: 20px;
+		font-size: 16px;
+	}
+	.header div.busca {
+		width: 220px;
+		display: block;
+		margin: auto;
+		padding-bottom: 40px;
+		padding-top: 10px;
+		font-size: 14px;
+	}
+	.header div.busca div {
+		float: left;
+		margin-left: 5px;
+	}
+	.sociais {
+		float: none;
+		padding: 10px 0px 0px 0px;
+	}
+	.sociais img {
+		margin: 3px;
+	}
+	.campo-busca {
+		padding-top: 1px;
+	}
+}
+.meddle {
+	max-width: 100%;
+	background: #6d6d6d;
+}
+body.home div.breadcrumb {
+	display: none;
+} 
+@media (min-width:1024px) {
+	.breadcrumb {
+		float: left;
+		padding: 13px 0px 0px 20px;	
+	}
+	.conteudo {
+		padding: 20px 30px 10px 30px;
+		font-size: 14px;
+	}
+	.conteudo p {
+	}
+	.conteudo img {
+		max-width: 945px;
+		height: auto;
+	}
+	.box-home-left {
+		float: left;
+		width: 59%;
+		padding-right: 20px;
+	}
+	.box-home-left h1 {
+		font-size: 26px;
+	}
+	.box-home-left p.oqueeolinea, ul.missao li {
+		font-size: 17px;
+	}
+	.box-home-left p {
+		font-size: 14px;
+	}
+	.blog-capa {
+		float: right;
+		width: 34%;
+		background: #444;
+		padding: 19px;
+		margin-bottom: 20px;
+	}
+	.modulo-novidades {
+		margin-bottom: 20px;
+	}
+	.modulo-novidades h3 a {
+		color: #fff;
+	}
+	img.attachment-thumbnail {
+		float: left;
+		margin: 5px 10px 10px 0px;
+		border: 2px solid #fff;
+	}
+	.box-projetos {
+		background: #555;
+		padding: 20px;
+		margin-bottom: 40px;
+		margin-top: 30px;
+	}
+	.img-box-projetos {
+		float: left;
+		margin-right: 10px; 
+		margin-top: 25px;
+	}
+	.box-projetos p.tit-box-projetos {
+		font-weight: bold;
+		font-size: 22px;
+		margin-top: 25px;
+	}
+	.box-projetos p.tit-box-projetos a {
+		color: #fff;
+	}
+	.box-projetos p {
+		margin: 0px;
+	}
+	.box-projetos hr {
+		border: 1px solid #666;
+		margin-top: 20px;
+	}
+}
+@media (max-width:1023px) {
+	.breadcrumb {
+		padding: 5px 5px 6px 10px;	
+		background: #666;
+	}
+	.conteudo {
+		padding: 30px 10px 30px 10px;
+	}
+	.conteudo img {
+		max-width: 100%;
+		height: auto;
+	}
+	.box-home-left {
+	padding: 0px
+	}
+	.box-home-left h1, .box-home-left h2, .box-home-left p {
+		margin: auto;
+		width: 95%;
+	}
+	.box-home-left p {
+		margin-bottom: 40px;
+	}
+	.box-home-left p.oqueeolinea, ul.missao li {
+		font-size: 17px;
+	}
+	.blog-capa {
+		margin: auto;
+		width: 90%;
+		background: #444;
+		padding: 19px;
+		margin-bottom: 20px;
+	}
+	.modulo-novidades {
+		margin-bottom: 20px;
+	}
+	.modulo-novidades p {
+		font-size: 13px;
+	}
+	img.attachment-thumbnail {
+		float: left;
+		margin: 5px 10px 10px 0px;
+		border: 2px solid #fff;
+	}
+	.box-projetos {
+		margin: auto;
+		width: 90%;
+		background: #555;
+		padding: 20px;
+		margin-bottom: 40px;
+	}
+	.img-box-projetos {
+		float: left;
+		margin-right: 10px; 
+		margin-top: 20px;
+	}
+	.box-projetos p.tit-box-projetos {
+		font-weight: bold;
+		font-size: 22px;
+		margin-top: 25px;
+	}
+	.box-projetos p.tit-box-projetos a {
+		color: #fff;
+	}
+	.box-projetos p {
+		margin: 0px;
+		font-size: 13px;
+	}
+	.box-projetos hr {
+		border: 1px solid #666;
+		margin-top: 20px;
+	}
+}
+.logos-projetos {
+	text-align: center;
+}
+.logos-projetos img {
+	margin: 0px 15px 0px 15px;
+}
+.gallery {
+	margin-left: 20px;
+}
+.gallery img {
+	float: left;
+	margin: 12px;
+}
+.navigation {
+	margin-bottom: 30px;	
+}
+h2 a {
+	color: #fff;
+	padding-bottom: 0px;
+}
+/*.slideshow {
+	max-width: 656px;
+	margin: 0px auto;
+}
+.slideshow img {
+	width: 100%;
+	height: auto;
+}*/
+.modulo-blog-capa {
+	margin-top: 25px;
+}
+.blog-capa h2 {
+	margin: 0px 0px 10px 0px;
+}
+.blog-capa h3 {
+	max-width: 618px;
+	margin: 0px 0px 5px 0px;
+}
+.blog-capa p.data-blog-capa {
+	font-size: 13px;
+	margin-bottom: 5px;
+	background: #333;
+	padding: 3px;
+} 
+@media (min-width:1024px) {
+	.blog-capa p {
+		margin: 0px 0px 5px 0px;
+	}
+}
+@media (max-width:1023px) {
+	.blog-capa p {
+		margin: 0px 0px 5px 0px;
+	}
+}
+div.conteudo table {
+	width: 100%;
+	border: 1px solid #aaa;
+	font-size: 13px;
+	margin-bottom: 30px;
+	}
+div.conteudo table tr td {
+	border-left: 1px solid #888;
+	border-bottom: 1px solid #888;
+}
+div.conteudo table tr th {
+	background: #555;
+}
+@media (min-width:768px) {
+	.footer {
+		max-width: 100%;	
+		background: #313131;
+		text-align: center;
+		padding: 10px 54px 10px 54px;
+		font-size: 13px;
+	}
+	.footer p {
+		margin-top: 0px;
+	}
+	.footer p.tit-footer {
+		margin-bottom: 0px;
+		margin-top: 10px;
+		font-size: 17px;
+	}
+}
+@media (max-width:767px) {
+	.footer {
+		max-width: 953px;	
+		background: #313131;
+		text-align: center;
+		padding: 30px 54px 20px 54px;
+		font-size: 10px;
+	}
+	.footer p {
+		margin-top: 0px;
+	}
+	.footer p.tit-footer {
+		margin-bottom: 0px;
+		margin-top: 10px;
+		font-size: 13px;
+	}
+}
+

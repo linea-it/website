@@ -1,0 +1,313 @@
+/*
+Theme Name: LIneA
+Theme URI: http://www.mairus.com.br
+Author: Mairus Webber
+Author URI: http://www.plutaodesign.com.br
+Description: Tema desenvolvido para o site do LIneA - Laboratório Interinstitucional de eAstronomia.
+Version: 2
+License: Copyright @copy; LIneA 2015 - All rights reserved
+License URI: 
+Tags: LIneA, Laboratório, Interinstitucional, eAstronomia, astronomia, observatório, nacional
+Text Domain: LIneA
+
+*/
+
+body {
+	background: #000;
+	font-family: 'Open Sans', sans-serif, helvetica, arial;
+	color: #fff;
+	margin: 0px;
+}
+img, img a {
+	border: 0px;
+}
+a {
+	color: #bff;
+	text-decoration: none;
+}
+a:hover {
+	color: #bff;
+	text-decoration: underline;	
+}
+h1, h2, h3, h4, h5, h6 {
+	max-width: 656px;
+	margin-top: 0px;
+	padding: 0px;
+}
+ul, li {
+	max-width: 600px;
+}
+.clearboth {
+	clear: both;
+}
+.tudo {
+	max-width: 1003px;
+	margin: 0px auto;
+}
+@media (min-width:768px) {
+	.header {
+	}
+	.header a img {
+		float: left;
+		margin: 31px 0px 31px 20px;
+	}
+	.header div.busca {
+		float: right;
+		margin: 130px 30px 0px 0px;
+		font-size: 14px;
+	}
+}
+@media (max-width:767px) {
+	.header {
+	text-align: center;
+	}
+	.header a img {
+		margin: 31px 20px 0px 20px;
+	}
+	.header p {
+		margin: 20px;
+		font-size: 16px;
+	}
+	.header div.busca {
+		padding: 20px 30px 20px 0px;
+		font-size: 14px;
+	}
+}
+.meddle {
+	max-width: 1003px;
+	background: #6d6d6d;
+}
+/*#################### Início Menu ######################*/
+@media (min-width:1024px) {
+	ul.menu, ul.menu-resp {
+		float: left;
+		width: 243px;
+		list-style: none;
+		margin: 3px 0px 0px 0px;
+		padding: 0px;
+		display: block;
+	}
+	.af-menu {
+		display: none;
+		cursor: pointer;
+	}
+	ul.menu-conteudo li {
+		font-size: 20px;
+		line-height: 36px;
+		list-style-image: url('imagens/li-menu-conteudo.png');
+	}
+	ul.menu-conteudo li:hover {
+		font-size: 20px;
+		line-height: 36px;
+		list-style-image: url('imagens/li-menu-conteudo2.png');
+	}
+	ul.menu-conteudo li a {
+		color: #fff;
+	}
+	ul.menu-conteudo li a:hover {
+		color: #bff;
+		text-decoration: underline;
+	}	
+}
+@media (max-width:1023px) {
+	ul.menu {
+		display: none;
+	}
+	ul.menu-resp {
+		display: block;
+		width: 100%;
+		list-style: none;
+		margin: 3px 0px 0px 0px;
+		padding: 0px;
+	}
+	.af-menu {
+		cursor: pointer;
+		margin: 0px 0px 0px 0px;
+		background: #545454 url('imagens/ico-menu.png') 10px 6px no-repeat;
+		padding: 12px 15px 13px 60px;
+	}
+ul.menu-conteudo li {
+	font-size: 20px;
+	line-height: 48px;
+	list-style-image: url('imagens/li-menu-conteudo.png');
+	}
+ul.menu-conteudo li a {
+		color: #bff;
+	}
+}
+ul.menu li, ul.menu-resp li {
+	margin: 0px 0px 3px 0px;
+	background: #444;
+	padding: 10px 0px 10px 15px;
+}
+ul.children {
+	display: none;
+}
+li.current_page_item ul.children, 
+li.current_page_parent ul.children,
+li.current_page_parent ul.children li.current_page_item ul.children, 
+li.current_page_ancestor ul.children,
+li.current_page_ancestor ul.children li.current_page_parent ul.children
+{
+	display: block;	
+	list-style: none;
+	width: 100%;
+	margin: 13px 0px -13px 0px;
+	padding: 0px;
+}
+ul.children li.page_item_has_children ul.children {
+	display: none;
+}
+ul.menu3 {
+	display: none;
+}
+ul.menu li a, ul.menu-resp li a {
+	color: #fff;
+}
+ul.menu2-resp {
+	display: block;
+	width: 100%;
+	list-style: none;
+	margin: 3px 0px 0px 0px;
+	padding: 0px;
+}
+ul.menu2-resp li, ul.children li {
+	margin: 0px 0px 3px 0px;
+	background: #555;
+	padding: 10px 15px 10px 30px;
+}
+ul.menu3-resp {
+	display: block;
+	width: 100%;
+	list-style: none;
+	margin: 3px 0px 0px 0px;
+	padding: 0px;
+}
+ul.menu3-resp li {
+	margin: 0px 0px 3px 0px;
+	background: #666;
+	padding: 10px 15px 10px 45px;
+}
+body.home ul.menu li.mac-inicio,
+body.category-5 li.noticias, 
+body.page-id-18 li.fale-conosco,
+ul.menu li.current_page_item, 
+ul.menu li.page_item ul.children li.page_item ul.children li.current_page_item
+{
+	background: #6d6d6d;
+	padding-right: 0px;
+}
+ul.children li
+{
+	margin: 0px 0px 3px -15px;
+	background: #555;
+	padding: 10px 0px 10px 30px;
+}
+ul.children li ul.children li {
+	margin: 0px 0px 3px -30px;
+	background: #646464;
+	padding: 10px 0px 10px 45px;
+}
+/*#################### Fim Menu ######################*/
+body.home div.breadcrumb {
+	display: none;
+} 
+@media (min-width:1024px) {
+	.breadcrumb {
+		float: left;
+		padding: 13px 0px 0px 20px;	
+	}
+	.conteudo {
+		float: left;
+		padding: 35px 52px 35px 52px;
+		width: 656px;
+	}
+	.conteudo p {
+		max-width: 656px;
+	}
+	.conteudo img {
+		max-width: 656px;
+		height: auto;
+	}
+}
+@media (max-width:1023px) {
+	.breadcrumb {
+		padding: 10px 5px 13px 5px;	
+		background: #666;
+	}
+	.conteudo {
+		padding: 30px 10px 30px 10px;
+	}
+	.conteudo img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+.navigation {
+	margin-bottom: 30px;	
+}
+h2 a {
+	color: #fff;
+	padding-bottom: 0px;
+}
+/*.slideshow {
+	max-width: 656px;
+	margin: 0px auto;
+}
+.slideshow img {
+	width: 100%;
+	height: auto;
+}*/
+.blog-capa {
+	background: #454545;
+	padding: 19px;
+	margin-top: 30px;
+}
+.modulo-blog-capa {
+	margin-top: 25px;
+}
+.blog-capa h2 {
+	margin: 0px 0px 10px 0px;
+}
+.blog-capa h3 {
+	max-width: 618px;
+	margin: 0px 0px 5px 0px;
+}
+.blog-capa p.data-blog-capa {
+	font-size: 13px;
+	margin-bottom: 5px;
+} 
+@media (min-width:1024px) {
+	.blog-capa p {
+		max-width: 618px;
+		margin: 0px 0px 5px 0px;
+	}
+}
+@media (max-width:1023px) {
+	.blog-capa p {
+		margin: 0px 0px 5px 0px;
+	}
+}
+table.zebra {
+	float: left;
+	max-width: 650px;
+	border: 1px solid #fff;
+	font-size: 13px;
+	margin-bottom: 30px;
+	}
+.footer {
+	max-width: 953px;	
+	background: #313131;
+	text-align: center;
+	padding: 30px 54px 20px 54px;
+	font-size: 13px;
+}
+.footer p {
+	margin-top: 0px;
+}
+.footer p.tit-footer {
+	margin-bottom: 0px;
+	margin-top: 10px;
+	font-size: 17px;
+}
+

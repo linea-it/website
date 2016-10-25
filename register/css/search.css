@@ -1,0 +1,116 @@
+body {
+    background: #bbbbbb url('../images/tiles/back.gif') top repeat-x;
+}
+
+.hidden-default {
+    display: none;
+}
+
+.error-title {
+    color: #a94442;
+}
+
+.warn-title {
+    color: #8a6d3b;
+}
+
+.success-title {
+    color: #2b542c;
+}
+
+.info-title {
+    color: #31708f;
+}
+
+.br-flag {
+    display: inline-block;
+    float: left;
+    background: url(../images/flags/Brazil.png) no-repeat center;
+    margin: 10px;
+    width: 80px;
+    height: 40px;
+}
+
+.br-flag-deselected {
+    display: inline-block;
+    float: left;
+    background: url(../images/flags/Brazil-Deselected.png) no-repeat center;
+    margin: 10px;
+    width: 80px;
+    height: 40px;
+}
+
+.us-flag {
+    display: inline-block;
+    float: left;
+    background: url(../images/flags/United_States_of_America.png) no-repeat center;
+    margin: 10px;
+    width: 80px;
+    height: 40px;
+}
+
+.us-flag-deselected {
+    display: inline-block;
+    float: left;
+    background: url(../images/flags/United_States_of_America-Deselected.png) no-repeat center;
+    margin: 10px;
+    width: 80px;
+    height: 40px;
+}
+
+/*Centraliza verticalmente os link da navbar*/
+.navbar-default a {
+    line-height: 50px;
+}
+
+.page-header {
+    margin: 0 0 20px 0;
+    padding: 0 15px 0 15px;
+    background: #222;
+    color: #FFF;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+}
+
+.page-header h3 {
+    margin: 0;
+    line-height: 40px;
+}
+
+
+
+
+
+#registerForm .form-control {
+    padding-right: -30px;
+    width: 600px;
+}
+
+#registerForm .input-group .form-control {
+    width: 500px;
+}
+
+.col-sm-2 {
+    width: 70px;
+     padding-left: 160px;
+      margin-bottom: 30px;
+
+   }
+
+.control-label {
+    padding-right: -30px;
+   
+}
+
+.buttom{
+    display:inline;
+}
+.panel{
+
+box-shadow: 1px 1px 10px -1px #000000;
+}

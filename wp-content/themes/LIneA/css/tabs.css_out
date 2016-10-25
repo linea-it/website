@@ -1,0 +1,55 @@
+/*
+Tabs jquery
+
+*/
+
+.ui-widget-header {
+    background: #6d6d6d none repeat scroll 0 0;
+    border: 2px solid #888;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    border-bottom-left-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 0;
+}
+
+
+@media (min-width:768px) {
+	
+}
+@media (max-width:767px) {
+	
+}
+
+@media (min-width:1024px) {
+	
+}
+@media (max-width:1023px) {
+	
+}
+
+@media (min-width:1024px) {
+	
+}
+@media (max-width:1023px) {
+	
+}
+
+@media (min-width:768px) {
+	
+}
+@media (max-width:767px) {
+	
+}
+
