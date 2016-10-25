@@ -1,0 +1,50 @@
+{
+    "yes": "Yes",
+    "no": "No",
+    "selectOne": "Select One",
+    "dialogTitles": {
+        "error":    "Error!",
+        "warn":     "Warn:",
+        "success":  "Success!",
+        "info":     "Info:",
+        "confirm":  "Confirm:"
+    },
+    "registrationForm": {
+        "name": "Name",
+        "birthDate": "Birth date",
+        "nationality": "Nationality",
+        "cpf": "CPF",
+        "rg": "RG",
+        "org": "Organ of Consultation",
+        "uf": "UF",
+        "passport": "Passport",
+        "brazillian": "Brazillian",
+        "nonBrazillian": "Non-Brazillian",
+        "nonBrazillianResident": "Non-Brazillian resident",
+        "street": "Street",
+        "city": "City",
+        "zipCode": "Zip Code",
+        "state": "State",
+        "country": "Country",
+        "telephone1": "Telephone 1",
+        "telephone2": "Telephone 2",
+        "institution": "Institution",
+        "position": "Position",
+        "administrative": "Administrative",
+        "intern": "Intern",
+        "iT": "IT",
+        "mscStudent": "MSC student",
+        "phdStudent": "PhD student",
+        "postDoc": "Post-doc",
+        "scientist": "Scientist",
+        "undergraduateStudent": "Undergraduate student",
+        "lineaEmail": "Would you like to get an Linea E-Mail?",
+        "lineaUser": "User",
+        "gmail": "GMail",
+        "contactEmail": "Contact E-Mail"
+    },
+    "userDao": {
+        "insertSuccess": "User successfully registered.",
+        "insertFail": "User registration failed."
+    }
+}

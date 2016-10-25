@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /wp-content/uploads/
+Disallow: /wp-content/plugins/
+Disallow: /readme.html
+
+Sitemap: http://www.linea.gov.br/post-sitemap.xml
+Sitemap: http://www.linea.gov.br/page-sitemap.xml
+Sitemap: http://www.linea.gov.br/category-sitemap.xml
