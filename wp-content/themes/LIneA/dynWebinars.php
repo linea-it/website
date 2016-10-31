@@ -14,6 +14,7 @@ Template Name: Webinars
 		<?php
 	    	include 'database.php';
 	    	require 'lineadb.php';
+	    	require 'ytb_functions.php';
 
 	    	$pdo = Database::connect();
 	    	$sql = 'SELECT * FROM webinars ORDER BY data DESC';
@@ -66,7 +67,11 @@ Template Name: Webinars
 	       		// div video
 	       		echo '<div id="video" class="tabcontent hide">';
 	       		if ( !empty($row['video']) ) {
-	       			echo '<p><a class="video" href="' . $row['video'] .'" >' . $row['video'] . '</a></p>';
+	       			$ytbID = getID($row['video']);
+	       			echo '<div class="ytb-video">';
+	       			echo '<img class="ytb-thumb" src="http://img.youtube.com/vi/' . $ytbID . '/hqdefault.jpg"/>';
+	       			echo '<a class="ytb-icon-link" onclick="loadYtbVideo(event, \'' . $ytbID . '\')"><img class="ytb-icon" src="' . get_bloginfo('template_url') . '/imagens/YouTube-icon-full_color.png"/></a>';
+	       			echo '</div>';
 				}
 	       		echo '</div>';
 	       		// div resumo
