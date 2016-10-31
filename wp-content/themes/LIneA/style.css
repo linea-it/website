@@ -956,6 +956,34 @@ div.searchdiv img:hover {
 	opacity: 1;
 }
 
+ /*** sub: Webinar Videos ***/ 
+
+
+.ytb-video .ytb-thumb, #video iframe {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+.ytb-icon {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	top: 60%;
+	left: 47%;
+}
+.ytb-icon-link {
+	cursor: pointer;
+	opacity: 0.8;
+	transition: 0.2s ease-out;
+}
+.ytb-icon-link:hover {
+	opacity: 1;
+}
+
+
+
 /** Date Single**/
 
 .date-single {
@@ -1031,3 +1059,4 @@ a.icon img{
 a.icon img:hover{
 	opacity: 1;
 }
+
