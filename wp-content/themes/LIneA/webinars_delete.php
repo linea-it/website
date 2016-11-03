@@ -13,6 +13,7 @@ if (!is_user_logged_in()) {
 	<div id="content" class="conteudo delete page" role="main">
 			<?php
 				require 'database.php';
+				require 'linea_func.php';
 
 			$id = null;
 			if ( !empty($_GET['id'])) {
@@ -29,13 +30,13 @@ if (!is_user_logged_in()) {
 		        $q->execute(array($id));
 
 		        // Inserindo LOG da operação no banco
-		        $sql_log = "INSERT INTO log (wp_username, datetime, action, page) VALUES (?, now(), 'DELETE', 'WEBINARS')";
+		        $sql_log = "INSERT INTO log (wp_username, datetime, action, page, resumo) VALUES (?, now(), 'DELETE', 'WEBINARS', ?)";
 		        $q_log = $pdo->prepare($sql_log);
 		        
 		        $current_user = wp_get_current_user();
 		        $wp_username = $current_user->user_login;
 				
-		        $q_log->execute(array($wp_username));
+		        $q_log->execute(array($wp_username, resumo($id)));
 
 		        Database::disconnect();
 		        header("Location: /seminarios/");
