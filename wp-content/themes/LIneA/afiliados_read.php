@@ -13,6 +13,7 @@ if (!is_user_logged_in()) {
 	<div id="content" class="conteudo read page" role="main">
 			<?php
 				require 'database.php';
+				
 				$id = null;
 
 				if (!empty($_GET['id'])) {
