@@ -13,6 +13,7 @@ if (!is_user_logged_in()) {
 	<div id="content" class="conteudo create page" role="main">
 			<?php
 				require 'database.php';
+				require 'linea_func.php';
 
 			if ( !empty($_POST)) {
 			    // keep track validation errors
@@ -57,13 +58,13 @@ if (!is_user_logged_in()) {
 			        $q->execute(array($titulo, $autor, $ano, $revista, $status, $numpagina, $link));
 
 			        // Inserindo LOG da operação no banco
-			        $sql_log = "INSERT INTO log (wp_username, datetime, action, page) VALUES (?, now(), 'INSERT', 'PUBLICACOES')";
+			        $sql_log = "INSERT INTO log (wp_username, datetime, action, page, resumo) VALUES (?, now(), 'INSERT', 'PUBLICACOES', ?)";
 			        $q_log = $pdo->prepare($sql_log);
 			        
 			        $current_user = wp_get_current_user();
 			        $wp_username = $current_user->user_login;
 					
-			        $q_log->execute(array($wp_username));
+			        $q_log->execute(array($wp_username, resumo($titulo)));
 
 			        Database::disconnect();
 			        header("Location: /new-publicacoes/");
