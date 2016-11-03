@@ -92,3 +92,20 @@ function webinarSearch(evt) {
         }
     }
 }
+
+function loadYtbVideo(evt, ytbID) {
+    var divYtb = evt.currentTarget.parentNode;
+    var iframe = document.createElement("iframe");
+    var iframe_url = "https://www.youtube.com/embed/" + ytbID + "?autoplay=1&autohide=1";
+
+    iframe.setAttribute("src",iframe_url);
+    iframe.setAttribute("frameborder",'0');
+
+    iframe.style.width  = divYtb.firstChild.width+"px";
+    console.log('W: '+iframe.style.width);
+    iframe.style.height = divYtb.firstChild.height+"px";
+    console.log('H: '+iframe.style.height);
+
+    divYtb.parentNode.insertBefore(iframe, divYtb);
+    divYtb.parentNode.removeChild(divYtb);
+}
