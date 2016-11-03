@@ -36,6 +36,7 @@ if (!is_user_logged_in()) {
 	        		echo '<th>User</th>';
 	        		echo '<th>Action</th>';
 	        		echo '<th>Page</th>';
+	        		echo '<th>Resumo</th>';
 	        		echo '</tr>';
 	        		echo '</thead>';
 	        		echo '<tbody>';
@@ -45,6 +46,7 @@ if (!is_user_logged_in()) {
 		        		echo '<td>' . $row['wp_username'] . '</td>';
 		        		echo '<td>' . $row['action'] . '</td>';
 		        		echo '<td>' . $row['page'] . '</td>';
+		        		echo '<td>' . $row['resumo'] . '</td>';
 		        		echo '</tr>';
 		        	}
 		        	echo '</tbody>';
