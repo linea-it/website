@@ -1060,3 +1060,48 @@ a.icon img:hover{
 	opacity: 1;
 }
 
+
+/* Tutoriais */
+
+.tuto-page div.tutorial_card {
+	display: inline-block;
+	width: 250px;
+	float: left;
+	background-color: #fff;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	box-shadow: 0px 3px 2px #555;
+}
+
+.tuto-page div.tutoriais:first-child {
+	margin-left: 30px;
+}
+
+.tuto-page div.tutorial_card:hover {
+	box-shadow: 1px 5px 2px #555;
+}
+
+.tuto-page div.tutorial_card img {
+	width: inherit;
+	border-radius: 0;
+	box-shadow: none;
+	margin-bottom: -6px;
+}
+
+div.playlist{
+	position: relative;
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	background: url(imagens/ic_playlist_play_bnw_24dp_2x.png) 0 0;
+}
+
+div.playlist:hover {
+	background: url(imagens/ic_playlist_play_bnw_24dp_2x.png) 48px 0;
+}
+
+div.playlist span{
+	position: absolute;
+	top: 15px;
+	padding-bottom: 10px;
+}
