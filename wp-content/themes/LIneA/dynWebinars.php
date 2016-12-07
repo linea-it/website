@@ -3,7 +3,6 @@
 Template Name: Webinars
 */
 ?>
-
 <?php get_header(); ?>
 <?php header('Content-Type: text/html; charset=utf-8'); ?>
 <?php get_sidebar(); ?>
@@ -103,10 +102,28 @@ Template Name: Webinars
 	        	}
 	        }
 
+	        //
 	        // Seletor de speakers
+	        //
+
 	        sort($speakers);
 	        $speakersUnique = array_unique($speakers);
 	        echo '<h3> Speakers <span class="countnum card">' . sprintf("%02d", count($speakersUnique)) . '</span></h3>';
+
+	        echo '<div id="owl-carousel" class="owl-carousel">';
+	        foreach ($result as $row) {
+	        	echo '<div class="item-div">';
+	        	echo '<div class="thumb">';
+	        	echo '<img src="' . FOTO_URL . $row['foto'] . '" />';
+	        	echo '</div>';
+	        	echo '<p>' . $row['nome'] . ' ' . $row['sobrenome'] . '</p>';
+	        	echo '</div>';
+
+	        }
+
+
+	        echo '</div>';
+	        
 	        echo '<select class="speakers-sel" onchange="speakerSearch(event)">';
 	        echo '<option value="All">All</option>';
 	        foreach ($speakersUnique as $nome) {
@@ -114,21 +131,30 @@ Template Name: Webinars
 	        }
 	        echo '</select>';
 
+
+	        //
 	        // Busca
+	        //
 	        echo '<div class="searchdiv">';
 	        // echo '<form>';
 	        echo '<input type="search" name="inputsearch" onchange="webinarSearch(event)"><span class="search-icon"><img src="' . get_bloginfo('template_url') . '/imagens/ic_search_white_24dp_2x.png" alt="Search icon"/></span>';
 	        // echo '</form>';
 	        echo '</div>';
 
+
+	        //
 	        // Webinars futuros
+	        //
 	        echo '<h3> Scheduled webinars </h3>';
 	        $rev = array_reverse($futureWebinars);
 	        foreach ($rev as $row) {
 	        	showWebinarSumary($row, $login);
 	        }
 
+
+	        //
 	        // Webinars antigos
+	        //
 	        echo '<h2> Past webinars </h2>';
 
 	        foreach (range(date('Y'), 2011, -1) as $ano) {
@@ -150,4 +176,7 @@ Template Name: Webinars
 	
 				
 	</div><div class="clearboth"></div>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl-carousel.js"></script>
 <?php get_footer(); ?>
