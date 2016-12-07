@@ -12,6 +12,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/lightbox.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.carousel.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.theme.css" type="text/css" media="screen" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
@@ -23,6 +25,7 @@
 		  $selectedBg = "$bg[$i]"; // set variable equal to which random filename was chosen
 		?>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/prototype.js"></script>
+		
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/scriptaculous.js?load=effects,builder"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/lightbox.js"></script>
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
