@@ -45,6 +45,18 @@ function speakerSearch(evt) {
     }
 }
 
+function speakerShow(name) {
+
+    var nomes = document.getElementsByClassName("nome");
+    for (var i = 0; i < nomes.length; i++) {
+        if ( nomes[i].innerHTML == name ) {
+            nomes[i].parentNode.parentNode.style.display = "block";
+        } else {
+            nomes[i].parentNode.parentNode.style.display = "none";
+        }
+    }
+}
+
 function cleanSearch() {
     var spanfound = document.getElementsByClassName("strfound");
     var str, cleanstr, strfound;
