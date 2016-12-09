@@ -136,16 +136,28 @@
 			        	$rev = array_reverse($futureWebinars);
 					?>
 
-
+					
 					<div class="blog-capa">
 						<h2>Webinars</h2><a href="/seminarios/">+ mais webinars</a>
-							<div><img class="alignleft" style="height:100px; margin-top: 0px; margin-botton: 0px;" src="<?php echo FOTO_URL . $rev[0]['foto']; ?>"/></div>
-							<div style="padding-top: 10px; padding-bottom: 20px"><?php echo date('d/m', strtotime($rev[0]['data'])); ?> <spam style="color: #fed700;"><?php echo date('h:ia', strtotime($rev[0]['horario'])); ?> BRT</spam> - <em><strong><?php echo $rev[0]['nome'] . ' ' . $rev[0]['sobrenome']; ?></strong> ( <?php echo $rev[0]['instituicao']; ?> )</em></span><br/>
-							<em><?php echo $rev[0]['titulo']; ?></em>
-							</div>
 						<?php
-							echo '<a id="webinar-link-on" href="' . WEBINAR_GTM_LINK . '">Assistir Webinar</a>';
+							if ( empty($futureWebinars) ) {
+								echo '<p style="text-align: center; font-size: 30px">Em Recesso</p>';
+								echo '<p style="text-align: center; margin-bottom: 30px"> A série retorna em março. </p>';
+
+							} else {
+								echo '<div>';
+								echo '<img class="alignleft" style="height:100px; margin-top: 0px; margin-botton: 0px;" src="' . FOTO_URL . $rev[0]["foto"] . '"/>';
+								echo '</div>';
+								echo '<div style="padding-top: 10px; padding-bottom: 20px"><spam>' . date("d/m", strtotime($rev[0]["data"])) . ' - </spam> <spam style="color: #fed700;">';
+								echo date("h:ia", strtotime($rev[0]["horario"])) . ' BRT</spam> - <em><strong>';
+								echo $rev[0]["nome"] . ' ' . $rev[0]["sobrenome"] . '</strong> ( ' . $rev[0]["instituicao"] . ' )</em></span><br/>';
+								echo '<em>' . $rev[0]["titulo"] . '</em>';
+								echo '</div>';
+								echo '<a id="webinar-link-on" href="' . WEBINAR_GTM_LINK . '">Assistir Webinar</a>';
+							}	
+						
 						?>
+						
 					</div>
 
 					<div class="blog-capa">
