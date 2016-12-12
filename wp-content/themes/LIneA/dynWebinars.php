@@ -102,27 +102,11 @@ Template Name: Webinars
 	        	}
 	        }
 
-	        //
-	        // Seletor de speakers
-	        //
-
 	        sort($speakers);
 	        $speakersUnique = array_unique($speakers);
-	        echo '<h3> Speakers <span class="countnum card">' . sprintf("%02d", count($speakersUnique)) . '</span></h3>';
-
-	        echo '<div id="owl-carousel" class="owl-carousel">';
-	        foreach ($result as $row) {
-	        	echo '<div class="item-div">';
-	        	echo '<div class="thumb">';
-	        	echo '<img src="' . FOTO_URL . $row['foto'] . '" />';
-	        	echo '</div>';
-	        	echo '<p>' . $row['nome'] . ' ' . $row['sobrenome'] . '</p>';
-	        	echo '</div>';
-
-	        }
 
 
-	        echo '</div>';
+	        // Select
 	        
 	        echo '<select class="speakers-sel" onchange="speakerSearch(event)">';
 	        echo '<option value="All">All</option>';
@@ -141,6 +125,46 @@ Template Name: Webinars
 	        // echo '</form>';
 	        echo '</div>';
 
+
+
+
+	        //
+	        // Seletor de speakers
+	        //
+	        
+	        echo '<h3> Speakers <span class="countnum card">' . sprintf("%02d", count($speakersUnique)) . '</span></h3>';
+
+	        // Carrossel
+
+	        foreach (range(date('Y'), 2011, -1) as $ano) {
+	        	echo '<a class="year-link ', $ano == date('Y') ? 'active':'', '" href="#' . $ano . '">' . $ano . '</a>';
+	        }
+
+	        echo '<div class="owl-carousel owl-theme">';
+	        foreach (range(date('Y'), 2011, -1) as $ano) {
+	        	$ano_array = array();
+	        	$count = 0;
+	        	foreach ($result as $row) {
+	        		if (date('Y', strtotime($row['data'])) == $ano) {
+	        			array_push($ano_array, $row);
+	        			$count += 1;
+	        		}
+	        	}
+	        	echo '<div class="item-div" data-hash="' . $ano . '">';
+	        	echo '<p class="year">' . $ano . '</p>';
+	        	echo '</div>';
+
+	        	foreach ($ano_array as $row) {
+		        	echo '<div class="item-div">';
+		        	echo '<div class="thumb">';
+		        	echo '<img src="' . FOTO_URL . $row['foto'] . '" />';
+		        	echo '</div>';
+		        	echo '<p>' . $row['nome'] . ' ' . $row['sobrenome'] . '</p>';
+		        	echo '</div>';
+	        	}
+	        }
+	        echo '</div>';
+	        
 
 	        //
 	        // Webinars futuros
