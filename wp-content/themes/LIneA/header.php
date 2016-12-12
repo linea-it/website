@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/lightbox.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.carousel.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.theme.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.theme.default.min.css" type="text/css" media="screen" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
