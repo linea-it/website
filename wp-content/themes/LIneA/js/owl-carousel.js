@@ -1,10 +1,36 @@
 $(document).ready(function() {
  
-  $("#owl-carousel").owlCarousel({items: 8, itemsCustom: false, itemsDesktop: [900, 7], itemsDesktopSmall: [700, 5], itemsTablet: [700, 5], itemsMobile: [479, 3], navigation: true, pagination: false});
+  $('.owl-carousel').owlCarousel({
+        items:8,
+        nav: true,
+        dots: false,
+        loop:false,
+        margin:10,
+        URLhashListener:true,
+        autoplayHoverPause:true,
+        startPosition: 'URLHash',
+        responsive:{
+	        0:{
+	            items:4
+	        },
+	        600:{
+	            items:6
+	        },
+	        1000:{
+	            items:8
+	        }
+    	}
+    });
 
-  $(".item-div").click(function(){
+  	$(".item-div").click(function(){
   	name = $(this).find("p").text();
     speakerShow(name);
-  })
+  	});
+
+  	$(".year-link").click(function(){
+  		$("body").find(".year-link").removeClass("active");
+  		$(this).addClass("active");
+  	});
+
  
 });
