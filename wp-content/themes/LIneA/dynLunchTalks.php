@@ -48,11 +48,13 @@ Template Name: LunchTalks
 	       		echo '<p class="titulo">' . $row['titulo'] . '</p>';
 	       		echo '<div class="clearboth"></div>';
 	       		// Tabs
+	       		/* Removido enquanto não é implementado o login
 	       		echo '<ul class="tab">';
 	       		echo '<li><a class="tablinks" onclick="openTab(event, \'resumo\')">Abstract</a></li>';
 	       		echo '<li><a class="tablinks" onclick="openTab(event, \'apresentacao\')">Presentation</a></li>';
 	       		echo '<li><a class="tablinks" onclick="openTab(event, \'video\')">Video</a></li>';
 	       		echo '</ul>';
+	       		*/
 	       		// div apresentacao
 	       		echo '<div id="apresentacao" class="tabcontent hide">';
 	       		if ( !empty($row['apresentacao']) ) {
