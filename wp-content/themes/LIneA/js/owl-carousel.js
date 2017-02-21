@@ -19,8 +19,9 @@ $(document).ready(function() {
 	        1000:{
 	            items:8
 	        }
-    	}
-    });
+        },
+        navText:['next','prev']
+  });
 
   	$(".item-div").click(function(){
   	name = $(this).find("p").text();
