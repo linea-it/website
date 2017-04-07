@@ -81,6 +81,16 @@ Template Name: Webinars
 	       		echo '</div>';
 	       		echo '</div>';
 	       	}
+
+	       	function isInTheFuture($stringDate, $stringTime){
+	       		$data = strtotime($stringDate);
+	       		$dia = date('d', $data);
+	       		$h = strtotime($stringTime);
+	       		return ( (date('Y-m-d', $data) > date('Y-m-d')) || 
+	       			(date('Y-m-d', $data) == date('Y-m-d')) && 
+	       			(date('H:i', strtotime('-1hour')) <= date('H:i', $h)) );
+	       	}
+
 	       	// Preparando os arrays com seminário e speakers
 	        $futureWebinars = array();
 	        $pastWebinars = array();
@@ -91,11 +101,8 @@ Template Name: Webinars
 
 	        	array_push($speakers, $row['nome'] . ' ' . $row['sobrenome']);
 
-	        	$data = strtotime($row['data']);
-	        	$dia = date('d', $data);
-	        	$h = strtotime($row['horario']);
 	        	$hora = date('H', $h);
-	        	if ( (date('Y-m-d', $data) > date('Y-m-d')) || (date('Y-m-d', $data) == date('Y-m-d')) && (date('H:i', strtotime('-1hour')) <= date('H:i', $h)) ) {
+	        	if ( isInTheFuture($row['data'], $row['horario']) ) {
 	        		array_push($futureWebinars, $row);
 	        	} else {
 	        		array_push($pastWebinars, $row);
@@ -145,7 +152,7 @@ Template Name: Webinars
 	        	$ano_array = array();
 	        	$count = 0;
 	        	foreach ($result as $row) {
-	        		if (date('Y', strtotime($row['data'])) == $ano) {
+	        		if ( date('Y', strtotime($row['data'])) == $ano && !isInTheFuture($row['data'], $row['horario']) ) {
 	        			array_push($ano_array, $row);
 	        			$count += 1;
 	        		}
