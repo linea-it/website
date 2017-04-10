@@ -24,8 +24,10 @@ $(document).ready(function() {
   });
 
   	$(".item-div").click(function(){
-  	name = $(this).find("p").text();
-    speakerShow(name);
+    	name = $(this).find("p").text();
+      if ( !$(this).find("p").hasClass("year") ) {
+        speakerShow(name);
+      }
   	});
 
   	$(".year-link").click(function(){

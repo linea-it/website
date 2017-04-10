@@ -171,6 +171,8 @@ Template Name: LunchTalks
 	        }
 	        echo '</div>';
 	        
+	        // Show All Button
+	        echo '<a class="btn showall" href="#" onclick="showAllWebinars(event)"> Show All </a>';
 
 	        //
 	        // Webinars futuros
