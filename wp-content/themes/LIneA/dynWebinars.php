@@ -172,6 +172,8 @@ Template Name: Webinars
 	        }
 	        echo '</div>';
 	        
+	        // Show All Button
+	        echo '<a class="btn showall" href="#" onclick="showAllWebinars(event)"> Show All </a>';
 
 	        //
 	        // Webinars futuros

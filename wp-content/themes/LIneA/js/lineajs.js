@@ -57,6 +57,16 @@ function speakerShow(name) {
     }
 }
 
+function showAllWebinars(evt) {
+    evt.preventDefault()
+    var nomes = document.getElementsByClassName("nome");
+    for (var i = 0; i < nomes.length; i++) {
+        nomes[i].parentNode.parentNode.style.display = "block";
+    }
+}
+
+
+
 function cleanSearch() {
     var spanfound = document.getElementsByClassName("strfound");
     var str, cleanstr, strfound;
