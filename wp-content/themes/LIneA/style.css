@@ -693,6 +693,7 @@ div.conteudo table.card {
 	width: 100%;
 	font-size: 15px;
 	margin-bottom: 30px;
+	border: 2px solid #5f5f5f;
 	}
 div.conteudo table.card tr td {
 	padding: 5px 10px 5px 10px;
@@ -700,6 +701,7 @@ div.conteudo table.card tr td {
 div.conteudo table.card tr th {
 	padding: 5px 10px 5px 10px;
 	background: #555;
+	text-align: left;
 }
 div.conteudo table.card tbody tr:hover {
 	background-color: #999999;
