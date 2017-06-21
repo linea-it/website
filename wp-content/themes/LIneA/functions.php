@@ -616,3 +616,16 @@ function posts_by_year() {
 
   return $years;
 }
+
+function add_taxonomies_to_pages() {
+ register_taxonomy_for_object_type( 'post_tag', 'page' );
+ register_taxonomy_for_object_type( 'category', 'page' );
+ }
+add_action( 'init', 'add_taxonomies_to_pages' );
+
+// remove width & height attributes from images
+//
+function remove_img_attr ($html) {
+	return preg_replace('/(width|height)="\d+"\s/', "", $html);
+}
+add_filter( 'post_thumbnail_html', 'remove_img_attr' );
