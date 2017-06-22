@@ -1201,10 +1201,8 @@ div.playlist span{
 	margin: auto;
 	min-width: 100%;
 	min-height: 100%;
-	left: -100%;
-  right: -100%;
-  top: -100%;
-  bottom: -100%;
+	left: -50%;
+  right: -50%;
 }
 
 .subpagina-acesso h2 {
