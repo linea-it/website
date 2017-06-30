@@ -7,5 +7,8 @@
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/lineajs.js"></script>
+	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 </html>
