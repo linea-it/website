@@ -1,3 +1,9 @@
+$(document).ready(function(){
+    $('.datepicker').datepicker({
+      dateFormat: 'yy-mm-dd'
+    });
+});
+
 function toggleYear(obj){
       var el = document.getElementById(obj);
       if ( el.style.display == "block" ){
@@ -7,4 +13,3 @@ function toggleYear(obj){
          el.style.display = "block";
       }
    }
-
