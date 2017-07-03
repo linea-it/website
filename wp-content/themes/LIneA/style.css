@@ -1240,7 +1240,7 @@ div.tno-thumbnail p {
 }
 
 .filtro-container .form-grupo {
-	width: 20%;
+	width: 23%;
 	display: inline-block;
 }
 
@@ -1255,6 +1255,10 @@ div.tno-thumbnail p {
 
 .filtro-container input {
 	border: 1px solid rgb(169, 169, 169);
+	width: 60%;
+}
+.filtro-container input[type=number] {
+	width: 3em;
 }
 
 .filtro-container .form-grupo label {
@@ -1267,8 +1271,9 @@ div.tno-thumbnail p {
 }
 
 .btn-paginacao {
-	width: 30px;
+	width: 3em;
 	text-align: center;
+	font-size: .7em;
 }
 
 .paginacao-atual {
@@ -1278,6 +1283,12 @@ div.tno-thumbnail p {
 
 .paginacao {
 	display: block;
+}
+.gap-paginacao {
+	padding-right: 5px;
+}
+.sem-imagem-msg {
+	text-align: center;
 }
 
 @media (max-width: 800px) {
