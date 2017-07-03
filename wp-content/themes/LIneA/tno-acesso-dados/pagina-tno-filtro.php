@@ -69,19 +69,25 @@
         <?php
           $limite_inferior = $limite*($pagina-1)+1;
           $limite_superior = ( $limite*($pagina-1)+$limite > $total_imagens )?$total_imagens:$limite*($pagina-1)+$limite;
-        ?>
-        <p class="mapas-contador">Mostrando <?php echo $limite_inferior ?>-<?php echo $limite_superior ?> mapas de <?php echo $total_imagens ?></p>
-        <?php foreach ($lista_imagens as $imagem) {
-          $img_url = TNO_BASE_URL . $imagem['nome_tno']. '/'
-          . $imagem['ano'] . '/' . $imagem['nome_arquivo'];
-          echo '<div class="tno-thumbnail">';
-          echo '<a href="' . $img_url . '" target="_blank">';
-          echo '<img class="card" src="' . $img_url .'" />';
-          echo '</a>';
-          echo '<p>' . $imagem['nome_arquivo'] . '</p>';
-          echo '</div>';
-        }
-        echo cria_paginacao($limite, $pagina, $total_imagens);
+          if ( $total_imagens > 0 ) {
+            ?>
+            <p class="mapas-contador">Mostrando <?php echo $limite_inferior ?>-<?php echo $limite_superior ?> mapas de <?php echo $total_imagens ?></p>
+            <?php
+
+            foreach ($lista_imagens as $imagem) {
+              $img_url = TNO_BASE_URL . $imagem['nome_tno']. '/'
+              . $imagem['ano'] . '/' . $imagem['nome_arquivo'];
+              echo '<div class="tno-thumbnail">';
+              echo '<a href="' . $img_url . '" target="_blank">';
+              echo '<img class="card" src="' . $img_url .'" />';
+              echo '</a>';
+              echo '<p>' . $imagem['nome_arquivo'] . '</p>';
+              echo '</div>';
+            }
+            echo cria_paginacao($limite, $pagina, $total_imagens);
+          } else {
+            echo '<p class="sem-imagem-msg" > Nenhuma imagem encontrada </p>';
+          }
         ?>
       </section>
 

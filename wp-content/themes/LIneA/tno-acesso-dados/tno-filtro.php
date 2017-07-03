@@ -39,9 +39,28 @@ function get_tno_tables($con, $nome_tno) {
 function cria_paginacao($limite, $pagina, $total_imagens) {
   $total_paginas = ceil($total_imagens/$limite);
   $str_paginacao = '<div class="paginacao">';
-  for ($i=1;$i<=$total_paginas;$i++) {
+  $intervalo = 4;
+  $inicio_btn = $pagina - $intervalo;
+  $fim_btn = $pagina + $intervalo;
+  if ( $inicio_btn <= 1 ) {
+    $inicio_btn = 1;
+  } else {
+    $str_paginacao .= '<button class="btn btn-paginacao '.
+      '" form="filtro" type="submit" name="pagina" value="' . 1 .'">' . 1 .
+      '</button><span class="gap-paginacao">...</span>';
+  }
+  if ( $fim_btn >= $total_paginas ) {
+    $fim_btn = $total_paginas;
+  }
+  for ($i=$inicio_btn;$i<=$fim_btn;$i++) {
     $pagina_ativa = ($pagina == $i)?'paginacao-atual':'';
-    $str_paginacao .= '<button class="btn btn-paginacao ' . $pagina_ativa . '" form="filtro" type="submit" name="pagina" value="' . $i .'">' . $i . '</button>';
+    $str_paginacao .= '<button class="btn btn-paginacao ' . $pagina_ativa .
+    '" form="filtro" type="submit" name="pagina" value="' . $i .'">' . $i . '</button>';
+  }
+  if ( $fim_btn < $total_paginas ) {
+    $str_paginacao .= '<span class="gap-paginacao">...</span><button class="btn btn-paginacao '.
+      '" form="filtro" type="submit" name="pagina" value="' . $total_paginas .'">' . $total_paginas .
+      '</button>';
   }
   $str_paginacao .= '</div>';
   return $str_paginacao;
