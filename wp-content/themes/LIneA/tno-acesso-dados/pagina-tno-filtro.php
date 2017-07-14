@@ -31,13 +31,17 @@
     <main class="pagina-filtro">
 
       <h1>TNO Acesso a dados</h1>
+
+      <!--Filtro-->
   		<section class="filtro-container">
   			<form id="filtro" class="filtro-form" action="<?php echo get_bloginfo('template_url') . '/tno-acesso-dados/pagina-tno-filtro.php' ?>" method="post">
   				<div class="form-grupo">
   					<label>Nome TNO</label>
   					<?php
-  					$lista_tno_nomes = get_tno_nomes($pdo);
-  					echo tno_objetos_select($lista_tno_nomes, $nome_tno);
+            $lista_tno_nomes = get_tno_nomes($pdo);
+            $lista_tno_nomes_alternativos = get_tno_nomes_alternativos($pdo);
+  					$lista_tno_nomes_merged = merge_nomes_alternativos($lista_tno_nomes, $lista_tno_nomes_alternativos);
+  					echo tno_objetos_select($lista_tno_nomes_merged, $lista_tno_nomes_alternativos, $nome_tno);
   					?>
   				</div>
   				<div class="form-grupo">
@@ -55,6 +59,8 @@
   				<button type="submit" class="btn">Filtrar</button>
         </form>
   		</section>
+
+      <!--Tables-->
       <section class="tno-tables">
         <h2>Tables</h2>
         <?php foreach ($lista_tables as $table) {
@@ -64,6 +70,8 @@
         }
         ?>
       </section>
+
+      <!--Mapas-->
       <section class="tno-thumbnails">
         <h2>Mapas</h2>
         <?php
