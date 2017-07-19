@@ -30,13 +30,13 @@
 		?>
     <main class="pagina-filtro">
 
-      <h1>TNO Acesso a dados</h1>
+      <h1>TNO Filter</h1>
 
       <!--Filtro-->
   		<section class="filtro-container">
   			<form id="filtro" class="filtro-form" action="<?php echo get_bloginfo('template_url') . '/tno-acesso-dados/pagina-tno-filtro.php' ?>" method="post">
   				<div class="form-grupo">
-  					<label>Nome TNO</label>
+  					<label>TNO name</label>
   					<?php
             $lista_tno_nomes = get_tno_nomes($pdo);
             $lista_tno_nomes_alternativos = get_tno_nomes_alternativos($pdo);
@@ -45,18 +45,18 @@
   					?>
   				</div>
   				<div class="form-grupo">
-  					<label>Data inicial</label>
-  					<input class="datepicker" type="text" name="data_inicio" value="<?php echo !empty($data_inicio)?$data_inicio:'';?>">
+  					<label>Initial Date</label>
+  					<input class="datepicker" type="text" name="data_inicio" placeholder="YYYY-MM-DD" value="<?php echo !empty($data_inicio)?$data_inicio:'';?>">
   				</div>
   				<div class="form-grupo">
-  					<label>Data Final</label>
-  					<input class="datepicker" type="text" name="data_fim" value="<?php echo !empty($data_fim)?$data_fim:'';?>">
+  					<label>Final Date</label>
+  					<input class="datepicker" type="text" name="data_fim" placeholder="YYYY-MM-DD" value="<?php echo !empty($data_fim)?$data_fim:'';?>">
   				</div>
           <div class="form-grupo">
-  					<label>Limite por página</label>
+  					<label>Maps per page</label>
   					<input type="number" name="limite" min="1" max="50" value="<?php echo !empty($limite)?$limite:'10';?>">
   				</div>
-  				<button type="submit" class="btn">Filtrar</button>
+  				<button type="submit" class="btn">Filter</button>
         </form>
   		</section>
 
@@ -73,13 +73,13 @@
 
       <!--Mapas-->
       <section class="tno-thumbnails">
-        <h2>Mapas</h2>
+        <h2>Maps</h2>
         <?php
           $limite_inferior = $limite*($pagina-1)+1;
           $limite_superior = ( $limite*($pagina-1)+$limite > $total_imagens )?$total_imagens:$limite*($pagina-1)+$limite;
           if ( $total_imagens > 0 ) {
             ?>
-            <p class="mapas-contador">Mostrando <?php echo $limite_inferior ?>-<?php echo $limite_superior ?> mapas de <?php echo $total_imagens ?></p>
+            <p class="mapas-contador">Showing <?php echo $limite_inferior ?>-<?php echo $limite_superior ?> maps of <?php echo $total_imagens ?></p>
             <?php
 
             foreach ($lista_imagens as $imagem) {
@@ -94,7 +94,7 @@
             }
             echo cria_paginacao($limite, $pagina, $total_imagens);
           } else {
-            echo '<p class="sem-imagem-msg" > Nenhuma imagem encontrada </p>';
+            echo '<p class="sem-imagem-msg" > No maps has been found. </p>';
           }
         ?>
       </section>
