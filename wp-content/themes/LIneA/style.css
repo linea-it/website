@@ -1260,6 +1260,9 @@ div.tno-thumbnail p {
 .filtro-container input[type=number] {
 	width: 3em;
 }
+.filtro-container input::placeholder {
+	color: rgb(169, 169, 169);
+}
 
 .filtro-container .form-grupo label {
 	display: inline-block;
