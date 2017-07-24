@@ -30,9 +30,9 @@ Template Name: Webinars
 	       	}
 	    	echo '<p>
 	    		Since 2011 we promote webinars which are an important aspect of our personnel development. This allows collaborators anywhere in the world to join seminars about the latest developments in several astronomical and technical fields. Webinars are presented in english and announced to a mailing list. Click <a href="' . MAILCHIMP_SUBS . '">here</a> if you want to subscribe.
- 
-	    	</p>'; 
-	       	
+
+	    	</p>';
+
 	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/webinars_create.php"> Adicionar </a>' : '');
 	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/log_view.php"> Exibir Log </a>' : '');
 
@@ -86,8 +86,8 @@ Template Name: Webinars
 	       		$data = strtotime($stringDate);
 	       		$dia = date('d', $data);
 	       		$h = strtotime($stringTime);
-	       		return ( (date('Y-m-d', $data) > date('Y-m-d')) || 
-	       			(date('Y-m-d', $data) == date('Y-m-d')) && 
+	       		return ( (date('Y-m-d', $data) > date('Y-m-d')) ||
+	       			(date('Y-m-d', $data) == date('Y-m-d')) &&
 	       			(date('H:i', strtotime('-1hour')) <= date('H:i', $h)) );
 	       	}
 
@@ -114,7 +114,7 @@ Template Name: Webinars
 
 
 	        // Select
-	        
+
 	        echo '<select class="speakers-sel" onchange="speakerSearch(event)">';
 	        echo '<option value="All">All</option>';
 	        foreach ($speakersUnique as $nome) {
@@ -138,7 +138,7 @@ Template Name: Webinars
 	        //
 	        // Seletor de speakers
 	        //
-	        
+
 	        echo '<h3> Speakers <span class="countnum card">' . sprintf("%02d", count($speakersUnique)) . '</span></h3>';
 
 	        // Carrossel
@@ -171,7 +171,7 @@ Template Name: Webinars
 	        	}
 	        }
 	        echo '</div>';
-	        
+
 	        // Show All Button
 	        echo '<a class="btn showall" href="#" onclick="showAllWebinars(event)"> Show All </a>';
 
@@ -206,10 +206,7 @@ Template Name: Webinars
 	        }
         ?>
 
-	
-				
+
+
 	</div><div class="clearboth"></div>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl-carousel.js"></script>
 <?php get_footer(); ?>
