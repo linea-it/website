@@ -1308,3 +1308,43 @@ div.tno-thumbnail p {
 
 
 }
+
+/*Videos*/
+
+.video-grupo {
+	display: flex;
+	flex-wrap: wrap;
+	height: 0;
+	overflow: hidden;
+}
+.show-video-grupo {
+	height: auto;
+}
+.video-grupo-titulo {
+	cursor: pointer;
+}
+.video-card {
+	width: 25%;
+	margin: 2%;
+	background-color: #5a5a5a;
+	padding: 0.3%;
+	border: 1px solid #585858;
+}
+.video-card img {
+	width: 100%;
+}
+.video-caption {
+	padding: 0 5%;
+	height: 4em;
+	color: #fff;
+}
+.video-caption p {
+	margin: 1% 0;
+	max-height: 2.6em;
+  overflow: hidden;
+}
+.video-group-icon {
+	display: block;
+  margin: 0 0 0 auto;
+  width: 20%;
+}
