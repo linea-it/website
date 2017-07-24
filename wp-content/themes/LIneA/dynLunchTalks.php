@@ -28,8 +28,8 @@ Template Name: LunchTalks
 	       	} else {
 	       		$login = 'desativado';
 	       	}
-	    	echo '<p></p>'; 
-	       	
+	    	echo '<p></p>';
+
 	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/lunchtalks_create.php"> Adicionar </a>' : '');
 
 	       	function showWebinarSumary($row, $login) {
@@ -84,8 +84,8 @@ Template Name: LunchTalks
 	       		$data = strtotime($stringDate);
 	       		$dia = date('d', $data);
 	       		$h = strtotime($stringTime);
-	       		return ( (date('Y-m-d', $data) > date('Y-m-d')) || 
-	       			(date('Y-m-d', $data) == date('Y-m-d')) && 
+	       		return ( (date('Y-m-d', $data) > date('Y-m-d')) ||
+	       			(date('Y-m-d', $data) == date('Y-m-d')) &&
 	       			(date('H:i', strtotime('-1hour')) <= date('H:i', $h)) );
 	       	}
 
@@ -113,7 +113,7 @@ Template Name: LunchTalks
 
 
 	        // Select
-	        
+
 	        echo '<select class="speakers-sel" onchange="speakerSearch(event)">';
 	        echo '<option value="All">All</option>';
 	        foreach ($speakersUnique as $nome) {
@@ -137,7 +137,7 @@ Template Name: LunchTalks
 	        //
 	        // Seletor de speakers
 	        //
-	        
+
 	        echo '<h3> Speakers <span class="countnum card">' . sprintf("%02d", count($speakersUnique)) . '</span></h3>';
 
 	        // Carrossel
@@ -170,7 +170,7 @@ Template Name: LunchTalks
 	        	}
 	        }
 	        echo '</div>';
-	        
+
 	        // Show All Button
 	        echo '<a class="btn showall" href="#" onclick="showAllWebinars(event)"> Show All </a>';
 
@@ -205,10 +205,7 @@ Template Name: LunchTalks
 	        }
         ?>
 
-	
-				
+
+
 	</div><div class="clearboth"></div>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl-carousel.js"></script>
 <?php get_footer(); ?>
