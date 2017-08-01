@@ -18,7 +18,12 @@ Template Name: Afiliados
 	    	$prep = $pdo->prepare($sql);
 	    	$prep->execute();
 	    	$result = $prep->fetchAll();
-	    	$ativos = array();
+	    	$posdocs = array();
+	    	$doutorandos = array();
+				$mestrandos = array();
+				$graduandos = array();
+				$tecnologistas = array();
+				$cientistas = array();
 	    	$inativos = array();
 
 	    	Database::disconnect();
@@ -27,13 +32,25 @@ Template Name: Afiliados
 	       	} else {
 	       		$login = 'desativado';
 	       	}
-	       	
+
 	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/afiliados_create.php"> Adicionar </a>' : '');
 
 
 	    	foreach ($result as $row) {
 	    		if (strtoupper($row['status']) == 'ATIVO'){
-	    			array_push($ativos, $row);
+	    			if ($row['cargo'] == 'Pós-doutorando') {
+							array_push($posdocs, $row);
+						} elseif (strtoupper($row['cargo']) == 'DOUTORANDO') {
+							array_push($doutorandos, $row);
+						} elseif (strtoupper($row['cargo']) == 'MESTRANDO') {
+							array_push($mestrandos, $row);
+						} elseif (strtoupper($row['cargo']) == 'GRADUANDO') {
+							array_push($graduandos, $row);
+						} elseif (strtoupper($row['cargo']) == 'TECNOLOGISTA') {
+							array_push($tecnologistas, $row);
+						} elseif (strtoupper($row['cargo']) == 'CIENTISTA') {
+							array_push($cientistas, $row);
+						}
 	    		} else {
 	    			array_push($inativos, $row);
 	    		}
@@ -47,36 +64,62 @@ Template Name: Afiliados
 	    		return str_replace("@", $at_img_tag, $email);
 	    	}
 
+				function gera_projetos_string($id_afiliado) {
+					return 'Projetos';
+				}
+
+				function gera_tabela($lista, $titulo) {
+					global $at_img_url;
+		    	echo '<h3>' . $titulo . '</h3>';
+		    	echo '<table class="card">';
+		    	echo '<thead>';
+		    	echo '<tr>';
+		    	echo '<th>Nome <span class="countnum card">' . sprintf("%02d", count($lista)) . '</span></th>';
+					echo '<th>Projetos</th>';
+		    	echo '<th>Instituição</th>';
+		    	echo '<th>e-mail</th>';
+					foreach ($lista as $row) {
+						$projetos = gera_projetos_string($row['id']);
+			    	echo '</tr>';
+			    	echo '</thead>';
+			    	echo '<tbody>';
+		    		echo '<tr>';
+		    		echo '<td>' . $row['nome'] . '<a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_read.php?id='. $row['id'] .'" title="Descrição"><img src="' . get_bloginfo('template_url') . '/imagens/ic_description_white_24dp_2x.png" alt="Read icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_update.php?id='. $row['id'] .'" title="Editar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_create_white_24dp_2x.png" alt="Edit icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_delete.php?id='. $row['id'] .'" title="Apagar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_remove_circle_outline_white_24dp_2x.png" alt="Remove icon"/></a></td>';
+		    		echo '<td>' . $projetos . '</td>';
+		    		echo '<td>' . $row['instituicao'] . '</td>';
+
+		    		if ($row['email_linea'] != '') {
+		    			echo '<td>' . esconde_email($at_img_url, $row['email_linea']) . '</td>';
+		    		} else if ($row['gmail'] != '') {
+		    			echo '<td>' . esconde_email($at_img_url, $row['gmail']) . '</td>';
+		    		} else {
+		    			echo '<td>' . esconde_email($at_img_url, $row['email_alt']) . '</td>';
+		    		}
+		    		echo '</tr>';
+					}
+		    	echo '</tbody>';
+		    	echo '</table>';
+				}
+
 	    	// Afiliados ativos
 
-	    	echo '<h3>Afiliados</h3>';
-	    	echo '<table class="card">';
-	    	echo '<thead>';
-	    	echo '<tr>';
-	    	echo '<th>Nome <span class="countnum card">' . sprintf("%02d", count($ativos)) . '</span></th>';
-	    	echo '<th>Posição</th>';
-	    	echo '<th>Instituição</th>';
-	    	echo '<th>e-mail</th>';
-	    	echo '</tr>';
-	    	echo '</thead>';
-	    	echo '<tbody>';
-	    	foreach ($ativos as $row) {
-	    		echo '<tr>';
-	    		echo '<td>' . $row['nome'] . '<a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_read.php?id='. $row['id'] .'" title="Descrição"><img src="' . get_bloginfo('template_url') . '/imagens/ic_description_white_24dp_2x.png" alt="Read icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_update.php?id='. $row['id'] .'" title="Editar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_create_white_24dp_2x.png" alt="Edit icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_delete.php?id='. $row['id'] .'" title="Apagar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_remove_circle_outline_white_24dp_2x.png" alt="Remove icon"/></a></td>';
-	    		echo '<td>' . $row['cargo'] . '</td>';
-	    		echo '<td>' . $row['instituicao'] . '</td>';
+				// Cientistas
+				gera_tabela($cientistas, 'Cientistas');
 
-	    		if ($row['email_linea'] != '') {
-	    			echo '<td>' . esconde_email($at_img_url, $row['email_linea']) . '</td>';
-	    		} else if ($row['gmail'] != '') {
-	    			echo '<td>' . esconde_email($at_img_url, $row['gmail']) . '</td>';
-	    		} else {
-	    			echo '<td>' . esconde_email($at_img_url, $row['email_alt']) . '</td>';	
-	    		}
-	    		echo '</tr>';
-	    	}
-	    	echo '</tbody>';
-	    	echo '</table>';	    	
+				// Pos-docs
+				gera_tabela($posdocs, 'Pós-doutorandos');
+
+				// Doutorandos
+				gera_tabela($doutorandos, 'Doutorandos');
+
+				// Mestrandos
+				gera_tabela($mestrandos, 'Mestrandos');
+
+				// Graduandos
+				gera_tabela($graduandos, 'Graduandos');
+
+				// Tecnologistas
+				gera_tabela($tecnologistas, 'Tecnologistas');
 
 	    	// Afiliados inativos
 
@@ -101,10 +144,10 @@ Template Name: Afiliados
 	    	echo '</table>';
 
 
-	           
+
         ?>
 
-	
-				
+
+
 	</div><div class="clearboth"></div>
 <?php get_footer(); ?>
