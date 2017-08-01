@@ -1348,3 +1348,7 @@ div.tno-thumbnail p {
   margin: 0 0 0 auto;
   width: 20%;
 }
+.caret {
+	text-indent: -999999px;
+	background-image: url('imagens/add-category.png');
+}

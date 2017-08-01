@@ -33,6 +33,7 @@ if (is_user_logged_in()) {
 				?>
         <h2 class="video-grupo-titulo">
 					<?php echo $row_grupos['titulo'] ?>
+					<i class="fa fa-caret-down"></i>
 					<span class="category-group-icon">
 						<?php echo get_video_action('add', $login, $row_grupos['id']); ?>
 						<?php echo get_video_group_action('delete', $login, $row_grupos['id']) ?>
@@ -55,6 +56,7 @@ if (is_user_logged_in()) {
       ?>
 	      <h2 class="video-grupo-titulo">
 					Sem Categoria
+					<i class="fa fa-caret-down"></i>
 					<span class="countnum card"><?php echo sprintf("%02d", count($videos_sem_categoria)); ?></span>
 				</h2>
 	      <div class="video-grupo">
