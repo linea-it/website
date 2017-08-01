@@ -4,8 +4,8 @@ $(document).ready(function(){
     });
 
     $('.video-grupo-titulo').click(function() {
-      console.log('click');
       $(this).next().toggleClass('show-video-grupo');
+      $(this).find('.fa').toggleClass('fa-caret-down fa-caret-right');
     });
 });
 
