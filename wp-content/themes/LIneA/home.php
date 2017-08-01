@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//PT">
-<!-- 
+<!--
 ######################################
 #   Este site foi desenvolvido por   #
 # Mairus "Webber" Maichrovicz Cabral #
@@ -17,7 +17,7 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 		<meta name="description" content="LIneA - Laboratório Interinstitucional de e-Astronomia" />
-		
+
 			<script>
 				function change(id, newClass) {
 					identity=document.getElementById(id);
@@ -41,7 +41,7 @@
 					<a href="https://www.facebook.com/linea.mcti"><img src="<?php bloginfo('template_url'); ?>/imagens/facebook_circle.png" /></a>
 					<a href="https://twitter.com/LIneA_mcti"><img src="<?php bloginfo('template_url'); ?>/imagens/twitter_circle.png" /></a></div>
 				<div class="clearright"></div>
-				
+
 				<div class="clearboth"></div>
 			</div>
 			<div class="meddle">
@@ -49,33 +49,33 @@
 				<div class="breadcrumb">&raquo; Home</div>
 				<div class="conteudo">
 					<div class="box-home-left">
-						<h1><?php 
+						<h1><?php
 						$page_id = 82;
 						$page_data = get_page( $page_id );
 						echo ''. $page_data->post_title .'';// echo the title
 						?></h1>
-						<p class="oqueeolinea"><?php 
+						<p class="oqueeolinea"><?php
 						$page_id = 82;
 						$page_data = get_page( $page_id );
 						echo ''. $page_data->post_content .'';// echo the content
 						?></p>
-						<h1><?php 
+						<h1><?php
 						$page_id = 2915;
 						$page_data = get_page( $page_id );
 						echo ''. $page_data->post_title .'';// echo the title
 						?></h1>
-						<p class="oqueeolinea"><?php 
-						$page_id = 2915;//2612/2915 
+						<p class="oqueeolinea"><?php
+						$page_id = 2915;//2612/2915
 						$page_data = get_page( $page_id );
 						echo ''. $page_data->post_content .'';// echo the content
 						?></p>
 						<h1>Projetos Apoiados</h1>
 						<div class="box-projetos">
-						
+
 						<?php
 	$mypages = get_pages( array( 'parent' => '2488', 'sort_column' => 'post_name', 'sort_order' => 'asc' ) );
 
-	foreach( $mypages as $page ) {		
+	foreach( $mypages as $page ) {
 		$title = $page->post_title;
 		$content = $page->post_content;
 		$link = get_page_link($page->ID);
@@ -84,7 +84,7 @@
 	?>
 		<hr />
 		<div class="project-card">
-		
+
 		<?php
 			$src = get_the_post_thumbnail($page->ID, 'thumbnail');
 			echo $src;
@@ -98,8 +98,8 @@
 		</div>
 		<div class="clearboth"></div>
 	<?php
-	}	
-?>						
+	}
+?>
 						</div>
 					</div>
 					<div class="blog-capa">
@@ -136,7 +136,7 @@
 			        	$rev = array_reverse($futureWebinars);
 					?>
 
-					
+
 					<div class="blog-capa">
 						<h2>Webinars</h2><a href="/seminarios/">+ mais webinars</a>
 						<?php
@@ -154,10 +154,10 @@
 								echo '<em>' . $rev[0]["titulo"] . '</em>';
 								echo '</div>';
 								echo '<a id="webinar-link-on" href="' . WEBINAR_GTM_LINK . '">Assistir Webinar</a>';
-							}	
-						
+							}
+
 						?>
-						
+
 					</div>
 
 					<div class="blog-capa">
@@ -165,29 +165,29 @@
 						<?php
 						remove_filter( 'excerpt_length', 'project_excerpt_length', 999);
 						add_filter( 'excerpt_length', 'custom_excerpt_length', 998 );
-						$args = array( 'posts_per_page' => 8, 'order'=> 'DESC', 'orderby' => 'date' );
+						$args = array( 'posts_per_page' => 9, 'order'=> 'DESC', 'orderby' => 'date' );
 						$postslist = get_posts( $args );
 						foreach ( $postslist as $post ) :
-						  setup_postdata( $post ); 
-						
-						
+						  setup_postdata( $post );
+
+
 						?>
 
 						  <p class="data-blog-capa"><?php the_date('d \d\e F \d\e Y'); ?></p>
 							<div class="modulo-novidades truncate news-card">
-								<?php 
+								<?php
 								if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 								  the_post_thumbnail('thumbnail');
-								} 
+								}
 								?>
 								<p class="truncate-news"><strong><a style="font-size: 17px; color: white" href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></strong></p>
 								<!--<p><?php echo get_post_meta( $post->ID, 'resumo-noticia-home', true ); ?></p>-->
-								
+
 								<p class="truncate-news" style="font-size: 13px"><?php echo get_the_excerpt(); ?></p>
 								<div class="clearboth"></div>
 							</div>
 						<?php
-						endforeach; 
+						endforeach;
 						wp_reset_postdata();
 						?>
 					</div>
