@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require( $_SERVER['DOCUMENT_ROOT'].'/wp-load.php' );
 if (!is_user_logged_in()) {
@@ -12,14 +12,15 @@ if (!is_user_logged_in()) {
 <div class="clearboth"></div>
 	<div id="content" class="conteudo read page" role="main">
 			<?php
-				require 'database.php';
-				
+				require_once 'database.php';
+				require_once 'afiliados_functions.php';
+
 				$id = null;
 
 				if (!empty($_GET['id'])) {
 					$id = $_REQUEST['id'];
 				}
-			
+
 			    // read data
 			    if ($id != null) {
 			        $pdo = Database::connect();
@@ -29,9 +30,11 @@ if (!is_user_logged_in()) {
 			        $q->execute(array($id));
 			        $result = $q->fetchAll();
 			        $row = $result[0];
+
+							$projetos_string = get_projetos_associados_string($pdo, $id);
 			        Database::disconnect();
 			    }
-			
+
 			?>
 
 		    <main class="container">
@@ -59,15 +62,15 @@ if (!is_user_logged_in()) {
 		        	echo '<p><strong>Data de início:</strong> ' . $row['data_inicio'] . '</p>';
 		        	echo '<p><strong>Data de saída:</strong> ' . $row['data_saida'] . '</p>';
 		        	echo '<p><strong>Status:</strong> ' . $row['status'] . '</p>';
-		        	echo '<p><strong>Projeto:</strong> ' . $row['projeto'] . '</p>';
+		        	echo '<p><strong>Projetos:</strong> ' . $projetos_string . '</p>';
 		        	echo '<p><strong>País Atual:</strong> ' . $row['pais_atual'] . '</p>';
 		        	echo '<p><strong>Função:</strong> ' . $row['funcao'] . '</p>';
 		        	echo '<p><strong>Skype:</strong> ' . $row['skype'] . '</p>';
-		        ?>																					
+		        ?>
               	<div>
                   <a class="btn" href="<?php echo get_bloginfo('template_url') . '/afiliados_update.php?id=' . $id ?>">Editar</a>
                   <a class="btn" href="/new-afiliados/">Voltar</a>
-                </div>	        
+                </div>
 		    </section>
 		    </main>
 	</div>

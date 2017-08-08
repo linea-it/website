@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require( $_SERVER['DOCUMENT_ROOT'].'/wp-load.php' );
 if (!is_user_logged_in()) {
@@ -12,18 +12,23 @@ if (!is_user_logged_in()) {
 <div class="clearboth"></div>
 	<div id="content" class="conteudo update page" role="main">
 			<?php
-				require 'database.php';
-				require 'linea_func.php';
+			require_once 'database.php';
+			require_once 'linea_func.php';
+			require_once 'afiliados_functions.php';
+
+			$pdo = Database::connect();
+			$pdo->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
+			$projetos_todos = get_projetos($pdo);
 
 			$id = null;
 			if ( !empty($_GET['id'])) {
 			    $id = $_REQUEST['id'];
 			}
-			 
+
 			if ( null==$id ) {
 			    header("Location: /");
 			}
-			 
+
 			if ( !empty($_POST)) {
 
 			    $nomeError = null;
@@ -47,11 +52,10 @@ if (!is_user_logged_in()) {
 			    $dataInicioError = null;
 			    $dataSaidaError = null;
 			    $statusError = null;
-			    $projetoError = null;
 			    $paisAtualError = null;
 			    $funcaoError = null;
 			    $skypeError = null;
-			     
+
 			    // keep track post values
 			    $nome = $_POST['nome'];
 			    $nascimento = $_POST['nascimento'];
@@ -74,60 +78,78 @@ if (!is_user_logged_in()) {
 			    $dataInicio = $_POST['dataInicio'];
 			    $dataSaida = $_POST['dataSaida'];
 			    $status = $_POST['status'];
-			    $projeto = $_POST['projeto'];
+					if ( isset($_POST['projetos']) ) {
+						$projetos = $_POST['projetos'];
+					}
 			    $paisAtual = $_POST['paisAtual'];
 			    $funcao = $_POST['funcao'];
 			    $skype = $_POST['skype'];
-			     
+
 			    // validate input
 			    $valid = true;
 			    if (empty($nome)) {
 			        $nomeError = 'Insira o nome';
 			        $valid = false;
 			    }
-			     
+
 			    // if (empty($nacionalidade)) {
 			    //     $nacionalidadeError = 'Insira a nacionalidade';
 			    //     $valid = false;
 			    // }
-			     
+
 			    // if (empty($instituicao)) {
 			    //     $instituicaoError = 'Insira a instituicao';
 			    //     $valid = false;
 			    // }
-			     
+
 			    // update data
 			    if ($valid) {
-			        $pdo = Database::connect();
-			        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			        $sql = "UPDATE afiliados set nome = ?, nascimento = ?, nacionalidade = ?, telefone = ?, celular = ?, instituicao = ?, 
+			        $sql = "UPDATE afiliados set nome = ?, nascimento = ?, nacionalidade = ?, telefone = ?, celular = ?, instituicao = ?,
 			        		cargo = ?, supervisor = ?, email_linea = ?, gmail = ?, email_alt = ?, cpf = ?, identidade = ?, org_emissor = ?,
 			        		uf_emissor = ?, passaporte_estrangeiro = ?, passaporte_residente = ?, cpf_estrangeiro_residente = ?, data_inicio = ?,
-			        		data_saida = ?, status = ?, projeto = ?, pais_atual = ?, funcao = ?, skype = ? WHERE id = ?";
+			        		data_saida = ?, status = ?, pais_atual = ?, funcao = ?, skype = ? WHERE id = ?";
 			        $q = $pdo->prepare($sql);
 			        $q->execute(array($nome, $nascimento, $nacionalidade, $telefone, $celular, $instituicao, $cargo, $supervisor, $emailLinea, $gmail, $emailAlt, $cpf,
 			        	$identidade, $orgEmissor, $ufEmissor, $passaporteEstrangeiro, $passaporteResidente, $cpfEstrangeiroResidente, $dataInicio, $dataSaida, $status,
-			        	$projeto, $paisAtual, $funcao, $skype, $id));
+			        	$paisAtual, $funcao, $skype, $id));
+
+							// Update projetos_associados
+							if ( isset( $projetos ) ) {
+								$projetos_associados = get_projetos_associados($pdo, $id);
+								foreach ( $projetos as $projeto ) {
+									if ( !in_array( $projeto, $projetos_associados ) ) {
+										$projeto_id = get_projeto_id($projetos_todos, $projeto);
+										salva_projeto_associado($pdo, $projeto_id, $id);
+									}
+								}
+								foreach ($projetos_associados as $projeto_associado) {
+									if ( !in_array( $projeto_associado, $projetos ) ) {
+										$projeto_id = get_projeto_id($projetos_todos, $projeto_associado);
+										remove_projeto_associado($pdo, $projeto_id, $id);
+									}
+								}
+							} else {
+								remove_todos_projetos_associados($pdo, $id);
+							}
 
 			        // Inserindo LOG da operação no banco
 			        $sql_log = "INSERT INTO log (wp_username, datetime, action, page, resumo) VALUES (?, now(), 'UPDATE', 'AFILIADOS', ?)";
 			        $q_log = $pdo->prepare($sql_log);
-			        
+
 			        $current_user = wp_get_current_user();
 			        $wp_username = $current_user->user_login;
-					
+
 			        $q_log->execute(array($wp_username, resumo($nome)));
-			        
+
 			        Database::disconnect();
 			        header("Location: /new-afiliados/");
 			    }
 			} else {
-			    $pdo = Database::connect();
-			    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			    $sql = "SELECT * FROM afiliados where id = ?";
 			    $q = $pdo->prepare($sql);
 			    $q->execute(array($id));
 			    $row = $q->fetch(PDO::FETCH_ASSOC);
+					$id = $row['id'];
 			    $nome = $row['nome'];
 			    $nascimento = $row['nascimento'];
 			    $nacionalidade = $row['nacionalidade'];
@@ -149,11 +171,11 @@ if (!is_user_logged_in()) {
 			    $dataInicio = $row['data_inicio'];
 			    $dataSaida = $row['data_saida'];
 			    $status = $row['status'];
-			    $projeto = $row['projeto'];
+			    $projetos = get_projetos_associados($pdo, $id);
 			    $paisAtual = $row['pais_atual'];
 			    $funcao = $row['funcao'];
 			    $skype = $row['skype'];
-			    $id = $row['id'];
+
 			    Database::disconnect();
 			}
 			?>
@@ -161,7 +183,7 @@ if (!is_user_logged_in()) {
 		    <main class="container">
 		    <section>
 		        <h1>Editar</h1>
-		           
+
 		            <form action="<?php echo get_bloginfo('template_url') . '/afiliados_update.php?id=' . $id ?>" method="post">
 						<!-- Nome -->
 						<div class="grupo-input <?php echo !empty($nomeError)?'error':'';?>">
@@ -202,7 +224,7 @@ if (!is_user_logged_in()) {
 							<?php if (!empty($celularError)): ?>
 							    <span class="errormsg"><?php echo $celularError;?></span>
 							<?php endif; ?>
-						</div>	
+						</div>
 						<!-- Instituição -->
 						<div class="grupo-input">
 							<label for="instituicao" class="control-label">Instituição:</label>
@@ -223,7 +245,22 @@ if (!is_user_logged_in()) {
 								<option value="Doutorando" <?php echo $cargo == 'Doutorando'?'selected':''; ?> >Doutorando</option>
 								<option value="Pós-doutorando" <?php echo $cargo == 'Pós-doutorando'?'selected':''; ?> >Pós-doutorando</option>
 							</select>
-						</div>	
+						</div>
+						<!-- Projetos -->
+						<div class="grupo-input">
+							<label for="projeto" class="control-label">Projetos:</label>
+							<?php foreach ($projetos_todos as $projeto_row): ?>
+								<?php
+								 	if ($projetos) {
+										$checked = ( in_array($projeto_row['nome_projeto'], $projetos) )?'checked':'';
+									} else {
+										$checked = '';
+									}
+								?>
+								<input type="checkbox" name="projetos[]" value="<?php echo $projeto_row['nome_projeto'] ?>" <?php echo $checked ?>>
+								<span><?php echo $projeto_row['nome_projeto'] ?></span>
+							<?php endforeach; ?>
+						</div>
 						<!-- Supervisor -->
 						<div class="grupo-input">
 							<label for="supervisor" class="control-label">Supervisor:</label>
@@ -263,7 +300,7 @@ if (!is_user_logged_in()) {
 							<?php if (!empty($cpfError)): ?>
 							    <span class="errormsg"><?php echo $cpfError;?></span>
 							<?php endif; ?>
-						</div>	
+						</div>
 						<!-- identidade -->
 						<div class="grupo-input">
 							<label for="identidade" class="control-label">Identidade:</label>
@@ -335,14 +372,6 @@ if (!is_user_logged_in()) {
 								<option value="Ativo" <?php echo $status == 'Ativo'?'selected':''; ?> >Ativo</option>
 								<option value="Inativo" <?php echo $status == 'Inativo'?'selected':''; ?> >Inativo</option>
 							</select>
-						</div>
-						<!-- Projeto -->
-						<div class="grupo-input">
-							<label for="projeto" class="control-label">Projeto:</label>
-							<input id="projeto" name="projeto" type="text"  placeholder="Projeto" value="<?php echo !empty($projeto)?$projeto:'';?>">
-							<?php if (!empty($projetoError)): ?>
-							    <span class="errormsg"><?php echo $projetoError;?></span>
-							<?php endif; ?>
 						</div>
 						<!-- País Atual -->
 						<div class="grupo-input">
