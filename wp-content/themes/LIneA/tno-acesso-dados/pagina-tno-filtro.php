@@ -94,7 +94,7 @@
             }
             echo cria_paginacao($limite, $pagina, $total_imagens);
           } else {
-            echo '<p class="sem-imagem-msg" > No maps has been found. </p>';
+            echo '<p class="sem-imagem-msg" > No maps have been found. </p>';
           }
         ?>
       </section>
