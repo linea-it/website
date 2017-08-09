@@ -65,7 +65,7 @@ Template Name: Afiliados
 	    		return str_replace("@", $at_img_tag, $email);
 	    	}
 
-				function gera_tabela($con, $lista, $titulo) {
+				function gera_tabela($con, $lista, $titulo, $login) {
 					global $at_img_url;
 		    	echo '<h3>' . $titulo . '</h3>';
 		    	echo '<table class="card">';
@@ -101,22 +101,22 @@ Template Name: Afiliados
 	    	// Afiliados ativos
 
 				// Cientistas
-				gera_tabela($pdo, $cientistas, 'Cientistas');
+				gera_tabela($pdo, $cientistas, 'Cientistas', $login);
 
 				// Pos-docs
-				gera_tabela($pdo, $posdocs, 'Pós-doutorandos');
+				gera_tabela($pdo, $posdocs, 'Pós-doutorandos', $login);
 
 				// Doutorandos
-				gera_tabela($pdo, $doutorandos, 'Doutorandos');
+				gera_tabela($pdo, $doutorandos, 'Doutorandos', $login);
 
 				// Mestrandos
-				gera_tabela($pdo, $mestrandos, 'Mestrandos');
+				gera_tabela($pdo, $mestrandos, 'Mestrandos', $login);
 
 				// Graduandos
-				gera_tabela($pdo, $graduandos, 'Graduandos');
+				gera_tabela($pdo, $graduandos, 'Graduandos', $login);
 
 				// Tecnologistas
-				gera_tabela($pdo, $tecnologistas, 'Tecnologistas');
+				gera_tabela($pdo, $tecnologistas, 'Tecnologistas', $login);
 
 	    	// Afiliados inativos
 
