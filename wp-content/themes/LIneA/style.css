@@ -138,11 +138,12 @@ main.container, main.pagina-filtro {
   	text-overflow: ellipsis;
 }
 a {
-	color: #d6b500;
+	color: #e6d45c;
 	text-decoration: none;
 }
 a:hover {
-	color: #dbdbdb;
+	/*color: #dbdbdb;*/
+	color: #d6b500;
 	text-decoration: none;
 }
 
@@ -1355,4 +1356,13 @@ div.tno-thumbnail p {
 .caret {
 	text-indent: -999999px;
 	background-image: url('imagens/add-category.png');
+}
+
+/*Pagina Eventos*/
+.evento {
+	margin-bottom: 2%;
+}
+
+.evento span {
+	margin-right: 1%;
 }
