@@ -9,7 +9,6 @@ Template Name: Afiliados
 <?php get_sidebar(); ?>
 <div class="clearboth"></div>
 	<div id="content" class="conteudo afiliados" role="main">
-		<h1>Afiliados</h1>
 
 		<?php
 	    	include 'database.php';
@@ -28,6 +27,10 @@ Template Name: Afiliados
 				$cientistas = array();
 	    	$inativos = array();
 
+            ?>
+            <h1>Afiliados <span class="countnum card"><?php printf("%02d", count($result)) ?></span></h1>
+
+            <?php
 	    	if (is_user_logged_in()) {
 	       		$login = 'ativado';
 	       	} else {
@@ -81,9 +84,9 @@ Template Name: Afiliados
 					foreach ($lista as $row) {
 						$projetos_string = get_projetos_associados_string($con, $row['id']);
 		    		echo '<tr>';
-		    		echo '<td>' . $row['nome'] . '<a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_read.php?id='. $row['id'] .'" title="Descrição"><img src="' . get_bloginfo('template_url') . '/imagens/ic_description_white_24dp_2x.png" alt="Read icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_update.php?id='. $row['id'] .'" title="Editar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_create_white_24dp_2x.png" alt="Edit icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_delete.php?id='. $row['id'] .'" title="Apagar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_remove_circle_outline_white_24dp_2x.png" alt="Remove icon"/></a></td>';
-		    		echo '<td class="projetos-td">' . $projetos_string . '</td>';
-		    		echo '<td>' . $row['instituicao'] . '</td>';
+		    		echo '<td class="afiliados-nome-td">' . $row['nome'] . '<a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_read.php?id='. $row['id'] .'" title="Descrição"><img src="' . get_bloginfo('template_url') . '/imagens/ic_description_white_24dp_2x.png" alt="Read icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_update.php?id='. $row['id'] .'" title="Editar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_create_white_24dp_2x.png" alt="Edit icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_delete.php?id='. $row['id'] .'" title="Apagar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_remove_circle_outline_white_24dp_2x.png" alt="Remove icon"/></a></td>';
+		    		echo '<td class="afiliados-projetos-td">' . $projetos_string . '</td>';
+		    		echo '<td class="afiliados-instituicao-td">' . $row['instituicao'] . '</td>';
 
 		    		if ($row['email_linea'] != '') {
 		    			echo '<td>' . esconde_email($at_img_url, $row['email_linea']) . '</td>';
