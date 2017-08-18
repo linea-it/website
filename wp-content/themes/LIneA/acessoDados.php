@@ -37,15 +37,17 @@ Template Name: acesso-a-dados
           ?>
             <div class="subpagina-acesso">
               <?php
-              if ( has_post_thumbnail() ) {
-								?>
-								<div class="card">
-								<?php
-								the_post_thumbnail(array(150, 150));
-								?>
-								</div>
-							<?php
-							}
+                if ( has_post_thumbnail() ) {
+                    ?>
+                    <div class="card">
+                        <a href="<?php the_permalink() ?>">
+                            <?php
+                            the_post_thumbnail(array(150, 150));
+                            ?>
+                        </a>
+                    </div>
+                    <?php
+                }
               ?>
               <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
             </div>
