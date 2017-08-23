@@ -33,60 +33,17 @@ Template Name: eventos
             }
 
             echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/eventos_create.php"> Adicionar </a>' : '');
+
+            $category = get_the_category();
+            $cat_slug = $category[0]->slug;
+
+            if ($cat_slug == 'eventos-organizacao') {
+                include 'eventos_organizacao.php';
+            } elseif ($cat_slug == 'eventos-participacao') {
+                include 'eventos_participacao.php';
+            }
+
         ?>
-        <section class="organizacao">
-            <h2>
-                Organização
-                <span class="countnum card">
-                    <?php echo sprintf("%02d", count($organizacao)) ?>
-                </span>
-            </h2>
-            <article class="org-internacional">
-                <h3>
-                    Internacional
-                    <span class="countnum card">
-                        <?php echo sprintf("%02d", count($org_internacional)) ?>
-                    </span>
-                </h3>
-                <?php
-                    if ($org_internacional) {
-                        foreach ($org_internacional as $row) {
-                            echo show_evento($row, $login);
-                        }
-                    }
-                ?>
-            </article>
-            <article class="org-nacional">
-                <h3>
-                    Nacional
-                    <span class="countnum card">
-                        <?php echo sprintf("%02d", count($org_nacional)) ?>
-                    </span>
-                </h3>
-                <?php
-                    if ($org_nacional) {
-                        foreach ($org_nacional as $row) {
-                            echo show_evento($row, $login);
-                        }
-                    }
-                ?>
-            </article>
-        </section>
-        <section class="participacao">
-            <h2>
-                Participação
-                <span class="countnum card">
-                    <?php echo sprintf("%02d", count($participacao)) ?>
-                </span>
-            </h2>
-            <?php
-                if ($participacao) {
-                    foreach ($participacao as $row) {
-                        echo show_evento($row, $login);
-                    }
-                }
-            ?>
-        </section>
     </div>
     <div class="clearboth"></div>
 <?php get_footer(); ?>
