@@ -1374,3 +1374,12 @@ div.tno-thumbnail p {
 .evento span {
 	margin-right: 1%;
 }
+
+/*CM Tooltip Glossary*/
+#ttcont {
+    background: #aaa;
+    color: #222;
+}
+a.glossaryLink {
+    color: #fff !important;
+}
