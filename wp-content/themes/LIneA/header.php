@@ -10,7 +10,6 @@
 	<head>
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/lightbox.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.carousel.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.theme.default.min.css" type="text/css" media="screen" />
@@ -37,6 +36,7 @@
 			}
 		</script>
 		<?php wp_head(); ?>
+        <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
 	</head>
 	<body <?php body_class(); ?>>
 		<div class="tudo">
