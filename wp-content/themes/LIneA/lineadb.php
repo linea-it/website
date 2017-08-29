@@ -8,9 +8,9 @@ $foto_dir = $upload_dir['basedir'] . '/lineadbfiles/foto/';
 $apresentacao_url = $upload_dir['baseurl'] . '/lineadbfiles/apresentacao/';
 $foto_url = $upload_dir['baseurl'] . '/lineadbfiles/foto/';
 
-$timezone = "America/Sao_Paulo"; 
+$timezone = "America/Sao_Paulo";
 if(function_exists('date_default_timezone_set')){
-  date_default_timezone_set($timezone); 
+  date_default_timezone_set($timezone);
 }
 
 define (APRESENTACAO_DIR, $apresentacao_dir);
@@ -20,6 +20,6 @@ define (APRESENTACAO_URL, $apresentacao_url);
 define (WEBINAR_DEFAULT_TITLE, 'Title: to be Announced');
 define (FOTO_DEFAULT, 'male-avatar.jpg');
 define (MAILCHIMP_SUBS, 'http://eepurl.com/O_UR1');
-define (WEBINAR_GTM_LINK, 'https://global.gotomeeting.com/join/986493925');
+define (WEBINAR_GTM_LINK, 'https://zoom.us/j/596761139');
 
 ?>
