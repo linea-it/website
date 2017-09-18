@@ -150,7 +150,7 @@
 								echo '</div>';
 								echo '<div style="padding-top: 10px; padding-bottom: 20px"><spam>' . date("d/m", strtotime($rev[0]["data"])) . ' - </spam> <spam style="color: #fed700;">';
 								echo date("h:ia", strtotime($rev[0]["horario"])) . ' BRT</spam> - <em><strong>';
-								echo $rev[0]["nome"] . ' ' . $rev[0]["sobrenome"] . '</strong> ( ' . $rev[0]["instituicao"] . ' )</em></span><br/>';
+								echo $rev[0]["nome"] . ' ' . $rev[0]["sobrenome"] . '</strong> (' . $rev[0]["instituicao"] . ')</em></span><br/>';
 								echo '<em>' . $rev[0]["titulo"] . '</em>';
 								echo '</div>';
 								echo '<a id="webinar-link-on" href="' . WEBINAR_GTM_LINK . '">Assistir Webinar</a>';
