@@ -21,14 +21,36 @@ Template Name: Afiliados
 	    	$result = $prep->fetchAll();
 	    	$posdocs = array();
 	    	$doutorandos = array();
-				$mestrandos = array();
-				$graduandos = array();
-				$tecnologistas = array();
-				$cientistas = array();
+			$mestrandos = array();
+			$graduandos = array();
+			$tecnologistas = array();
+			$cientistas = array();
+            $administrativo = array();
 	    	$inativos = array();
 
+            foreach ($result as $row) {
+                if (strtoupper($row['status']) == 'ATIVO'){
+                    if ($row['cargo'] == 'Pós-doutorando') {
+                        array_push($posdocs, $row);
+                    } elseif (strtoupper($row['cargo']) == 'DOUTORANDO') {
+                        array_push($doutorandos, $row);
+                    } elseif (strtoupper($row['cargo']) == 'MESTRANDO') {
+                        array_push($mestrandos, $row);
+                    } elseif (strtoupper($row['cargo']) == 'GRADUANDO') {
+                        array_push($graduandos, $row);
+                    } elseif (strtoupper($row['cargo']) == 'TECNOLOGISTA') {
+                        array_push($tecnologistas, $row);
+                    } elseif (strtoupper($row['cargo']) == 'CIENTISTA') {
+                        array_push($cientistas, $row);
+                    } elseif (strtoupper($row['cargo']) == 'ADMINISTRATIVO') {
+                        array_push($administrativo, $row);
+                    }
+                } else {
+                    array_push($inativos, $row);
+                }
+            }
             ?>
-            <h1>Afiliados <span class="countnum card"><?php printf("%02d", count($result)) ?></span></h1>
+            <h1>Afiliados <span class="countnum card"><?php printf("%02d", count($result) - count($inativos)) ?></span></h1>
 
             <?php
 	    	if (is_user_logged_in()) {
@@ -40,25 +62,6 @@ Template Name: Afiliados
 	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/afiliados_create.php"> Adicionar </a>' : '');
 
 
-	    	foreach ($result as $row) {
-	    		if (strtoupper($row['status']) == 'ATIVO'){
-	    			if ($row['cargo'] == 'Pós-doutorando') {
-							array_push($posdocs, $row);
-						} elseif (strtoupper($row['cargo']) == 'DOUTORANDO') {
-							array_push($doutorandos, $row);
-						} elseif (strtoupper($row['cargo']) == 'MESTRANDO') {
-							array_push($mestrandos, $row);
-						} elseif (strtoupper($row['cargo']) == 'GRADUANDO') {
-							array_push($graduandos, $row);
-						} elseif (strtoupper($row['cargo']) == 'TECNOLOGISTA') {
-							array_push($tecnologistas, $row);
-						} elseif (strtoupper($row['cargo']) == 'CIENTISTA') {
-							array_push($cientistas, $row);
-						}
-	    		} else {
-	    			array_push($inativos, $row);
-	    		}
-	    	}
 
 	    	// Função para trocar @ por imagem
 	    	$at_img_url = get_bloginfo('template_url') . '/imagens/at2.png';
@@ -120,6 +123,10 @@ Template Name: Afiliados
 
 				// Tecnologistas
 				gera_tabela($pdo, $tecnologistas, 'Tecnologistas', $login);
+
+                // Administrativo
+				gera_tabela($pdo, $administrativo, 'Administrativo', $login);
+
 
 	    	// Afiliados inativos
 
