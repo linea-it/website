@@ -673,6 +673,17 @@ h2 a {
 	padding: 3px;
 	box-shadow: 2px 2px 1px -1px #222;
 }
+.contador-container {
+    padding: 5% 0;
+}
+.texto-contador {
+    text-align: center;
+    font-size: 1.1em;
+}
+#contador {
+    text-align: center;
+    font-size: 2em;
+}
 @media (min-width:1024px) {
 	.blog-capa p {
 		margin: 0px 0px 0px 0px;

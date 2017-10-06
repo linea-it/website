@@ -163,6 +163,34 @@
 					<div class="blog-capa">
 						<h2>Notícias </h2><a href="/noticias/">+ mais notícias</a>
 						<?php
+
+                        // Contador para Notícia importante
+                        $args = array(
+                        	'post_type' => 'post',
+                            'post_status' => 'future',
+                        	'tax_query' => array(
+                        		array(
+                        			'taxonomy' => 'category',
+                        			'field'    => 'slug',
+                        			'terms'    => 'important-news'
+                        		),
+                        	),
+                        );
+                        $query = new WP_Query( $args );
+                        if ( $query->have_posts() ) {
+                        	while ( $query->have_posts() ) {
+                        		$query->the_post();
+                                ?>
+                                <div class="contador-container">
+                                    <p class="texto-contador"><?php echo get_the_content() ?></p>
+                                    <p id="contador"><?php echo get_the_date('r') ?></p>
+                                </div>
+                                <?php
+                        	} // end while
+                        } // end if
+
+
+                        // Notícias
 						remove_filter( 'excerpt_length', 'project_excerpt_length', 999);
 						add_filter( 'excerpt_length', 'custom_excerpt_length', 998 );
 						$args = array( 'posts_per_page' => 9, 'order'=> 'DESC', 'orderby' => 'date' );
