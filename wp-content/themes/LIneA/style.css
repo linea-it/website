@@ -1394,3 +1394,24 @@ div.tno-thumbnail p {
 a.glossaryLink {
     color: #fff !important;
 }
+
+/* Apresentações */
+.apresentacao-horiz-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin-bottom: 3%;
+}
+.apresentacao-horiz-video {
+	width: 30%;
+	display: inline;
+	margin-right: 10%;
+}
+.apresentacao-horiz-thumb {
+	width: 100%;
+}
+.apresentacao-horiz-caption {
+	width: 30%;
+	display: inline;
+	align-self: center;
+}
