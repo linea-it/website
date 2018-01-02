@@ -193,7 +193,18 @@
                         // Notícias
 						remove_filter( 'excerpt_length', 'project_excerpt_length', 999);
 						add_filter( 'excerpt_length', 'custom_excerpt_length', 998 );
-						$args = array( 'posts_per_page' => 9, 'order'=> 'DESC', 'orderby' => 'date' );
+						$args = array( 
+							'posts_per_page' => 9,
+							'order'=> 'DESC',
+							'orderby' => 'date',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'category',
+									'field' => 'slug',
+									'terms' => 'blog'
+								)
+							)
+						);
 						$postslist = get_posts( $args );
 						foreach ( $postslist as $post ) :
 						  setup_postdata( $post );
