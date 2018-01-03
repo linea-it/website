@@ -603,7 +603,14 @@ function posts_by_year() {
     'orderby' => 'post_date',
     'order' => 'ASC',
     'post_type' => 'post',
-    'post_status' => 'publish'
+    'post_status' => 'publish',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'category',
+            'field'    => 'slug',
+            'terms'    => 'blog'
+        ),
+    )
   ));
 
   // loop through posts, populating $years arrays
