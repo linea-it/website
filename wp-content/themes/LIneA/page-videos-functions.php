@@ -62,6 +62,18 @@ function get_video_group_action($action, $login, $id) {
   return $str;
 }
 
+function get_video_subgroup_action($action, $login, $id) {
+  if ( !empty($id) ) {
+    $param = '?id=' . $id;
+  }
+  $str = '';
+  $str .= '<a class="icon ' . $login . '" title="Categoria: '. $action .'" href="';
+  $str .= get_bloginfo('template_url') . '/video-subgroup-'. $action .'.php' . $param . '">';
+  $str .= '<img src="' . get_bloginfo('template_url') . '/imagens//'. $action .'.png" alt="'. $action .' icon"/>';
+  $str .= '</a>';
+  return $str;
+}
+
 function get_video_grupos_select($con, $categoria) {
   $row_grupos = get_video_grupos($con);
   $str = '';
