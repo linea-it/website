@@ -56,10 +56,16 @@ if (!is_user_logged_in()) {
 						$pdo = Database::connect();
 						$pdo->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
 
-		        $sql = "INSERT INTO videos (titulo, video, video_grupo_id) VALUES (?,?,?)";
-		        $q = $pdo->prepare($sql);
+                        // Insere video
+		                $sql = "INSERT INTO videos (titulo, video) VALUES (?,?)";
+		                $q = $pdo->prepare($sql);
+                        $q->execute(array($titulo, $video));
+                        $lastID = $pdo->lastInsertId();
 
-						$q->execute(array($titulo, $video, $id_grupo));
+                        // Cria relacionamento
+                        $sql = "INSERT INTO video_grupos_relac (video_id, grupo_id) VALUES (?,?)";
+                        $q = $pdo->prepare($sql);
+                        $q->execute(array($lastID, $id_grupo));
 
 
 		        // Inserindo LOG da operação no banco
