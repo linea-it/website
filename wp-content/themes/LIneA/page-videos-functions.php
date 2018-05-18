@@ -9,32 +9,49 @@ function get_video_grupos($con) {
 }
 
 function get_videos_por_grupo($con, $grupo_id) {
-  $sql = 'SELECT * FROM videos WHERE video_grupo_id = ? ORDER BY titulo';
+  $sql = <<<SQL
+    SELECT v.id as v_id, v.titulo as v_titulo, v.video as v_video FROM
+    videos AS v INNER JOIN video_grupos_relac AS vgr ON v.id = vgr.video_id
+    WHERE vgr.grupo_id = ? ORDER BY titulo
+SQL;
   $prep = $con->prepare($sql);
   $prep->execute(array($grupo_id));
   return $prep->fetchAll();
 }
 
 function get_videos_sem_categoria($con) {
-  $sql = 'SELECT * FROM videos WHERE video_grupo_id IS NULL ORDER BY titulo';
+  $sql = <<<SQL
+    SELECT * FROM videos AS v INNER JOIN video_grupos_relac AS vgr ON
+    v.id = vgr.video_id WHERE vgr.grupo_id IS NULL ORDER BY titulo
+SQL;
   $prep = $con->prepare($sql);
   $prep->execute();
   return $prep->fetchAll();
 }
 
+function get_grupo_por_id_video($con, $id_video) {
+    $sql = <<<SQL
+    SELECT grupo_id FROM video_grupos_relac WHERE video_id = ?;
+SQL;
+    $prep = $con->prepare($sql);
+    $prep->execute(array($id_video));
+    $result = $prep->fetchAll();
+    return $result[0]['grupo_id'];
+}
+
 function video_card($row, $login) {
-    $ytbID = getID($row['video']);
+    $ytbID = getID($row['v_video']);
     $str = '';
     $str .= '<div class="video-card">';
-    $str .= '<a href="' . $row['video'] . '">';
+    $str .= '<a href="' . $row['v_video'] . '">';
     $str .= '<img src="http://img.youtube.com/vi/' . $ytbID . '/hqdefault.jpg"/>';
     $str .= '<div class="video-caption">';
-    $str .= '<p>' . $row['titulo'] . '</p>';
+    $str .= '<p>' . $row['v_titulo'] . '</p>';
     $str .= '</div>';
     $str .= '</a>';
     $str .= '<span class="video-group-icon">';
-    $str .= get_video_action('update', $login, $row['id']);
-    $str .= get_video_action('delete', $login, $row['id']);
+    $str .= get_video_action('update', $login, $row['v_id']);
+    $str .= get_video_action('delete', $login, $row['v_id']);
     $str .= '</span>';
     $str .= '</div>';
     return $str;
@@ -74,10 +91,10 @@ function get_video_subgroup_action($action, $login, $id) {
   return $str;
 }
 
-function get_video_grupos_select($con, $categoria) {
+function get_video_grupos_select($con, $categoria, $input_name) {
   $row_grupos = get_video_grupos($con);
   $str = '';
-  $str .= '<select name="categoria" id="categoria">';
+  $str .= '<select name='.$input_name.' id'.$input_name.'>';
   foreach ($row_grupos as $row) {
     $selected = ( $categoria == $row['id'] )?'selected':'';
     $str .= '<option value="' . $row['id'] . '" '. $selected .' >' . $row['titulo'] . '</option>';
