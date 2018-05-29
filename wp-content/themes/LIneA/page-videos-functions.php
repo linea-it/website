@@ -1,58 +1,79 @@
 <?php
 require_once 'ytb_functions.php';
 
-function get_video_grupos($con) {
-  $sql = 'SELECT * FROM video_grupos ORDER BY titulo';
-  $prep = $con->prepare($sql);
-  $prep->execute();
-  return $prep->fetchAll();
+function get_num_videos_grupo($grupo_slug) {
+    $args = array(
+        'post_type' => 'video',
+        'tax_query' => array (
+            array(
+                'taxonomy' => 'grupo',
+                'field' => 'slug',
+                'terms' => $grupo_slug,
+            )
+        )
+    );
+    $query_result = new WP_Query($args);
+    return count($query_result->posts);
 }
 
-function get_videos_por_grupo($con, $grupo_id) {
-  $sql = <<<SQL
-    SELECT v.id as v_id, v.titulo as v_titulo, v.video as v_video FROM
-    videos AS v INNER JOIN video_grupos_relac AS vgr ON v.id = vgr.video_id
-    WHERE vgr.grupo_id = ? ORDER BY titulo
-SQL;
-  $prep = $con->prepare($sql);
-  $prep->execute(array($grupo_id));
-  return $prep->fetchAll();
+function get_videos_por_subgrupo($subgrupo) {
+    $args = array(
+        'post_type' => 'video',
+        'orderby' => 'date',
+        'tax_query' => array (
+            array(
+                'taxonomy' => 'grupo',
+                'field' => 'slug',
+                'terms' => $subgrupo
+            )
+        )
+    );
+    $query_result = new WP_Query($args);
+    return $query_result;
 }
 
-function get_videos_sem_categoria($con) {
-  $sql = <<<SQL
-    SELECT * FROM videos AS v INNER JOIN video_grupos_relac AS vgr ON
-    v.id = vgr.video_id WHERE vgr.grupo_id IS NULL ORDER BY titulo
-SQL;
-  $prep = $con->prepare($sql);
-  $prep->execute();
-  return $prep->fetchAll();
+function get_permissao($post_id) {
+    if (is_user_logged_in()) {
+        return true;
+    } else {
+        return !has_tag('restrito', $post_id);
+    }
 }
 
-function get_grupo_por_id_video($con, $id_video) {
-    $sql = <<<SQL
-    SELECT grupo_id FROM video_grupos_relac WHERE video_id = ?;
-SQL;
-    $prep = $con->prepare($sql);
-    $prep->execute(array($id_video));
-    $result = $prep->fetchAll();
-    return $result[0]['grupo_id'];
-}
-
-function video_card($row, $login) {
+function video_card($row, $permissao) {
     $ytbID = getID($row['v_video']);
+    $url = $row['v_video'];
+    $class_desativado = '';
+    if (!$permissao) {
+        $class_desativado = 'video-desativado';
+    }
     $str = '';
-    $str .= '<div class="video-card">';
-    $str .= '<a href="' . $row['v_video'] . '">';
+    $str .= '<div class="video-card ' . $class_desativado . '">';
+    if ($permissao) {
+        $str .= '<a href="' . $url . '">';
+    }
     $str .= '<img src="http://img.youtube.com/vi/' . $ytbID . '/hqdefault.jpg"/>';
     $str .= '<div class="video-caption">';
     $str .= '<p>' . $row['v_titulo'] . '</p>';
     $str .= '</div>';
-    $str .= '</a>';
-    $str .= '<span class="video-group-icon">';
-    $str .= get_video_action('update', $login, $row['v_id']);
-    $str .= get_video_action('delete', $login, $row['v_id']);
+    if ($permissao) {
+        $str .= '</a>';
+    } else {
+        $str .= '<span class="video-desativado">RESTRITO</span>';
+    }
+    $str .= '<span class="video-data">';
+    $str .= get_the_date('d/m/Y');
     $str .= '</span>';
+    $str .= '</div>';
+    return $str;
+
+}
+
+function ano_card($ano) {
+    $ytbID = getID($row['v_video']);
+    $str = '';
+    $str .= '<div class="video-card ano-card">';
+    $str .= '<p>' . $ano . '</p>';
     $str .= '</div>';
     return $str;
 
