@@ -68,10 +68,13 @@ if (!is_user_logged_in()) {
                     $pdo = Database::connect();
                     $pdo->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
 
+                    // Update video
                     $sql = "UPDATE videos set titulo = ?, video = ?, data = ? WHERE id = ?";
                     $q = $pdo->prepare($sql);
                     $q->execute(array($titulo, $video, $data, $id));
 
+                    //Insere relacionamento com o grupo
+                    $sql = "";
 
                     // Inserindo LOG da operação no banco
                     $sql_log = "INSERT INTO log (wp_username, datetime, action, page, resumo) VALUES (?, now(), 'UPDATE', 'VIDEOS', ?)";
