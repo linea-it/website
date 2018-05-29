@@ -4,9 +4,13 @@ $(document).ready(function(){
     });
 
     $('.video-grupo-titulo').click(function() {
-      $(this).next().toggleClass('show-video-grupo');
+      $(this).next('.video-grupo').toggleClass('show-video-grupo');
       $(this).find('.fa').toggleClass('fa-caret-down fa-caret-right');
     });
+    $('.video-subgrupo-titulo').click(function() {
+        $(this).next('.video-subgrupo').toggleClass('show-video-subgrupo');
+        $(this).find('.fa').toggleClass('fa-caret-down fa-caret-right');
+      });
 
     // Set the date we're counting down to
     var dataAgendada = document.getElementById("contador").innerHTML;
