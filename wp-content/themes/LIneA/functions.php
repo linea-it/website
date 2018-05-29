@@ -636,3 +636,82 @@ function remove_img_attr ($html) {
 	return preg_replace('/(width|height)="\d+"\s/', "", $html);
 }
 add_filter( 'post_thumbnail_html', 'remove_img_attr' );
+
+function create_post_type_video() {
+    $nome_singular = 'Video';
+    $nome = 'Videos';
+    $labels = array(
+        'name' => $nome,
+        'singular_name' => $nome_singular,
+        'add_new' => 'Adicionar novo',
+        'add_new_item' => 'Adicionar novo ' . $nome_singular,
+        'edit_item' => 'Editar ' . $nome_singular,
+        'new_item' => 'Novo ' . $nome_singular,
+        'view_item' => 'Visualizar ' . $nome_singular,
+        'view_items' => 'Visualizar ' . $nome,
+        'search_items' => 'Localizar ' . $nome
+    );
+    $supports = array(
+        'title',
+        'editor',
+        'excerpt',
+        'custom-fields'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-video-alt2',
+        'supports' => $supports
+    );
+    register_post_type( 'video', $args );
+}
+add_action( 'init', 'create_post_type_video' );
+
+function adiciona_suporte_videos() {
+    register_taxonomy_for_object_type('grupo', 'video');
+    register_taxonomy_for_object_type('post_tag', 'video');
+}
+add_action( 'init', 'adiciona_suporte_videos' );
+
+
+function criar_taxonomia_grupo() {
+    $nome_singular = 'Grupo';
+    $nome = 'Grupos';
+    $labels = array(
+        'name'                       => $nome,
+        'singular_name'              => $nome_singular,
+        'search_items'               => 'Procurar ' . $nome,
+        'popular_items'              => $nome . 'Populares',
+        'all_items'                  => 'Todas as ' . $nome,
+        'edit_item'                  => 'Editar ' . $nome_singular,
+        'update_item'                => 'Atualizar ' . $nome_singular,
+        'add_new_item'               => 'Adicionar nova ' . $nome_singular,
+        'new_item_name'              => 'Nova ' . $nome_singular,
+        'separate_items_with_commas' => 'Separar ' . $nome . ' com vírgulas',
+        'add_or_remove_items'        => 'Adicionar ou remover ' . $nome,
+        'choose_from_most_used'      => 'Escolher entre as ' . $nome . ' mais usadas',
+        'not_found'                  => 'Nenhuma ' . $nome_singular . ' encontrada',
+        'menu_name'                  => $nome_plural
+    );
+    $args = array(
+        'hierarchical'          => true,
+        'labels'                => $labels
+    );
+    register_taxonomy( 'grupo', 'video' , $args);
+}
+add_action('init', 'criar_taxonomia_grupo');
+
+function muda_colunas_lista_videos( $cols ) {
+    $cols = array(
+      'cb' => '<input type="checkbox" />',
+      'title' => __('Title'),
+      'author' => __('Author'),
+      'taxonomy-grupo' => 'Grupos',
+      'tags' => __('Tags'),
+      'comments' => '<span class="vers"><div title="Comments" class="comment-grey-bubble"></div></span>',
+      'date' => __('Date')
+    );
+    return $cols;
+  }
+  add_filter( "manage_video_posts_columns", "muda_colunas_lista_videos" );
