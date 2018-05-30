@@ -108,6 +108,7 @@ if (is_user_logged_in()) {
             $args = array(
                 'post_type' => 'video',
                 'orderby' => 'date',
+                'posts_per_page' => -1,
                 'tax_query' => array (
                     array(
                         'taxonomy' => 'grupo',

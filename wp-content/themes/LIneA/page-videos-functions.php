@@ -4,6 +4,7 @@ require_once 'ytb_functions.php';
 function get_num_videos_grupo($grupo_slug) {
     $args = array(
         'post_type' => 'video',
+        'posts_per_page' => -1,
         'tax_query' => array (
             array(
                 'taxonomy' => 'grupo',
@@ -20,6 +21,7 @@ function get_videos_por_subgrupo($subgrupo) {
     $args = array(
         'post_type' => 'video',
         'orderby' => 'date',
+        'posts_per_page' => -1,
         'tax_query' => array (
             array(
                 'taxonomy' => 'grupo',
