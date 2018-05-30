@@ -20,7 +20,7 @@ if (is_user_logged_in()) {
 <div class="clearboth"></div>
 	<div id="content" class="conteudo videos" role="main">
         <?php
-            $query_result = new WP_Query( array('post_type' => 'video') );
+            $query_result = new WP_Query( array('post_type' => 'video', 'posts_per_page' => -1) );
             $num_videos = count($query_result->posts);
         ?>
 		<h1>Videos <span class="countnum card"><?php echo sprintf("%02d", $num_videos); ?></span></h1>
