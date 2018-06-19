@@ -13,6 +13,9 @@
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl-carousel.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/lineajs.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+
+	<!-- js das abas estatistica -->
 	<script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script>
   	<script src='//static.codepen.io/assets/editor/live/css_live_reload_init-890dc39bb89183d4642d58b1ae5376a0193342f9aed88ea04330dc14c8d52f55.js'></script>
+
 </html>
