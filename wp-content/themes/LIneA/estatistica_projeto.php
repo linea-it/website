@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: colaboradores
+ * Template Name: Estatistica de Projeto
  *
  * @package WordPress
  * @subpackage Twenty_Fourteen
@@ -15,405 +15,87 @@
 <?php get_header(); ?>
 <?php header('Content-Type: text/html; charset=utf-8'); ?>
 <?php get_sidebar(); ?>
-<div class="breadcrumb"><a href="<?php bloginfo('url'); ?>">LIneA</a> » <a href="<?php bloginfo('url'); ?>/Ticket/" rel="category tag">Estatistica de Projeto</a></div>
+<div class="breadcrumb"><a href="<?php bloginfo('url'); ?>">LIneA</a> » <a href="<?php bloginfo('url'); ?>/Ticket/" rel="category tag">Estatistica Projeto</a></div>
 <div class="clearboth"></div> 
   <div class="conteudo estatistica_ticket col-md-12"  role="main">
      <h1>Relatório de Estatísticas Projeto - 2018</h1>  
      <div class="content">
   <div class="tabs-content">
-
-    <div id="page" class="clearfix">
-    <!-- #promoted -->
-    <div id="promoted" class="clearfix">
-      <div id="promoted-inside" class="clearfix">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="region region-promoted">
-              <div id="block-views-equipe-nova-view-block" class="block block-views clearfix">
-               <h2>Afiliados</h2>
-               <div class="content">
-                <div class="view view-equipe-nova-view view-id-equipe_nova_view view-display-id-block region-promoted view-dom-id-0fd3909aa13e030832fb753288b48a5e">
-                  <div class="view-content">                               
-                    <h3>Cientistas</h3>
-                    <div class="col-md-3 post-thumb-wrap-center">
-                      <div class="views-field views-field-field-foto">
-                        <div class="field-content post-thumb-wrap">
-                          <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=13" target=""><img typeof="foaf:Image" src="images/h.png" width="140" height="160" alt="" /></a>
-                        </div>
-                      </div>  
-                      <div class="views-field views-field-title">
-                        <h4 class="field-content post-title">Basilio Santiago</h4>
-                      </div> 
-                      <div class="views-field views-field-field-cargo">
-                        <div class="field-content post-content">Cientista</div>
-                      </div>  
-                      <div class="views-field views-field-field-contato">
-                        <div class="field-content"></div>
-                      </div>  
-                      <div class="field-content post_read_more">
-                        <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=13" class="post_read_more" target="">Conheça</a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-3 post-thumb-wrap-center">
-                      <div class="views-field views-field-field-foto">
-                        <div class="field-content post-thumb-wrap">
-                          <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=129" target=""><img typeof="foaf:Image" src="images/m.png" width="140" height="160" alt="" /></a>
-                        </div>
-                      </div>  
-                      <div class="views-field views-field-title">
-                        <h4 class="field-content post-title">Beatriz Barbuy</h4>
-                      </div>  
-                      <div class="views-field views-field-field-cargo">
-                        <div class="field-content post-content">Cientista</div>
-                      </div>  
-                      <div class="views-field views-field-field-contato">
-                        <div class="field-content"></div>
-                      </div>  
-                      <div class="views-field views-field-field-curr-culo">
-                        <div class="field-content post_read_more">
-                          <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=129" class="post_read_more" target="">Conheça</a>
-                        </div>
-                      </div>
-                    </div>   
-                                    
-                    <div class="col-md-3 post-thumb-wrap-center">
-                      <div class="views-field views-field-field-foto">
-                        <div class="field-content post-thumb-wrap">
-                          <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=19" target="">
-                            <img typeof="foaf:Image" src="images/h.png" width="140" height="160" alt="" /></a>
-                          </div>                    
-                        </div>  
-                        <div class="views-field views-field-title">
-                          <h4 class="field-content post-title">Christophe Benoist</h4>
-                        </div>  
-                        <div class="views-field views-field-field-cargo">
-                          <div class="field-content post-content">Cientista</div>
-                        </div>  
-                        <div class="views-field views-field-field-contato">
-                          <div class="field-content">  
-                          </div>
-                        </div>  
-                        <div class="views-field views-field-field-curr-culo">
-                          <div class="field-content post_read_more">
-                            <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=19" class="post_read_more" target="">Conheça</a>
-                          </div>
-                        </div>
-                      </div> 
-
-                      <div class="col-md-3 post-thumb-wrap-center">
-                        <div class="views-field views-field-field-foto">
-                          <div class="field-content post-thumb-wrap">
-                            <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=23" target="">
-                              <img typeof="foaf:Image" src="images/m.png" width="140" height="160" alt="" /></a>
-                            </div>
-                          </div>  
-                          <div class="views-field views-field-title">
-                            <h4 class="field-content post-title">Cristina  Leite</h4>
-                          </div>  
-                          <div class="views-field views-field-field-cargo">
-                            <div class="field-content post-content">Cientista</div>
-                          </div>  
-                          <div class="views-field views-field-field-contato">
-                            <div class="field-content"></div>
-                          </div>  
-                          <div class="views-field views-field-field-curr-culo">
-                            <div class="field-content post_read_more">
-                              <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=23" class="post_read_more" target="">Conheça</a>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-md-3 post-thumb-wrap-center">
-                          <div class="views-field views-field-field-foto">
-                            <div class="field-content post-thumb-wrap">
-                              <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=31" target=""><img typeof="foaf:Image" src="images/h.png" width="140" height="160" alt="" /></a>
-                            </div>
-                          </div>  
-                          <div class="views-field views-field-title">
-                            <h4 class="field-content post-title">Eduardo Silva</h4>
-                          </div>
-                          <div class="views-field views-field-field-cargo">
-                           <div class="field-content post-content">Cientista</div>
-                         </div>  
-                         <div class="views-field views-field-field-contato">
-                           <div class="field-content">   
-                           </div>
-                         </div>
-                         <div class="views-field views-field-field-curr-culo">
-                           <div class="field-content post_read_more">
-                            <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=31" class="post_read_more" target="">Conheça</a>
-                          </div>
-                        </div>
-                      </div> 
-                                     
-                      <div class="col-md-3 post-thumb-wrap-center">
-                        <div class="views-field views-field-field-foto">
-                          <div class="field-content post-thumb-wrap">
-                            <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=35" target=""><img typeof="foaf:Image" src="images/h.png" width="140" height="160" alt="" /></a>
-                          </div>
-                        </div> 
-                        <div class="views-field views-field-title">
-                          <h4 class="field-content post-title">Eduardo Ogasawara</h4>
-                        </div> 
-                        <div class="views-field views-field-field-cargo">
-                          <div class="field-content post-content">Cientista</div>
-                        </div> 
-                        <div class="views-field views-field-field-contato">
-                          <div class="field-content"></div>
-                        </div>
-                        <div class="views-field views-field-field-curr-culo">
-                          <div class="field-content post_read_more">
-                            <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=35" class="post_read_more" target="">conheça</a>
-                          </div>
-                        </div>
-                      </div> 
-
-                      <div class="col-md-3 post-thumb-wrap-center">
-                        <div class="views-field views-field-field-foto">
-                          <div class="field-content post-thumb-wrap">
-                            <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=111" target=""><img typeof="foaf:Image" src="images/m.png" width="140" height="160" alt="" /></a>
-                          </div>
-                        </div>
-                        <div class="views-field views-field-title">
-                          <h4 class="field-content post-title">Érica Nogueira</h4>
-                        </div>  
-                        <div class="views-field views-field-field-cargo">
-                          <div class="field-content post-content">Cientista</div>
-                        </div>
-                        <div class="views-field views-field-field-contato">
-                          <div class="field-content">  
-                          </div>
-                        </div>
-                        <div class="views-field views-field-field-curr-culo">
-                          <div class="field-content post_read_more">
-                            <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=111" class="post_read_more" target="">Conheça</a>
-                          </div>
-                        </div>
-                      </div> 
-
-                      <div class="col-md-3 post-thumb-wrap-center">
-                        <div class="views-field views-field-field-foto">
-                          <div class="field-content post-thumb-wrap">
-                            <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=37" target=""><img typeof="foaf:Image" src="images/h.png" width="140" height="160" alt="" /></a> 
-                          </div>
-                        </div>
-                        <div class="views-field views-field-title">
-                          <h4 class="field-content post-title">Fábio Porto</h4>
-                        </div>
-                        <div class="views-field views-field-field-cargo">
-                          <div class="field-content post-content">Cientista</div>
-                        </div>
-                        <div class="views-field views-field-field-contato">
-                          <div class="field-content">  
-                          </div>
-                        </div> 
-                        <div class="views-field views-field-field-curr-culo">
-                          <div class="field-content post_read_more">
-                            <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=37" class="post_read_more" target="">Conheça</a>
-                          </div>
-                        </div>
-                      </div> 
-
-                      <div class="col-md-3 post-thumb-wrap-center">
-                        <div class="views-field views-field-field-foto">
-                          <div class="field-content post-thumb-wrap">
-                            <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=119"target="">
-                              <img typeof="foaf:Image" src="images/h.png" width="140" height="160" alt="" /></a>
-                            </div>
-                          </div> 
-                          <div class="views-field views-field-title">
-                            <h4 class="field-content post-title">Felipe Ribas</h4>
-                          </div>
-                          <div class="views-field views-field-field-cargo">
-                            <div class="field-content post-content">Cientista</div>
-                          </div>
-                          <div class="views-field views-field-field-contato">
-                            <div class="field-content"></div>
-                          </div> 
-                          <div class="views-field views-field-field-curr-culo">
-                            <div class="field-content post_read_more">
-                              <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=119" class="post_read_more" target="">Conheça</a>
-                            </div>
-                          </div>
-                        </div> 
-
-                        <div class="col-md-3 post-thumb-wrap-center">
-                          <div class="views-field views-field-field-foto">
-                            <div class="field-content post-thumb-wrap">
-                              <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=41" target=""><img typeof="foaf:Image" src="images/m.png" width="140" height="160" alt="" /></a>
-                            </div>
-                          </div>
-                          <div class="views-field views-field-title">
-                            <h4 class="field-content post-title">Flavia Sobreira</h4>
-                          </div>
-                          <div class="views-field views-field-field-cargo">
-                            <div class="field-content post-content">Cientista</div>
-                          </div> 
-                          <div class="views-field views-field-field-contato">
-                            <div class="field-content"></div>
-                          </div> 
-                          <div class="views-field views-field-field-curr-culo">
-                            <div class="field-content post_read_more">
-                              <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=41" class="post_read_more" target="">Conheça</a>
-                            </div>
-                          </div>
-                        </div> 
-
-                        <div class="col-md-3 post-thumb-wrap-center">
-                          <div class="views-field views-field-field-foto">
-                            <div class="field-content post-thumb-wrap">
-                              <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=49" target=""><img typeof="foaf:Image" src="images/h.png" width="140" height="160" alt="" /></a></div>
-                            </div>  
-                            <div class="views-field views-field-title">
-                              <h4 class="field-content post-title">Helio Pinto</h4>
-                            </div> 
-                            <div class="views-field views-field-field-cargo">
-                              <div class="field-content post-content">Cientista</div>
-                            </div>
-                            <div class="views-field views-field-field-contato">
-                              <div class="field-content"></div>
-                            </div>
-                            <div class="views-field views-field-field-curr-culo">
-                              <div class="field-content post_read_more">
-                                <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=49" class="post_read_more" target="">Conheça</a>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="col-md-3 post-thumb-wrap-center">
-                            <div class="views-field views-field-field-foto">
-                              <div class="field-content post-thumb-wrap">
-                                <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=58" target="">
-                                <img typeof="foaf:Image" src="images/h.png" width="140" height="160" alt="" /></a>
-                                </div>
-                              </div>
-                              <div class="views-field views-field-title">
-                                <h4 class="field-content post-title">Júlio Camargo</h4>
-                              </div>
-                              <div class="views-field views-field-field-cargo">
-                                <div class="field-content post-content">Cientista</div>
-                              </div>
-                              <div class="views-field views-field-field-contato">
-                                <div class="field-content"></div>
-                              </div> 
-                              <div class="views-field views-field-field-curr-culo">
-                                <div class="field-content post_read_more">
-                                  <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=58" class="post_read_more" target="">Conheça</a>
-                                </div>
-                              </div>
-                            </div>                             
-                          </div>
-
-
-                          <div class="view-content">
-                            <h3>Pós-doutorandos</h3>
-                            <div class="col-md-3 post-thumb-wrap-center">
-                              <div class="views-field views-field-field-foto">
-                                <div class="field-content post-thumb-wrap">
-                                  <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=12" target="">
-                                    <img typeof="foaf:Image" src="images/h.jpg" width="140" height="160" alt="" /></a> 
-                                  </div>
-                                </div>  
-                                <div class="views-field views-field-title">
-                                  <h4 class="field-content post-title">Aurélio Rosell</h4>
-                                </div>  
-                                <div class="views-field views-field-field-cargo">
-                                  <div class="field-content post-content">Pós-doutorandos</div>
-                                </div>
-                                <div class="views-field views-field-field-contato">
-                                  <div class="field-content"></div>
-                                </div>  
-                                <div class="views-field views-field-field-curr-culo">
-                                  <div class="field-content post_read_more">
-                                    <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=12" class="post_read_more" target="">Conheça</a>
-                                  </div>
-                                </div>
-                              </div>
-
-                                
-                              <div class="col-md-3 post-thumb-wrap-center">
-                                <div class="views-field views-field-field-foto">
-                                  <div class="field-content post-thumb-wrap">
-                                    <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=148" target="">
-                                      <img typeof="foaf:Image" src="images/h.jpg" width="140" height="160" alt="" /></a>
-                                    </div>
-                                  </div>  
-                                  <div class="views-field views-field-title">
-                                    <h4 class="field-content post-title">Felipe Oliveira</h4>
-                                  </div>  
-                                  <div class="views-field views-field-field-cargo">
-                                    <div class="field-content post-content">Pós-doutorandos</div>
-                                  </div>  
-                                  <div class="views-field views-field-field-contato">
-                                    <div class="field-content"></div>
-                                  </div>
-                                  <div class="views-field views-field-field-curr-culo">
-                                    <div class="field-content post_read_more">
-                                      <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=148" class="post_read_more" target="">Conheça</a>
-                                    </div>
-                                  </div>
-                                </div>
-                                    
-                                      
-                                     
-                                <div class="col-md-3 post-thumb-wrap-center">
-                                  <div class="views-field views-field-field-foto">
-                                    <div class="field-content post-thumb-wrap">
-                                      <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=42" target="">
-                                        <img typeof="foaf:Image" src="images/h.jpg" width="140" height="160" alt="" /></a>
-                                      </div>
-                                    </div>  
-                                    <div class="views-field views-field-title">
-                                      <h4 class="field-content post-title">Friedrich Anders</h4>
-                                    </div>
-                                    <div class="views-field views-field-field-cargo">
-                                      <div class="field-content post-content">Pós-doutorandos</div>
-                                    </div>  
-                                    <div class="views-field views-field-field-contato">
-                                      <div class="field-content"></div>
-                                    </div>
-                                    <div class="views-field views-field-field-curr-culo">
-                                      <div class="field-content post_read_more">
-                                        <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=42" class="post_read_more" target="">Conheça</a>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="col-md-3 post-thumb-wrap-center">
-                                    <div class="views-field views-field-field-foto">
-                                      <div class="field-content post-thumb-wrap">
-                                        <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=126" target=""><img typeof="foaf:Image" src="images/h.jpg" width="140" height="160" alt="" /></a>
-                                      </div>
-                                    </div>  
-                                    <div class="views-field views-field-title">
-                                      <h4 class="field-content post-title">Gustavo Rossi</h4>
-                                    </div>  
-                                    <div class="views-field views-field-field-cargo">
-                                      <div class="field-content post-content">Pós-doutorandos</div>
-                                    </div>
-                                    <div class="views-field views-field-field-contato">
-                                      <div class="field-content"></div>
-                                    </div>  
-                                    <div class="views-field views-field-field-curr-culo">
-                                      <div class="field-content post_read_more">
-                                        <a href="http://linea-dev.linea.gov.br/wp-content/themes/LIneA/afiliados_read.php?id=126" class="post_read_more" target="">Conheça</a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div> 
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- EOF:#page --> 
+    <div class="tabs-menu clearfix">
+      <ul>
+        <li><a class="active-tab-menu" href="#" data-tab="tab1">Jan 2018</a></li>
+        <li><a href="#" data-tab="tab2">Fev 2018</a></li>
+        <li><a href="#" data-tab="tab3">Mar 2018</a></li>
+        <li><a href="#" data-tab="tab4">Abr 2018</a></li>
+        <li><a href="#" data-tab="tab5">Mai 2018</a></li>
+        <li><a href="#" data-tab="tab6">Jun 2018</a></li>
+        <li><a href="#" data-tab="tab7">Jul 2018</a><a href="#" data-tab="tab7">Jul 2018</a></li>
+        <li><a href="#" data-tab="tab8">Ago 2018</a></li>
+        <li><a href="#" data-tab="tab9">Set 2018</a></li>
+        <li><a href="#" data-tab="tab10">Out 2018</a></li>
+        <li><a href="#" data-tab="tab11">Nov 2018</a></li>
+        <li><a href="#" data-tab="tab12">Dez 2018</a></li>
+      </ul>
+    </div> <!-- tabs-menu -->
     
+    <div class="tab1 tabs first-tab">      
+   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMAjtc4AM2DQBeh2MMVhKF7YgYXXG67NUazAItngu5q5LgdGHM3KuA_4Mv4YpoZgM_DsoTlBsxsh44/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div> <!-- .tab1 -->
+    
+    <div class="tab2 tabs">            
+      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMAjtc4AM2DQBeh2MMVhKF7YgYXXG67NUazAItngu5q5LgdGHM3KuA_4Mv4YpoZgM_DsoTlBsxsh44/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div> <!-- .tab2 -->
+    
+    <div class="tab3 tabs">
+     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMAjtc4AM2DQBeh2MMVhKF7YgYXXG67NUazAItngu5q5LgdGHM3KuA_4Mv4YpoZgM_DsoTlBsxsh44/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div> <!-- .tab3 -->
+
+    <div class="tab4 tabs">
+     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMAjtc4AM2DQBeh2MMVhKF7YgYXXG67NUazAItngu5q5LgdGHM3KuA_4Mv4YpoZgM_DsoTlBsxsh44/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div> <!-- .tab4 -->
+
+    <div class="tab5 tabs">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMAjtc4AM2DQBeh2MMVhKF7YgYXXG67NUazAItngu5q5LgdGHM3KuA_4Mv4YpoZgM_DsoTlBsxsh44/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+    </div> <!-- .tab5 -->
+
+     <div class="tab6 tabs">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMAjtc4AM2DQBeh2MMVhKF7YgYXXG67NUazAItngu5q5LgdGHM3KuA_4Mv4YpoZgM_DsoTlBsxsh44/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+    </div> <!-- .tab6 -->
+
+     <div class="tab7 tabs">
+   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRulEiZeZ-21VKgaPfzKykY4E3TVn4wXV9g34ptV1y4WkEgRXN3Y4gr2OD8UyJNyvVRucc8tLJR6mwO/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+    </div> <!-- .tab7 -->
+
+
+
+       <div class="tab8 tabs">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMAjtc4AM2DQBeh2MMVhKF7YgYXXG67NUazAItngu5q5LgdGHM3KuA_4Mv4YpoZgM_DsoTlBsxsh44/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div> <!-- .tab8 -->
+
+       <div class="tab9 tabs">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMAjtc4AM2DQBeh2MMVhKF7YgYXXG67NUazAItngu5q5LgdGHM3KuA_4Mv4YpoZgM_DsoTlBsxsh44/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div> <!-- .tab9 -->
+
+           <div class="tab10 tabs">
+ <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMAjtc4AM2DQBeh2MMVhKF7YgYXXG67NUazAItngu5q5LgdGHM3KuA_4Mv4YpoZgM_DsoTlBsxsh44/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+    </div> <!-- .tab10 -->
+
+              <div class="tab11 tabs">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMAjtc4AM2DQBeh2MMVhKF7YgYXXG67NUazAItngu5q5LgdGHM3KuA_4Mv4YpoZgM_DsoTlBsxsh44/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+    </div> <!-- .tab11 -->
+
+              <div class="tab12 tabs">
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQMAjtc4AM2DQBeh2MMVhKF7YgYXXG67NUazAItngu5q5LgdGHM3KuA_4Mv4YpoZgM_DsoTlBsxsh44/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+    </div> <!-- .tab12 -->
 
 
     

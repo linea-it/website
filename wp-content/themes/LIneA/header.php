@@ -10,6 +10,14 @@
 	<head>
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <?php
+        if (has_tag('mosaico', $post_id)){
+            ?>
+            <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/elastic_grid.min.css" />
+            <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/demo.css" />
+            <?php
+        }
+        ?>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/lightbox.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.carousel.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.theme.default.min.css" type="text/css" media="screen" />
@@ -17,14 +25,13 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
 		<meta name="viewport" content="width=device-width" />
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
-
+		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />	
 		<?php
 		  $bg = array('DES_img01_alt.png', 'DES_img02_alt.png', 'DES_img07_alt.png'); // array of filenames
 
 		  $i = rand(0, count($bg)-1); // generate random number size of the array
 		  $selectedBg = "$bg[$i]"; // set variable equal to which random filename was chosen
-		?>
+		?>		
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/prototype.js"></script>
 
 		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/scriptaculous.js?load=effects,builder"></script>

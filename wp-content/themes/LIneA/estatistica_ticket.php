@@ -9,15 +9,12 @@
 
 ?>
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-
 <?php get_header(); ?>
 <?php header('Content-Type: text/html; charset=utf-8'); ?>
 <?php get_sidebar(); ?>
 <div class="breadcrumb"><a href="<?php bloginfo('url'); ?>">LIneA</a> » <a href="<?php bloginfo('url'); ?>/Ticket/" rel="category tag">Estatistica de Ticket</a></div>
 <div class="clearboth"></div> 
-  <div class="conteudo estatistica_ticket col-md-12"  role="main">
+  <div class="conteudo estatistica_ticket"  role="main">
      <h1>Relatório de Estatísticas Tickets - 2018</h1>  
      <div class="content">
   <div class="tabs-content">
