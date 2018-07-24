@@ -22,7 +22,7 @@ img, img a {
 	border: 0px;
 }
 .page .conteudo {
-	max-width: 1024px;
+	max-width: 1300px;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #696969;
@@ -773,6 +773,8 @@ td.afiliados-instituicao-td {
 	figure {
 		max-width: 250px;
 	}
+
+
 }
 
 
@@ -833,6 +835,9 @@ div.post-sumary:hover {
 }
 /* página de Webinars*/
 
+.page .conteudo.webinars {
+    max-width: 1024px;
+}
 .webinar-sumary {
 	background-color: #5f5f5f;
 	position: relative;
@@ -1459,55 +1464,141 @@ a.glossaryLink {
 
 /* Estilo das abas estatistica */
 
-  .nav_tabs{   
-    margin: 50px;
-    background-color: #fff;
-    position: relative;
-  }
-
-  .nav_tabs ul{
-    list-style: none;
-  }
-
-  .nav_tabs ul li{
-    float: left;
-  }
-
-  .tab_label{
-    display: block;    
-    background-color: #363b48;
-    padding: 25px;
-    font-size: 13px;
-    color:#fff;
-    cursor: pointer;
-    text-align: center;
-  }
-
-  .nav_tabs .rd_tab { 
-  display:none;
-  position: absolute;
+.page .estatistica_ticket {
+    max-width: 100%;
 }
 
-.nav_tabs .rd_tab:checked ~ label { 
-  background-color: #e54e43;
-  color:#fff;}
+li.ui-tabs-tab.ui-corner-top.ui-state-default.ui-tab {
+    padding-top: 10px;
+    width: 101px;
+}
 
-.tab-content{
-  border-top: solid 5px #e54e43;
-  background-color: #fff;
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    border: 1px solid #898989;
+    background: #898989;
+    font-weight: normal;
+    color: #fff;
+    text-decoration: none;
+}
+
+.tab-links a {
+	padding:9px 15px;
+	display:inline-block;
+	border-radius:3px 3px 0px 0px;
+	background:#7FB5DA;
+	font-size:16px;
+	font-weight:600;
+	color:#4c4c4c;
+	transition:all linear 0.15s;
+}
+
+.tab-links a:hover {
+	background:#a7cce5;
+	text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+	background:#000;
+	color:#4c4c4c;
+}
+
+/* Impactando links no site todo
+.single .conteudo p a, .archive .conteudo p a, .page .conteudo p a, .search .conteudo p a, .single .conteudo ul a, .archive .conteudo ul a, .page .conteudo ul a, .search .conteudo ul a, .single .conteudo ol a, .archive .conteudo ol a, .page .conteudo ol a, .search .conteudo ol a, .single .conteudo em a, .archive .conteudo em a, .page .conteudo em a, .search .conteudo em a {
+
+	color: #000;
+	text-decoration: none;
+
+}
+*/
+
+.ui-tabs .ui-tabs-nav {
+    padding-left: 10px;
+}
+
+
+/*
+
+a:focus {
+  outline: none;
+}
+.content {
+  margin: 30px;
+}
+.clearfix:after {
+  content: '.';
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+*/
+
+/* Abas */
+.tabs-content {
+  background: #eee;
+  font-family: sans-serif;
+}
+
+/* Menu das abas */
+.tabs-menu {
+  background: #8B8A8C;
+}
+.tabs-menu ul {
+   list-style: none;
+}
+.tabs-menu ul li {
+  float: left;
+  width: 103px;
+  text-align: center;
+}
+.tabs-menu ul li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+.page .conteudo .tabs-menu ul {
+    margin: 0;
+}
+.page .conteudo .tabs-menu a{
+    color: #333;
+    padding: 20%;
+}
+.page .conteudo .tabs-menu li a.active-tab-menu {
+    color: #fff;
+    background-color: #555;
+}
+
+/* Conteúdo das abas */
+.tabs {
   display: none;
-  position: absolute;
-  left: 0;  
+  padding: 30px;
 }
-
-.rd_tab:checked ~ .tab-content{
+.first-tab {
   display: block;
 }
-.tab-content h2{
-  padding: 10px;
-  color: #87d3b7;
+
+
+div.tabs iframe { 
+    width: 100%;
 }
-.tab-content article{
-  padding: 10px;
-  color: #555;
+
+
+.tab-content {
+    width: 100%;
+}
+
+/* Galeria de Fotos */
+
+#elastic_grid_demo a {
+    color: #444;
+}
+#elastic_grid_demo a:hover {
+    color: #999;
 }
