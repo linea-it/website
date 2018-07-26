@@ -4,6 +4,7 @@ Template Name: page-videos
 */
 ?>
 <?php
+
 require_once 'database.php';
 require_once 'page-videos-functions.php';
 
