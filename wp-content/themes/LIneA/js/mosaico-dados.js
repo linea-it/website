@@ -538,20 +538,7 @@ $(function(){
                 'tags'          : ['Pós-Doutorandos']
             },
 
-            {
-                'title'         : 'Maria Villegas',  
-                'description'   : '<p>Projetos: </p> <p>Instituição: USP</p> <p>e-mail: angelespv@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
-
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
-                'img_title'     : ['Maria Villegas'],
-                'button_list'   :
-                [
-                   
-                ],
-                'tags'          : ['Pós-Doutorandos']
-            },
-
+            
             {
                 'title'         : 'Rodrigo Boufleur',  
                 'description'   : '<p>Projetos: </p> <p>Instituição: LIneA</p> <p>e-mail: rodrigo.boufleur@linea.gov.br</p>',                
@@ -786,9 +773,9 @@ $(function(){
             {
                 'title'         : 'Anna Queiroz',  
                 'description'   : '<p>Projetos: DES, INCT, LSST</p> <p>Instituição: UFRGS</p> <p>e-mail: barbarannaz@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/ana_queiroz.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/ana_queiroz.jpg',],
                 'img_title'     : ['Anna Queiroz'],
                 'button_list'   :
                 [
@@ -959,7 +946,7 @@ $(function(){
                 'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/aline_deconto.jpg'],
 
                 'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/aline_deconto.jpg',],
-                'img_title'     : ['Alice Machado'],
+                'img_title'     : ['Alice Deconto'],
                 'button_list'   :
                 [
                    
@@ -1064,21 +1051,7 @@ $(function(){
                    
                 ],
                 'tags'          : ['Graduandos']
-            },
-
-            {
-                'title'         : 'Marcello Serqueira',  
-                'description'   : '<p>Projetos: INCT</p> <p>Instituição: CEFET-RJ</p> <p>e-mail: marcello.serqueira@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
-
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
-                'img_title'     : ['Marcello Serqueira'],
-                'button_list'   :
-                [
-                   
-                ],
-                'tags'          : ['Graduandos']
-            },
+            },           
 
             {
                 'title'         : 'Marina Ponte',  
@@ -1148,21 +1121,7 @@ $(function(){
                    
                 ],
                 'tags'          : ['Graduandos']
-            },
-
-               {
-                'title'         : 'Rafael Cirolini',  
-                'description'   : '<p>Projetos: SDSS</p> <p>Instituição: UNICAMP</p> <p>e-mail: cirolini@linea.gov.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
-
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
-                'img_title'     : ['Rafael Cirolini'],
-                'button_list'   :
-                [
-                   
-                ],
-                'tags'          : ['Graduandos']
-            },
+            },              
 
              {
                 'title'         : 'Roberta Razera',  
