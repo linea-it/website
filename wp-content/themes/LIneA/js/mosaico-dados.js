@@ -1364,20 +1364,6 @@ $(function(){
             },
 
              {
-                'title'         : 'Thiago Vasconcelos',  
-                'description'   : '<p>Projetos: </p> <p>Instituição: LIneA</p> <p>e-mail: thiago.vasconcelos@linea.gov.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
-
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
-                'img_title'     : ['Thiago Vasconcelos'],
-                'button_list'   :
-                [
-                   
-                ],
-                'tags'          : ['Tecnologistas']
-            },
-
-             {
                 'title'         : 'Luana Silva',  
                 'description'   : '<p>Projetos: </p> <p>Instituição: ON</p> <p>e-mail: luana.silva@linea.gov.br</p>',                
                 'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/21.jpg'],
