@@ -97,9 +97,9 @@ $(function(){
             {
                 'title'         : 'Érica Nogueira',  
                 'description'   : '<p>Projetos: INCT</p> <p>Instituição:UFF</p> <p>e-mail: erica.nogueira@on.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/erica_nogueira.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/erica_nogueira.jpg',],
                 'img_title'     : ['Érica Nogueira'],
                 'button_list'   :
                 [
@@ -240,9 +240,9 @@ $(function(){
              {
                 'title'         : 'Marcos Lima',  
                 'description'   : '<p>Projetos: DES, INCT, SDSS</p> <p>Instituição: USP</p> <p>e-mail: mvlima80gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/marcos_lima.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg'],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/marcos_lima.jpg'],
                 'img_title'     : ['Marcos Lima'],
                 'button_list'   :
                 [
@@ -713,9 +713,9 @@ $(function(){
             {
                 'title'         : 'Thaise Rodrigues',  
                 'description'   : '<p>Projetos: DES</p> <p>Instituição: OAPD</p> <p>e-mail: tsrodrigues@usp.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/thaise_rodrigues.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/thaise_rodrigues.jpg',],
                 'img_title'     : ['Thaise Rodrigues'],
                 'button_list'   :
                 [
