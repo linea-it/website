@@ -41,9 +41,9 @@ $(function(){
                  {
                 'title'         : 'Christophe Benoist',  
                 'description'   : '<p>Projetos: DES, INCT</p> <p>Instituição: OCA</p> <p>e-mail: cbenoist.oca@gmail.com</p> ',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/chistophe.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/chistophe.jpg',],
                 'img_title'     : ['Christophe Benoist ', 'jquery elastic grid 2', 'jquery elastic grid 3', 'jquery elastic grid 4', 'jquery elastic grid 5'],
                 'button_list'   :
                 [
@@ -97,9 +97,9 @@ $(function(){
             {
                 'title'         : 'Érica Nogueira',  
                 'description'   : '<p>Projetos: INCT</p> <p>Instituição:UFF</p> <p>e-mail: erica.nogueira@on.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/erica_nogueira.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/erica_nogueira.jpg',],
                 'img_title'     : ['Érica Nogueira'],
                 'button_list'   :
                 [
@@ -108,13 +108,12 @@ $(function(){
                 'tags'          : ['Cientistas']
             },
 
-
                {
                 'title'         : 'Fábio Porto',  
                 'description'   : '<p>Projetos: </p> <p>Instituição:LNCC</p> <p>e-mail: fabio.machadoporto@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/fabio_porto.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/fabio_porto.jpg',],
                 'img_title'     : ['Fábio Porto'],
                 'button_list'   :
                 [
@@ -140,9 +139,9 @@ $(function(){
             {
                 'title'         : 'Flavia Sobreira',  
                 'description'   : '<p>Projetos: DES, INCT, LSST </p> <p>Instituição: UNICAMP</p> <p>e-mail: sobreira@linea.gov.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/flavia_sobreira.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/flavia_sobreira.jpg',],
                 'img_title'     : ['Flavia Sobreira'],
                 'button_list'   :
                 [
@@ -241,9 +240,9 @@ $(function(){
              {
                 'title'         : 'Marcos Lima',  
                 'description'   : '<p>Projetos: DES, INCT, SDSS</p> <p>Instituição: USP</p> <p>e-mail: mvlima80gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/marcos_lima.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg'],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/marcos_lima.jpg'],
                 'img_title'     : ['Marcos Lima'],
                 'button_list'   :
                 [
@@ -255,9 +254,9 @@ $(function(){
            {
                 'title'         : 'Martin Groenwegen',  
                 'description'   : '<p>Projetos: DES</p> <p>Instituição: ROB</p> <p>e-mail: marting@oma.be</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/martin.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg'],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/martin.jpg'],
                 'img_title'     : ['Martin Groenwegen'],
                 'button_list'   :
                 [
@@ -412,12 +411,12 @@ $(function(){
             },
 
             {
-                'title'         : 'Altair Júnior',  
+                'title'         : 'Altair Gomes',  
                 'description'   : '<p>Projetos: TON</p> <p>Instituição: ON</p> <p>e-mail: altairgomesjr@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/altair.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
-                'img_title'     : ['Altair Júnior'],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/altair.jpg',],
+                'img_title'     : ['Altair Gomes'],
                 'button_list'   :
                 [
                    
@@ -470,9 +469,9 @@ $(function(){
             {
                 'title'         : 'Friedrich Anders',  
                 'description'   : '<p>Projetos: SDSS</p> <p>Instituição: IAP</p> <p>e-mail: fanders@aip.de</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/friedrich.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/friedrich.jpg',],
                 'img_title'     : ['Friedrich Anders'],
                 'button_list'   :
                 [
@@ -539,20 +538,7 @@ $(function(){
                 'tags'          : ['Pós-Doutorandos']
             },
 
-            {
-                'title'         : 'Maria Villegas',  
-                'description'   : '<p>Projetos: </p> <p>Instituição: USP</p> <p>e-mail: angelespv@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
-
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
-                'img_title'     : ['Maria Villegas'],
-                'button_list'   :
-                [
-                   
-                ],
-                'tags'          : ['Pós-Doutorandos']
-            },
-
+            
             {
                 'title'         : 'Rodrigo Boufleur',  
                 'description'   : '<p>Projetos: </p> <p>Instituição: LIneA</p> <p>e-mail: rodrigo.boufleur@linea.gov.br</p>',                
@@ -585,9 +571,9 @@ $(function(){
              {
                 'title'         : 'Helio Perottoni',  
                 'description'   : '<p>Projetos: SDSS</p> <p>Instituição: UFRJ</p> <p>e-mail: hperottoni@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/helio.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/helio.jpg',],
                 'img_title'     : ['Helio Perottoni'],
                 'button_list'   :
                 [
@@ -727,9 +713,9 @@ $(function(){
             {
                 'title'         : 'Thaise Rodrigues',  
                 'description'   : '<p>Projetos: DES</p> <p>Instituição: OAPD</p> <p>e-mail: tsrodrigues@usp.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/thaise_rodrigues.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/thaise_rodrigues.jpg',],
                 'img_title'     : ['Thaise Rodrigues'],
                 'button_list'   :
                 [
@@ -758,9 +744,9 @@ $(function(){
             {
                 'title'         : 'Andres Navarro',  
                 'description'   : '<p>Projetos: DES</p> <p>Instituição: UNICAMP</p> <p>e-mail: andres.navarro@linea.gov.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/andres_navarro.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images//large/avatar_h.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images//large/andres_navarro.jpg',],
                 'img_title'     : ['Andres Navarro'],
                 'button_list'   :
                 [
@@ -772,10 +758,10 @@ $(function(){
             {
                 'title'         : 'Andresa Campos',  
                 'description'   : '<p>Projetos: DES, INCT</p> <p>Instituição: UNESP</p> <p>e-mail: andresarodriguescampos@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/andresa_campos.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
-                'img_title'     : ['Andres Navarro'],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/andresa_campos.jpg',],
+                'img_title'     : ['Andresa Campos'],
                 'button_list'   :
                 [
                    
@@ -787,9 +773,9 @@ $(function(){
             {
                 'title'         : 'Anna Queiroz',  
                 'description'   : '<p>Projetos: DES, INCT, LSST</p> <p>Instituição: UFRGS</p> <p>e-mail: barbarannaz@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/ana_queiroz.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/ana_queiroz.jpg',],
                 'img_title'     : ['Anna Queiroz'],
                 'button_list'   :
                 [
@@ -929,7 +915,7 @@ $(function(){
              {
                 'title'         : 'Raphael Fialho',  
                 'description'   : '<p>Projetos: </p> <p>Instituição: CEFET-RJ</p> <p>e-mail: raphael.fialhoeic.cefet-rj.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/raphael_correia.jpg'],
 
                 'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/raphael_correia.jpg',],
                 'img_title'     : ['Raphael Fialho'],
@@ -955,12 +941,12 @@ $(function(){
             },
 
             {
-                'title'         : 'Alice Machado',  
+                'title'         : 'Alice Deconto',  
                 'description'   : '<p>Projetos: SDSS</p> <p>Instituição: UFSM</p> <p>e-mail: alicedeconto@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/aline_deconto.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
-                'img_title'     : ['Alice Machado'],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/aline_deconto.jpg',],
+                'img_title'     : ['Alice Deconto'],
                 'button_list'   :
                 [
                    
@@ -985,9 +971,9 @@ $(function(){
              {
                 'title'         : 'Carolina Souza',  
                 'description'   : '<p>Projetos: SDSS</p> <p>Instituição: UFSM</p> <p>e-mail: alicedeconto@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_m.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/carolina.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_m.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/carolina.jpg',],
                 'img_title'     : ['Carolina Souza'],
                 'button_list'   :
                 [
@@ -1040,12 +1026,12 @@ $(function(){
 
 
             {
-                'title'         : 'Lucas Oliveira',  
+                'title'         : 'Lucas Bertoncello',  
                 'description'   : '<p>Projetos: DES</p> <p>Instituição: UNICAMP</p> <p>e-mail: lucasb161o@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/lucas.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
-                'img_title'     : ['Lucas Oliveira'],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/lucas.jpg',],
+                'img_title'     : ['Lucas Bertoncello'],
                 'button_list'   :
                 [
                    
@@ -1065,28 +1051,14 @@ $(function(){
                    
                 ],
                 'tags'          : ['Graduandos']
-            },
-
-            {
-                'title'         : 'Marcello Serqueira',  
-                'description'   : '<p>Projetos: INCT</p> <p>Instituição: CEFET-RJ</p> <p>e-mail: marcello.serqueira@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
-
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
-                'img_title'     : ['Marcello Serqueira'],
-                'button_list'   :
-                [
-                   
-                ],
-                'tags'          : ['Graduandos']
-            },
+            },           
 
             {
                 'title'         : 'Marina Ponte',  
                 'description'   : '<p>Projetos: DES, INCT</p> <p>Instituição: UFRGS</p> <p>e-mail: marina@linea.gov.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/27.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/27.jpg',],
                 'img_title'     : ['Marcello Serqueira'],
                 'button_list'   :
                 [
@@ -1149,21 +1121,7 @@ $(function(){
                    
                 ],
                 'tags'          : ['Graduandos']
-            },
-
-               {
-                'title'         : 'Rafael Cirolini',  
-                'description'   : '<p>Projetos: SDSS</p> <p>Instituição: UNICAMP</p> <p>e-mail: cirolini@linea.gov.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
-
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
-                'img_title'     : ['Rafael Cirolini'],
-                'button_list'   :
-                [
-                   
-                ],
-                'tags'          : ['Graduandos']
-            },
+            },              
 
              {
                 'title'         : 'Roberta Razera',  
@@ -1194,12 +1152,12 @@ $(function(){
             },
 
             {
-                'title'         : 'Carlos Souza',  
+                'title'         : 'Carlos Adean',  
                 'description'   : '<p>Projetos: </p> <p>Instituição: LIneA</p> <p>e-mail: carlosadean@linea.gov.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/carlos_adean.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
-                'img_title'     : ['Carlos Souza'],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/carlos_adean.jpg',],
+                'img_title'     : ['Carlos SouzaAdean'],
                 'button_list'   :
                 [
                    
@@ -1238,9 +1196,9 @@ $(function(){
             {
                 'title'         : 'Eric Souza',  
                 'description'   : '<p>Projetos: </p> <p>Instituição: LIneA</p> <p>e-mail: eric.freire@linea.gov.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/eric.jpg'],
 
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/eric.jpg',],
                 'img_title'     : ['Eric Souza'],
                 'button_list'   :
                 [
@@ -1398,20 +1356,6 @@ $(function(){
 
                 'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/35.jpg',],
                 'img_title'     : ['Rodrigo Souza'],
-                'button_list'   :
-                [
-                   
-                ],
-                'tags'          : ['Tecnologistas']
-            },
-
-             {
-                'title'         : 'Thiago Vasconcelos',  
-                'description'   : '<p>Projetos: </p> <p>Instituição: LIneA</p> <p>e-mail: thiago.vasconcelos@linea.gov.br</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
-
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
-                'img_title'     : ['Thiago Vasconcelos'],
                 'button_list'   :
                 [
                    
