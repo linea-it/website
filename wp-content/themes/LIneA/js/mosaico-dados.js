@@ -553,6 +553,19 @@ $(function(){
                 'tags'          : ['Pós-Doutorandos']
             },
                          
+            {
+                'title'         : 'Anderson Souza',  
+                'description'   : '<p>Projetos: DES</p> <p>Instituição: UNICAMP</p> <p>e-mail: andersonluizbsouza@gmail.com</p>',                
+                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/anderson_souza.jpg'],
+
+                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/anderson_souza.jpg',],
+                'img_title'     : ['Anderson Souza'],
+                'button_list'   :
+                [
+                   
+                ],
+                'tags'          : ['Doutorandos']
+            }, 
 
              {
                 'title'         : 'Bruno Morgado',  
@@ -727,19 +740,7 @@ $(function(){
 
             /* Mestrandos*/
 
-             {
-                'title'         : 'Anderson Souza',  
-                'description'   : '<p>Projetos: DES</p> <p>Instituição: UNICAMP</p> <p>e-mail: andersonluizbsouza@gmail.com</p>',                
-                'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/avatar_h.jpg'],
-
-                'large'         : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/large/avatar_h.jpg',],
-                'img_title'     : ['Anderson Souza'],
-                'button_list'   :
-                [
-                   
-                ],
-                'tags'          : ['Mestrandos']
-            },
+             
 
             {
                 'title'         : 'Andres Navarro',  
