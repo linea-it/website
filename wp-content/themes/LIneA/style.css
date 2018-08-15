@@ -1602,3 +1602,10 @@ div.tabs iframe {
 #elastic_grid_demo a:hover {
     color: #999;
 }
+
+/* Galeria Slides */
+
+div div.huge_it_slideshow_dots_thumbnails_gallery_2 {
+	display: none;
+ }
+
