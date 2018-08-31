@@ -70,7 +70,7 @@
     </div> <!-- .tab7 -->
 
     <div class="tab8 tabs">   
-
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRcioohjvByUAxSugT6NW7JbFJ3jpZOHbXIXbtA2ZjeLjZ5AR2Nxk4w0nnz8xHbhchlnrD9gbVYpl40/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
     </div> <!-- .tab8 -->
 
     <div class="tab9 tabs">
