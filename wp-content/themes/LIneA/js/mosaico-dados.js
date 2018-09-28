@@ -1224,7 +1224,7 @@ $(function(){
             },
 
             {
-                'title'         : 'Fernanda Mello',  
+                'title'         : 'Fernanda Massena',  
                 'description'   : '<p>Projetos: </p> <p>Instituição: LIneA</p> <p>e-mail: fernanda.massena@linea.gov.br</p>',                
                 'thumbnail'     : ['http://linea-dev.linea.gov.br/wp-content/themes/LIneA/images/small/10.jpg'],
 
