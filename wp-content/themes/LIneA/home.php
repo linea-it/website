@@ -86,8 +86,14 @@
 		<div class="project-card">
 
 		<?php
-			$src = get_the_post_thumbnail($page->ID, 'thumbnail');
-			echo $src;
+            $src = get_the_post_thumbnail($page->ID, 'thumbnail');
+            ?>
+            <a href="<?php echo $link; ?>">
+            <?php
+            echo $src;
+            ?>
+            </a>
+            <?php
 			$project_post = get_post($page->ID);
 			setup_postdata($project_post);
 			add_filter( 'excerpt_length', 'project_excerpt_length', 999 );
