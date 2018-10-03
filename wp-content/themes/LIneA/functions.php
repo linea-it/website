@@ -637,6 +637,8 @@ function remove_img_attr ($html) {
 }
 add_filter( 'post_thumbnail_html', 'remove_img_attr' );
 
+// Videos
+//
 function create_post_type_video() {
     $nome_singular = 'Video';
     $nome = 'Videos';
@@ -715,3 +717,38 @@ function muda_colunas_lista_videos( $cols ) {
     return $cols;
   }
   add_filter( "manage_video_posts_columns", "muda_colunas_lista_videos" );
+
+  // Anúncios
+  //
+  function create_post_type_anuncios() {
+    $nome_singular = 'Anúncio';
+    $nome = 'Anúncios';
+    $labels = array(
+        'name' => $nome,
+        'singular_name' => $nome_singular,
+        'add_new' => 'Adicionar novo',
+        'add_new_item' => 'Adicionar novo ' . $nome_singular,
+        'edit_item' => 'Editar ' . $nome_singular,
+        'new_item' => 'Novo ' . $nome_singular,
+        'view_item' => 'Visualizar ' . $nome_singular,
+        'view_items' => 'Visualizar ' . $nome,
+        'search_items' => 'Localizar ' . $nome
+    );
+    $supports = array(
+        'title',
+        'editor',
+        'excerpt',
+        'custom-fields',
+        'thumbnail'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-email',
+        'supports' => $supports,
+        'taxonomies' => array('category')
+    );
+    register_post_type( 'anuncio', $args );
+}
+add_action( 'init', 'create_post_type_anuncios' );
