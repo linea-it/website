@@ -1627,8 +1627,8 @@ table td.data {
 
  .anuncio-card {
     background-color: #5f5f5f;
-    height: 206px;
-    max-width: 250px;
+    height: 187px;
+    max-width: 220px;
     margin: 10px;
     box-sizing: border-box;
  }
@@ -1642,8 +1642,9 @@ table td.data {
  .anuncio-card h3 {
     padding-top: 0px;
     overflow: hidden;
-    height: 28px;
+    height: 25px;
     margin: 0 2%;
+    font-size: 18px;
  }
  .anuncio-card p {
     float: right;
