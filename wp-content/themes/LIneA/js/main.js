@@ -59,3 +59,19 @@ function toggleYear(obj){
          el.style.display = "block";
       }
    }
+
+function showAll(classToShow){
+    var x = document.getElementsByClassName(classToShow);
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "block";
+    }
+}
+
+function hideAll(classToHide){
+    var x = document.getElementsByClassName(classToHide);
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+}

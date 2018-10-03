@@ -1623,4 +1623,49 @@ table td.data {
 	 width: 20%;
  }
 
- 
+ /* Paginas de anuncios */
+
+ .anuncio-card {
+    background-color: #5f5f5f;
+    height: 206px;
+    max-width: 250px;
+    margin: 10px;
+    box-sizing: border-box;
+ }
+ .anuncio-card img {
+    width: 96%;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px -1px #444;
+    margin: 5px 20px 5px 5px;
+ }
+ .anuncio-card h3 {
+    padding-top: 0px;
+    overflow: hidden;
+    height: 28px;
+    margin: 0 2%;
+ }
+ .anuncio-card p {
+    float: right;
+    position: relative;
+    margin-right: 2%;
+    font-size: 0.8em;
+    top: 15px;
+    margin: 0 2%;
+ }
+ .anuncio h2 {
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+ }
+ .anuncio-card a {
+     color: #fff;
+ }
+ .anuncio-card:hover {
+    background-color: #555;
+    box-shadow: 2px 2px 1px -1px #444;
+}
+.anuncio-year {
+    display: flex;
+    flex-wrap: wrap;
+}
