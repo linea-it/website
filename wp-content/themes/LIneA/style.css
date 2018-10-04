@@ -398,7 +398,13 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 	.header a img.logo-linea {
 		float: left;
 		margin: 23px 0px 23px 20px;
-	}
+    }
+    .header a img.logo-inct {
+        float: left;
+        width: 90px;
+        margin: 23px 0px 23px 20px;
+        border-radius: 15px;
+    }
 	.header div.busca {
 		float: right;
 		margin: 88px 10px 0px 0px;
@@ -425,9 +431,14 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 	.header {
 	text-align: center;
 	}
-	.header a img.logo-linea {
+    .header a img.logo-linea {
 		margin: 31px 20px 0px 20px;
-	}
+    }
+    .header a img.logo-inct {
+        width: 90px;
+        margin: 31px 20px 0px 20px;
+        border-radius: 15px;
+    }
 	.header p {
 		margin: 20px;
 		font-size: 16px;
