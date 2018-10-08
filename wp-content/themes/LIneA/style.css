@@ -732,6 +732,15 @@ div.conteudo table.card tbody tr:hover {
 div.conteudo table.card tr:nth-child(odd) {
 	background-color: #6a6a6a;
 }
+div.conteudo table.medium-table {
+    width: 50%;
+}
+@media (max-width:767px) {
+    div.conteudo table.medium-table {
+        width: 100%;
+    }
+}
+
 /*Table Afiliados*/
 td.afiliados-projetos-td {
     width: 15%;
