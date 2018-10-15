@@ -71,13 +71,19 @@
 
     <div class="tab8 tabs">   
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRcioohjvByUAxSugT6NW7JbFJ3jpZOHbXIXbtA2ZjeLjZ5AR2Nxk4w0nnz8xHbhchlnrD9gbVYpl40/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    <br><br><
+     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSgnvrbXyCgyuD7kl_qLkxxyESRkfSzOkH6Q_2g9tRHOBMxKsEVOl0HN7pDxc5YQT7tXSZxBLUENQ2G/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      br>
     </div> <!-- .tab8 -->
 
     <div class="tab9 tabs">
-    
+
+      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT_mFJObrG4B4qLugiMNkUEF9kuhrk9qSPvsllVV-YDRPY6MZNJDav3qiEdhZ-txJPs4rjfSiLuz1WL/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
     </div> <!-- .tab9 -->
 
-    <div class="tab10 tabs">  
+    <div class="tab10 tabs">
+      
 
     </div> <!-- .tab10 -->
 
