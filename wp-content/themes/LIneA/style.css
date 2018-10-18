@@ -1365,6 +1365,7 @@ div.tno-thumbnail p {
 /*Videos*/
 .page .videos {
     max-width: 1780px;
+    min-height: 500px;
 }
 .video-grupo, .video-subgrupo {
 	height: 0;
@@ -1386,8 +1387,8 @@ div.tno-thumbnail p {
 	cursor: pointer;
 }
 .video-card {
-	width: 15%;
-	margin: 0 2% 2% 2%;
+	width: 265px;
+	margin: 0 2% 5% 2%;
 	background-color: #5a5a5a;
 	padding: 0.3%;
     border: 1px solid #585858;
@@ -1444,6 +1445,55 @@ span.ano-atual {
     padding: 5px 12px;
     position: relative;
     z-index: 1;
+}
+.folders-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3%;
+}
+.folder-card {
+    display: inline-block;
+    width: 265px;
+    background-color: #5f5f5f;
+    height: 50px;
+    position: relative;
+    border: 1px solid #585858;
+    margin: 0 2% 5% 2%;
+    padding: 0.3%;
+}
+.folder-card:hover {
+    background-color: #555;
+    box-shadow: 1px 1px 1px #444;
+    cursor: pointer;
+}
+img.folder-icon {
+    margin: 2% 6%;
+    display: inline-block;
+    vertical-align: middle;
+    width: 15%;
+}
+p.folder-name {
+    display: inline-block;
+    margin: 0;
+    width: 60%;
+    position: absolute;
+    bottom: 25%;
+    font-weight: bold;
+}
+.folder-link {
+    color: #fff;
+}
+.folder-link:hover {
+    color: #fff;
+}
+.folder-countnum {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+}
+p.no-videos {
+    margin: 3%;
+    text-align: center;
 }
 
 

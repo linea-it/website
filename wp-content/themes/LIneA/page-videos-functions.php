@@ -1,6 +1,30 @@
 <?php
 require_once 'ytb_functions.php';
 
+function the_breadcrumb($grupo_id){
+    $args = array(
+        'format'    => 'slug',
+        'separator' => '/',
+        'link'      => false,
+        'inclusive' => true
+    );
+    if ($grupo_id != 0) {
+        $list = explode("/",get_term_parents_list($grupo_id, 'grupo', $args));
+        array_pop($list);
+        $base_url = get_page_link(get_the_ID()) . "?grupo_id=";
+        $output = '<p><a href="' . get_page_link(get_the_ID()) . '">Vídeos</a> ';
+        foreach($list as $grupo){
+            $term = get_term_by('slug', $grupo, 'grupo');
+            $output .= '>> ' . '<a href="' . $base_url . $term->term_id . '">';
+            $output .= $term->name;
+            $output .= '</a> ';
+        }
+        $output .= '</p>';
+        echo $output;
+    }
+    
+}
+
 function get_num_videos_grupo($grupo_slug) {
     $args = array(
         'post_type' => 'video',
