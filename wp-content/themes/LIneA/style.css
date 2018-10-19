@@ -1479,6 +1479,8 @@ p.folder-name {
     position: absolute;
     bottom: 25%;
     font-weight: bold;
+    max-height: 70%;
+    overflow: hidden;
 }
 .folder-link {
     color: #fff;
