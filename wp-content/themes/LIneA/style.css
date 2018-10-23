@@ -1439,12 +1439,9 @@ span.video-data {
     font-style: italic;
     color: #999;
 }
-span.ano-atual {
-    font-style: italic;
-    background-color: #5a5a5a;
-    padding: 5px 12px;
-    position: relative;
-    z-index: 1;
+a.ano-atual {
+    color: #fff;
+    cursor: pointer;
 }
 .folders-container {
     display: flex;

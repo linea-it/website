@@ -84,13 +84,15 @@ if (is_user_logged_in()) {
             $query_result = new WP_Query($args);
             $num_videos = count($query_result->posts);
                 ?>
-                <h2>
+                <!--h2>
                     <?php echo get_term($grupo_parent, 'grupo')->name; ?>
                     <span class="countnum card"><?php echo sprintf("%02d", $num_videos); ?></span>
-                </h2>
+                </h2-->
+                <a class="btn" onclick="showAll('ano-hide')"> Mostrar </a>
+                <a class="btn" onclick="hideAll('ano-hide')"> Esconder </a>
                 <?php
             if ($query_result->have_posts()) {
-                
+
                 $ano_atual = '';
                 while($query_result->have_posts()) {
                     $query_result->the_post();
@@ -99,12 +101,24 @@ if (is_user_logged_in()) {
                         if ($ano_atual != '') {
                             ?>
                             </div>
+                            </div>
                             <?php
                         }
                         $ano_atual = $ano_post;
+                        $today = getdate();
+                        if ($ano_atual == $today[year]) {
+                            $display = 'block';
+                        } else {
+                            $display = 'none';
+                        }
                         ?>
-                        <span class="ano-atual"><?php echo $ano_atual ?></span>
-                        <div class="ano-container">
+                        <a class="ano-atual" onclick="toggleYear('<?php echo $ano_atual; ?>')">
+                            <h2 class="ano-atual"><?php echo $ano_atual ?>
+                                <span class="countnum card"><?php echo sprintf("%02d", get_num_videos_ano($query_result, $ano_atual)); ?></span>
+                            </h2>
+                        </a>
+                        <div style="display: <?php echo $display?>" class="ano-hide" id="<?php echo $ano_atual; ?>">
+                        <div  class="ano-container">
                         
                         <?php
                     }
@@ -117,6 +131,7 @@ if (is_user_logged_in()) {
                     echo video_card($row_videos, $permissao);
                 }
             ?>
+            </div>
             </div>
             <?php
             }
