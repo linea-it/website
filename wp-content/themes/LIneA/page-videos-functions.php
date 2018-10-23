@@ -1,6 +1,18 @@
 <?php
 require_once 'ytb_functions.php';
 
+function get_num_videos_ano($query_result, $year){
+    $filtered = array();
+    foreach ($query_result->posts as $p) {
+        //var_dump($p);
+        $post_year = date('Y', strtotime($p->post_date));
+        if ($post_year == $year) {
+            array_push($filtered, $p);
+        }
+    }
+    return count($filtered);
+}
+
 function the_breadcrumb($grupo_id){
     $args = array(
         'format'    => 'slug',
