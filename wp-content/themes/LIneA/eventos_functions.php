@@ -26,9 +26,13 @@ function show_evento($row_evento, $login) {
   $data_final = strtotime($row_evento['data_final']);
   $elemento = '';
   $elemento .= '<div class="evento">';
-  $elemento .= '<a href="' . $row_evento['link'] . '">';
+  if ($row_evento['link'] != ''){
+    $elemento .= '<a href="' . $row_evento['link'] . '">';
+  }
   $elemento .= '<span class="evento-titulo">' . $row_evento['titulo'] . '</span>';
-  $elemento .= '</a>';
+  if ($row_evento['link'] != ''){
+    $elemento .= '</a>';
+  }
   $elemento .= '<span> - </span>';
   $elemento .= show_intervalo_data($data_inicial, $data_final);
   $elemento .= '<span class="evento-local">' . $row_evento['local'] . '</span>';
