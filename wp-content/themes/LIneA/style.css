@@ -1145,10 +1145,8 @@ div.searchdiv img:hover {
 /** Btn **/
 
 .btn {
-	background-color: #5e9c5e;
-	border-radius: 3px;
-	border: 0;
-	box-shadow: 1px 1px 1px #555 !important;
+	background-color: #5f5f5f;
+	border: 1px solid #585858;
 	box-sizing: border-box;
 	color: white;
 	display: inline-block;
@@ -1160,8 +1158,9 @@ div.searchdiv img:hover {
 }
 
 .btn:hover {
-	background-color: #6ab06a;
-	color: white !important;
+	background-color: #555;
+    color: white !important;
+    box-shadow: 1px 1px 1px #444;
 }
 
 /** Icons **/
