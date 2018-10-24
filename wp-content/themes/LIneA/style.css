@@ -1499,9 +1499,11 @@ p.no-videos {
 .evento {
 	margin-bottom: 2%;
 }
-
 .evento span {
 	margin-right: 1%;
+}
+.evento-titulo {
+    font-weight: bold;
 }
 
 /*CM Tooltip Glossary*/
