@@ -94,6 +94,7 @@ if (is_user_logged_in()) {
             if ($query_result->have_posts()) {
 
                 $ano_atual = '';
+                $ano_aberto = false;
                 while($query_result->have_posts()) {
                     $query_result->the_post();
                     $ano_post = get_the_date('Y');
@@ -105,11 +106,11 @@ if (is_user_logged_in()) {
                             <?php
                         }
                         $ano_atual = $ano_post;
-                        $today = getdate();
-                        if ($ano_atual == $today[year]) {
-                            $display = 'block';
-                        } else {
+                        if ($ano_aberto) {
                             $display = 'none';
+                        } else {
+                            $display = 'block';
+                            $ano_aberto = true;
                         }
                         ?>
                         <a class="ano-atual" onclick="toggleYear('<?php echo $ano_atual; ?>')">
