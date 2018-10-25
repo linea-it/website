@@ -1237,30 +1237,36 @@ div.playlist span{
 
 .subpagina-acesso {
 	width: 30%;
-	border-radius: 3px;
 }
 
 .subpagina-acesso div {
 	display: block;
-	margin: auto;
-	width: 150px;
-	height: 150px;
-	overflow: hidden;
-	position: relative;
+	margin: 0 1% 10% 1%;
+	width: 220px;
+    height: 180px;
+    background-color: #5a5a5a;
+}
+
+.subpagina-acesso div:hover {
+    background-color: #555;
+    box-shadow: 2px 2px 1px -1px #444;
 }
 
 .subpagina-acesso img {
-	position: absolute;
-	margin: auto;
-	min-width: 100%;
-	min-height: 100%;
-	left: -50%;
-  right: -50%;
+    width: 96%;
+    padding: 1.8%;
 }
 
-.subpagina-acesso h2 {
-	margin-top: 10%;
-	text-align: center;
+.subpagina-acesso p {
+    margin: 0;
+    padding: 1.8%;
+    height: 25%;
+    overflow: hidden;
+    font-weight: bold;
+    text-align: center;
+}
+.subpagina-acesso a {
+    color: #fff !important;
 }
 
 @media (max-width: 800px) {
@@ -1499,9 +1505,11 @@ p.no-videos {
 .evento {
 	margin-bottom: 2%;
 }
-
 .evento span {
 	margin-right: 1%;
+}
+.evento-titulo {
+    font-weight: bold;
 }
 
 /*CM Tooltip Glossary*/

@@ -39,17 +39,17 @@ Template Name: acesso-a-dados
               <?php
                 if ( has_post_thumbnail() ) {
                     ?>
-                    <div class="card">
+                    <div>
                         <a href="<?php the_permalink() ?>">
                             <?php
-                            the_post_thumbnail(array(150, 150));
+                            the_post_thumbnail('full');
                             ?>
+                        <p><?php the_title(); ?></p>
                         </a>
                     </div>
                     <?php
                 }
               ?>
-              <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
             </div>
           <div class="clearboth"></div>
           <?php
