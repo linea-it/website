@@ -1511,6 +1511,9 @@ p.no-videos {
 .evento-titulo {
     font-weight: bold;
 }
+.org-nacional h3, .org-internacional h3 {
+    margin-top: 4%;
+}
 
 /*CM Tooltip Glossary*/
 #ttcont {
