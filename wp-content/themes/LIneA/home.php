@@ -110,7 +110,7 @@
 						</div>
 					</div>
 					<div class="blog-capa">
-						<h2>Galeria</h2>
+						<h2>Galeria de Imagens</h2><a href="/060-divulgacao/2-galeria-de-imagens/">+ mais imagens</a>
 						<div class="slider-back">
 							<div class="slider">
 								<?php echo do_shortcode("[huge_it_gallery id='2']"); ?>
