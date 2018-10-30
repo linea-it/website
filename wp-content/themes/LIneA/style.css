@@ -1145,6 +1145,9 @@ div.searchdiv img:hover {
     border-bottom: 3px solid #555;
     font-weight: bold;
 }
+.publicacoes h3 {
+    margin-top: 40px;
+}
 
 .conteudo a.desativado {
 	display: none;
