@@ -1136,7 +1136,15 @@ div.searchdiv img:hover {
 .publicacoes li:hover {
 	list-style: decimal;
 }
-
+.publicacoes p.ano-titulo {
+    color: #fff;
+    font-style: italic;
+    padding: 1px 6px 1px 20px;
+    display: inline-block;
+    cursor: pointer;
+    border-bottom: 3px solid #555;
+    font-weight: bold;
+}
 
 .conteudo a.desativado {
 	display: none;
