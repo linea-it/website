@@ -143,8 +143,12 @@ Template Name: Publicacoes
                     echo '<div style="display: block" class="ano-container" id="publicados-' . $ano . '">';
                     echo '<ol>';
                 }
-	    		echo '<li><em>' . $row['titulo'] . ' ' . $row['autor'] . ' <strong>' . $row['ano'] . '</strong>, <strong>' . $row['revista'] .
-	    		'</strong>.</em> <a class=' . $link_class . ' href=' . $link . '> arXiv </a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/public_update.php?id='. $row['id'] .'"><img src="' . get_bloginfo('template_url') . '/imagens/ic_create_white_24dp_2x.png" alt="Edit icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/public_delete.php?id='. $row['id'] .'"><img src="' . get_bloginfo('template_url') . '/imagens/ic_remove_circle_outline_white_24dp_2x.png" alt="Remove icon"/></a></li>';
+                echo '<li><em>' . $row['titulo'] . ' ' . $row['autor'] . ' <strong>' . $row['ano'] . '</strong>, <strong><a class=' . $link_class . ' href=' . $link .
+                '>'. $row['revista'] . '</a></strong>, ' . $row['numpagina'] . '.</em><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .
+                '/public_update.php?id='. $row['id'] .'"><img src="' . get_bloginfo('template_url') . 
+                '/imagens/ic_create_white_24dp_2x.png" alt="Edit icon"/></a><a class="icon ' . $login . 
+                '" href="'. get_bloginfo('template_url') .'/public_delete.php?id='. $row['id'] .'"><img src="' . get_bloginfo('template_url') . 
+                '/imagens/ic_remove_circle_outline_white_24dp_2x.png" alt="Remove icon"/></a></li>';
             }
             echo '</ol>';
             echo '</div>';
