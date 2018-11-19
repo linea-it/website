@@ -3,4 +3,6 @@ wp-content/plugins/si-contact-form/captcha/cache
 .vscode
 wp-content/uploads
 wp-content/wflogs
+wp-content/gallery
+wp-content/plugins
 movefile.yml
