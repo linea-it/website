@@ -5,4 +5,5 @@ wp-content/uploads
 wp-content/wflogs
 wp-content/gallery
 wp-content/plugins
+wp-content/*.sql.gz
 movefile.yml
