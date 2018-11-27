@@ -256,11 +256,6 @@ div.ngg-navigation {
 	font-size: 13px;
 	padding: 5px 10px 15px 10px;
 }
-.news-card {
-	border-radius: 3px;
-	background: #616161;
-	box-shadow: 2px 2px 1px -1px #444;
-}
 .project-card {
 	height: 144px;
 	border-radius: 3px;
@@ -1763,4 +1758,60 @@ table td.data {
 .anuncio-year {
     display: flex;
     flex-wrap: wrap;
+}
+
+/* Home */
+
+.home-container {
+    display: flex;
+}
+.home-left-column {
+    width: 60%;
+}
+.home-right-column {
+    width: 40%;
+}
+.home-card {
+    background-color: #5f5f5f;
+    width: 90%;
+    display: block;
+    margin: 30px auto;
+    position: relative;
+}
+.main-card {
+    height: 300px;
+}
+.projects-card {
+    height: 300px;
+}
+.news-card {
+    height: 130px;
+}
+.webinar-card {
+    height: 130px;
+}
+.gallery-card {
+    height: 200px;
+}
+.home-card-title {
+    margin-left: 3%;
+}
+.card-more {
+    width: 0;
+    height: 0;
+    border-top: 15px solid #444;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #444;
+    border-left: 15px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.card-more-plus {
+    position: absolute;
+    top: -8px;
+    right: 2px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #fff;
 }
