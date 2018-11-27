@@ -167,7 +167,7 @@
                                 echo '<div>';
                                 echo '<img class="alignleft" style="height:100px; margin-top: 0px; margin-botton: 0px;" src="' . $thumb_url . '"/>';
                                 echo '</div>';
-                                echo '<p style="text-align: left; font-size: 30px">Em Recesso</p>';
+                                echo '<p style="text-align: left; font-size: 30px">' . get_the_title() . '</p>';
 
 							} else {
 								echo '<div>';
