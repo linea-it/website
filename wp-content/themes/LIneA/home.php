@@ -147,10 +147,27 @@
 
 					<div class="blog-capa">
 						<h2>Webinars</h2><a href="/seminarios/">+ mais webinars</a>
-						<?php
+                        <?php
+                            $args = array(
+                                'post_type' => 'post',
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'category',
+                                        'field'    => 'slug',
+                                        'terms'    => 'recesso-webinar'
+                                    ),
+                                ),
+                            );
+                            $query = new WP_Query( $args );
 							if ( empty($futureWebinars) ) {
-								echo '<p style="text-align: center; font-size: 30px">Em Recesso</p>';
-								echo '<p style="text-align: center; margin-bottom: 30px"> A série retorna em março. </p>';
+                                if ($query->have_posts()) {
+                                    $query->the_post();
+                                    $thumb_url = get_the_post_thumbnail_url($query->ID, 'full');
+                                }
+                                echo '<div>';
+                                echo '<img class="alignleft" style="height:100px; margin-top: 0px; margin-botton: 0px;" src="' . $thumb_url . '"/>';
+                                echo '</div>';
+                                echo '<p style="text-align: left; font-size: 30px">Em Recesso</p>';
 
 							} else {
 								echo '<div>';
