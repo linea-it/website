@@ -587,6 +587,10 @@ function project_excerpt_length( $length ) {
 	return 50;
 }
 
+function main_card_excerpt_length( $length ) {
+    return 10;
+}
+
 function new_excerpt_more( $more ) {
 	return '...';
 }
