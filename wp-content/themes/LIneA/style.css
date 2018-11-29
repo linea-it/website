@@ -1837,8 +1837,8 @@ table td.data {
 .webinar-card {
     height: 130px;
 }
-.gallery-card {
-    height: 200px;
+.gallery-container {
+    padding-bottom: 2%;
 }
 .home-card-title {
     margin-left: 3%;
