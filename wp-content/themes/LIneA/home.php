@@ -106,6 +106,9 @@
                 <div class="card-more"></div>
                 <span class="card-more-plus">+</span>
             </a>
+            <div class="gallery-container">
+                <?php echo do_shortcode("[huge_it_gallery id='2']");?>
+            </div>
         </div><!--GALLERY CARD-->
 
     </div><!--RIGHT COLUMN-->
