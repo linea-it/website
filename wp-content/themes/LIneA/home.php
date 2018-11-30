@@ -102,7 +102,7 @@
 
         <div class="home-card gallery-card">
             <h2 class="home-card-title">Galeria de Imagens</h2>
-            <a href="#" title="+ mais imagens">
+            <a href="/060-divulgacao/2-galeria-de-imagens/" title="+ mais imagens">
                 <div class="card-more"></div>
                 <span class="card-more-plus">+</span>
             </a>
