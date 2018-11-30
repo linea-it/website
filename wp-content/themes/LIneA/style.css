@@ -1832,7 +1832,34 @@ table td.data {
     margin: 0 auto;
 }
 .news-card {
-    height: 130px;
+}
+.news-card .news-item {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+.news-img-container {
+    width: 20%;
+    display: inline-block;
+}
+.news-img-container img {
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px -1px #444;
+    max-width: 100px;
+}
+.news-item-title {
+    display: inline-block;
+    width: 70%;
+    position: absolute;
+    top: 0;
+}
+.news-item-date {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: .8em;
+    color: #ccc;
+    font-style: italic;
 }
 .webinar-card {
     height: 130px;

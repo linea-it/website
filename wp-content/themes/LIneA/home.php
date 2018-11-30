@@ -90,6 +90,42 @@
                 <div class="card-more"></div>
                 <span class="card-more-plus">+</span>
             </a>
+            <?php
+            $args = array( 
+                'posts_per_page' => 3,
+                'order'=> 'DESC',
+                'orderby' => 'date',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'category',
+                        'field' => 'slug',
+                        'terms' => 'blog'
+                    )
+                )
+            );
+            $query = new WP_Query( $args );
+            if ( $query->have_posts() ) {
+                ?>
+                <div class="owl-carousel owl-theme">
+                <?php
+                while ( $query->have_posts() ) {
+                    $query->the_post();
+                    ?>
+
+                    <div class="news-item">
+                        <div class="news-img-container">
+                            <?php echo the_post_thumbnail('full');; ?>
+                        </div>
+                        <h3 class="news-item-title"><?php echo get_the_title();?></h3>
+                        <span class="news-item-date"><?php echo get_the_date('d \d\e F \d\e Y'); ?></span>
+                    </div>
+                    <?php
+                }
+                ?>
+                </div><!--OWL-CAROUSEL-->
+                <?php
+            }
+            ?>
         </div><!--NEWS CARD-->
 
         <div class="home-card webinar-card">
