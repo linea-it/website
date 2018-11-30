@@ -86,7 +86,7 @@
     <div class="home-right-column">
         <div class="home-card news-card">
             <h2 class="home-card-title">Notícias</h2>
-            <a href="#" title="+ mais notícias">
+            <a href="/noticias/" title="+ mais notícias">
                 <div class="card-more"></div>
                 <span class="card-more-plus">+</span>
             </a>
