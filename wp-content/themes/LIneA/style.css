@@ -1764,12 +1764,14 @@ table td.data {
 
 .home-container {
     display: flex;
+    flex-wrap: wrap;
 }
 .home-left-column {
     width: 60%;
 }
 .home-right-column {
     width: 40%;
+    min-width: 500px;
 }
 .home-card {
     background-color: #5f5f5f;
@@ -1789,6 +1791,8 @@ table td.data {
 .logo-container {
     width: 50%;
     margin: 0 auto;
+    max-width: 170px;
+    min-width: 130px;
 }
 .logo-container img, .project-logo-container img {
     width: 100%;
@@ -1819,6 +1823,7 @@ table td.data {
     width: 20%;
     box-sizing: border-box;
     padding: 1%;
+    min-width: 130px;
 }
 .project-title {
     font-size: .8em;
@@ -1828,7 +1833,7 @@ table td.data {
     margin: 0 auto;
 }
 .project-logo-container {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
 }
 .news-card {
@@ -1958,4 +1963,13 @@ h3.webinar-card-title {
     font-weight: bold;
     font-size: 1.5em;
     color: #fff;
+}
+
+@media (max-width:1250px) {
+    .home-left-column {
+        width: 100%;
+    }
+    .home-right-column {
+        width: 100%;
+    }
 }
