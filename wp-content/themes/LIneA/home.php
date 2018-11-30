@@ -145,9 +145,28 @@ require 'webinar_functions.php';
                 <?php
                 $next_webinar = get_next_webinar();
                 if ( empty($next_webinar) ) {
+                    $args = array(
+                        'post_type' => 'post',
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'category',
+                                'field'    => 'slug',
+                                'terms'    => 'recesso-webinar'
+                            ),
+                        ),
+                    );
+                    $query = new WP_Query( $args );
+                    if ($query->have_posts()) {
+                        $query->the_post();
+                        $thumb_url = get_the_post_thumbnail_url($query->ID, 'full');
+                    }
                     ?>
-                    <p style="text-align: center; font-size: 30px">Em Recesso</p>
-                    <p style="text-align: center; margin-bottom: 30px"> A série retorna em março. </p>
+                    <div class="webinar-card-photo-container">
+                        <img class="webinar-card-photo" src="<?php echo $thumb_url; ?>"/>
+                    </div>
+                    <div class="webinar-card-info">
+                        <h3 class="webinar-card-title"><?php echo get_the_title(); ?></h3>
+                    </div>
                 <?php
                 } else {
                     $webinar_img_src = FOTO_URL . $next_webinar["foto"];
