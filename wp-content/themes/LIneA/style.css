@@ -1813,7 +1813,7 @@ table td.data {
     flex-wrap: wrap;
     justify-content: center;
     box-sizing: border-box;
-    padding: 1%;
+    padding: 4% 1%;
 }
 .project {
     width: 20%;
@@ -1839,6 +1839,12 @@ table td.data {
 }
 .gallery-container {
     padding-bottom: 2%;
+}
+.gallery-container .huge_it_slideshow_image_wrap_gallery_2 {
+    background-color: transparent;
+}
+.gallery-container ul.huge_it_slider_gallery_2 {
+    box-shadow: 1px 1px 1px #333;
 }
 .home-card-title {
     margin-left: 3%;
