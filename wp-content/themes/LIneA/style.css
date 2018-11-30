@@ -1866,7 +1866,67 @@ table td.data {
     font-style: italic;
 }
 .webinar-card {
-    height: 130px;
+}
+.webinar-card-container {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 8%;
+}
+.webinar-card-photo-container {
+    width: 20%;
+    display: inline-block;
+}
+img.webinar-card-photo {
+    width: 100%;
+    max-width: 100px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #444;
+}
+.webinar-card-info {
+    width: 80%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    padding-left: 10px;
+}
+.webinar-card-first-line {
+    margin-bottom: 4px;
+    max-height: 1.5em;
+    overflow: hidden;
+    font-size: .95em;
+    font-style: italic;
+}
+span.webinar-card-hour {
+    color: #fed700;
+}
+span.webinar-card-author {
+    font-weight: bold;
+}
+h3.webinar-card-title {
+    max-height: 2.8em;
+    overflow: hidden;
+}
+#webinar-link-on {
+    box-shadow: 0px -2px 0px #628f55 inset;
+    position: absolute;
+    bottom: 13%;
+    right: 0;
+}
+#webinar-link-on, #webinar-link-off{
+    color: white;
+    font-size: .9em;
+    transition: box-shadow 0.2s;
+}
+#webinar-link-on:hover {
+    box-shadow: 0px -4px 0px #628f55 inset;
+}
+#webinar-link-off {
+    box-shadow: 0px -2px 0px #b13a3a inset;
+}
+#webinar-link-off:hover {
+    box-shadow: 0px -4px 0px #b13a3a inset;
 }
 .gallery-container {
     padding-bottom: 2%;

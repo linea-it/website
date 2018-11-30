@@ -1,6 +1,11 @@
 <?php get_header(); ?>
 <?php header('Content-Type: text/html; charset=utf-8'); ?>
 <?php get_sidebar(); ?>
+<?php
+require 'database.php';
+require 'lineadb.php';
+require 'webinar_functions.php';
+?>
 
 <div class="home-container">
     <div class="home-left-column">
@@ -132,10 +137,41 @@
 
         <div class="home-card webinar-card">
             <h2 class="home-card-title">Webinars</h2>
-            <a href="#" title="+ mais webinars">
+            <a href="/seminarios/" title="+ mais webinars">
                 <div class="card-more"></div>
                 <span class="card-more-plus">+</span>
             </a>
+            <div class="webinar-card-container">
+                <?php
+                $next_webinar = get_next_webinar();
+                if ( empty($next_webinar) ) {
+                    ?>
+                    <p style="text-align: center; font-size: 30px">Em Recesso</p>
+                    <p style="text-align: center; margin-bottom: 30px"> A série retorna em março. </p>
+                <?php
+                } else {
+                    $webinar_img_src = FOTO_URL . $next_webinar["foto"];
+                    $webinar_date = date("d/m", strtotime($next_webinar["data"]));
+                    $webinar_hour = date("h:ia", strtotime($next_webinar["horario"])) . ' BRT';
+                    $webinar_author = $next_webinar["nome"] . ' ' . $next_webinar["sobrenome"];
+                    ?>
+                    <div class="webinar-card-photo-container">
+                        <img class="webinar-card-photo" src="<?php echo $webinar_img_src; ?>"/>
+                    </div>
+                    <div class="webinar-card-info">
+                        <div class="webinar-card-first-line">
+                            <span class="webinar-card-date"><?php echo $webinar_date; ?></span> - 
+                            <span class="webinar-card-hour"><?php echo $webinar_hour;?></span> - 
+                            <span class="webinar-card-author"><?php echo $webinar_author; ?></span>
+                            <span class="webinar-card-institution">(<?php echo $next_webinar["instituicao"]; ?>)</span>
+                        </div>
+                        <h3 class="webinar-card-title"><?php echo $next_webinar["titulo"]; ?></h3>
+                    </div>
+                    <a id="webinar-link-on" href="<?php echo WEBINAR_GTM_LINK; ?>">Assistir Webinar</a>
+                <?php
+                }
+                ?>
+            </div><!--WEBINAR-CARD-CONTAINER-->
         </div><!--WEBINAR CARD-->
 
         <div class="home-card gallery-card">
