@@ -1855,6 +1855,7 @@ table td.data {
     padding-left: 10px;
     max-height: 2.8em;
     overflow: hidden;
+    color: #fff;
 }
 .news-item-date {
     position: absolute;

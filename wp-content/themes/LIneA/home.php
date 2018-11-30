@@ -113,10 +113,12 @@
                     ?>
 
                     <div class="news-item">
-                        <div class="news-img-container">
-                            <?php echo the_post_thumbnail('full');; ?>
-                        </div>
-                        <h3 class="news-item-title"><?php echo get_the_title();?></h3>
+                        <a href="<?php echo get_the_permalink(); ?>">
+                            <div class="news-img-container">
+                                <?php echo the_post_thumbnail('full');; ?>
+                            </div>
+                            <h3 class="news-item-title"><?php echo get_the_title();?></h3>
+                        </a>
                         <span class="news-item-date"><?php echo get_the_date('d \d\e F \d\e Y'); ?></span>
                     </div>
                     <?php

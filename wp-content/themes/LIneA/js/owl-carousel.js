@@ -41,7 +41,7 @@ $(document).ready(function() {
         nav:true,
         autoplay: true,
         nav: false,
-        autoplayHoverPause: true,
+        autoplayHoverPause: false,
         responsive:{
             0:{
                 items:1
