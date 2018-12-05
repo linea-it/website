@@ -75,3 +75,31 @@ function hideAll(classToHide){
         x[i].style.display = "none";
     }
 }
+
+function visao_compacta(){
+    var x = document.getElementsByClassName('afiliados-foto-td');
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+
+    var x = document.getElementsByClassName('afiliados-foto-th');
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+}
+
+function visao_normal(){
+    var x = document.getElementsByClassName('afiliados-foto-td');
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "table-cell";
+    }
+
+    var x = document.getElementsByClassName('afiliados-foto-th');
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "table-cell";
+    }
+}
