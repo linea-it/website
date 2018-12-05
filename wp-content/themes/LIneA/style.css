@@ -746,6 +746,17 @@ div.conteudo table.center-table {
 }
 
 /*Table Afiliados*/
+
+.afiliados-foto-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #5c5c5c;
+    overflow: hidden;
+}
+.afiliados-foto-td img {
+    width: 100%;
+}
 td.afiliados-projetos-td {
     width: 15%;
     font-size: 12px;
@@ -755,6 +766,27 @@ td.afiliados-nome-td {
 }
 td.afiliados-instituicao-td {
     width: 15%;
+}
+.foto-afiliados {
+    width: 100px;
+}
+.densidade-icon-container {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}
+.densidade-icon {
+    cursor: pointer;
+    opacity: .5;
+    transition: opacity .3s;
+    width: 25px;
+    display: inline-block;
+}
+.densidade-icon:hover {
+    opacity: 1;
+}
+.densidade-icon img {
+    width: 100%;
 }
 
 
