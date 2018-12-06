@@ -1858,3 +1858,9 @@ ul.grid-afiliados-filters li {
 ul.grid-afiliados-filters li.active-filter {
 	background-color: #555;
 }
+ul.grid-afiliados-filters li.title {
+    background-color: #6f6f6f;
+    border-bottom-left-radius: 10px;
+    color: #ccc;
+    margin-right: 5px;
+}

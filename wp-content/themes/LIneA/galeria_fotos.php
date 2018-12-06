@@ -17,8 +17,8 @@ $pdo = Database::connect();
     <div id="content" class="conteudo afiliados" role="main">
         <h1><?php echo get_the_title() ?></h1>
         <div class="filters-container">
-            <span class="title">Filtrar por: </span>
             <ul class="grid-afiliados-filters">
+                <li class="title">Filtrar por: </li>
                 <li class="filter active-filter" data-filter="*">Todos</li>
                 <?php
                 $result = get_cargos($pdo);
@@ -32,8 +32,8 @@ $pdo = Database::connect();
         </div>
         <br/>
         <div class="filters-container">
-            <span class="title">Organizar por: </span>
             <ul class="grid-afiliados-filters">
+                <li class="title">Organizar por: </li>
                 <li class="sort active-filter grid-sort-name">Nome</li>
                 <li class="sort grid-sort-institution">Instituição</li>
             </ul>
