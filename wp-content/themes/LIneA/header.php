@@ -31,11 +31,7 @@
 
 		  $i = rand(0, count($bg)-1); // generate random number size of the array
 		  $selectedBg = "$bg[$i]"; // set variable equal to which random filename was chosen
-		?>		
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/prototype.js"></script>
-
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/scriptaculous.js?load=effects,builder"></script>
-		<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/lightbox.js"></script>
+		?>
 		<script>
 			function change(id, newClass) {
 				identity=document.getElementById(id);
