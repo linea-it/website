@@ -1796,3 +1796,65 @@ table td.data {
     display: flex;
     flex-wrap: wrap;
 }
+
+/* Galeria de fotos de afiliados (Isotope GRID) */
+
+.grid-afiliados {
+
+}
+.grid-item-afiliado {
+    display: inline-block;
+    width: 14%;
+    background-color: #5f5f5f;
+    margin: 1% .9%;
+    padding: 5px;
+}
+.grid-item-afiliado:hover {
+    background-color: #555;
+    box-shadow: 2px 2px 1px -1px #444;
+}
+.grid-item-img-container {
+    width: 100%;
+}
+.grid-item-img-container img {
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px -1px #444;
+}
+.grid-item-afiliado .nome {
+    font-size: .9em;
+    font-weight: bold;
+    margin: 0 0 5% 0;
+}
+.grid-item-afiliado .instituicao, .grid-item-afiliado .email, .grid-item-afiliado .cargo {
+    font-size: .8em;
+    margin: 0;
+    text-align: right;
+    font-style: italic;
+    color: #ccc;
+}
+.grid-item-afiliado .email img {
+    width: 10px;
+}
+.filters-container {
+	display: inline-block;
+	width: 100%;
+}
+.filters-container span.title {
+	width: 20%;
+}
+ul.grid-afiliados-filters {
+	display: inline-block;
+	width: 80%;
+}
+ul.grid-afiliados-filters li {
+	display: inline-block;
+    background-color: #5f5f5f;
+    padding: .3% 1%;
+	border: 1px solid #5a5a5a;
+	cursor: pointer;
+	margin-right: -5px;
+}
+ul.grid-afiliados-filters li.active-filter {
+	background-color: #555;
+}
