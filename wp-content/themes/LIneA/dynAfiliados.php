@@ -62,16 +62,8 @@ Template Name: Afiliados
 
 	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/afiliados_create.php"> Adicionar </a>' : '');
 
-	    	// Função para trocar @ por imagem
-	    	$at_img_url = get_bloginfo('template_url') . '/imagens/at2.png';
-
-	    	function esconde_email ($img_url, $email) {
-	    		$at_img_tag = '<img src="' . $img_url . '"/>';
-	    		return str_replace("@", $at_img_tag, $email);
-	    	}
 
 				function gera_tabela($con, $lista, $titulo, $login) {
-					global $at_img_url;
                 echo '<h3>' . $titulo . '</h3>';
                 echo '<div class="densidade-icon-container">';
                 echo '<a class="densidade-icon" onclick="visao_compacta()" title="Visão compacta"><img src="' . get_bloginfo('template_url') . '/imagens/densidade_compacto.png" alt="densidade compacta"/></a>';
@@ -95,14 +87,7 @@ Template Name: Afiliados
 		    		echo '<td class="afiliados-nome-td">' . $row['nome'] . '<a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_read.php?id='. $row['id'] .'" title="Descrição"><img src="' . get_bloginfo('template_url') . '/imagens/ic_description_white_24dp_2x.png" alt="Read icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_update.php?id='. $row['id'] .'" title="Editar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_create_white_24dp_2x.png" alt="Edit icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_delete.php?id='. $row['id'] .'" title="Apagar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_remove_circle_outline_white_24dp_2x.png" alt="Remove icon"/></a></td>';
 		    		echo '<td class="afiliados-projetos-td">' . $projetos_string . '</td>';
 		    		echo '<td class="afiliados-instituicao-td">' . $row['instituicao'] . '</td>';
-
-		    		if ($row['email_linea'] != '') {
-		    			echo '<td>' . esconde_email($at_img_url, $row['email_linea']) . '</td>';
-		    		} else if ($row['gmail'] != '') {
-		    			echo '<td>' . esconde_email($at_img_url, $row['gmail']) . '</td>';
-		    		} else {
-		    			echo '<td>' . esconde_email($at_img_url, $row['email_alt']) . '</td>';
-		    		}
+                    echo '<td>' . esconde_email(get_pref_email($row)) . '</td>';
 		    		echo '</tr>';
 					}
 		    	echo '</tbody>';
