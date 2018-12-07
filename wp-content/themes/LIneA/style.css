@@ -256,11 +256,6 @@ div.ngg-navigation {
 	font-size: 13px;
 	padding: 5px 10px 15px 10px;
 }
-.news-card {
-	border-radius: 3px;
-	background: #616161;
-	box-shadow: 2px 2px 1px -1px #444;
-}
 .project-card {
 	height: 144px;
 	border-radius: 3px;
@@ -1763,4 +1758,218 @@ table td.data {
 .anuncio-year {
     display: flex;
     flex-wrap: wrap;
+}
+
+/* Home */
+
+.home-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.home-left-column {
+    width: 60%;
+}
+.home-right-column {
+    width: 40%;
+    min-width: 500px;
+}
+.home-card {
+    background-color: #5f5f5f;
+    width: 90%;
+    display: block;
+    margin: 30px auto;
+    position: relative;
+}
+.main-card {
+    display: flex;
+}
+.main-card-linea, .main-card-inct {
+    padding: 3% 5%;
+    width: 40%;
+    margin: 0%;
+}
+.logo-container {
+    width: 50%;
+    margin: 0 auto;
+    max-width: 170px;
+    min-width: 130px;
+}
+.logo-container img, .project-logo-container img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px #333;
+}
+.main-card h3.main-card-title {
+    text-align: center;
+    margin: 0 0 1% 0;
+}
+.main-card p.main-card-excerpt {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.main-card a.main-card-link {
+    display: block;
+    text-align: center;
+}
+.projects-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 4% 1%;
+}
+.project {
+    width: 20%;
+    box-sizing: border-box;
+    padding: 1%;
+    min-width: 130px;
+}
+.project-title {
+    font-size: .8em;
+    text-align: center;
+    color: #fff;
+    width: 70%;
+    margin: 0 auto;
+}
+.project-logo-container {
+    width: 70%;
+    margin: 0 auto;
+}
+.news-card {
+}
+.news-card .news-item {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+.news-img-container {
+    width: 20%;
+    display: inline-block;
+}
+.news-img-container img {
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px -1px #444;
+    max-width: 100px;
+}
+.news-item-title {
+    display: inline-block;
+    width: 70%;
+    position: absolute;
+    top: 0;
+    padding-left: 10px;
+    max-height: 2.8em;
+    overflow: hidden;
+    color: #fff;
+}
+.news-item-date {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: .8em;
+    color: #ccc;
+    font-style: italic;
+}
+.webinar-card {
+}
+.webinar-card-container {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 8%;
+}
+.webinar-card-photo-container {
+    width: 20%;
+    display: inline-block;
+}
+img.webinar-card-photo {
+    width: 100%;
+    max-width: 100px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #444;
+}
+.webinar-card-info {
+    width: 80%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    padding-left: 10px;
+}
+.webinar-card-first-line {
+    margin-bottom: 4px;
+    max-height: 1.5em;
+    overflow: hidden;
+    font-size: .95em;
+    font-style: italic;
+}
+span.webinar-card-hour {
+    color: #fed700;
+}
+span.webinar-card-author {
+    font-weight: bold;
+}
+h3.webinar-card-title {
+    max-height: 2.8em;
+    overflow: hidden;
+}
+#webinar-link-on {
+    box-shadow: 0px -2px 0px #628f55 inset;
+    position: absolute;
+    bottom: 13%;
+    right: 0;
+}
+#webinar-link-on, #webinar-link-off{
+    color: white;
+    font-size: .9em;
+    transition: box-shadow 0.2s;
+}
+#webinar-link-on:hover {
+    box-shadow: 0px -4px 0px #628f55 inset;
+}
+#webinar-link-off {
+    box-shadow: 0px -2px 0px #b13a3a inset;
+}
+#webinar-link-off:hover {
+    box-shadow: 0px -4px 0px #b13a3a inset;
+}
+.gallery-container {
+    padding-bottom: 2%;
+}
+.gallery-container .huge_it_slideshow_image_wrap_gallery_2 {
+    background-color: transparent;
+}
+.gallery-container ul.huge_it_slider_gallery_2 {
+    box-shadow: 1px 1px 1px #333;
+}
+.home-card-title {
+    margin-left: 3%;
+}
+.card-more {
+    width: 0;
+    height: 0;
+    border-top: 15px solid #444;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #444;
+    border-left: 15px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.card-more-plus {
+    position: absolute;
+    top: -8px;
+    right: 2px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+@media (max-width:1250px) {
+    .home-left-column {
+        width: 100%;
+    }
+    .home-right-column {
+        width: 100%;
+    }
 }
