@@ -741,6 +741,17 @@ div.conteudo table.center-table {
 }
 
 /*Table Afiliados*/
+
+.afiliados-foto-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #5c5c5c;
+    overflow: hidden;
+}
+.afiliados-foto-td img {
+    width: 100%;
+}
 td.afiliados-projetos-td {
     width: 15%;
     font-size: 12px;
@@ -750,6 +761,27 @@ td.afiliados-nome-td {
 }
 td.afiliados-instituicao-td {
     width: 15%;
+}
+.foto-afiliados {
+    width: 100px;
+}
+.densidade-icon-container {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}
+.densidade-icon {
+    cursor: pointer;
+    opacity: .5;
+    transition: opacity .3s;
+    width: 25px;
+    display: inline-block;
+}
+.densidade-icon:hover {
+    opacity: 1;
+}
+.densidade-icon img {
+    width: 100%;
 }
 
 
@@ -1972,4 +2004,71 @@ h3.webinar-card-title {
     .home-right-column {
         width: 100%;
     }
+}
+/* Galeria de fotos de afiliados (Isotope GRID) */
+
+.grid-afiliados {
+
+}
+.grid-item-afiliado {
+    display: inline-block;
+    width: 14%;
+    background-color: #5f5f5f;
+    margin: 1% .9%;
+    padding: 5px;
+}
+.grid-item-afiliado:hover {
+    background-color: #555;
+    box-shadow: 2px 2px 1px -1px #444;
+}
+.grid-item-img-container {
+    width: 100%;
+}
+.grid-item-img-container img {
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px -1px #444;
+}
+.grid-item-afiliado .nome {
+    font-size: .9em;
+    font-weight: bold;
+    margin: 0 0 5% 0;
+}
+.grid-item-afiliado .instituicao, .grid-item-afiliado .email, .grid-item-afiliado .cargo {
+    font-size: .8em;
+    margin: 0;
+    text-align: right;
+    font-style: italic;
+    color: #ccc;
+}
+.grid-item-afiliado .email img {
+    width: 10px;
+}
+.filters-container {
+	display: inline-block;
+	width: 100%;
+}
+.filters-container span.title {
+	width: 20%;
+}
+ul.grid-afiliados-filters {
+	display: inline-block;
+	width: 80%;
+}
+ul.grid-afiliados-filters li {
+	display: inline-block;
+    background-color: #5f5f5f;
+    padding: .3% 1%;
+	border: 1px solid #5a5a5a;
+	cursor: pointer;
+	margin-right: -5px;
+}
+ul.grid-afiliados-filters li.active-filter {
+	background-color: #555;
+}
+ul.grid-afiliados-filters li.title {
+    background-color: #6f6f6f;
+    border-bottom-left-radius: 10px;
+    color: #ccc;
+    margin-right: 5px;
 }
