@@ -14,13 +14,13 @@ if (!is_user_logged_in()) {
 			<?php
 			require_once 'database.php';
 			require_once 'linea_func.php';
-			require_once 'afiliados_functions.php';
+            require_once 'afiliados_functions.php';
 
-			$pdo = Database::connect();
-			$pdo->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
-
-
-			$projetos_todos = get_projetos($pdo);
+            $pdo = Database::connect();
+            $pdo->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
+            
+            $projetos_todos = get_projetos($pdo);
+            $projetos = array();
 
 			if ( !empty($_POST)) {
 
@@ -48,7 +48,8 @@ if (!is_user_logged_in()) {
 			    $projetosError = null;
 			    $paisAtualError = null;
 			    $funcaoError = null;
-			    $skypeError = null;
+                $skypeError = null;
+                $fotoError = null;
 
 			    // keep track post values
 			    $nome = $_POST['nome'];
@@ -71,76 +72,106 @@ if (!is_user_logged_in()) {
 			    $cpfEstrangeiroResidente = $_POST['cpfEstrangeiroResidente'];
 			    $dataInicio = $_POST['dataInicio'];
 			    $dataSaida = $_POST['dataSaida'];
-			    $status = $_POST['status'];
-					if ( isset($_POST['projetos']) ) {
-						$projetos = $_POST['projetos'];
-					}
+                $status = $_POST['status'];
+                $foto = $_FILES['upload']['name'][0];
+                if ( isset($_POST['projetos']) ) {
+                    $projetos = $_POST['projetos'];
+                } else {
+                    $projetos = array();
+                }
 
 			    $paisAtual = $_POST['paisAtual'];
 			    $funcao = $_POST['funcao'];
 			    $skype = $_POST['skype'];
 
-			    // validate input
+                // validate input
+                
+                require 'checkUpload.php';
+
 			    $valid = true;
 			    if (empty($nome)) {
 			        $nomeError = 'Insira o nome';
 			        $valid = false;
+                }
+                
+                if (!empty($foto)) {
+                    //usar checkUpload.php para testar imagem
+                    $errMsg = checkImg(0, 'upload');
+                    if ($errMsg){
+                        $fotoError = $errMsg;
+                        $valid = false;
+                    }
+                }
+
+			    if (empty($instituicao)) {
+			        $instituicaoError = 'Insira a instituicao';
+			        $valid = false;
 			    }
+                
+                if (empty($dataInicio)) {
+                    $dataInicio = NULL;
+                }
 
-			    // if (empty($nacionalidade)) {
-			    //     $nacionalidadeError = 'Insira a nacionalidade';
-			    //     $valid = false;
-			    // }
+                if (empty($dataSaida)) {
+                    $dataSaida = NULL;
+                }
 
-			    // if (empty($instituicao)) {
-			    //     $instituicaoError = 'Insira a instituicao';
-			    //     $valid = false;
-			    // }
-
+                if (empty($nascimento)) {
+                    $nascimento = NULL;
+                }
+                
 			    // update data
 			    if ($valid) {
 			        $sql = "INSERT INTO afiliados (nome, nascimento, nacionalidade, telefone, celular, instituicao,
 			        		cargo, supervisor, email_linea, gmail, email_alt, cpf, identidade, org_emissor,
 			        		uf_emissor, passaporte_estrangeiro, passaporte_residente, cpf_estrangeiro_residente, data_inicio,
-			        		data_saida, status, pais_atual, funcao, skype) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-			        $q = $pdo->prepare($sql);
-			        $q->execute(array($nome, $nascimento, $nacionalidade, $telefone, $celular, $instituicao, $cargo, $supervisor, $emailLinea, $gmail, $emailAlt, $cpf,
-			        	$identidade, $orgEmissor, $ufEmissor, $passaporteEstrangeiro, $passaporteResidente, $cpfEstrangeiroResidente, $dataInicio, $dataSaida, $status,
-			        	$paisAtual, $funcao, $skype));
+			        		data_saida, status, pais_atual, funcao, skype, foto) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                    $q = $pdo->prepare($sql);
+                    $uploadOK = true;
+                    if (!empty($foto)) {
+                        if (!upload(0, 'upload', FOTO_DIR)){
+                            $uploadOK = false;
+                        }
+                    } else {
+                        $foto = FOTO_DEFAULT;
+                    }
+                    if ($uploadOK) {
+                        $q->execute(array($nome, $nascimento, $nacionalidade, $telefone, $celular, $instituicao, $cargo, $supervisor, $emailLinea, $gmail, $emailAlt, $cpf,
+                            $identidade, $orgEmissor, $ufEmissor, $passaporteEstrangeiro, $passaporteResidente, $cpfEstrangeiroResidente, $dataInicio, $dataSaida, $status,
+                            $paisAtual, $funcao, $skype, $foto));
+                        if ( !empty($projetos) ) {
+                            $sql = "SELECT id FROM afiliados WHERE nome = ?";
+                            $prep = $pdo->prepare($sql);
+                            $prep->execute(array($nome));
+                            $result = $prep->fetchAll();
+                            $afiliado_id = $result[0]['id'];
 
-							if ( !empty($projetos) ) {
-								$sql = "SELECT id FROM afiliados WHERE nome = ?";
-								$prep = $pdo->prepare($sql);
-								$prep->execute(array($nome));
-								$result = $prep->fetchAll();
-								$afiliado_id = $result[0]['id'];
+                            foreach ($projetos as $nome_projeto) {
+                                $projeto_id = get_projeto_id($projetos_todos, $nome_projeto);
+                                salva_projeto_associado($pdo, $projeto_id, $afiliado_id);
+                            }
+                        }
+                        // Inserindo LOG da operação no banco
+                        $sql_log = "INSERT INTO log (wp_username, datetime, action, page, resumo) VALUES (?, now(), 'INSERT', 'AFILIADOS', ?)";
+                        $q_log = $pdo->prepare($sql_log);
 
-								foreach ($projetos as $nome_projeto) {
-									$projeto_id = get_projeto_id($projetos_todos, $nome_projeto);
-									salva_projeto_associado($pdo, $projeto_id, $afiliado_id);
-								}
-							}
+                        $current_user = wp_get_current_user();
+                        $wp_username = $current_user->user_login;
 
-			        // Inserindo LOG da operação no banco
-			        $sql_log = "INSERT INTO log (wp_username, datetime, action, page, resumo) VALUES (?, now(), 'INSERT', 'AFILIADOS', ?)";
-			        $q_log = $pdo->prepare($sql_log);
-
-			        $current_user = wp_get_current_user();
-			        $wp_username = $current_user->user_login;
-
-			        $q_log->execute(array($wp_username, resumo($nome)));
-
-			        Database::disconnect();
-			        header("Location: /new-afiliados/");
-			    }
-			}
+                        $q_log->execute(array($wp_username, resumo($nome)));
+                        
+                    }
+                    Database::disconnect();
+                    header("Location: /new-afiliados/");
+                }
+            }
 			?>
 
 		    <main class="container">
 		    <section>
 		        <h1>Criar</h1>
 
-		            <form action="<?php echo get_bloginfo('template_url') . '/afiliados_create.php' ?>" method="post">
+		            <form action="<?php echo get_bloginfo('template_url') . '/afiliados_create.php' ?>" method="post" enctype="multipart/form-data">
 						<!-- Nome -->
 						<div class="grupo-input <?php echo !empty($nomeError)?'error':'';?>">
 							<label for="titulo" class="control-label">Nome:</label>
@@ -149,6 +180,14 @@ if (!is_user_logged_in()) {
 							    <span class="errormsg"><?php echo $nomeError;?></span>
 							<?php endif; ?>
 						</div>
+                        <!-- Foto -->
+                        <div class="grupo-input <?php echo !empty($fotoError)?'error':'';?>">
+                            <label for="foto" class="control-label">Foto:</label>
+                            <input id="foto" name="upload[]" type="file" value="<?php echo !empty($foto)?$foto:'';?>">
+                            <?php if (!empty($fotoError)): ?>
+                                <span class="errormsg"><?php echo $fotoError;?></span>
+                            <?php endif; ?>
+                        </div>
 						<!-- Nascimento -->
 						<div class="grupo-input <?php echo !empty($nascimentoError)?'error':'';?>">
 							<label for="nascimento" class="control-label">Nascimento:</label>

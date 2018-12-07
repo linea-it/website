@@ -11,6 +11,40 @@ $(document).ready(function(){
         $(this).next('.video-subgrupo').toggleClass('show-video-subgrupo');
         $(this).find('.fa').toggleClass('fa-caret-down fa-caret-right');
       });
+    
+    // Grid Afiliados
+    var $gridAfiliados = $('.grid-afiliados').isotope({
+        // options
+        itemSelector: '.grid-item-afiliado',
+        layoutMode: 'fitRows',
+        getSortData: {
+            name: '.nome',
+            institution: '.instituicao'
+        }
+    });
+    $gridAfiliados.imagesLoaded().progress( function() {
+        $gridAfiliados.isotope('layout');
+    });
+    $('.grid-sort-name').click(function(){
+        console.log("Sorting by name");
+        console.log($gridAfiliados);
+        $gridAfiliados.isotope({ sortBy: 'name' });
+    });
+    $('.grid-sort-institution').click(function(){
+        console.log("Sorting by institution");
+        $gridAfiliados.isotope({ sortBy: 'institution' });
+    });
+    $('.filter').click(function() {
+        var filterValue = $( this ).attr('data-filter');
+        console.log(filterValue);
+        $gridAfiliados.isotope({ filter: filterValue });
+        $('.filter.active-filter').toggleClass('active-filter');
+        $(this).toggleClass('active-filter');
+    });
+    $('.sort').click(function() {
+        $('.sort.active-filter').toggleClass('active-filter');
+        $(this).toggleClass('active-filter');
+    });
 
     // Set the date we're counting down to
     var dataAgendada = document.getElementById("contador").innerHTML;
@@ -73,5 +107,33 @@ function hideAll(classToHide){
     var i;
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
+    }
+}
+
+function visao_compacta(){
+    var x = document.getElementsByClassName('afiliados-foto-td');
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+
+    var x = document.getElementsByClassName('afiliados-foto-th');
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+}
+
+function visao_normal(){
+    var x = document.getElementsByClassName('afiliados-foto-td');
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "table-cell";
+    }
+
+    var x = document.getElementsByClassName('afiliados-foto-th');
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "table-cell";
     }
 }
