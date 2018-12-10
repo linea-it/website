@@ -48,4 +48,20 @@ $(document).ready(function() {
             }
         }
     })
+
+    $('.gallery-card .owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        autoplay: true,
+        nav: false,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: false,
+        responsive:{
+            0:{
+                items:1
+            }
+        },
+        animateOut: 'fadeOut'
+    })
 });
