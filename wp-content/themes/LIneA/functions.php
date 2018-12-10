@@ -810,7 +810,7 @@ function registra_post_type_fotos() {
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
-        'taxonomies' => array( 'album' ),
+        'taxonomies' => array( 'album', 'post_tag' ),
         'supports' => array( 'title', 'author', 'thumbnail', 'comments' ),
         'menu_icon' => 'dashicons-camera'
     );

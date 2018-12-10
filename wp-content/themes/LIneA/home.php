@@ -199,8 +199,30 @@ require 'webinar_functions.php';
                 <div class="card-more"></div>
                 <span class="card-more-plus">+</span>
             </a>
-            <div class="gallery-container">
-                <?php echo do_shortcode("[huge_it_gallery id='2']");?>
+            <div class="gallery-container owl-carousel owl-theme">
+                <?php
+                $args = array(
+                    'post_type' => 'fotos',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'post_tag',
+                            'field'    => 'slug',
+                            'terms'    => 'home-gallery'
+                        ),
+                    ),
+                );
+                $query_result = new WP_Query( $args );
+                if ($query_result->have_posts()) {
+                    while ($query_result->have_posts()) {
+                        $query_result->the_post();
+                        ?>
+                        <div class="gallery-img-container">
+                            <img class="gallery-img" src="<?php echo get_the_post_thumbnail_url($query_result->ID)?>"/>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>
             </div>
         </div><!--GALLERY CARD-->
 
