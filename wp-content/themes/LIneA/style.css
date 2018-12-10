@@ -2072,3 +2072,44 @@ ul.grid-afiliados-filters li.title {
     color: #ccc;
     margin-right: 5px;
 }
+
+/* Galeria de Imagens */
+
+.grid-imagens {
+    max-width: 1200px;
+    margin: auto;
+} 
+.grid-imagens.are-images-unloaded {
+    opacity: 0;
+}
+.grid-imagens__item,
+.grid-imagens__col-sizer {
+    width: 19%;
+}
+.grid-imagens__gutter-sizer { width: 1%; }
+/* hide by default */
+.grid-imagens.are-images-unloaded .image-grid__item {
+    opacity: 0;
+}
+.grid-imagens__item {
+    cursor: pointer;
+    margin-bottom: 1%;
+}
+.grid-imagens__item--width2 { width: 41%; }
+.grid-imagens__item img {
+    display: block;
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #444;
+}
+.page-load-status {
+    display: none; /* hidden by default */
+    padding-top: 20px;
+    border-top: 1px solid #777;
+    text-align: center;
+    color: #777;
+}
+.hide-item {
+    opacity: .5;
+    transition: opacity 1s;
+}

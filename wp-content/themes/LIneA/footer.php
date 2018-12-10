@@ -11,10 +11,13 @@
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl-carousel.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/infinite-scroll.pkgd.min.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/masonry.pkgd.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/lineajs.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/galeria_imagens.js"></script>
  
 
 <!-- js das abas estatistica -->
