@@ -18,13 +18,13 @@ Template Name: eventos
             $pdo->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
 
             $organizacao = get_eventos_envolvimento($pdo, 'Organizacao');
-            $participacao = get_eventos_envolvimento($pdo, 'Participacao');
+            $participacao = get_eventos_por_ano(get_eventos_envolvimento($pdo, 'Participacao'));
 
             $org_nacional = array();
             $org_internacional = array();
 
-            $org_nacional = get_org_porte($organizacao, 'Nacional');
-            $org_internacional = get_org_porte($organizacao, 'Internacional');
+            $org_nacional = get_eventos_por_ano(get_org_porte($organizacao, 'Nacional'));
+            $org_internacional = get_eventos_por_ano(get_org_porte($organizacao, 'Internacional'));
 
             if (is_user_logged_in()) {
                 $login = 'ativado';
@@ -33,6 +33,11 @@ Template Name: eventos
             }
 
             echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/eventos_create.php"> Adicionar </a>' : '');
+            ?>
+            <a class="btn" onclick="showAll('evento-year-container')"> Mostrar </a>
+            <a class="btn" onclick="hideAll('evento-year-container')"> Esconder </a>
+            
+            <?php
 
             $category = get_the_category();
             $cat_slug = $category[0]->slug;

@@ -1540,6 +1540,23 @@ p.no-videos {
 
 
 /*Pagina Eventos*/
+.eventos span.countnum.card {
+    color: #fff;
+}
+.eventos-year-title {
+    color: #fff;
+    font-style: italic;
+    padding: 1px 6px 1px 20px;
+    display: inline-block;
+    cursor: pointer;
+    border-bottom: 3px solid #555;
+    font-weight: bold;
+}
+.evento-year-container {
+    margin-left: 4%;
+    width: 100%;
+    box-sizing: border-box;
+}
 .evento {
 	margin-bottom: 2%;
 }
