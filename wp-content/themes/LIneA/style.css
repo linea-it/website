@@ -1988,6 +1988,7 @@ h3.webinar-card-title {
 .gallery-img-container {
     width: 50%;
     max-height: 230px;
+    max-width: 250px;
     border-radius: 5px;
     margin: auto;
     overflow: hidden;
@@ -2032,6 +2033,53 @@ h3.webinar-card-title {
         width: 100%;
     }
 }
+
+@media (max-width:415px) {
+    .main-card {
+        flex-wrap: wrap;
+    }
+    .main-card-linea, .main-card-inct {
+        width: 100%;
+    }
+    .project {
+        width: 100%;
+        margin-bottom: 12%;
+    }
+    .project-logo-container {
+        width: 50%;
+    }
+    .project-title {
+        font-size: 1.2em;
+    }
+    .news-img-container {
+        width: 30%;
+    }
+    .news-item-title {
+        font-size: 1em;
+    }
+    .webinar-card-photo-container {
+        width: 30%;
+    }
+    .webinar-card-first-line {
+        max-height: 2.8em;
+        overflow: visible;
+        font-size: .8em;
+    }
+    .webinar-card-info {
+        width: 70%;
+    }
+    h3.webinar-card-title {
+        font-size: 1em;
+    }
+    .webinar-card-container {
+        padding-bottom: 20%;
+    }
+    .gallery-img-container {
+        width: 70%;
+        max-height: 150px;
+    }
+}
+
 /* Galeria de fotos de afiliados (Isotope GRID) */
 
 .grid-afiliados {
@@ -2142,6 +2190,6 @@ ul.grid-afiliados-filters li.title {
 }
 
 /* Mega-menu Fix */
-#mega-menu-wrap-primary {
+/* #mega-menu-wrap-primary {
     overflow: hidden;
-}
+} */
