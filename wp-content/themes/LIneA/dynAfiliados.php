@@ -69,6 +69,7 @@ Template Name: Afiliados
                 echo '<a class="densidade-icon" onclick="visao_compacta()" title="Visão compacta"><img src="' . get_bloginfo('template_url') . '/imagens/densidade_compacto.png" alt="densidade compacta"/></a>';
                 echo '<a class="densidade-icon" onclick="visao_normal()" title="Visão regular"><img src="' . get_bloginfo('template_url') . '/imagens/densidade_regular.png" alt="densidade regular"/></a>';
                 echo '</div>';
+                echo '<div class="table-afiliados-container">';
                 echo '<table class="card">';
 		    	echo '<thead>';
                 echo '<tr>';
@@ -91,7 +92,8 @@ Template Name: Afiliados
 		    		echo '</tr>';
 					}
 		    	echo '</tbody>';
-		    	echo '</table>';
+                echo '</table>';
+                echo '</div>';
 				}
 
 	    	// Afiliados ativos
