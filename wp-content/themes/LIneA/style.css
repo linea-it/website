@@ -2194,7 +2194,7 @@ ul.grid-afiliados-filters li.title {
     cursor: pointer;
     margin-bottom: 1%;
 }
-.grid-imagens__item--width2 { width: 41%; }
+.grid-imagens__item--width2 { width: 39%; }
 .grid-imagens__item img {
     display: block;
     max-width: 100%;
@@ -2213,6 +2213,14 @@ ul.grid-afiliados-filters li.title {
     transition: opacity 1s;
 }
 
+@media (max-width:415px) {
+    .grid-imagens__item,
+    .grid-imagens__col-sizer {
+        width: 32%;
+    }
+    .grid-imagens__gutter-sizer { width: 2%; }
+    .grid-imagens__item--width2 { width: 66%; }
+}
 /* Mega-menu Fix */
 /* #mega-menu-wrap-primary {
     overflow: hidden;
