@@ -895,6 +895,14 @@ div.post-sumary:hover {
 .page .conteudo.webinars {
     max-width: 1024px;
 }
+.webinar-year-title {
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+.webinars span.countnum.card {
+    color: #fff;
+}
 .webinar-sumary {
 	background-color: #5f5f5f;
 	position: relative;
