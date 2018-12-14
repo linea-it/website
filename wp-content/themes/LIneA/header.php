@@ -43,15 +43,24 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<div class="tudo">
-			<div class="header" style="background:url('<?php bloginfo('template_url'); ?>/fotos/<?php echo $selectedBg; ?>') center center no-repeat">
-				<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/imagens/logo-header.png" alt="Home" title="Home" class="logo-linea" /></a>
-                <a href="<?php bloginfo('url'); ?>/010-ciencia/1-projetos/3-inct-do-e-universo-2/"><img src="<?php bloginfo('template_url'); ?>/imagens/inct_logo.png" alt="INCT" title="INCT" class="logo-inct" /></a>
-                <a href="<?php bloginfo('url'); ?>/010-ciencia/1-projetos/3-inct-do-e-universo-2/"><img src="<?php bloginfo('template_url'); ?>/imagens/inct_euniverso_logo.png" alt="INCT" title="INCT" class="logo-inct" /></a>
-				<div class="busca"><?php get_search_form(); ?></div>
-				<div class="sociais">
-					<a href="https://www.facebook.com/linea.mcti"><img src="<?php bloginfo('template_url'); ?>/imagens/facebook_circle.png" /></a>
-					<a href="https://twitter.com/LIneA_mcti"><img src="<?php bloginfo('template_url'); ?>/imagens/twitter_circle.png" /></a></div>
-				<div class="clearright"></div>
-				<div class="clearboth"></div>
+            <div class="header" style="background:url('<?php bloginfo('template_url'); ?>/fotos/<?php echo $selectedBg; ?>') center center no-repeat">
+                <div class="logos-header-container">
+					<div class="logo-linea-header-container">
+						<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/imagens/logo-header.png" alt="Home" title="Home" class="logo-linea" /></a>
+					</div>
+					<div class="logo-inct-header-container">
+						<a href="<?php bloginfo('url'); ?>/010-ciencia/1-projetos/3-inct-do-e-universo-2/"><img src="<?php bloginfo('template_url'); ?>/imagens/inct_logo.png" alt="INCT" title="INCT" class="logo-inct" /></a>
+					</div>
+					<div class="logo-euniverso-header-container">
+						<a href="<?php bloginfo('url'); ?>/010-ciencia/1-projetos/3-inct-do-e-universo-2/"><img src="<?php bloginfo('template_url'); ?>/imagens/inct_euniverso_logo.png" alt="INCT" title="INCT" class="logo-inct" /></a>
+					</div>
+				</div>
+				<div class="tools-header-container">
+					<div class="busca"><?php get_search_form(); ?></div>
+					<div class="sociais">
+						<a href="https://www.facebook.com/linea.mcti"><img src="<?php bloginfo('template_url'); ?>/imagens/facebook_circle.png" /></a>
+						<a href="https://twitter.com/LIneA_mcti"><img src="<?php bloginfo('template_url'); ?>/imagens/twitter_circle.png" /></a>
+					</div>
+				</div>
 			</div>
 			<div class="meddle">
