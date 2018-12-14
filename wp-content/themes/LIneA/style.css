@@ -484,8 +484,6 @@ body.home div.breadcrumb {
 		padding: 20px 30px 10px 30px;
 		font-size: 16px;
 	}
-	.conteudo p {
-	}
 	.conteudo img {
 		max-width: 945px;
 		height: auto;
@@ -1146,7 +1144,6 @@ div.searchdiv img:hover {
 	background-color: #616161;
 	display: inline;
 	margin-left: -50px;
-	float: left;
 	box-shadow: 1px 1px 1px #4f4f4f;
 }
 
@@ -1233,7 +1230,6 @@ a.icon img:hover{
 .tuto-page div.tutorial_card {
 	display: inline-block;
 	width: 250px;
-	float: left;
 	background-color: #fff;
 	margin-right: 30px;
 	margin-bottom: 30px;
@@ -1595,7 +1591,6 @@ a.glossaryLink {
 	margin-bottom: 3%;
 }
 .apresentacao-horiz-video {
-	width: 30%;
 	display: inline;
 	margin-right: 10%;
 }
@@ -1603,7 +1598,6 @@ a.glossaryLink {
 	width: 100%;
 }
 .apresentacao-horiz-caption {
-	width: 30%;
 	display: inline;
 	align-self: center;
 }
@@ -1893,8 +1887,6 @@ table td.data {
     width: 70%;
     margin: 0 auto;
 }
-.news-card {
-}
 .news-card .news-item {
     width: 90%;
     margin: 0 auto;
@@ -1926,8 +1918,6 @@ table td.data {
     font-size: .8em;
     color: #ccc;
     font-style: italic;
-}
-.webinar-card {
 }
 .webinar-card-container {
     width: 90%;
@@ -2090,9 +2080,7 @@ h3.webinar-card-title {
 
 /* Galeria de fotos de afiliados (Isotope GRID) */
 
-.grid-afiliados {
 
-}
 .grid-item-afiliado {
     display: inline-block;
     width: 14%;
