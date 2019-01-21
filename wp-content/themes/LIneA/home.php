@@ -15,25 +15,24 @@ require 'webinar_functions.php';
                 $linea_page_id = 82; // TODO: Buscar por tag
                 $page_data = get_post( $linea_page_id );
                 setup_postdata($page_data);
-                add_filter( 'excerpt_length', 'main_card_excerpt_length', 999 );
                 $thumbnail_tag = get_the_post_thumbnail($linea_page_id, 'full');
-                if ($thumbnail_tag){
-                    ?>
-                    <div class="logo-container">
-                    <?php
-                    echo $thumbnail_tag;
-                    ?>
-                    </div>
-                    <?php
-                }
                 ?>
-                <h3 class="main-card-title">
-                    <?php echo $page_data->post_title; ?>
-                </h3>
-                <p class="main-card-excerpt">
-                    <?php echo get_the_excerpt(); ?>
-                </p>
-                <a class="main-card-link" href="<?php echo get_the_permalink($linea_page_id); ?>">leia mais</a>
+                <a class="main-card-link" href="<?php echo get_the_permalink($linea_page_id); ?>">
+                    <?php
+                    if ($thumbnail_tag){
+                        ?>
+                        <div class="logo-container">
+                        <?php
+                        echo $thumbnail_tag;
+                        ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                    <h3 class="main-card-title">
+                        <?php echo $page_data->post_title; ?>
+                    </h3>
+                </a>
             </div><!--MAIN CARD LINEA-->
 
             <div class="main-card-inct">
@@ -41,25 +40,24 @@ require 'webinar_functions.php';
                 $inct_page_id = 4488; // TODO: Buscar por tag
                 $page_data = get_post( $inct_page_id );
                 setup_postdata($page_data);
-                add_filter( 'excerpt_length', 'main_card_excerpt_length', 999 );
                 $thumbnail_tag = get_the_post_thumbnail($inct_page_id, 'full');
-                if ($thumbnail_tag){
-                    ?>
-                    <div class="logo-container">
-                    <?php
-                    echo $thumbnail_tag;
-                    ?>
-                    </div>
-                    <?php
-                }
                 ?>
-                <h3 class="main-card-title">
-                    <?php echo $page_data->post_title; ?>
-                </h3>
-                <p class="main-card-excerpt">
-                    <?php echo get_the_excerpt(); ?>
-                </p>
-                <a class="main-card-link" href="<?php echo get_the_permalink($inct_page_id); ?>">leia mais</a>
+                <a class="main-card-link" href="<?php echo get_the_permalink($inct_page_id); ?>">
+                    <?php
+                    if ($thumbnail_tag){
+                        ?>
+                        <div class="logo-container">
+                        <?php
+                        echo $thumbnail_tag;
+                        ?>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                    <h3 class="main-card-title">
+                        <?php echo $page_data->post_title; ?>
+                    </h3>
+                </a>
             </div><!--MAIN CARD INCT-->
 
         </div><!--MAIN CARD-->
