@@ -752,3 +752,84 @@ function muda_colunas_lista_videos( $cols ) {
     register_post_type( 'anuncio', $args );
 }
 add_action( 'init', 'create_post_type_anuncios' );
+
+// Documentos
+//
+function create_post_type_documento() {
+    $nome_singular = 'Documento';
+    $nome = 'Documentos';
+    $labels = array(
+        'name' => $nome,
+        'singular_name' => $nome_singular,
+        'add_new' => 'Adicionar novo',
+        'add_new_item' => 'Adicionar novo ' . $nome_singular,
+        'edit_item' => 'Editar ' . $nome_singular,
+        'new_item' => 'Novo ' . $nome_singular,
+        'view_item' => 'Visualizar ' . $nome_singular,
+        'view_items' => 'Visualizar ' . $nome,
+        'search_items' => 'Localizar ' . $nome
+    );
+    $supports = array(
+        'title',
+        'editor',
+        'excerpt',
+        'custom-fields'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-format-aside',
+        'supports' => $supports
+    );
+    register_post_type( 'documento', $args );
+}
+add_action( 'init', 'create_post_type_documento' );
+
+function adiciona_suporte_documentos() {
+    register_taxonomy_for_object_type('categoria', 'documento');
+    register_taxonomy_for_object_type('post_tag', 'documento');
+}
+add_action( 'init', 'adiciona_suporte_documentos' );
+
+
+function criar_taxonomia_categoria() {
+    $nome_singular = 'Categoria';
+    $nome = 'Categorias';
+    $labels = array(
+        'name'                       => $nome,
+        'singular_name'              => $nome_singular,
+        'search_items'               => 'Procurar ' . $nome,
+        'popular_items'              => $nome . 'Populares',
+        'all_items'                  => 'Todas as ' . $nome,
+        'edit_item'                  => 'Editar ' . $nome_singular,
+        'update_item'                => 'Atualizar ' . $nome_singular,
+        'add_new_item'               => 'Adicionar nova ' . $nome_singular,
+        'new_item_name'              => 'Nova ' . $nome_singular,
+        'separate_items_with_commas' => 'Separar ' . $nome . ' com vírgulas',
+        'add_or_remove_items'        => 'Adicionar ou remover ' . $nome,
+        'choose_from_most_used'      => 'Escolher entre as ' . $nome . ' mais usadas',
+        'not_found'                  => 'Nenhuma ' . $nome_singular . ' encontrada',
+        'menu_name'                  => $nome_plural
+    );
+    $args = array(
+        'hierarchical'          => true,
+        'labels'                => $labels
+    );
+    register_taxonomy( 'categoria', 'documento' , $args);
+}
+add_action('init', 'criar_taxonomia_categoria');
+
+function muda_colunas_lista_categorias( $cols ) {
+    $cols = array(
+      'cb' => '<input type="checkbox" />',
+      'title' => __('Title'),
+      'author' => __('Author'),
+      'taxonomy-categoria' => 'Categorias',
+      'tags' => __('Tags'),
+      'comments' => '<span class="vers"><div title="Comments" class="comment-grey-bubble"></div></span>',
+      'date' => __('Date')
+    );
+    return $cols;
+  }
+  add_filter( "manage_categoria_posts_columns", "muda_colunas_lista_categorias" );
