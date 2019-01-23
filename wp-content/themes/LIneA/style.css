@@ -1672,7 +1672,7 @@ a:focus {
 /* Conteúdo das abas */
 .tabs {
   display: none;
-  padding: 30px;
+  padding: 40px;
 }
 .first-tab {
   display: block;
