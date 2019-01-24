@@ -5,6 +5,7 @@
 require 'database.php';
 require 'lineadb.php';
 require 'webinar_functions.php';
+require 'home_functions.php';
 ?>
 
 <div class="home-container">
@@ -12,7 +13,7 @@ require 'webinar_functions.php';
         <div class="home-card main-card">
             <div class="main-card-linea">
                 <?php
-                $linea_page_id = 82; // TODO: Buscar por tag
+                $linea_page_id = 3718; // TODO: Buscar por tag
                 $page_data = get_post( $linea_page_id );
                 setup_postdata($page_data);
                 $thumbnail_tag = get_the_post_thumbnail($linea_page_id, 'full');
@@ -192,36 +193,15 @@ require 'webinar_functions.php';
         </div><!--WEBINAR CARD-->
 
         <div class="home-card gallery-card">
-            <h2 class="home-card-title">Galeria de Imagens</h2>
-            <a href="/060-divulgacao/2-galeria-de-imagens/" title="+ mais imagens">
-                <div class="card-more"></div>
-                <span class="card-more-plus">+</span>
-            </a>
-            <div class="gallery-container owl-carousel owl-theme">
-                <?php
-                $args = array(
-                    'post_type' => 'fotos',
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'post_tag',
-                            'field'    => 'slug',
-                            'terms'    => 'home-gallery'
-                        ),
-                    ),
-                );
-                $query_result = new WP_Query( $args );
-                if ($query_result->have_posts()) {
-                    while ($query_result->have_posts()) {
-                        $query_result->the_post();
-                        ?>
-                        <div class="gallery-img-container">
-                            <img class="gallery-img" src="<?php echo get_the_post_thumbnail_url($query_result->ID)?>"/>
-                        </div>
-                        <?php
-                    }
-                }
-                ?>
-            </div>
+            <h2 class="home-card-title">Galerias</h2>
+            <div class="card-links-container">
+                <?php echo page_link_container(6039); ?> <!--AFILIADOS-->
+                
+                <?php echo page_link_container(2547); ?> <!--IMAGENS-->
+
+                <?php echo page_link_container(5016); ?> <!--VIDEOS-->
+
+            </div><!--GALLERIES CONTAINER-->
         </div><!--GALLERY CARD-->
 
     </div><!--RIGHT COLUMN-->
