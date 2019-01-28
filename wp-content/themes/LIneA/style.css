@@ -1997,12 +1997,22 @@ h3.webinar-card-title {
     padding: 1% 1%;
 }
 .page-link-icon-container {
-    max-width: 90px;
+    max-width: 70px;
     margin: 0 auto;
+}
+h3.page-link-card-title {
+    text-align: center;
 }
 a.page-card-link {
     color: #fff;
 }
+a.page-card-link {
+    color: #ccc;
+}
+.page-link-icon-container img {
+    width: 100%;
+}
+
 .home-card-title {
     margin-left: 3%;
 }
