@@ -85,6 +85,39 @@ require 'home_functions.php';
             ?>
         </div><!--PROJECTS CARD-->
 
+        <div class="home-card">
+            <div class="card-links-container">
+                <?php echo page_link_container(4230); ?> <!--PUBLICACOES-->
+
+                <?php echo page_link_container(4865); ?> <!--ACESSO A DADOS-->
+
+            </div><!--GENERAL CONTAINER-->
+        </div><!--GENERAL CARD-->
+
+        <div class="home-card">
+            <h2 class="home-card-title">Serviços</h2>
+            <div class="card-links-container">
+                <?php echo page_link_container(
+                    '', 
+                    'Download Request Form', 
+                    'https://docs.google.com/forms/d/1pmEFXiBQL1kMD0UE5Zuu4EgN2Wx_aiphedTuMsWkQgU/viewform',
+                    6974
+                ); 
+                ?> <!--DOWNLOAD FORM-->
+
+                <?php echo page_link_container(5693);?> <!--DOWNLOAD STATUS-->
+                
+                <?php echo page_link_container(
+                    '', 
+                    'Registro de Participantes', 
+                    'https://docs.google.com/forms/d/1NX1pfvF84rIq4MToD23mHCHwv5AHTPmXqWADJ6HIqLw/viewform',
+                    6970
+                ); 
+                ?> <!--REGISTRO DE PARTICIPANTES-->
+
+            </div><!--SERVICES CONTAINER-->
+        </div><!--SERVICES CARD-->
+
     </div><!--LEFT COLUMN-->
 
     <div class="home-right-column">
@@ -195,11 +228,11 @@ require 'home_functions.php';
         <div class="home-card gallery-card">
             <h2 class="home-card-title">Galerias</h2>
             <div class="card-links-container">
-                <?php echo page_link_container(6039); ?> <!--AFILIADOS-->
+                <?php echo page_link_container(6039, 'Fotos'); ?> <!--AFILIADOS-->
                 
-                <?php echo page_link_container(2547); ?> <!--IMAGENS-->
+                <?php echo page_link_container(2547, 'Imagens'); ?> <!--IMAGENS-->
 
-                <?php echo page_link_container(5016); ?> <!--VIDEOS-->
+                <?php echo page_link_container(5016, 'Vídeos'); ?> <!--VIDEOS-->
 
             </div><!--GALLERIES CONTAINER-->
         </div><!--GALLERY CARD-->
