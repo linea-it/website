@@ -101,7 +101,7 @@ require 'home_functions.php';
                     '', 
                     'Download Request Form', 
                     'https://docs.google.com/forms/d/1pmEFXiBQL1kMD0UE5Zuu4EgN2Wx_aiphedTuMsWkQgU/viewform',
-                    6974
+                    6976
                 ); 
                 ?> <!--DOWNLOAD FORM-->
 
@@ -111,7 +111,7 @@ require 'home_functions.php';
                     '', 
                     'Registro de Participantes', 
                     'https://docs.google.com/forms/d/1NX1pfvF84rIq4MToD23mHCHwv5AHTPmXqWADJ6HIqLw/viewform',
-                    6970
+                    6978
                 ); 
                 ?> <!--REGISTRO DE PARTICIPANTES-->
 
