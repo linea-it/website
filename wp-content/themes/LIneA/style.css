@@ -1151,8 +1151,9 @@ div.searchdiv img:hover {
 .date-single {
 	background-color: #616161;
 	display: inline;
-	margin-left: -50px;
-	box-shadow: 1px 1px 1px #4f4f4f;
+	margin-left: 0;
+    box-shadow: 1px 1px 1px #4f4f4f;
+    float: left;
 }
 
 .date-single small {
