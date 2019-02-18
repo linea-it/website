@@ -85,16 +85,16 @@ require 'home_functions.php';
             ?>
         </div><!--PROJECTS CARD-->
 
-        <div class="home-card">
+        <!--div class="home-card">
             <div class="card-links-container">
-                <?php echo page_link_container(4230); ?> <!--PUBLICACOES-->
+                <?php echo page_link_container(4230); ?> <!--PUBLICACOES>
 
-                <?php echo page_link_container(4865); ?> <!--ACESSO A DADOS-->
+                <?php echo page_link_container(4865); ?> <!--ACESSO A DADOS>
 
-            </div><!--GENERAL CONTAINER-->
+            </div><!--GENERAL CONTAINER>
         </div><!--GENERAL CARD-->
 
-        <div class="home-card">
+        <!--div class="home-card">
             <h2 class="home-card-title">Serviços</h2>
             <div class="card-links-container">
                 <?php echo page_link_container(
@@ -103,9 +103,9 @@ require 'home_functions.php';
                     'https://docs.google.com/forms/d/1pmEFXiBQL1kMD0UE5Zuu4EgN2Wx_aiphedTuMsWkQgU/viewform',
                     6976
                 ); 
-                ?> <!--DOWNLOAD FORM-->
+                ?> <!--DOWNLOAD FORM>
 
-                <?php echo page_link_container(5693);?> <!--DOWNLOAD STATUS-->
+                <?php echo page_link_container(5693);?> <!--DOWNLOAD STATUS>
                 
                 <?php echo page_link_container(
                     '', 
@@ -113,10 +113,10 @@ require 'home_functions.php';
                     'https://docs.google.com/forms/d/1NX1pfvF84rIq4MToD23mHCHwv5AHTPmXqWADJ6HIqLw/viewform',
                     6978
                 ); 
-                ?> <!--REGISTRO DE PARTICIPANTES-->
+                ?> <!--REGISTRO DE PARTICIPANTES>
 
-            </div><!--SERVICES CONTAINER-->
-        </div><!--SERVICES CARD-->
+            </div><!--SERVICES CONTAINER>
+        </div--><!--SERVICES CARD-->
 
     </div><!--LEFT COLUMN-->
 
