@@ -66,12 +66,16 @@
 
      <div class="tab7 tabs first-tab">
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRulEiZeZ-21VKgaPfzKykY4E3TVn4wXV9g34ptV1y4WkEgRXN3Y4gr2OD8UyJNyvVRucc8tLJR6mwO/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+    <br><br>
+
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSoSHsq4lAaAP57Lo1ODTKoLRpsu-CKRz46R8jT2tlD4_5uYdYTUJUE62eSTJkLCXNsSj9ad7_i18cG/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
    
     </div> <!-- .tab7 -->
 
     <div class="tab8 tabs">   
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRcioohjvByUAxSugT6NW7JbFJ3jpZOHbXIXbtA2ZjeLjZ5AR2Nxk4w0nnz8xHbhchlnrD9gbVYpl40/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-    <br><br><
+    <br><br>
      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSgnvrbXyCgyuD7kl_qLkxxyESRkfSzOkH6Q_2g9tRHOBMxKsEVOl0HN7pDxc5YQT7tXSZxBLUENQ2G/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
       br>
     </div> <!-- .tab8 -->
@@ -79,15 +83,28 @@
     <div class="tab9 tabs">
 
       <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT_mFJObrG4B4qLugiMNkUEF9kuhrk9qSPvsllVV-YDRPY6MZNJDav3qiEdhZ-txJPs4rjfSiLuz1WL/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+       <br><br>
+      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTP9f_aIyLQCeF34btPx67WfgLoYdzFXNwv8UYFk5ouAaZk6PWVQV2bLv4yy__vceASzBmwXIFruhme/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
     </div> <!-- .tab9 -->
 
     <div class="tab10 tabs">
-      
+
+      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTgRMTeFj6A7FvbTlSGVhOVe429o-Ve0Ebzlrcf0Pypwow0zdupZFJzs2tBB-qEFRivQACHQOOCceZB/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+       <br><br>          
+       <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRdr-Gnab-8lHIWAu80YB6rxeUSEr1yUKLddiKZ0VYQPmTONwadp0ZMLhXIIgCkb3IzS78LMZwAOWlt/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        
 
     </div> <!-- .tab10 -->
 
     <div class="tab11 tabs">  
+
+      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTe-mdilP3O-RCqeWGNqCEQN8jcSBNF7n3RmHXKWxdCFsTsj5ZIC9wpAwG4PApIozgB0uUU1MQfig36/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+      <br><br>          
+       <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTN0TS9ry5g9dNew53OqVSuOmtKjsCxeONA1LeyNIHXuN0aBvlzmdszrHSeMsK7S7A5v3of8aU37TWw/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>>
+             
 
     </div> <!-- .tab11 -->
 
