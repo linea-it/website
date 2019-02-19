@@ -822,25 +822,106 @@ add_action( 'init', 'registra_post_type_fotos' );
 
 function muda_colunas_lista_fotos( $cols ) {
     $cols = array(
+        'cb' => '<input type="checkbox" />',
+        'title' => __('Title'),
+        'author' => __('Author'),
+        'taxonomy-album' => 'Album',
+        'tags' => __('Tags'),
+        'comments' => '<span class="vers"><div title="Comments" class="comment-grey-bubble"></div></span>',
+        'date' => __('Date'),
+        'thumbnail' => __('Thumbnail')
+      );
+      return $cols;
+  }
+  add_filter( "manage_fotos_posts_columns", "muda_colunas_lista_fotos" );
+  
+  function colunas_customizadas( $col, $post_id ) {
+      switch ( $col ) {
+        case 'thumbnail':
+          $tag = '<img style="width: 100px" src="' . get_the_post_thumbnail_url($post_id, "thumbnail-list") . '"/>';
+          echo $tag;
+          break;
+      }
+  }
+  add_action( 'manage_fotos_posts_custom_column' , 'colunas_customizadas', 10, 2);
+
+// Documentos
+//
+function create_post_type_documento() {
+    $nome_singular = 'Documento';
+    $nome = 'Documentos';
+    $labels = array(
+        'name' => $nome,
+        'singular_name' => $nome_singular,
+        'add_new' => 'Adicionar novo',
+        'add_new_item' => 'Adicionar novo ' . $nome_singular,
+        'edit_item' => 'Editar ' . $nome_singular,
+        'new_item' => 'Novo ' . $nome_singular,
+        'view_item' => 'Visualizar ' . $nome_singular,
+        'view_items' => 'Visualizar ' . $nome,
+        'search_items' => 'Localizar ' . $nome
+    );
+    $supports = array(
+        'title',
+        'editor',
+        'excerpt',
+        'custom-fields'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-format-aside',
+        'supports' => $supports
+    );
+    register_post_type( 'documento', $args );
+}
+add_action( 'init', 'create_post_type_documento' );
+
+function adiciona_suporte_documentos() {
+    register_taxonomy_for_object_type('categoria', 'documento');
+    register_taxonomy_for_object_type('post_tag', 'documento');
+}
+add_action( 'init', 'adiciona_suporte_documentos' );
+
+
+function criar_taxonomia_categoria() {
+    $nome_singular = 'Categoria';
+    $nome = 'Categorias';
+    $labels = array(
+        'name'                       => $nome,
+        'singular_name'              => $nome_singular,
+        'search_items'               => 'Procurar ' . $nome,
+        'popular_items'              => $nome . 'Populares',
+        'all_items'                  => 'Todas as ' . $nome,
+        'edit_item'                  => 'Editar ' . $nome_singular,
+        'update_item'                => 'Atualizar ' . $nome_singular,
+        'add_new_item'               => 'Adicionar nova ' . $nome_singular,
+        'new_item_name'              => 'Nova ' . $nome_singular,
+        'separate_items_with_commas' => 'Separar ' . $nome . ' com vírgulas',
+        'add_or_remove_items'        => 'Adicionar ou remover ' . $nome,
+        'choose_from_most_used'      => 'Escolher entre as ' . $nome . ' mais usadas',
+        'not_found'                  => 'Nenhuma ' . $nome_singular . ' encontrada',
+        'menu_name'                  => $nome_plural
+    );
+    $args = array(
+        'hierarchical'          => true,
+        'labels'                => $labels
+    );
+    register_taxonomy( 'categoria', 'documento' , $args);
+}
+add_action('init', 'criar_taxonomia_categoria');
+
+function muda_colunas_lista_categorias( $cols ) {
+    $cols = array(
       'cb' => '<input type="checkbox" />',
       'title' => __('Title'),
       'author' => __('Author'),
-      'taxonomy-album' => 'Album',
+      'taxonomy-categoria' => 'Categorias',
       'tags' => __('Tags'),
       'comments' => '<span class="vers"><div title="Comments" class="comment-grey-bubble"></div></span>',
-      'date' => __('Date'),
-      'thumbnail' => __('Thumbnail')
+      'date' => __('Date')
     );
     return $cols;
-}
-add_filter( "manage_fotos_posts_columns", "muda_colunas_lista_fotos" );
-
-function colunas_customizadas( $col, $post_id ) {
-    switch ( $col ) {
-      case 'thumbnail':
-        $tag = '<img style="width: 100px" src="' . get_the_post_thumbnail_url($post_id, "thumbnail-list") . '"/>';
-        echo $tag;
-        break;
-    }
-}
-add_action( 'manage_fotos_posts_custom_column' , 'colunas_customizadas', 10, 2);
+  }
+  add_filter( "manage_categoria_posts_columns", "muda_colunas_lista_categorias" );
