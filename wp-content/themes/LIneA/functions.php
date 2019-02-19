@@ -912,7 +912,7 @@ function criar_taxonomia_categoria() {
 }
 add_action('init', 'criar_taxonomia_categoria');
 
-function muda_colunas_lista_categorias( $cols ) {
+function muda_colunas_lista_documento( $cols ) {
     $cols = array(
       'cb' => '<input type="checkbox" />',
       'title' => __('Title'),
@@ -924,4 +924,4 @@ function muda_colunas_lista_categorias( $cols ) {
     );
     return $cols;
   }
-  add_filter( "manage_categoria_posts_columns", "muda_colunas_lista_categorias" );
+  add_filter( "manage_documento_posts_columns", "muda_colunas_lista_documento" );
