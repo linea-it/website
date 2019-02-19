@@ -13,7 +13,8 @@ if (!is_user_logged_in()) {
 	<div id="content" class="conteudo read page" role="main">
 			<?php
 				require_once 'database.php';
-				require_once 'afiliados_functions.php';
+                require_once 'afiliados_functions.php';
+                require_once 'lineadb.php';
 
 				$id = null;
 
@@ -41,7 +42,8 @@ if (!is_user_logged_in()) {
 		    <section>
 		        <h1>Descrição</h1>
 		        <?php
-		        	echo '<p><strong>Nome:</strong> ' . $row['nome'] . '</p>';
+                    echo '<p><strong>Nome:</strong> ' . $row['nome'] . '</p>';
+                    echo '<p><strong>Foto:</strong> <img class="foto-afiliados" src="' . FOTO_URL . $row['foto'] . '" /></p>';
 		        	echo '<p><strong>Nascimento:</strong> ' . $row['nascimento'] . '</p>';
 		        	echo '<p><strong>Nacionalidade:</strong> ' . $row['nacionalidade'] . '</p>';
 		        	echo '<p><strong>Telefone:</strong> ' . $row['telefone'] . '</p>';

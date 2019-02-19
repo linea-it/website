@@ -173,8 +173,11 @@ Template Name: Webinars
 	        echo '</div>';
 
 	        // Show All Button
-	        echo '<a class="btn showall" href="#" onclick="showAllWebinars(event)"> Show All </a>';
-
+            
+            ?>
+            <a class="btn showall" href="#" onclick="showAllWebinars(event)"> Mostrar </a>
+            <a class="btn" onclick="hideAll('webinar-year-container')"> Esconder </a>
+            <?php
 	        //
 	        // Webinars futuros
 	        //
@@ -198,11 +201,26 @@ Template Name: Webinars
 	        			array_push($ano_array, $row);
 	        			$count += 1;
 	        		}
-	        	}
-	        	echo '<h2>' . $ano . ' <span class="countnum card">' . sprintf("%02d", $count) . '</span></h2>';
+                }
+                $today = getdate();
+                if ($ano == $today[year]) {
+                    $display = 'block';
+                } else {
+                    $display = 'none';
+                }
+                ?>
+                <a onclick="toggleYear('<?php echo $ano; ?>')">
+                    <h3 class="webinar-year-title"><?php echo $ano; ?></h3> <span class="countnum card"><?php echo sprintf("%02d", $count);?></span>
+                </a>
+                <div style="display: <?php echo $display?>" class="webinar-year-container" id="<?php echo $ano; ?>">
+                <?php
 	        	foreach ($ano_array as $row) {
 	        		showWebinarSumary($row, $login);
-	        	}
+                }
+                ?>
+                </div>
+                <div class="clearboth"></div>
+                <?php
 	        }
         ?>
 
