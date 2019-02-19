@@ -14,7 +14,8 @@ if (!is_user_logged_in()) {
 			<?php
 			require_once 'database.php';
 			require_once 'linea_func.php';
-			require_once 'afiliados_functions.php';
+            require_once 'afiliados_functions.php';
+            require 'checkUpload.php';
 
 			$pdo = Database::connect();
 			$pdo->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
@@ -54,7 +55,8 @@ if (!is_user_logged_in()) {
 			    $statusError = null;
 			    $paisAtualError = null;
 			    $funcaoError = null;
-			    $skypeError = null;
+                $skypeError = null;
+                $fotoError = null;
 
 			    // keep track post values
 			    $nome = $_POST['nome'];
@@ -83,7 +85,12 @@ if (!is_user_logged_in()) {
 					}
 			    $paisAtual = $_POST['paisAtual'];
 			    $funcao = $_POST['funcao'];
-			    $skype = $_POST['skype'];
+                $skype = $_POST['skype'];
+                if (!empty($_FILES['upload']['name'][0])) {
+			    	$foto = $_FILES['upload']['name'][0];
+			    } else {
+			    	$foto = $_POST['old_foto'];
+			    }
 
 			    // validate input
 			    $valid = true;
@@ -92,55 +99,82 @@ if (!is_user_logged_in()) {
 			        $valid = false;
 			    }
 
-			    // if (empty($nacionalidade)) {
-			    //     $nacionalidadeError = 'Insira a nacionalidade';
-			    //     $valid = false;
-			    // }
+                if (!empty($foto) && $foto != $_POST['old_foto']) {
+                    //usar checkUpload.php para testar imagem
+                    $errMsg = checkImg(0, 'upload');
+                    if ($errMsg){
+                        $fotoError = $errMsg;
+                        $foto = $_POST['old_foto'];
+                        $valid = false;
+                    }
+                }
 
-			    // if (empty($instituicao)) {
-			    //     $instituicaoError = 'Insira a instituicao';
-			    //     $valid = false;
-			    // }
+			    if (empty($instituicao)) {
+			        $instituicaoError = 'Insira a instituicao';
+			        $valid = false;
+			    }
+                
+                if (empty($dataInicio)) {
+                    $dataInicio = NULL;
+                }
+
+                if (empty($dataSaida)) {
+                    $dataSaida = NULL;
+                }
+
+                if (empty($nascimento)) {
+                    $nascimento = NULL;
+                }
 
 			    // update data
 			    if ($valid) {
 			        $sql = "UPDATE afiliados set nome = ?, nascimento = ?, nacionalidade = ?, telefone = ?, celular = ?, instituicao = ?,
 			        		cargo = ?, supervisor = ?, email_linea = ?, gmail = ?, email_alt = ?, cpf = ?, identidade = ?, org_emissor = ?,
 			        		uf_emissor = ?, passaporte_estrangeiro = ?, passaporte_residente = ?, cpf_estrangeiro_residente = ?, data_inicio = ?,
-			        		data_saida = ?, status = ?, pais_atual = ?, funcao = ?, skype = ? WHERE id = ?";
-			        $q = $pdo->prepare($sql);
-			        $q->execute(array($nome, $nascimento, $nacionalidade, $telefone, $celular, $instituicao, $cargo, $supervisor, $emailLinea, $gmail, $emailAlt, $cpf,
-			        	$identidade, $orgEmissor, $ufEmissor, $passaporteEstrangeiro, $passaporteResidente, $cpfEstrangeiroResidente, $dataInicio, $dataSaida, $status,
-			        	$paisAtual, $funcao, $skype, $id));
+			        		data_saida = ?, status = ?, pais_atual = ?, funcao = ?, skype = ?, foto = ? WHERE id = ?";
+                    $q = $pdo->prepare($sql);
+                    
+                    $uploadOK = true;
+                    if (!empty($foto) && $foto != $_POST['old_foto']) {
+                        if (!upload(0, 'upload', FOTO_DIR)){
+                            $uploadOK = false;
+                        }
+                    } else {
+                        $foto = $_POST['old_foto'];
+                    }
+                    if ($uploadOK) {
+                        $q->execute(array($nome, $nascimento, $nacionalidade, $telefone, $celular, $instituicao, $cargo, $supervisor, $emailLinea, $gmail, $emailAlt, $cpf,
+                            $identidade, $orgEmissor, $ufEmissor, $passaporteEstrangeiro, $passaporteResidente, $cpfEstrangeiroResidente, $dataInicio, $dataSaida, $status,
+                            $paisAtual, $funcao, $skype, $foto, $id));
 
-							// Update projetos_associados
-							if ( isset( $projetos ) ) {
-								$projetos_associados = get_projetos_associados($pdo, $id);
-								foreach ( $projetos as $projeto ) {
-									if ( !in_array( $projeto, $projetos_associados ) ) {
-										$projeto_id = get_projeto_id($projetos_todos, $projeto);
-										salva_projeto_associado($pdo, $projeto_id, $id);
-									}
-								}
-								foreach ($projetos_associados as $projeto_associado) {
-									if ( !in_array( $projeto_associado, $projetos ) ) {
-										$projeto_id = get_projeto_id($projetos_todos, $projeto_associado);
-										remove_projeto_associado($pdo, $projeto_id, $id);
-									}
-								}
-							} else {
-								remove_todos_projetos_associados($pdo, $id);
-							}
+                                // Update projetos_associados
+                                if ( isset( $projetos ) ) {
+                                    $projetos_associados = get_projetos_associados($pdo, $id);
+                                    foreach ( $projetos as $projeto ) {
+                                        if ( !in_array( $projeto, $projetos_associados ) ) {
+                                            $projeto_id = get_projeto_id($projetos_todos, $projeto);
+                                            salva_projeto_associado($pdo, $projeto_id, $id);
+                                        }
+                                    }
+                                    foreach ($projetos_associados as $projeto_associado) {
+                                        if ( !in_array( $projeto_associado, $projetos ) ) {
+                                            $projeto_id = get_projeto_id($projetos_todos, $projeto_associado);
+                                            remove_projeto_associado($pdo, $projeto_id, $id);
+                                        }
+                                    }
+                                } else {
+                                    remove_todos_projetos_associados($pdo, $id);
+                                }
 
-			        // Inserindo LOG da operação no banco
-			        $sql_log = "INSERT INTO log (wp_username, datetime, action, page, resumo) VALUES (?, now(), 'UPDATE', 'AFILIADOS', ?)";
-			        $q_log = $pdo->prepare($sql_log);
+                        // Inserindo LOG da operação no banco
+                        $sql_log = "INSERT INTO log (wp_username, datetime, action, page, resumo) VALUES (?, now(), 'UPDATE', 'AFILIADOS', ?)";
+                        $q_log = $pdo->prepare($sql_log);
 
-			        $current_user = wp_get_current_user();
-			        $wp_username = $current_user->user_login;
+                        $current_user = wp_get_current_user();
+                        $wp_username = $current_user->user_login;
 
-			        $q_log->execute(array($wp_username, resumo($nome)));
-
+                        $q_log->execute(array($wp_username, resumo($nome)));
+                    }
 			        Database::disconnect();
 			        header("Location: /new-afiliados/");
 			    }
@@ -174,7 +208,9 @@ if (!is_user_logged_in()) {
 			    $projetos = get_projetos_associados($pdo, $id);
 			    $paisAtual = $row['pais_atual'];
 			    $funcao = $row['funcao'];
-			    $skype = $row['skype'];
+                $skype = $row['skype'];
+                $foto = $row['foto'];
+                $old_foto = $foto;
 
 			    Database::disconnect();
 			}
@@ -184,13 +220,24 @@ if (!is_user_logged_in()) {
 		    <section>
 		        <h1>Editar</h1>
 
-		            <form action="<?php echo get_bloginfo('template_url') . '/afiliados_update.php?id=' . $id ?>" method="post">
+		            <form action="<?php echo get_bloginfo('template_url') . '/afiliados_update.php?id=' . $id ?>" method="post" enctype="multipart/form-data">
 						<!-- Nome -->
 						<div class="grupo-input <?php echo !empty($nomeError)?'error':'';?>">
 							<label for="titulo" class="control-label">Nome:</label>
 							<input id="nome" name="nome" type="text"  placeholder="Nome" value="<?php echo !empty($nome)?$nome:'';?>">
 							<?php if (!empty($nomeError)): ?>
 							    <span class="errormsg"><?php echo $nomeError;?></span>
+							<?php endif; ?>
+						</div>
+                        <!-- Foto -->
+						<div class="grupo-input <?php echo !empty($fotoError)?'error':'';?>">
+							<img class="speaker-photo" src="<?php  echo FOTO_URL . $foto; ?>" />
+							<p> <?php echo $foto; ?> </p> 
+							<label for="foto" class="control-label">Foto:</label>
+							<input name="old_foto" type="hidden" value="<?php echo $old_foto; ?>">
+							<input id="foto" name="upload[]" type="file" value="<?php echo !empty($foto)?$foto:'';?>">
+							<?php if (!empty($fotoError)): ?>
+							    <span class="errormsg"><?php echo $fotoError;?></span>
 							<?php endif; ?>
 						</div>
 						<!-- Nascimento -->

@@ -1,5 +1,47 @@
 <?php
 
+function get_cargos($con) {
+    $sql = 'SELECT DISTINCT cargo FROM afiliados ORDER BY cargo';
+    $prep = $con->prepare($sql);
+    $prep->execute();
+    $result = $prep->fetchAll();
+    return $result;
+}
+function get_pref_email($afiliado) {
+    if ($afiliado['email_linea'] != '') {
+        return $afiliado['email_linea'];
+    } else if ($afiliado['gmail'] != '') {
+        return $afiliado['gmail'];
+    } else {
+        return $afiliado['email_alt'];
+    }
+}
+function esconde_email ($email) {
+    $at_img_tag = '<img src="' . AT_IMG_URL . '"/>';
+    return str_replace("@", $at_img_tag, $email);
+}
+
+function card_afiliado($afiliado) {
+    $tag = '<div class="grid-item-afiliado ' . $afiliado['cargo'] . '">';
+    $tag .= '<div class="grid-item-img-container">';
+    $tag .= '<img src="' . FOTO_URL . $afiliado['foto'] . '"/>';
+    $tag .= '</div>';
+    $tag .= '<p class="nome">' . $afiliado['nome'] . '</p>';
+    $tag .= '<p class="instituicao">' . $afiliado['instituicao'] . '</p>';
+    $tag .= '<p class="cargo">' . $afiliado['cargo'] . '</p>';
+    $tag .= '<p class="email">' . esconde_email(get_pref_email($afiliado)) . '</p>';
+    $tag .= '</div>';
+    return $tag;
+}
+
+function get_todos_afiliados_ativos($con) {
+    $sql = 'SELECT * FROM afiliados WHERE status="ATIVO" ORDER BY nome COLLATE utf8_unicode_ci';
+    $prep = $con->prepare($sql);
+    $prep->execute();
+    $result = $prep->fetchAll();
+    return $result;
+}
+
 function get_projetos($con) {
   $sql = "SELECT * FROM projetos";
   $prep = $con->prepare($sql);

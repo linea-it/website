@@ -8,8 +8,17 @@ Template Name: Blog Posts
 <?php get_sidebar(); ?>
 <div class="clearboth"></div>
 	<div id="content" class="conteudo blogs" role="main">
-
-		<?php foreach(posts_by_year() as $year => $posts) : ?>
+        <?php
+        $posts_by_year = posts_by_year();
+        $num_posts = 0;
+        foreach($posts_by_year as $year){
+            $num_posts += count($year);
+        }
+        ?>
+        <h1>Noticias <span class="countnum card"><?php echo sprintf("%02d", $num_posts);?></span></h1>
+        <a class="btn" onclick="showAll('year')"> Mostrar </a>
+        <a class="btn" onclick="hideAll('year')"> Esconder </a>
+		<?php foreach($posts_by_year as $year => $posts) : ?>
 		  <?php
 		  	$today = getdate();
 		  	if ($year == $today[year]) {

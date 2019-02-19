@@ -587,6 +587,10 @@ function project_excerpt_length( $length ) {
 	return 50;
 }
 
+function main_card_excerpt_length( $length ) {
+    return 10;
+}
+
 function new_excerpt_more( $more ) {
 	return '...';
 }
@@ -753,6 +757,94 @@ function muda_colunas_lista_videos( $cols ) {
 }
 add_action( 'init', 'create_post_type_anuncios' );
 
+// Galeria de Images
+
+function criando_taxonomia_album() {
+    $singular = 'Album';
+    $plural = 'Albums';
+
+    $labels = array(
+        'name' => $plural,
+        'singular_name' => $singular,
+        'view_item' => 'Ver ' . $singular,
+        'edit_item' => 'Editar ' . $singular,
+        'new_item' => 'Novo ' . $singular,
+        'add_new_item' => 'Adicionar novo ' . $singular
+        );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'hierarchical' => true,
+        'query_var' => true,
+        'show_admin_column' => true
+        );
+
+    register_taxonomy('album', 'fotos', $args);
+}
+
+add_action( 'init' , 'criando_taxonomia_album' );
+
+function registra_post_type_fotos() {
+
+    $nomeSingular = 'Foto';
+    $nomePlural = 'Fotos';
+
+    $labels = array(
+        'name' => $nomePlural,
+        'singular_name' => $nomeSingular,
+        'add_new' => 'Adicionar nova ' . $nomeSingular,
+        'add_new_item' => 'Adicionar nova ' . $nomeSingular,
+        'edit_item' => 'Editar ' . $nomeSingular,
+        'new_item' => 'Nova ' . $nomeSingular,
+        'all_items' => 'Todas as ' . $nomePlural,
+        'view_item' => 'Visualizar ' . $nomeSingular,
+        'search_items' => 'Procurar ' . $nomePlural,
+        'not_found' => 'Nenhuma ' . $nomeSingular . 'encontrada',
+        'not_found_in_trash' => 'Nenhuma ' . $nomeSingular . 'encontrada na Lixeira',
+        'parent_item_colon' => '',
+        'menu_name' => $nomePlural
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'taxonomies' => array( 'album', 'post_tag' ),
+        'supports' => array( 'title', 'author', 'thumbnail', 'comments' ),
+        'menu_icon' => 'dashicons-camera'
+    );
+    register_post_type( 'fotos', $args );
+    add_image_size( 'thumbnail-list', '100', '100', true );
+}
+
+add_action( 'init', 'registra_post_type_fotos' );
+
+function muda_colunas_lista_fotos( $cols ) {
+    $cols = array(
+        'cb' => '<input type="checkbox" />',
+        'title' => __('Title'),
+        'author' => __('Author'),
+        'taxonomy-album' => 'Album',
+        'tags' => __('Tags'),
+        'comments' => '<span class="vers"><div title="Comments" class="comment-grey-bubble"></div></span>',
+        'date' => __('Date'),
+        'thumbnail' => __('Thumbnail')
+      );
+      return $cols;
+  }
+  add_filter( "manage_fotos_posts_columns", "muda_colunas_lista_fotos" );
+  
+  function colunas_customizadas( $col, $post_id ) {
+      switch ( $col ) {
+        case 'thumbnail':
+          $tag = '<img style="width: 100px" src="' . get_the_post_thumbnail_url($post_id, "thumbnail-list") . '"/>';
+          echo $tag;
+          break;
+      }
+  }
+  add_action( 'manage_fotos_posts_custom_column' , 'colunas_customizadas', 10, 2);
+
 // Documentos
 //
 function create_post_type_documento() {
@@ -820,7 +912,7 @@ function criar_taxonomia_categoria() {
 }
 add_action('init', 'criar_taxonomia_categoria');
 
-function muda_colunas_lista_categorias( $cols ) {
+function muda_colunas_lista_documento( $cols ) {
     $cols = array(
       'cb' => '<input type="checkbox" />',
       'title' => __('Title'),
@@ -832,4 +924,4 @@ function muda_colunas_lista_categorias( $cols ) {
     );
     return $cols;
   }
-  add_filter( "manage_categoria_posts_columns", "muda_colunas_lista_categorias" );
+  add_filter( "manage_documento_posts_columns", "muda_colunas_lista_documento" );
