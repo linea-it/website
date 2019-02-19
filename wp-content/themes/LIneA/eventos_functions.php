@@ -2,6 +2,14 @@
 
 setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 
+function get_eventos_por_ano($posts) {
+    $years = array();
+    foreach($posts as $post) {
+        $years[date('Y', strtotime($post['data_inicial']))][] = $post;
+    }
+    return $years;
+}
+
 function get_eventos_envolvimento($con, $envolvimento) {
   $sql = "SELECT * FROM eventos WHERE envolvimento = :envolvimento ORDER BY data_inicial DESC";
   $prep = $con->prepare($sql);
