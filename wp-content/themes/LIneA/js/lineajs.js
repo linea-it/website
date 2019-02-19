@@ -30,6 +30,8 @@ function speakerSearch(evt) {
     var name = evt.currentTarget.value;
 
     var nomes = document.getElementsByClassName("nome");
+    showAll('webinar-year-container');
+
     if ( name == "All") {
         for (i = 0; i < nomes.length; i++) {
             nomes[i].parentNode.parentNode.style.display = "block";
@@ -47,6 +49,8 @@ function speakerSearch(evt) {
 
 function speakerShow(name) {
 
+    showAll('webinar-year-container');
+
     var nomes = document.getElementsByClassName("nome");
     for (var i = 0; i < nomes.length; i++) {
         if ( nomes[i].innerHTML == name ) {
@@ -63,6 +67,7 @@ function showAllWebinars(evt) {
     for (var i = 0; i < nomes.length; i++) {
         nomes[i].parentNode.parentNode.style.display = "block";
     }
+    showAll('webinar-year-container');
 }
 
 
@@ -83,7 +88,7 @@ function cleanSearch() {
 function webinarSearch(evt) {
     var input = evt.currentTarget.value;
     var child, str, strfound, n, found, lowstr, lowinput, origstr;
-    console.log('INPUT :'+input);
+    showAll('webinar-year-container');
     cleanSearch();
     lowinput = input.toLowerCase();
     var websumary = document.getElementsByClassName("webinar-sumary");
