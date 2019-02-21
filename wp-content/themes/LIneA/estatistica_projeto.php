@@ -20,13 +20,13 @@
   <div class="tabs-content">
     <div class="tabs-menu clearfix">
       <ul>
-        <li><a href="#" data-tab="tab1">Jan 2018</a></li>
+        <li><a class="active-tab-menu" href="#" data-tab="tab1">Jan 2018</a></li>
         <li><a href="#" data-tab="tab2">Fev 2018</a></li>
         <li><a href="#" data-tab="tab3">Mar 2018</a></li>
         <li><a href="#" data-tab="tab4">Abr 2018</a></li>
         <li><a href="#" data-tab="tab5">Mai 2018</a></li>
         <li><a href="#" data-tab="tab6">Jun 2018</a></li>
-        <li><a class="active-tab-menu" href="#" data-tab="tab7">Jul 2018</a></li>        
+        <li><a href="#" data-tab="tab7">Jul 2018</a></li>        
         <li><a href="#" data-tab="tab8">Ago 2018</a></li>
         <li><a href="#" data-tab="tab9">Set 2018</a></li>
         <li><a href="#" data-tab="tab10">Out 2018</a></li>
@@ -109,6 +109,10 @@
     </div> <!-- .tab11 -->
 
     <div class="tab12 tabs">
+
+       <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSK1afyKjtI6hbQSl6lMTs17cSRZMtTB6stBvApk41goGg2_JVRHaCFmWW51jvaKMhAvoCsvqXXV2VH/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+      <br><br>    
 
     </div> <!-- .tab12 -->
     
