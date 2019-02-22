@@ -49,7 +49,7 @@
 						<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/imagens/logo-header.png" alt="Home" title="Home" class="logo-linea" /></a>
 					</div>
 					<div class="logo-inct-header-container">
-						<a href="<?php bloginfo('url'); ?>/010-ciencia/1-projetos/3-inct-do-e-universo-2/"><img src="<?php bloginfo('template_url'); ?>/imagens/inct_logo.png" alt="INCT" title="INCT" class="logo-inct" /></a>
+						<a href="http://inct.cnpq.br/home/"><img src="<?php bloginfo('template_url'); ?>/imagens/inct_logo.png" alt="INCT" title="INCT" class="logo-inct" /></a>
 					</div>
 					<div class="logo-euniverso-header-container">
 						<a href="<?php bloginfo('url'); ?>/010-ciencia/1-projetos/3-inct-do-e-universo-2/"><img src="<?php bloginfo('template_url'); ?>/imagens/inct_euniverso_logo.png" alt="INCT" title="INCT" class="logo-inct" /></a>
