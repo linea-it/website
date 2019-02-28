@@ -12,7 +12,7 @@
 <?php get_sidebar(); ?>
 <div class="home-card projects-card">
             <?php
-            $mypages = get_pages( array( 'parent' => '7638', 'sort_column' => 'post_name', 'sort_order' => 'asc' ) );
+            $mypages = get_pages( array( 'parent' => '7651', 'sort_column' => 'post_name', 'sort_order' => 'asc' ) );
             foreach( $mypages as $page ) {
                 $title = $page->post_title;
                 $link = get_the_permalink($page->ID);
