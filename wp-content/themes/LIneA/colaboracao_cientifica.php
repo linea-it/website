@@ -24,7 +24,7 @@
                         <div class="project-logo-container">
                             <?php echo $thumbnail_tag; ?>
                         </div>
-                        <h3 class="project-title"><?php echo $title ?></h3>
+                        
                     </a>
                 </div>
                 <?php
