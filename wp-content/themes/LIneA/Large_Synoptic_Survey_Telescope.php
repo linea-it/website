@@ -14,18 +14,20 @@
             <?php
             $mypages = get_pages( array( 'parent' => '7638', 'sort_column' => 'post_name', 'sort_order' => 'asc' ) );
             foreach( $mypages as $page ) {
-                $title = $page->post_title;
+                $title = $page->post_title; 
+                $content = $page->post_content;               
                 $link = get_the_permalink($page->ID);
                 $title = apply_filters( 'the_title', $title );
                 $thumbnail_tag = get_the_post_thumbnail($page->ID, 'full');
                 ?>
-                <div class="project">
+                <div class="project-landing-Page">
                     <a href="<?php echo $link; ?>">
-                        <div class="project-logo-container">
-                            <?php echo $thumbnail_tag; ?>
-                        </div>
-                        <h3 class="project-title"><?php echo $title ?></h3>
-                    </a>
+                         <h3 class="project-title-landing-Page"><?php echo $title ?></h3>
+                          <div class="project-logo-container-landing-Page">
+                            <?php echo $thumbnail_tag; ?>                          
+                        </div>  
+                        </a>
+                    <p class="project-landing-Page"><?php echo $content ?> </p>
                 </div>
                 <?php
             }

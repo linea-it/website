@@ -85,6 +85,28 @@ require 'home_functions.php';
             ?>
         </div><!--PROJECTS CARD-->
 
+         <div class="home-card projects-card">
+            <?php
+            $mypages = get_pages( array( 'parent' => '7703', 'sort_column' => 'post_name', 'sort_order' => 'asc' ) );
+            foreach( $mypages as $page ) {
+                $title = $page->post_title;
+                $link = get_the_permalink($page->ID);
+                $title = apply_filters( 'the_title', $title );
+                $thumbnail_tag = get_the_post_thumbnail($page->ID, 'full');
+                ?>
+                <div class="project">
+                    <a href="<?php echo $link; ?>">                        
+                        <div class="project-logo-container">                          
+                            <?php echo $thumbnail_tag; ?>
+                        </div>
+                       <!-- <h3 class="project-title"><?php echo $title ?></h3>-->
+                    </a>
+                </div>
+                <?php
+            }
+            ?>
+        </div><!--PROJECTS CARD-->
+
         <!--div class="home-card">
             <div class="card-links-container">
                 <?php echo page_link_container(4230); ?> <!--PUBLICACOES>
