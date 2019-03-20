@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Sloan Digital Sky Survey
+ * Template Name: Acesso-Usuario
  * @package WordPress
  * @subpackage Twenty_Fourteen
  * @since Twenty Fourteen 1.0
@@ -12,7 +12,7 @@
 <?php get_sidebar(); ?>
 <div class="home-card projects-card">
             <?php
-            $mypages = get_pages( array( 'parent' => '7638', 'sort_column' => 'post_name', 'sort_order' => 'asc' ) );
+            $mypages = get_pages( array( 'parent' => '7745', 'sort_column' => 'post_name', 'sort_order' => 'asc' ) );
             foreach( $mypages as $page ) {
                 $title = $page->post_title; 
                 $content = $page->post_content;               
