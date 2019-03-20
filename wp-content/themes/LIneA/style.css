@@ -410,12 +410,12 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 div.logo-inct-header-container,
 div.logo-euniverso-header-container {
     width: 10%;
-    margin-right: 1%;
+    margin-right: 4%;
     margin-bottom: .5%;
     max-width: 100px;
 }
 div.logo-linea-header-container {
-    margin: 0 1% .5% 2%;
+    margin: 0 4% .5% 2%;
 }
 div.logo-linea-header-container, 
 div.logo-inct-header-container,
@@ -1876,7 +1876,7 @@ table td.data {
     flex-wrap: wrap;
     justify-content: center;
     box-sizing: border-box;
-    padding: 4% 1%;
+    padding: 0% 1% 4% 0%;
 }
 .project {
     width: 20%;
@@ -1896,6 +1896,10 @@ table td.data {
     margin: 0 auto;
 }
 
+.project-titulo {
+    width: 100%;       
+}
+
 /* landing Page */
 
 .logo-container {
@@ -1905,7 +1909,7 @@ table td.data {
     min-width: 130px;
 }
 .logo-container img, .project-logo-container-landing-Page img {
-    width: 100%;       
+    width: 100%;   
 }
 
 .projects-card-landing-Page {

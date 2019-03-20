@@ -64,6 +64,9 @@ require 'home_functions.php';
         </div><!--MAIN CARD-->
 
         <div class="home-card projects-card">
+            <div class="project-titulo">
+               <h2 class="home-card-title">Colaboração Científica</h2>
+            </div>
             <?php
             $mypages = get_pages( array( 'parent' => '2488', 'sort_column' => 'post_name', 'sort_order' => 'asc' ) );
             foreach( $mypages as $page ) {
@@ -86,6 +89,9 @@ require 'home_functions.php';
         </div><!--PROJECTS CARD-->
 
          <div class="home-card projects-card">
+             <div class="project-titulo">
+               <h2 class="home-card-title">LIneA</h2>
+            </div>
             <?php
             $mypages = get_pages( array( 'parent' => '7703', 'sort_column' => 'post_name', 'sort_order' => 'asc' ) );
             foreach( $mypages as $page ) {
