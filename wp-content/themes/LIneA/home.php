@@ -85,6 +85,35 @@ require 'home_functions.php';
             ?>
         </div><!--PROJECTS CARD-->
 
+        <div class="home-card data-access-card">
+            <h2 class="home-card-title">Acesso à Dados</h2>
+            <?php
+            $args = array(
+                'post_type' => 'page',
+                'order'=> 'ASC',
+                'orderby' => 'title',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'category',
+                        'field' => 'slug',
+                        'terms' => 'acesso-a-dados'
+                    )
+                )
+            );
+            $query = new WP_Query( $args );
+            ?>
+            <div class="card-links-container">
+            <?php
+            while ( $query->have_posts() ) {
+                $query->the_post();
+                ?>
+                <?php echo page_link_container($post->ID); ?>
+                <?php
+            }
+            ?>
+            </div>
+        </div><!--DATA-ACCESS CARD-->
+
         <!--div class="home-card">
             <div class="card-links-container">
                 <?php echo page_link_container(4230); ?> <!--PUBLICACOES>
