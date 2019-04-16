@@ -2371,3 +2371,23 @@ p.no-documentos {
     margin: 3%;
     text-align: center;
 }
+
+/* Home card acesso a dados */
+
+.data-access-card .card-links-container {
+    padding-bottom: 3%;
+}
+.data-access-card .page-link-container {
+    background-color: #555;
+    padding: 4px;
+}
+.data-access-card .page-link-icon-container {
+    max-width: 150px;
+}
+.data-access-card .page-link-container:hover {
+    background-color: #515151;
+    box-shadow: 1px 1px 1px #444;
+}
+.data-access-card h3.page-link-card-title {
+    margin: 0;
+}
