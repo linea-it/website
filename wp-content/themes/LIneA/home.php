@@ -158,7 +158,7 @@ require 'home_functions.php';
             </a>
             <?php
             $args = array( 
-                'posts_per_page' => 3,
+                'posts_per_page' => 5,
                 'order'=> 'DESC',
                 'orderby' => 'date',
                 'tax_query' => array(

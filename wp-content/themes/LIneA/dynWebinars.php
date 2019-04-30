@@ -8,7 +8,6 @@ Template Name: Webinars
 <?php get_sidebar(); ?>
 <div class="clearboth"></div>
 	<div id="content" class="conteudo webinars" role="main">
-		<h1>Webinars</h1>
 
 		<?php
 	    	include 'database.php';
@@ -22,19 +21,6 @@ Template Name: Webinars
 	    	$result = $prep->fetchAll();
 
 	    	Database::disconnect();
-
-	    	if (is_user_logged_in()) {
-	       		$login = 'ativado';
-	       	} else {
-	       		$login = 'desativado';
-	       	}
-	    	echo '<p>
-	    		Since 2011 we promote webinars which are an important aspect of our personnel development. This allows collaborators anywhere in the world to join seminars about the latest developments in several astronomical and technical fields. Webinars are presented in english and announced to a mailing list. Click <a href="' . MAILCHIMP_SUBS . '">here</a> if you want to subscribe.
-
-	    	</p>';
-
-	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/webinars_create.php"> Adicionar </a>' : '');
-	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/log_view.php"> Exibir Log </a>' : '');
 
 	       	function showWebinarSumary($row, $login) {
 	       		$data = date('d/m', strtotime($row['data']));
@@ -112,6 +98,21 @@ Template Name: Webinars
 	        sort($speakers);
 	        $speakersUnique = array_unique($speakers);
 
+            ?>
+            <h1>Webinars <span class="countnum card"><?php echo sprintf("%02d", count($result)) ?></span></h1>
+            <?php
+	    	if (is_user_logged_in()) {
+	       		$login = 'ativado';
+	       	} else {
+	       		$login = 'desativado';
+	       	}
+	    	echo '<p>
+	    		Since 2011 we promote webinars which are an important aspect of our personnel development. This allows collaborators anywhere in the world to join seminars about the latest developments in several astronomical and technical fields. Webinars are presented in english and announced to a mailing list. Click <a href="' . MAILCHIMP_SUBS . '">here</a> if you want to subscribe.
+
+	    	</p>';
+
+	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/webinars_create.php"> Adicionar </a>' : '');
+	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/log_view.php"> Exibir Log </a>' : '');
 
 	        // Select
 
@@ -180,9 +181,11 @@ Template Name: Webinars
             <?php
 	        //
 	        // Webinars futuros
-	        //
-	        echo '<h3> Scheduled webinars </h3>';
-	        $rev = array_reverse($futureWebinars);
+            //
+            ?>
+	        <h3> Scheduled webinars <span class="countnum card"><?php echo sprintf("%02d", count($futureWebinars)) ?></span></h3>
+	        <?php
+            $rev = array_reverse($futureWebinars);
 	        foreach ($rev as $row) {
 	        	showWebinarSumary($row, $login);
 	        }
@@ -190,8 +193,10 @@ Template Name: Webinars
 
 	        //
 	        // Webinars antigos
-	        //
-	        echo '<h2> Past webinars </h2>';
+            //
+            ?>
+	        <h2> Past webinars <span class="countnum card"><?php echo sprintf("%02d", count($pastWebinars)) ?></span></h2>
+            <?php
 
 	        foreach (range(date('Y'), 2011, -1) as $ano) {
 	        	$ano_array = array();
