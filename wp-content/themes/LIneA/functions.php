@@ -925,3 +925,85 @@ function muda_colunas_lista_documento( $cols ) {
     return $cols;
   }
   add_filter( "manage_documento_posts_columns", "muda_colunas_lista_documento" );
+
+
+// Landing Page Cards
+//
+function create_post_type_lpcard() {
+    $nome_singular = 'Landing Card';
+    $nome = 'Landing Cards';
+    $labels = array(
+        'name' => $nome,
+        'singular_name' => $nome_singular,
+        'add_new' => 'Adicionar novo',
+        'add_new_item' => 'Adicionar novo ' . $nome_singular,
+        'edit_item' => 'Editar ' . $nome_singular,
+        'new_item' => 'Novo ' . $nome_singular,
+        'view_item' => 'Visualizar ' . $nome_singular,
+        'view_items' => 'Visualizar ' . $nome,
+        'search_items' => 'Localizar ' . $nome
+    );
+    $supports = array(
+        'title',
+        'editor',
+        'excerpt',
+        'custom-fields',
+        'thumbnail'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-images-alt2',
+        'supports' => $supports
+    );
+    register_post_type( 'lpcard', $args );
+}
+add_action( 'init', 'create_post_type_lpcard' );
+
+function adiciona_suporte_lpcard() {
+    register_taxonomy_for_object_type('lpcategory', 'lpcard');
+    register_taxonomy_for_object_type('post_tag', 'lpcard');
+}
+add_action( 'init', 'adiciona_suporte_lpcard' );
+
+
+function criar_taxonomia_lpcategory() {
+    $nome_singular = 'Landing Category';
+    $nome = 'Landing Categories';
+    $labels = array(
+        'name'                       => $nome,
+        'singular_name'              => $nome_singular,
+        'search_items'               => 'Procurar ' . $nome,
+        'popular_items'              => $nome . 'Populares',
+        'all_items'                  => 'Todas as ' . $nome,
+        'edit_item'                  => 'Editar ' . $nome_singular,
+        'update_item'                => 'Atualizar ' . $nome_singular,
+        'add_new_item'               => 'Adicionar nova ' . $nome_singular,
+        'new_item_name'              => 'Nova ' . $nome_singular,
+        'separate_items_with_commas' => 'Separar ' . $nome . ' com vírgulas',
+        'add_or_remove_items'        => 'Adicionar ou remover ' . $nome,
+        'choose_from_most_used'      => 'Escolher entre as ' . $nome . ' mais usadas',
+        'not_found'                  => 'Nenhuma ' . $nome_singular . ' encontrada',
+        'menu_name'                  => $nome_plural
+    );
+    $args = array(
+        'hierarchical'          => true,
+        'labels'                => $labels
+    );
+    register_taxonomy( 'lpcategory', 'lpcard' , $args);
+}
+add_action('init', 'criar_taxonomia_lpcategory');
+
+function muda_colunas_lista_lpcard( $cols ) {
+    $cols = array(
+      'cb' => '<input type="checkbox" />',
+      'title' => __('Title'),
+      'author' => __('Author'),
+      'taxonomy-lpcategory' => 'Landing Categories',
+      'tags' => __('Tags'),
+      'date' => __('Date')
+    );
+    return $cols;
+  }
+  add_filter( "manage_lpcard_posts_columns", "muda_colunas_lista_lpcard" );
