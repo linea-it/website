@@ -35,6 +35,7 @@ if (is_user_logged_in()) {
         // Cards
         //
         if ($lpcategory != 0) {
+            // Args for generic cards
             $args = array(
                 'post_type' => 'lpcard',
                 'orderby' => 'title',
@@ -49,38 +50,59 @@ if (is_user_logged_in()) {
                     )
                 )
             );
-
-            $query_result = new WP_Query($args);
-                ?>
-                <h2>
-                    <?php echo get_term($lpcategory, 'lpcategory')->name; ?>
-                </h2>
-                <?php
-            if ($query_result->have_posts()) {
-                ?>
-                <div class="lpcards-container">
-                <?php
-                while($query_result->have_posts()) {
-                    $query_result->the_post();
-                    $thumb_tag = get_the_post_thumbnail(get_the_ID(), 'full');
-                    $main_link = get_post_meta(get_the_ID(), 'card_main_link', true);
-                    $alt_link = get_post_meta(get_the_ID(), 'card_alt_link', true);
-                    $content = get_the_content();
-                    $row_lpcard = array(
-                        'titulo' => get_the_title(),
-                        'main_link' => $main_link,
-                        'alt_link' => $alt_link,
-                        'thumb_tag' => $thumb_tag,
-                        'content' => $content
-                    );
-                    $permissao = get_permissao(get_the_ID());
-                    echo lpcard($row_lpcard, $permissao);
-
-                }
+            $main_card_class="";
+        } else {
+            // Args for main cards
+            $args = array(
+                'post_type' => 'lpcard',
+                'orderby' => 'title',
+                'order' => 'ASC',
+                'posts_per_page' => -1,
+                'tax_query' => array (
+                    array(
+                        'taxonomy' => 'lpcategory',
+                        'field' => 'slug',
+                        'terms' => 'main-lpcards',
+                        'include_children' => false
+                    )
+                )
+            );
+            $main_card_class="main-lpcard";
+        }
+        $query_result = new WP_Query($args);
             ?>
-            </div>
+            <h2>
+                <?php echo get_term($lpcategory, 'lpcategory')->name; ?>
+            </h2>
             <?php
+        if ($query_result->have_posts()) {
+            ?>
+            <div class="lpcards-container <?php echo $main_card_class; ?>">
+            <?php
+            while($query_result->have_posts()) {
+                $query_result->the_post();
+                $thumb_tag = get_the_post_thumbnail(get_the_ID(), 'full');
+                $main_link = get_post_meta(get_the_ID(), 'card_main_link', true);
+                $alt_link = get_post_meta(get_the_ID(), 'card_alt_link', true);
+                $content = get_the_content();
+                $row_lpcard = array(
+                    'titulo' => get_the_title(),
+                    'main_link' => $main_link,
+                    'alt_link' => $alt_link,
+                    'thumb_tag' => $thumb_tag,
+                    'content' => $content
+                );
+                $permissao = get_permissao(get_the_ID());
+                if ($lpcategory != 0) {
+                    echo lpcard($row_lpcard, $permissao);
+                } else {
+                    echo main_lpcard($row_lpcard);
+                }
+
             }
+        ?>
+        </div>
+        <?php
         }
         ?>
   </div>

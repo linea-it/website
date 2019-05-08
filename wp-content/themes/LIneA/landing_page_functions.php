@@ -64,7 +64,7 @@ function lpcard($row, $permissao) {
         $str .= '   <span class="card-more-plus">+</span>';
         $str .= '</a>';
     }
-    if ($permissao) {
+    if ($permissao && $main_link != '') {
         $str .= '<a href="' . $main_link . '">';
     }
     $str .= '<div class="lpcard-title">';
@@ -79,10 +79,40 @@ function lpcard($row, $permissao) {
     $str .= '   </div>';
     $str .= '</div>';
     if ($permissao) {
-        $str .= '</a>';
+        if ( $main_link != ''){
+            $str .= '</a>';
+        }
     } else {
         $str .= '<span class="lpcard-desativado">RESTRITO</span>';
     }
+    if (is_user_logged_in()){
+        $str .= '<a class="lpcard-edit" href="' . get_edit_post_link() . '">Edit</a>';
+    }
+    $str .= '</div>';
+    return $str;
+
+}
+
+function main_lpcard($row) {
+    $main_link = $row['main_link'];
+    $str = '';
+    $str .= '<div class="lpcard main-lpcard">';
+    if ($row['alt_link'] != ''){
+        $str .= '<a href="' . $row['alt_link'] . '" title="+ leia mais">';
+        $str .= '   <div class="card-more"></div>';
+        $str .= '   <span class="card-more-plus">+</span>';
+        $str .= '</a>';
+    }
+    $str .= '<a href="' . $main_link . '">';
+    $str .= '<div class="lpcard-title main-lpcard">';
+    $str .= '   <p>' . $row['titulo'] . '</p>';
+    $str .= '</div>';
+    $str .= '<div class="lpcard-container main-lpcard">';
+    $str .= '   <div class="lpcard-icon-container main-lpcard">';
+    $str .= $row['thumb_tag'];
+    $str .= '   </div>';
+    $str .= '</div>';
+    $str .= '</a>';
     if (is_user_logged_in()){
         $str .= '<a class="lpcard-edit" href="' . get_edit_post_link() . '">Edit</a>';
     }
