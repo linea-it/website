@@ -2394,6 +2394,9 @@ p.no-documentos {
 
 /* Landing Page */
 
+.conteudo.landing-page {
+    min-height: 600px;
+}
 .lpcards-container {
     display: flex;
     justify-content: flex-start;
@@ -2424,6 +2427,7 @@ p.no-documentos {
     margin: 1% 0;
     min-height: 2.7em;
     max-height: 2.7em;
+    overflow: hidden;
 }
 .lpcard-container {
     display: flex;
@@ -2474,7 +2478,29 @@ span.lpcard-desativado {
 }
 .lpcards-container.main-lpcard {
     justify-content: center;
+    margin: 10% 0;
 }
 .lpcard-container.main-lpcard {
     justify-content: center;
+}
+@media (max-width:1240px) {
+    .lpcard {
+        width: 49%;
+        margin-right: 2%;
+    }
+    .lpcard:nth-child(3n) {
+        margin-right: 2%;
+    }
+    .lpcard:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+@media (max-width:800px) {
+    .lpcard {
+        width: 100%;
+        margin-right: 0;
+    }
+    .lpcard:nth-child(3n) {
+        margin-right: 0;
+    }
 }
