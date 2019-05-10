@@ -21,10 +21,28 @@ if (is_user_logged_in()) {
 <div class="clearboth"></div>
     <div id="content" class="conteudo documentos" role="main">
         <?php
+
+            // Documento de indice
+            $doc_index_result = new WP_Query( array('post_type' => 'documento', 'tag' => 'doc-index') );
+            $doc_index_post = $doc_index_result->posts[0];
+            $doc_index_url = get_post_meta($doc_index_post->ID, 'documento_url', true);
+            $doc_index_icon = get_bloginfo('template_url') . '/imagens/google-sheets.png';
+
+            // query documentos
             $query_result = new WP_Query( array('post_type' => 'documento', 'posts_per_page' => -1) );
             $num_documentos = count($query_result->posts);
         ?>
-        <h1>Documentos <span class="countnum card"><?php echo sprintf("%02d", $num_documentos); ?></span></h1>
+        <h1>Documentos 
+            <span class="countnum card"><?php echo sprintf("%02d", $num_documentos); ?>
+            </span>
+
+        </h1>
+        <a href="<?php echo $doc_index_url?>">
+            <div class="doc-index-container">
+                <img class="doc-index-icon" src="<?php echo $doc_index_icon ?>" />
+                <p class="doc-index-title"><?php echo $doc_index_post->post_title ?></p>
+            </div>
+        </a>
         <?php
 
         $grupo_parent = 0;
