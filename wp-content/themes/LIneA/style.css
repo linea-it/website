@@ -2435,7 +2435,11 @@ p.no-documentos {
     justify-content: space-between;
 }
 .lpcard-content {
-    width: 50%;
+	width: 50%;
+	transition: width .2s;
+}
+.lpcard-content-fullwidth {
+	width: 100%;
 }
 .lpcard-content p {
     color: #444;
@@ -2444,7 +2448,11 @@ p.no-documentos {
 }
 .lpcard-icon-container {
     width: 50%;
-    max-width: 130px;
+	max-width: 130px;
+	transition: width .2s;
+}
+.lpcard-icon-container-hide {
+	width: 0;
 }
 .lpcard-icon-container img {
     width: 100%;
