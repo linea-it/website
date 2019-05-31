@@ -46,16 +46,6 @@ $(document).ready(function(){
         $(this).toggleClass('active-filter');
     });
 
-    // Landing Page
-
-    $('.lpcard-content').hover(function(){
-        $(this).addClass('lpcard-content-fullwidth');
-        $(this).parent().find('.lpcard-icon-container').addClass('lpcard-icon-container-hide');
-    }, function(){
-        $(this).removeClass('lpcard-content-fullwidth');
-        $(this).parent().find('.lpcard-icon-container').removeClass('lpcard-icon-container-hide');
-    });
-
 
 
     // Set the date we're counting down to
