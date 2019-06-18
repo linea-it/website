@@ -26,13 +26,13 @@ Template Name: eventos
             $org_nacional = get_eventos_por_ano(get_org_porte($organizacao, 'Nacional'));
             $org_internacional = get_eventos_por_ano(get_org_porte($organizacao, 'Internacional'));
 
-            if (is_user_logged_in()) {
+            if (current_user_can('administrator')) {
                 $login = 'ativado';
             } else {
                 $login = 'desativado';
             }
 
-            echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/eventos_create.php"> Adicionar </a>' : '');
+            echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/eventos_create.php"> Adicionar </a>' : '');
             ?>
             <a class="btn" onclick="showAll('evento-year-container')"> Mostrar </a>
             <a class="btn" onclick="hideAll('evento-year-container')"> Esconder </a>
