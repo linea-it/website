@@ -924,4 +924,17 @@ function muda_colunas_lista_documento( $cols ) {
     );
     return $cols;
   }
-  add_filter( "manage_documento_posts_columns", "muda_colunas_lista_documento" );
+add_filter( "manage_documento_posts_columns", "muda_colunas_lista_documento" );
+
+
+
+function remove_admin_bar()
+{
+    if (current_user_can('administrator')  || current_user_can('editor') ||
+    current_user_can('author') || current_user_can('contributor')) {
+        return true;
+    }
+    return false;
+}
+
+add_filter('show_admin_bar', 'remove_admin_bar', PHP_INT_MAX);

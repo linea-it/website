@@ -101,7 +101,7 @@ Template Name: Webinars
             ?>
             <h1>Webinars <span class="countnum card"><?php echo sprintf("%02d", count($result)) ?></span></h1>
             <?php
-	    	if (is_user_logged_in()) {
+	    	if (current_user_can('administrator')) {
 	       		$login = 'ativado';
 	       	} else {
 	       		$login = 'desativado';
@@ -111,8 +111,8 @@ Template Name: Webinars
 
 	    	</p>';
 
-	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/webinars_create.php"> Adicionar </a>' : '');
-	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/log_view.php"> Exibir Log </a>' : '');
+	       	echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/webinars_create.php"> Adicionar </a>' : '');
+	       	echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/log_view.php"> Exibir Log </a>' : '');
 
 	        // Select
 
