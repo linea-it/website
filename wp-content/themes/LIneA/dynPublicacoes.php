@@ -33,14 +33,14 @@ Template Name: Publicacoes
             }
 
 	    	Database::disconnect();
-	    	if (is_user_logged_in()) {
+	    	if (current_user_can('administrator')) {
 	       		$login = 'ativado';
 	       	} else {
 	       		$login = 'desativado';
 	       	}
 	    	echo '<h3>Publicações com participação de afiliados ao LIneA (2008 – Presente) <span class="countnum card">' . sprintf("%02d", count($result)) . '</h3>'; 
 	       	
-	       	echo (is_user_logged_in() ? '<a class="btn" href="'. get_bloginfo('template_url') .'/public_create.php"> Adicionar </a>' : '');
+	       	echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/public_create.php"> Adicionar </a>' : '');
             echo '<a class="btn" onclick="showAll(\'ano-container\')"> Mostrar </a>';
             echo '<a class="btn" onclick="hideAll(\'ano-container\')"> Esconder </a>';
 
