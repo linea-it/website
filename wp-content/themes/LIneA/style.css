@@ -2413,3 +2413,38 @@ p.doc-index-title {
 .data-access-card h3.page-link-card-title {
     margin: 0;
 }
+
+/* Login plugin */
+
+.tools-header-container > a {
+    cursor: pointer;
+    align-self: flex-end;
+    background-color: #666;
+    padding: 3px 10px;
+    margin-right: 1%;
+    color: white;
+    border: 1px solid #777;
+    box-sizing: border-box;
+    height: 32px;
+}
+.tools-header-container > a:hover {
+    background-color: #555;
+}
+p.user-info {
+    align-self: flex-end;
+    margin: 0;
+    padding: 5px 10px;
+    display: inline-block;
+}
+.lrm-user-modal-container {
+    color: #000;
+}
+.lrm-form-message.lrm-is-error {
+    color: red;
+}
+ul.lrm-switcher {
+    display: none;
+}
+p.lrm-form-bottom-message {
+    display: none;
+}
