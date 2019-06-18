@@ -45,6 +45,5 @@ if (has_tag('mosaico', $post_id)){
     <?php
 }
 ?>
-
 </html>
 
