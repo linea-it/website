@@ -8,6 +8,7 @@
  -->
 <html <?php language_attributes(); ?>>
 	<head>
+        
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <?php
@@ -56,6 +57,15 @@
 					</div>
 				</div>
 				<div class="tools-header-container">
+                    <a class="lrm-login lrm-hide-if-logged-in">Login</a>
+                    <?php if (is_user_logged_in()) {
+                        $current_user = wp_get_current_user();
+                        ?>
+                        <p class="user-info"><?php echo $current_user->user_login ?></p>
+                        <a href="<?php echo wp_logout_url(); ?>">Logout</a>
+                        <?php
+                    }
+                    ?>
 					<div class="busca"><?php get_search_form(); ?></div>
 					<div class="sociais">
 						<a href="https://www.facebook.com/linea.mcti"><img src="<?php bloginfo('template_url'); ?>/imagens/facebook_circle.png" /></a>
