@@ -252,6 +252,14 @@ div.ngg-navigation {
 .ngg-navigation a:hover {
 	background-color: #654c32 !important;
 }
+.wp-block-image .aligncenter>figcaption, 
+.wp-block-image .alignleft>figcaption, 
+.wp-block-image .alignright>figcaption, 
+.wp-block-image.is-resized>figcaption{
+    display: block;
+    color: #fff;
+    text-align: left;
+}
 .wp-caption-text {
 	font-size: 13px;
 	padding: 5px 10px 15px 10px;
