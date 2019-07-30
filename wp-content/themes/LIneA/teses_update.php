@@ -68,7 +68,7 @@ if (!is_user_logged_in()) {
 
                 // update data
                 if ($valid) {
-                    $sql = "UPDATE `' . DBLINEA_NAME . '`.teses set autor = ?, titulo = ?, ano = ?, instituicao = ?, orientador = ?, tipo = ? WHERE id = ?";
+                    $sql = "UPDATE teses set autor = ?, titulo = ?, ano = ?, instituicao = ?, orientador = ?, tipo = ? WHERE id = ?";
                     $q = $pdo->prepare($sql);
 
                     $q->execute(array($autor, $titulo, $ano, $instituicao, $orientador, $tipo, $id));
@@ -86,7 +86,7 @@ if (!is_user_logged_in()) {
                     header("Location: /new-teses/");
                 }
             } else {
-                $sql = "SELECT * FROM `' . DBLINEA_NAME . '`.teses where id = ?";
+                $sql = "SELECT * FROM teses where id = ?";
                 $q = $pdo->prepare($sql);
                 $q->execute(array($id));
                 $row = $q->fetch(PDO::FETCH_ASSOC);

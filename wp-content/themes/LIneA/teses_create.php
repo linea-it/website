@@ -60,7 +60,7 @@ if (!is_user_logged_in()) {
                 
 			    // update data
 			    if ($valid) {
-			        $sql = "INSERT INTO `' . DBLINEA_NAME . '`.teses (autor, instituicao, tipo, orientador, ano, titulo) VALUES (?,?,?,?,?,?)";
+			        $sql = "INSERT INTO teses (autor, instituicao, tipo, orientador, ano, titulo) VALUES (?,?,?,?,?,?)";
                     $q = $pdo->prepare($sql);
                     
                     $q->execute(array($autor, $instituicao, $tipo, $orientador, $ano, $titulo));
