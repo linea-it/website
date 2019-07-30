@@ -25,7 +25,7 @@ if (!is_user_logged_in()) {
                 if ($id != null) {
                     $pdo = Database::connect();
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql = "SELECT * from teses WHERE id = ?";
+                    $sql = "SELECT * from `' . DBLINEA_NAME . '`.teses WHERE id = ?";
                     $q = $pdo->prepare($sql);
                     $q->execute(array($id));
                     $result = $q->fetchAll();
