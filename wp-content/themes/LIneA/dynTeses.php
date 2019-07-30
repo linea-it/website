@@ -40,7 +40,7 @@ Template Name: Teses
 	       		$login = 'desativado';
 	       	}
 
-	       	echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/afiliados_create.php"> Adicionar </a>' : '');
+	       	echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/teses_create.php"> Adicionar </a>' : '');
 
 
             function gera_tabela($con, $lista, $titulo, $login) {
