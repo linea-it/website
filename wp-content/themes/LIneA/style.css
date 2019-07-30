@@ -2460,3 +2460,25 @@ ul.lrm-switcher {
 p.lrm-form-bottom-message {
     display: none;
 }
+
+
+/*Table Teses*/
+
+.table-teses-container {
+    overflow-x: auto; 
+}
+td.teses-autor-td {
+    width: 20%;
+}
+td.teses-titulo-td {
+    width: 40%;
+}
+td.teses-ano-td {
+    width: 5%;
+}
+td.teses-instituicao-td {
+    width: 5%;
+}
+td.teses-orientador-td {
+    width: 5%;
+}
