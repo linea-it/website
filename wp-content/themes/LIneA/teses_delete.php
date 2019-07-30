@@ -25,7 +25,7 @@ if (!is_user_logged_in()) {
 
                 $pdo = Database::connect();
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "DELETE from teses WHERE id = ?";
+                $sql = "DELETE from `' . DBLINEA_NAME . '`.teses WHERE id = ?";
                 $q = $pdo->prepare($sql);
                 $q->execute(array($id));
 
