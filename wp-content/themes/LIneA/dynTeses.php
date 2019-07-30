@@ -15,7 +15,7 @@ Template Name: Teses
             require 'lineadb.php';
 
 	    	$pdo = Database::connect();
-	    	$sql = 'SELECT * FROM `' . DBLINEA_NAME . '`.teses ORDER BY ano COLLATE utf8_unicode_ci';
+	    	$sql = 'SELECT * FROM teses ORDER BY ano COLLATE utf8_unicode_ci';
 	    	$prep = $pdo->prepare($sql);
 	    	$prep->execute();
 	    	$result = $prep->fetchAll();
