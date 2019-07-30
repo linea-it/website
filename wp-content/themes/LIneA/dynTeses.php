@@ -15,7 +15,7 @@ Template Name: Teses
             require 'lineadb.php';
 
 	    	$pdo = Database::connect();
-	    	$sql = 'SELECT * FROM teses ORDER BY ano';
+	    	$sql = 'SELECT * FROM teses ORDER BY ano DESC';
 	    	$prep = $pdo->prepare($sql);
 	    	$prep->execute();
 	    	$result = $prep->fetchAll();
