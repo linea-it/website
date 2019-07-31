@@ -89,6 +89,9 @@ function lpcard($row, $permissao) {
         $str .= '<a class="lpcard-edit" href="' . get_edit_post_link() . '">Edit</a>';
     }
     $str .= '</div>';
+    if (has_tag('card-break', get_the_ID())){
+        $str .= '</br>';
+    }
     return $str;
 
 }
