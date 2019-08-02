@@ -65,15 +65,12 @@ function lpcard($row, $permissao) {
         $str .= '</a>';
     }
     if ($permissao && $main_link != '') {
-        $str .= '<a href="' . $main_link . '">';
+        $str .= '<a href="' . $main_link . '" >';
     }
     $str .= '<div class="lpcard-title">';
     $str .= '   <p>' . $row['titulo'] . '</p>';
     $str .= '</div>';
     $str .= '<div class="lpcard-container">';
-    $str .= '   <div class="lpcard-content">';
-    $str .= '       <p>' . $row['content'] . '</p>';
-    $str .= '   </div>';
     $str .= '   <div class="lpcard-icon-container">';
     $str .= $row['thumb_tag'];
     $str .= '   </div>';
@@ -90,7 +87,8 @@ function lpcard($row, $permissao) {
     }
     $str .= '</div>';
     if (has_tag('card-break', get_the_ID())){
-        $str .= '</br>';
+        $str .= '</div>';
+        $str .= '<div class="lpcards-container ' . $main_card_class . '">';
     }
     return $str;
 
