@@ -46,6 +46,8 @@ $(document).ready(function(){
         $(this).toggleClass('active-filter');
     });
 
+
+
     // Set the date we're counting down to
     var dataAgendada = document.getElementById("contador").innerHTML;
     console.log(dataAgendada);
