@@ -9,3 +9,5 @@ wp-content/*.sql.gz
 movefile.yml
 wp-includes/
 wp-admin/
+wp-content/themes/twentyseventeen/
+wp-content/themes/twentynineteen/
