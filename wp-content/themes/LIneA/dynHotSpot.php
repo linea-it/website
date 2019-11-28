@@ -70,7 +70,7 @@ Template Name: HotSpot
 	       		if ( !empty($row['video']) ) {
 	       			$ytbID = getID($row['video']);
 	       			echo '<div class="ytb-video">';
-	       			echo '<img class="ytb-thumb" src="http://img.youtube.com/vi/' . $ytbID . '/hqdefault.jpg"/>';
+	       			echo '<img class="ytb-thumb" src="https://img.youtube.com/vi/' . $ytbID . '/hqdefault.jpg"/>';
 	       			echo '<a class="ytb-icon-link" onclick="loadYtbVideo(event, \'' . $ytbID . '\')"><img class="ytb-icon" src="' . get_bloginfo('template_url') . '/imagens/YouTube-icon-full_color.png"/></a>';
 	       			echo '</div>';
 				}
