@@ -24,7 +24,7 @@
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/owl.theme.default.min.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/jquery-ui.min.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400' rel='stylesheet' type='text/css'>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />	
 		<?php
