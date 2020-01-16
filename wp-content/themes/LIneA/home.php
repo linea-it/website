@@ -6,6 +6,7 @@ require 'database.php';
 require 'lineadb.php';
 require 'webinar_functions.php';
 require 'home_functions.php';
+
 ?>
 
 <div class="home-container">
@@ -150,9 +151,46 @@ require 'home_functions.php';
     </div><!--LEFT COLUMN-->
 
     <div class="home-right-column">
-        <div class="home-card news-card">
+        <div class="home-card tweets-card">
             <h2 class="home-card-title">Notícias</h2>
-            <a href="/noticias/" title="+ mais notícias">
+            <?php
+            $twitter_screen_name='LIneA_mcti';
+            $twitter_base_url='https://twitter.com/';
+            $twitter_url=$twitter_base_url.$twitter_screen_name;
+            ?>
+            <a href="<?php echo $twitter_url ?>" title="+ mais notícias">
+                <div class="card-more"></div>
+                <span class="card-more-plus">+</span>
+            </a>
+            <?php
+            
+            $num_of_tweets=3;
+            $twitter_logo_slug='twitter-logo-small-fade-100x100';
+            $tweets = get_tweets($twitter_screen_name, $num_of_tweets);
+            ?>
+            <div class="owl-carousel owl-theme">
+            <?php
+            foreach($tweets as $tweet){
+                ?>
+                <div class="tweets-item">
+                    <a href="<?php echo get_tweet_url($tweet, $twitter_base_url); ?>" title="ver tweet">
+                        <div class="tweets-img-container">
+                            <img src="<?php echo get_image_url_by_slug($twitter_logo_slug); ?>" />
+                        </div>
+                        <p class="tweets-item-title"><?php echo $tweet->text;?></p>
+                    </a>
+                    <span class="tweets-item-date"><?php echo get_tweet_date_formated($tweet, 'd \d\e F \d\e Y');?></span>
+                </div>
+                <?php
+            }
+            ?>
+            </div><!--OWL-CAROUSEL-->
+        </div><!--NEWS CARD-->
+
+
+        <div class="home-card news-card">
+            <h2 class="home-card-title">Blogs</h2>
+            <a href="/noticias/" title="+ mais blogs">
                 <div class="card-more"></div>
                 <span class="card-more-plus">+</span>
             </a>
@@ -194,7 +232,7 @@ require 'home_functions.php';
                 <?php
             }
             ?>
-        </div><!--NEWS CARD-->
+        </div><!--BLOGS CARD-->
 
         <div class="home-card webinar-card">
             <h2 class="home-card-title">Webinars</h2>
