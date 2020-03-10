@@ -156,6 +156,7 @@ require 'home_functions.php';
             <?php
             $twitter_screen_name='LIneA_mcti';
             $twitter_base_url='https://twitter.com/';
+            $twitter_news_tag=' ';
             $twitter_url=$twitter_base_url.$twitter_screen_name;
             ?>
             <a href="<?php echo $twitter_url ?>" title="+ mais notícias">
@@ -166,22 +167,12 @@ require 'home_functions.php';
             
             $num_of_tweets=3;
             $twitter_logo_slug='twitter-logo-small-fade-100x100';
-            $tweets = get_tweets($twitter_screen_name, $num_of_tweets);
+            $tweets = get_tweets($twitter_screen_name, $num_of_tweets, $twitter_news_tag);
             ?>
             <div class="owl-carousel owl-theme">
             <?php
             foreach($tweets as $tweet){
-                ?>
-                <div class="tweets-item">
-                    <a href="<?php echo get_tweet_url($tweet, $twitter_base_url); ?>" title="ver tweet">
-                        <div class="tweets-img-container">
-                            <img src="<?php echo get_image_url_by_slug($twitter_logo_slug); ?>" />
-                        </div>
-                        <p class="tweets-item-title"><?php echo $tweet->text;?></p>
-                    </a>
-                    <span class="tweets-item-date"><?php echo get_tweet_date_formated($tweet, 'd \d\e F \d\e Y');?></span>
-                </div>
-                <?php
+                show_tweet($tweet, $twitter_base_url, $twitter_logo_slug);
             }
             ?>
             </div><!--OWL-CAROUSEL-->
@@ -195,43 +186,15 @@ require 'home_functions.php';
                 <span class="card-more-plus">+</span>
             </a>
             <?php
-            $args = array( 
-                'posts_per_page' => 5,
-                'order'=> 'DESC',
-                'orderby' => 'date',
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'category',
-                        'field' => 'slug',
-                        'terms' => 'blog'
-                    )
-                )
-            );
-            $query = new WP_Query( $args );
-            if ( $query->have_posts() ) {
-                ?>
-                <div class="owl-carousel owl-theme">
+            $posts = get_blogs(5);
+            ?>
+            <div class="owl-carousel owl-theme">
                 <?php
-                while ( $query->have_posts() ) {
-                    $query->the_post();
-                    ?>
-
-                    <div class="news-item">
-                        <a href="<?php echo get_the_permalink(); ?>">
-                            <div class="news-img-container">
-                                <?php echo the_post_thumbnail('full');; ?>
-                            </div>
-                            <h3 class="news-item-title"><?php echo get_the_title();?></h3>
-                        </a>
-                        <span class="news-item-date"><?php echo get_the_date('d \d\e F \d\e Y'); ?></span>
-                    </div>
-                    <?php
+                foreach($posts as $post_object){
+                    show_blog($post_object);
                 }
                 ?>
-                </div><!--OWL-CAROUSEL-->
-                <?php
-            }
-            ?>
+            </div><!--OWL-CAROUSEL-->
         </div><!--BLOGS CARD-->
 
         <div class="home-card webinar-card">
