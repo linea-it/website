@@ -152,3 +152,26 @@ function show_blog($post_object){
 
     echo $str;
 }
+
+function merge_tweets_and_blogs($tweets, $blogs, $array_limit){
+    $news = array();
+    foreach($tweets as $tweet){
+        $item = ['type'=>'tweet', 'date'=>get_tweet_date($tweet), 'obj'=>$tweet];
+        array_push($news, $item);
+    }
+    foreach($blogs as $blog){
+        $item = ['type'=>'blog', 'date'=>$blog->date, 'obj'=>$blog];
+        array_push($news, $item);
+    }
+    usort($news, 'news_compare');
+    return array_chunk(array_reverse($news), $array_limit)[0];
+}
+
+function news_compare($x, $y){
+    if ($x['date'] == $y['date'])
+    return 0;
+    else if ($x['date'] > $y['date'])
+    return 1;
+    else
+    return -1;
+}
