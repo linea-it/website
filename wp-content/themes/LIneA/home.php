@@ -162,7 +162,7 @@ require 'home_functions.php';
 
             $twitter_screen_name='LIneA_mcti';
             $twitter_base_url='https://twitter.com/';
-            $twitter_news_tag=' ';
+            $twitter_news_tag='#LIneANewsfeed';
             $twitter_url=$twitter_base_url.$twitter_screen_name;
 
             $num_of_tweets=$num_max_news;
