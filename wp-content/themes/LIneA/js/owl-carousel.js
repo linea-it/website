@@ -35,7 +35,7 @@ $(document).ready(function() {
   		$(this).addClass("active");
   	});
 
-      $('.news-card .owl-carousel').owlCarousel({
+      $('.news-card .owl-carousel, .tweets-card .owl-carousel').owlCarousel({
         loop:true,
         margin:10,
         nav:true,

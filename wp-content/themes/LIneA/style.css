@@ -1939,6 +1939,43 @@ table td.data {
     color: #ccc;
     font-style: italic;
 }
+
+.news-card .tweets-item {
+    width: 90%;
+    margin: 0 auto;
+	position: relative;
+	padding: 0 0 2% 0;
+}
+.tweets-img-container {
+    width: 20%;
+    display: inline-block;
+}
+.tweets-img-container img {
+    border-radius: 3px;
+    box-shadow: 2px 2px 1px -1px #444;
+    max-width: 100px;
+}
+.tweets-item-title {
+	display: inline-block;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    padding-left: 10px;
+    max-height: 6em;
+    line-height: 1.2em;
+    overflow: hidden;
+    color: #fff;
+    margin: 0;
+}
+.tweets-item-date {
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    font-size: .8em;
+    color: #ccc;
+    font-style: italic;
+}
+
 .webinar-card-container {
     width: 90%;
     display: block;
@@ -2080,6 +2117,14 @@ a.page-card-link:hover {
     }
     .news-item-title {
         font-size: 1em;
+	}
+	.tweets-img-container {
+        width: 30%;
+    }
+    .tweets-item-title {
+		font-size: 1em;
+		width: 70%;
+		max-height: 4.9em;
     }
     .webinar-card-photo-container {
         width: 30%;

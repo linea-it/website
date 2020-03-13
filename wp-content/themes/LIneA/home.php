@@ -6,6 +6,7 @@ require 'database.php';
 require 'lineadb.php';
 require 'webinar_functions.php';
 require 'home_functions.php';
+
 ?>
 
 <div class="home-container">
@@ -152,49 +153,40 @@ require 'home_functions.php';
     <div class="home-right-column">
         <div class="home-card news-card">
             <h2 class="home-card-title">Notícias</h2>
-            <a href="/noticias/" title="+ mais notícias">
+            <a href="/noticias/" title="+ mais blogs">
                 <div class="card-more"></div>
                 <span class="card-more-plus">+</span>
             </a>
             <?php
-            $args = array( 
-                'posts_per_page' => 5,
-                'order'=> 'DESC',
-                'orderby' => 'date',
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'category',
-                        'field' => 'slug',
-                        'terms' => 'blog'
-                    )
-                )
-            );
-            $query = new WP_Query( $args );
-            if ( $query->have_posts() ) {
-                ?>
-                <div class="owl-carousel owl-theme">
-                <?php
-                while ( $query->have_posts() ) {
-                    $query->the_post();
-                    ?>
+            $num_max_news = 5;
 
-                    <div class="news-item">
-                        <a href="<?php echo get_the_permalink(); ?>">
-                            <div class="news-img-container">
-                                <?php echo the_post_thumbnail('full');; ?>
-                            </div>
-                            <h3 class="news-item-title"><?php echo get_the_title();?></h3>
-                        </a>
-                        <span class="news-item-date"><?php echo get_the_date('d \d\e F \d\e Y'); ?></span>
-                    </div>
-                    <?php
+            $twitter_screen_name='LIneA_mcti';
+            $twitter_base_url='https://twitter.com/';
+            $twitter_news_tag='#LIneANewsfeed';
+            $twitter_url=$twitter_base_url.$twitter_screen_name;
+
+            $num_of_tweets=$num_max_news;
+            $twitter_logo_slug='twitter-logo-small-fade-100x100';
+            $tweets = get_tweets($twitter_screen_name, $num_of_tweets, $twitter_news_tag);
+
+            $blogs = get_blogs($num_max_news);
+            
+            $news_list = merge_tweets_and_blogs($tweets, $blogs, $num_max_news);
+
+            ?>
+            <div class="owl-carousel owl-theme">
+                <?php
+                foreach($news_list as $news){
+                    if ($news['type'] == 'tweet'){
+                        show_tweet($news['obj'], $twitter_base_url, $twitter_logo_slug);
+                    }
+                    else if ($news['type'] == 'blog'){
+                        show_blog($news['obj']);
+                    }
                 }
                 ?>
-                </div><!--OWL-CAROUSEL-->
-                <?php
-            }
-            ?>
-        </div><!--NEWS CARD-->
+            </div><!--OWL-CAROUSEL-->
+        </div><!--BLOGS CARD-->
 
         <div class="home-card webinar-card">
             <h2 class="home-card-title">Webinars</h2>
