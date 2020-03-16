@@ -45,7 +45,7 @@ function page_link_container($page_id, $title='', $link='', $image_id='') {
 }
 
 function get_tweets($screen_name, $count, $tag){
-    $ch = curl_init('https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name='.$screen_name.'&count='.$count);
+    $ch = curl_init('https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name='.$screen_name.'&count='.$count.'&tweet_mode=extended');
     $authorization = "Authorization: Bearer ".TWITTER_KEY;
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization ));
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
@@ -56,7 +56,7 @@ function get_tweets($screen_name, $count, $tag){
     curl_close($ch);
     $tweets = json_decode($result);
     foreach ($tweets as $tweet){
-        if (substr_count($tweet->text, $tag) > 0) {
+        if (substr_count($tweet->full_text, $tag) > 0) {
             array_push($tweets_with_tag, $tweet);
         }
     }
@@ -74,7 +74,7 @@ function show_tweet($tweet, $twitter_base_url, $twitter_logo_slug){
     $str .= '        <div class="tweets-img-container">';
     $str .= '            <img src="' . get_image_url_by_slug($twitter_logo_slug) .'" />';
     $str .= '        </div>';
-    $str .= '        <p class="tweets-item-title">' . $tweet->text . '</p>';
+    $str .= '        <p class="tweets-item-title">' . $tweet->full_text . '</p>';
     $str .= '    </a>';
     $str .= '    <span class="tweets-item-date">' . get_tweet_date_formated($tweet, 'd \d\e F \d\e Y') . '</span>';
     $str .= '</div>';
