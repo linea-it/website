@@ -1,6 +1,0 @@
-AuthUserFile /home/webmaster/webdev/bootstrap/search/.htpasswd
-AuthGroupFile /dev/null
-AuthName "Acesso restrito"
-AuthType Basic
-
-require valid-user
