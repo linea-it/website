@@ -10,10 +10,16 @@ function get_eventos_por_ano($posts) {
     return $years;
 }
 
-function get_eventos_envolvimento($con, $envolvimento) {
-  $sql = "SELECT * FROM eventos WHERE envolvimento = :envolvimento ORDER BY data_inicial DESC";
+function get_eventos_envolvimento($con, $envolvimento, $tipo, $login) {
+  $sql = 'SELECT * FROM eventos WHERE envolvimento = :envolvimento AND (tipo = :tipo OR tipo = "Ambos") ';
+  if (!$login){
+    $sql .= "AND publico = TRUE ";
+  }
+  $sql .= "ORDER BY data_inicial DESC";
+
   $prep = $con->prepare($sql);
   $prep->bindParam(':envolvimento', $envolvimento, PDO::PARAM_STR);
+  $prep->bindParam(':tipo', $tipo, PDO::PARAM_STR);
   $prep->execute();
   $result = $prep->fetchAll();
   return $result;
@@ -29,7 +35,7 @@ function get_org_porte($organizacao, $porte) {
   return $array_porte;
 }
 
-function show_evento($row_evento, $login) {
+function show_evento($row_evento, $login_adm) {
   $data_inicial = strtotime($row_evento['data_inicial']);
   $data_final = strtotime($row_evento['data_final']);
   $elemento = '';
@@ -44,8 +50,8 @@ function show_evento($row_evento, $login) {
   $elemento .= '<span> - </span>';
   $elemento .= show_intervalo_data($data_inicial, $data_final);
   $elemento .= '<span class="evento-local">' . $row_evento['local'] . '</span>';
-  $elemento .= show_action_icon('Editar', 'update.png', 'eventos_update.php', $row_evento['id'], $login);
-  $elemento .= show_action_icon('Apagar', 'delete.png', 'eventos_delete.php', $row_evento['id'], $login);
+  $elemento .= show_action_icon('Editar', 'update.png', 'eventos_update.php', $row_evento['id'], $login_adm);
+  $elemento .= show_action_icon('Apagar', 'delete.png', 'eventos_delete.php', $row_evento['id'], $login_adm);
   $elemento .= '</div>';
   return $elemento;
 }
@@ -66,11 +72,11 @@ function show_intervalo_data($data_inicial, $data_final) {
   return $elemento;
 }
 
-function show_action_icon($action, $action_img, $action_file, $id, $login) {
+function show_action_icon($action, $action_img, $action_file, $id, $login_adm) {
   $action_img_url = get_bloginfo('template_url') . '/imagens//' . $action_img;
   $action_file_url = get_bloginfo('template_url') . '/' . $action_file;
   $elemento = '<span class="action_icon eventos_icon">';
-  $elemento .= '<a class="icon ' . $login . '" href="' . $action_file_url . '?id=' . $id . '" title="' . $action . '">';
+  $elemento .= '<a class="icon ' . $login_adm . '" href="' . $action_file_url . '?id=' . $id . '" title="' . $action . '">';
   $elemento .= '<img src="' . $action_img_url . '" alt="' . $action . 'icon"/>';
   $elemento .= '</a>';
   $elemento .= '</span>';
