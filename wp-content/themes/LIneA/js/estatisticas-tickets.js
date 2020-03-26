@@ -10,15 +10,18 @@ jQuery(function($){
       
       // A classe da aba ativa
       var active_tab_class = 'active-tab-menu';
+      var inactive_tab_class = 'inactive-tab-menu';
       
       // Captura o atributo data-tab e gera uma classe
       var the_tab = '.' + a.attr('data-tab');
       
       // Remove a classe de aba ativa de todas as abas
       $('.tabs-menu ul li a').removeClass(active_tab_class);
+      $('.tabs-menu ul li a').addClass(inactive_tab_class);
       
       // Adiciona a classe de aba ativa apenas no link clicado
       a.addClass(active_tab_class);
+      a.removeClass(inactive_tab_class);
       
       // Adiciona um CSS para ocultar todas as abas
       $('.tabs-content .tabs').css({

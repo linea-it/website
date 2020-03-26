@@ -19,6 +19,9 @@ if (!is_user_logged_in()) {
 			if ( !empty($_GET['id'])) {
 			    $id = $_REQUEST['id'];
 			}
+			if ( !empty($_GET['last_page'])) {
+				$last_page = $_REQUEST['last_page'];
+			}
 
 			if ( null==$id ) {
 			    header("Location: /");
@@ -43,6 +46,7 @@ if (!is_user_logged_in()) {
 				} else {
 					$publico = 0;
 				}
+				$last_page = $_POST['last_page'];
 
 		    // validate input
 		    $valid = true;
@@ -75,7 +79,7 @@ if (!is_user_logged_in()) {
 		        $q_log->execute(array($wp_username, resumo($titulo)));
 
 		        Database::disconnect();
-		        header("Location: /eventos/");
+		        header("Location: /" . $last_page . "/");
 		    }
 			} else {
 			    $pdo = Database::connect();
@@ -175,10 +179,10 @@ if (!is_user_logged_in()) {
 								    <span class="errormsg"><?php echo $linkError;?></span>
 								<?php endif; ?>
 							</div>
-
+							<input name="last_page" type="hidden" value="<?php echo $last_page; ?>">
 	            <div class="form-actions">
 	              <button type="submit" class="btn">Update</button>
-	              <a class="btn" href="/eventos/">Back</a>
+	              <a class="btn" href="/<?php echo $last_page ?>/">Back</a>
 	            </div>
             </form>
 			    </section>

@@ -39,7 +39,7 @@ Template Name: eventos
                 $login_adm = 'desativado';
             }
 
-            echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/eventos_create.php"> Adicionar </a>' : '');
+            echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/eventos_create.php?last_page=' . get_page_uri() . '"> Adicionar </a>' : '');
             ?>
             <a class="btn" onclick="showAll('evento-year-container')"> Mostrar </a>
             <a class="btn" onclick="hideAll('evento-year-container')"> Esconder </a>

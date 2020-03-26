@@ -1715,6 +1715,20 @@ a:focus {
   width: 103px;
   text-align: center;
 }
+.tabs-menu li a {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.tabs-menu li {
+    padding: 0 3px 0 0;
+}
+.inactive-tab-menu {
+    background: #777;
+    color: #aaa !important;
+}
+.inactive-tab-menu:hover{
+    background: #6f6f6f;
+}
 .tabs-menu ul li a {
   display: block;
   padding: 10px 20px;
@@ -1733,7 +1747,8 @@ a:focus {
 }
 .page .conteudo .tabs-menu li a.active-tab-menu {
     color: #fff;
-    background-color: #555;
+	background-color: #555;
+	border-right: 2px solid #4f4f4f;
 }
 
 /* Conteúdo das abas */

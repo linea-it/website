@@ -9,9 +9,16 @@ function get_eventos_por_ano($posts) {
     }
     return $years;
 }
+function get_eventos($con, $tipo, $login){
+  return get_eventos_envolvimento($con, '', $tipo, $login);
+}
 
 function get_eventos_envolvimento($con, $envolvimento, $tipo, $login) {
-  $sql = 'SELECT * FROM eventos WHERE envolvimento = :envolvimento AND (tipo = :tipo OR tipo = "Ambos") ';
+  $sql = 'SELECT * FROM eventos WHERE ';
+  if ($envolvimento != ''){
+    $sql .= 'envolvimento = :envolvimento AND ';
+  }
+  $sql .= '(tipo = :tipo OR tipo = "Ambos") ';
   if (!$login){
     $sql .= "AND publico = TRUE ";
   }
@@ -72,11 +79,24 @@ function show_intervalo_data($data_inicial, $data_final) {
   return $elemento;
 }
 
+function show_intervalo_data_calendario($data_inicial, $data_final) {
+  $elemento = '';
+  if ($data_inicial == $data_final) {
+    $elemento .= strftime('%d', $data_inicial);
+  } else if ( strftime('%m', $data_inicial) == strftime('%m', $data_final) ) {
+    $elemento .= strftime('%d', $data_inicial) . '-' . strftime('%d', $data_final);
+  } else {
+    $elemento .= strftime('%d-', $data_inicial);
+    $elemento .= strftime('%d/%m', $data_final);
+  }
+  return $elemento;
+}
+
 function show_action_icon($action, $action_img, $action_file, $id, $login_adm) {
   $action_img_url = get_bloginfo('template_url') . '/imagens//' . $action_img;
   $action_file_url = get_bloginfo('template_url') . '/' . $action_file;
   $elemento = '<span class="action_icon eventos_icon">';
-  $elemento .= '<a class="icon ' . $login_adm . '" href="' . $action_file_url . '?id=' . $id . '" title="' . $action . '">';
+  $elemento .= '<a class="icon ' . $login_adm . '" href="' . $action_file_url . '?id=' . $id . '&last_page='. get_page_uri() .'" title="' . $action . '">';
   $elemento .= '<img src="' . $action_img_url . '" alt="' . $action . 'icon"/>';
   $elemento .= '</a>';
   $elemento .= '</span>';
