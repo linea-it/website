@@ -19,9 +19,13 @@ if (!is_user_logged_in()) {
 			if ( !empty($_GET['id'])) {
 			    $id = $_REQUEST['id'];
 			}
+			if ( !empty($_GET['last_page'])) {
+				$last_page = $_REQUEST['last_page'];
+			}
 
 			if ( !empty($_POST)) {
-		    	$id = $_POST['id'];
+				$id = $_POST['id'];
+				$last_page = $_POST['last_page'];
 
 		        $pdo = Database::connect();
 		        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -39,7 +43,7 @@ if (!is_user_logged_in()) {
 		        $q_log->execute(array($wp_username, resumo($id)));
 
 		        Database::disconnect();
-		        header("Location: /eventos/");
+		        header("Location: /" . $last_page . "/");
 			}
 			?>
 
@@ -50,11 +54,12 @@ if (!is_user_logged_in()) {
 		            <form action="<?php echo get_bloginfo('template_url') . '/eventos_delete.php'; ?>" method="post">
 						<div class="grupo-input">
 							<input name="id" type="hidden" value="<?php echo $id; ?>">
+							<input name="last_page" type="hidden" value="<?php echo $last_page; ?>">
 							<p> Tem certeza que quer deletar? </p>
 						</div>
 		              	<div class="form-actions">
 		                  <button type="submit" class="btn">Sim</button>
-		                  <a class="btn" href="/eventos/">Não</a>
+		                  <a class="btn" href="/<?php echo $last_page ?>/">Não</a>
 		                </div>
 		            </form>
 		    </section>

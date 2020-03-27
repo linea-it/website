@@ -29,7 +29,7 @@
                         <div class="evento-year">
                             <?php 
                             foreach($eventos as $evento){
-                                echo show_evento($evento, $login);
+                                echo show_evento($evento, $login_adm);
                             }
                             ?>
                         </div><!--EVENTO YEAR-->
@@ -64,7 +64,7 @@
                         <div class="evento-year">
                             <?php 
                             foreach($eventos as $evento){
-                                echo show_evento($evento, $login);
+                                echo show_evento($evento, $login_adm);
                             }
                             ?>
                         </div><!--EVENTO YEAR-->

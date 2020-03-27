@@ -19,6 +19,9 @@ if (!is_user_logged_in()) {
 			if ( !empty($_GET['id'])) {
 			    $id = $_REQUEST['id'];
 			}
+			if ( !empty($_GET['last_page'])) {
+				$last_page = $_REQUEST['last_page'];
+			}
 
 			if ( null==$id ) {
 			    header("Location: /");
@@ -37,6 +40,13 @@ if (!is_user_logged_in()) {
 				$envolvimento = $_POST['envolvimento'];
 				$porte = $_POST['porte'];
 				$link = $_POST['link'];
+				$tipo = $_POST['tipo'];
+				if (isset($_POST['publico'])){
+					$publico = 1;
+				} else {
+					$publico = 0;
+				}
+				$last_page = $_POST['last_page'];
 
 		    // validate input
 		    $valid = true;
@@ -55,9 +65,9 @@ if (!is_user_logged_in()) {
 		    if ($valid) {
 		        $pdo = Database::connect();
 		        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		        $sql = "UPDATE eventos set titulo = ?, data_inicial = ?, data_final = ?, local = ?, envolvimento = ?, porte = ?, link = ? WHERE id = ?";
+		        $sql = "UPDATE eventos set titulo = ?, data_inicial = ?, data_final = ?, local = ?, envolvimento = ?, porte = ?, link = ?, tipo = ?, publico = ? WHERE id = ?";
 		        $q = $pdo->prepare($sql);
-		        $q->execute(array($titulo, $data_inicial, $data_final, $local, $envolvimento, $porte, $link, $id));
+		        $q->execute(array($titulo, $data_inicial, $data_final, $local, $envolvimento, $porte, $link, $tipo, $publico, $id));
 
 		        // Inserindo LOG da operação no banco
 		        $sql_log = "INSERT INTO log (wp_username, datetime, action, page, resumo) VALUES (?, now(), 'UPDATE', 'EVENTOS', ?)";
@@ -69,7 +79,7 @@ if (!is_user_logged_in()) {
 		        $q_log->execute(array($wp_username, resumo($titulo)));
 
 		        Database::disconnect();
-		        header("Location: /eventos/");
+		        header("Location: /" . $last_page . "/");
 		    }
 			} else {
 			    $pdo = Database::connect();
@@ -85,7 +95,9 @@ if (!is_user_logged_in()) {
 					$envolvimento = $row['envolvimento'];
 					$porte = $row['porte'];
 			    $link = $row['link'];
-			    $id = $row['id'];
+				$id = $row['id'];
+				$tipo = $row['tipo'];
+				$publico = $row['publico'];
 			    Database::disconnect();
 			}
 			?>
@@ -123,6 +135,23 @@ if (!is_user_logged_in()) {
 		  					<label>Data final</label>
 		  					<input class="datepicker" type="text" name="data_final" placeholder="AAAA-MM-DD" value="<?php echo !empty($data_final)?$data_final:'';?>">
 		  				</div>
+							
+							<!-- Tipo -->
+							<div class="grupo-input">
+								<label for="tipo" class="control-label">Tipo:</label>
+								<select name="tipo" id="tipo">
+									<option value="Ambos" <?php echo $tipo == 'Ambos'?'selected':''; ?> >Ambos</option>
+									<option value="Calendario" <?php echo $tipo == 'Calendario'?'selected':''; ?> >Calendario</option>
+									<option value="Evento" <?php echo $tipo == 'Evento'?'selected':''; ?> >Evento</option>
+								</select>
+							</div>
+
+							<!-- Publico -->
+							<div class="grupo-input">
+								<?php $checked = $publico ?'checked':''; ?>
+								<input type="checkbox" name="publico" value="<?php echo $publico ?>" <?php echo $checked ?>>
+								<span>Público</span>
+							</div>
 
 							<!-- Envolvimento -->
 							<div class="grupo-input">
@@ -150,10 +179,10 @@ if (!is_user_logged_in()) {
 								    <span class="errormsg"><?php echo $linkError;?></span>
 								<?php endif; ?>
 							</div>
-
+							<input name="last_page" type="hidden" value="<?php echo $last_page; ?>">
 	            <div class="form-actions">
 	              <button type="submit" class="btn">Update</button>
-	              <a class="btn" href="/eventos/">Back</a>
+	              <a class="btn" href="/<?php echo $last_page ?>/">Back</a>
 	            </div>
             </form>
 			    </section>
