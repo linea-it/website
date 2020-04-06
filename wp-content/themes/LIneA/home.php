@@ -165,7 +165,7 @@ require 'home_functions.php';
             $twitter_news_tag='#LIneANewsfeed';
             $twitter_url=$twitter_base_url.$twitter_screen_name;
 
-            $num_of_tweets=$num_max_news;
+            $num_of_tweets=100;
             $twitter_logo_slug='twitter-logo-small-fade-100x100';
             $tweets = get_tweets($twitter_screen_name, $num_of_tweets, $twitter_news_tag);
 
@@ -178,7 +178,7 @@ require 'home_functions.php';
                 <?php
                 foreach($news_list as $news){
                     if ($news['type'] == 'tweet'){
-                        show_tweet($news['obj'], $twitter_base_url, $twitter_logo_slug);
+                        show_tweet($news['obj'], $twitter_base_url, $twitter_logo_slug, $twitter_news_tag);
                     }
                     else if ($news['type'] == 'blog'){
                         show_blog($news['obj']);
