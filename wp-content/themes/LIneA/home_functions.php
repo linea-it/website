@@ -67,14 +67,14 @@ function get_tweet_url($tweet, $twitter_base_url){
     return $twitter_base_url.$tweet->user->screen_name.'/status/'.$tweet->id_str;
 }
 
-function show_tweet($tweet, $twitter_base_url, $twitter_logo_slug){
+function show_tweet($tweet, $twitter_base_url, $twitter_logo_slug, $twitter_news_tag){
     $str = '';
     $str .= '<div class="tweets-item">';
     $str .= '    <a href="' . get_tweet_url($tweet, $twitter_base_url). '" title="ver tweet">';
     $str .= '        <div class="tweets-img-container">';
     $str .= '            <img src="' . get_image_url_by_slug($twitter_logo_slug) .'" />';
     $str .= '        </div>';
-    $str .= '        <p class="tweets-item-title">' . $tweet->full_text . '</p>';
+    $str .= '        <p class="tweets-item-title">' . str_replace($twitter_news_tag, '<span class="tweet-hashtag">'.$twitter_news_tag.'</span>', $tweet->full_text) . '</p>';
     $str .= '    </a>';
     $str .= '    <span class="tweets-item-date">' . get_tweet_date_formated($tweet, 'd \d\e F \d\e Y') . '</span>';
     $str .= '</div>';

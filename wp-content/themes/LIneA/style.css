@@ -1990,6 +1990,9 @@ table td.data {
     color: #ccc;
     font-style: italic;
 }
+.tweet-hashtag{
+	color: rgb(108, 184, 230);
+}
 
 .webinar-card-container {
     width: 90%;
