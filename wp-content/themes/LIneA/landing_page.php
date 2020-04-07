@@ -7,12 +7,16 @@ Template Name: landing_page
 
 require_once 'database.php';
 require_once 'landing_page_functions.php';
+require_once 'access_functions.php';
 
 if (is_user_logged_in()) {
         $login = 'ativado';
     } else {
         $login = 'desativado';
 }
+
+$auth_terms = get_user_auth_terms();
+$auth_tax_query = build_auth_tax_query($auth_terms);
 
 ?>
 <?php get_header(); ?>
@@ -42,12 +46,14 @@ if (is_user_logged_in()) {
                 'order' => 'ASC',
                 'posts_per_page' => -1,
                 'tax_query' => array (
+                    'relation' => 'AND',
                     array(
                         'taxonomy' => 'lpcategory',
                         'field' => 'term_id',
                         'terms' => $lpcategory,
                         'include_children' => false
-                    )
+                    ),
+                    $auth_tax_query
                 )
             );
             $main_card_class="";
@@ -59,12 +65,14 @@ if (is_user_logged_in()) {
                 'order' => 'ASC',
                 'posts_per_page' => -1,
                 'tax_query' => array (
+                    'relation' => 'AND',
                     array(
                         'taxonomy' => 'lpcategory',
                         'field' => 'slug',
                         'terms' => 'main-lpcards',
                         'include_children' => false
-                    )
+                    ),
+                    $auth_tax_query
                 )
             );
             $main_card_class="main-lpcard";

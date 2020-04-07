@@ -82,7 +82,7 @@ function lpcard($row, $permissao) {
     } else {
         $str .= '<span class="lpcard-desativado">RESTRITO</span>';
     }
-    if (is_user_logged_in()){
+    if (current_user_can('administrator')){
         $str .= '<a class="lpcard-edit" href="' . get_edit_post_link() . '">Edit</a>';
     }
     $str .= '</div>';
@@ -114,7 +114,7 @@ function main_lpcard($row) {
     $str .= '   </div>';
     $str .= '</div>';
     $str .= '</a>';
-    if (is_user_logged_in()){
+    if (current_user_can('administrator')){
         $str .= '<a class="lpcard-edit" href="' . get_edit_post_link() . '">Edit</a>';
     }
     $str .= '</div>';
@@ -122,4 +122,18 @@ function main_lpcard($row) {
 
 }
 
+function build_auth_tax_query($auth_terms){
+    $tax_query = array(
+        'relation' => 'OR'
+    );
+    foreach($auth_terms as $term){
+        array_push($tax_query, array(
+            'taxonomy' => 'lpaccess',
+            'field' => 'slug',
+            'terms' => $term,
+            'include_children' => false
+        ));
+    }
+    return $tax_query;
+}
 ?>
