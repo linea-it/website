@@ -1,5 +1,7 @@
 <?php
 
+require_once 'access_functions.php';
+
 function the_breadcrumb($grupo_id){
     $args = array(
         'format'    => 'slug',
@@ -42,15 +44,8 @@ function get_lpcards_por_subgrupo($subgrupo) {
     return $query_result;
 }
 
-function get_permissao($post_id) {
-    if (is_user_logged_in()) {
-        return true;
-    } else {
-        return !has_tag('restrito', $post_id);
-    }
-}
-
-function lpcard($row, $permissao) {
+function lpcard($row, $post_id, $auth) {
+    $permissao = $auth->can_access($post_id);
     $main_link = $row['main_link'];
     $class_desativado = '';
     if (!$permissao) {
@@ -58,7 +53,7 @@ function lpcard($row, $permissao) {
     }
     $str = '';
     $str .= '<div class="lpcard ' . $class_desativado . '">';
-    if ($row['alt_link'] != ''){
+    if ($row['alt_link'] != '' && $permissao){
         $str .= '<a href="' . $row['alt_link'] . '" title="+ leia mais">';
         $str .= '   <div class="card-more"></div>';
         $str .= '   <span class="card-more-plus">+</span>';
@@ -66,6 +61,8 @@ function lpcard($row, $permissao) {
     }
     if ($permissao && $main_link != '') {
         $str .= '<a href="' . $main_link . '" >';
+    } else if (!is_user_logged_in()) {
+        $str .= '<a class="lrm-login">';
     }
     $str .= '<div class="lpcard-title">';
     $str .= '   <p>' . $row['titulo'] . '</p>';
@@ -80,7 +77,10 @@ function lpcard($row, $permissao) {
             $str .= '</a>';
         }
     } else {
-        $str .= '<span class="lpcard-desativado">RESTRITO</span>';
+        if (!is_user_logged_in()){
+            $str .= '</a>';
+        }
+        $str .= '<span class="lpcard-desativado"><img src="' . get_bloginfo('template_url') . '/imagens/round_lock_black_24dp.png" alt="lock icon"/></span>';
     }
     if (current_user_can('administrator')){
         $str .= '<a class="lpcard-edit" href="' . get_edit_post_link() . '">Edit</a>';
@@ -94,17 +94,26 @@ function lpcard($row, $permissao) {
 
 }
 
-function main_lpcard($row) {
+function main_lpcard($row, $post_id, $auth) {
+    $permissao = $auth->can_access($post_id);
     $main_link = $row['main_link'];
+    $class_desativado = '';
+    if (!$permissao) {
+        $class_desativado = 'lpcard-desativado';
+    }
     $str = '';
-    $str .= '<div class="lpcard main-lpcard">';
-    if ($row['alt_link'] != ''){
+    $str .= '<div class="lpcard main-lpcard '. $class_desativado .'">';
+    if ($row['alt_link'] != '' && $permissao){
         $str .= '<a href="' . $row['alt_link'] . '" title="+ leia mais">';
         $str .= '   <div class="card-more"></div>';
         $str .= '   <span class="card-more-plus">+</span>';
         $str .= '</a>';
     }
-    $str .= '<a href="' . $main_link . '">';
+    if ($permissao && $main_link != '') {
+        $str .= '<a href="' . $main_link . '" >';
+    } else if (!is_user_logged_in()) {
+        $str .= '<a class="lrm-login">';
+    }
     $str .= '<div class="lpcard-title main-lpcard">';
     $str .= '   <p>' . $row['titulo'] . '</p>';
     $str .= '</div>';
@@ -113,7 +122,16 @@ function main_lpcard($row) {
     $str .= $row['thumb_tag'];
     $str .= '   </div>';
     $str .= '</div>';
-    $str .= '</a>';
+    if ($permissao) {
+        if ( $main_link != ''){
+            $str .= '</a>';
+        }
+    } else {
+        if (!is_user_logged_in()){
+            $str .= '</a>';
+        }
+        $str .= '<span class="lpcard-desativado"><img src="' . get_bloginfo('template_url') . '/imagens/round_lock_black_24dp.png" alt="lock icon"/></span>';
+    }
     if (current_user_can('administrator')){
         $str .= '<a class="lpcard-edit" href="' . get_edit_post_link() . '">Edit</a>';
     }
