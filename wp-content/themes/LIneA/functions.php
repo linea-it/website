@@ -1009,12 +1009,40 @@ function criar_taxonomia_lpcategory() {
 }
 add_action('init', 'criar_taxonomia_lpcategory');
 
+function criar_taxonomia_lpaccess() {
+    $nome_singular = 'Landing Access';
+    $nome = 'Landing Accesses';
+    $labels = array(
+        'name'                       => $nome,
+        'singular_name'              => $nome_singular,
+        'search_items'               => 'Procurar ' . $nome,
+        'popular_items'              => $nome . 'Populares',
+        'all_items'                  => 'Todas as ' . $nome,
+        'edit_item'                  => 'Editar ' . $nome_singular,
+        'update_item'                => 'Atualizar ' . $nome_singular,
+        'add_new_item'               => 'Adicionar nova ' . $nome_singular,
+        'new_item_name'              => 'Nova ' . $nome_singular,
+        'separate_items_with_commas' => 'Separar ' . $nome . ' com vírgulas',
+        'add_or_remove_items'        => 'Adicionar ou remover ' . $nome,
+        'choose_from_most_used'      => 'Escolher entre as ' . $nome . ' mais usadas',
+        'not_found'                  => 'Nenhuma ' . $nome_singular . ' encontrada',
+        'menu_name'                  => $nome_plural
+    );
+    $args = array(
+        'hierarchical'          => true,
+        'labels'                => $labels
+    );
+    register_taxonomy( 'lpaccess', 'lpcard' , $args);
+}
+add_action('init', 'criar_taxonomia_lpaccess');
+
 function muda_colunas_lista_lpcard( $cols ) {
     $cols = array(
       'cb' => '<input type="checkbox" />',
       'title' => __('Title'),
       'author' => __('Author'),
       'taxonomy-lpcategory' => 'Landing Categories',
+      'taxonomy-lpaccess' => 'Landing Accesses',
       'tags' => __('Tags'),
       'date' => __('Date')
     );
