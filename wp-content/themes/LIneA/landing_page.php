@@ -15,8 +15,7 @@ if (is_user_logged_in()) {
         $login = 'desativado';
 }
 
-$auth_terms = get_user_auth_terms();
-$auth_tax_query = build_auth_tax_query($auth_terms);
+$auth = new AuthLIneA();
 
 ?>
 <?php get_header(); ?>
@@ -46,14 +45,12 @@ $auth_tax_query = build_auth_tax_query($auth_terms);
                 'order' => 'ASC',
                 'posts_per_page' => -1,
                 'tax_query' => array (
-                    'relation' => 'AND',
                     array(
                         'taxonomy' => 'lpcategory',
                         'field' => 'term_id',
                         'terms' => $lpcategory,
                         'include_children' => false
-                    ),
-                    $auth_tax_query
+                    )
                 )
             );
             $main_card_class="";
@@ -65,14 +62,12 @@ $auth_tax_query = build_auth_tax_query($auth_terms);
                 'order' => 'ASC',
                 'posts_per_page' => -1,
                 'tax_query' => array (
-                    'relation' => 'AND',
                     array(
                         'taxonomy' => 'lpcategory',
                         'field' => 'slug',
                         'terms' => 'main-lpcards',
                         'include_children' => false
-                    ),
-                    $auth_tax_query
+                    )
                 )
             );
             $main_card_class="main-lpcard";
@@ -100,11 +95,10 @@ $auth_tax_query = build_auth_tax_query($auth_terms);
                     'thumb_tag' => $thumb_tag,
                     'content' => $content
                 );
-                $permissao = get_permissao(get_the_ID());
                 if ($lpcategory != 0) {
-                    echo lpcard($row_lpcard, $permissao);
+                    echo lpcard($row_lpcard, get_the_ID(), $auth);
                 } else {
-                    echo main_lpcard($row_lpcard);
+                    echo main_lpcard($row_lpcard, get_the_ID(), $auth);
                 }
 
             }
