@@ -54,13 +54,13 @@ Template Name: Afiliados
             <h1>Afiliados <span class="countnum card"><?php printf("%02d", count($result) - count($inativos)) ?></span></h1>
 
             <?php
-	    	if (current_user_can('administrator')) {
+	    	if (current_user_can('administrator') || current_user_can('editor')) {
 	       		$login = 'ativado';
 	       	} else {
 	       		$login = 'desativado';
 	       	}
 
-	       	echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/afiliados_create.php"> Adicionar </a>' : '');
+	       	echo ((current_user_can('administrator') || current_user_can('editor')) ? '<a class="btn" href="'. get_bloginfo('template_url') .'/afiliados_create.php"> Adicionar </a>' : '');
 
 
 				function gera_tabela($con, $lista, $titulo, $login) {

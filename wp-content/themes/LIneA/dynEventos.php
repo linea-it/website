@@ -33,17 +33,17 @@ Template Name: eventos
             $org_nacional = get_eventos_por_ano(get_org_porte($organizacao, 'Nacional'));
             $org_internacional = get_eventos_por_ano(get_org_porte($organizacao, 'Internacional'));
 
-            if (current_user_can('administrator')) {
+            if (current_user_can('administrator') || current_user_can('editor')) {
                 $login_adm = 'ativado';
             } else {
                 $login_adm = 'desativado';
             }
 
-            echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/eventos_create.php?last_page=' . get_page_uri() . '"> Adicionar </a>' : '');
+            echo ((current_user_can('administrator') || current_user_can('editor')) ? '<a class="btn" href="'. get_bloginfo('template_url') .'/eventos_create.php?last_page=' . get_page_uri() . '"> Adicionar </a>' : '');
             ?>
             <a class="btn" onclick="showAll('evento-year-container')"> Mostrar </a>
             <a class="btn" onclick="hideAll('evento-year-container')"> Esconder </a>
-            
+
             <?php
 
             $category = get_the_category();
