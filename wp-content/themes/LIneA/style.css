@@ -252,6 +252,13 @@ div.ngg-navigation {
 .ngg-navigation a:hover {
 	background-color: #654c32 !important;
 }
+.wp-block-embed figcaption {
+    margin-top: .5em;
+    margin-bottom: 1em;
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+}
 .wp-block-image .aligncenter>figcaption, 
 .wp-block-image .alignleft>figcaption, 
 .wp-block-image .alignright>figcaption, 
@@ -2061,6 +2068,27 @@ h3.webinar-card-title {
     padding-bottom: .5%;
     justify-content: space-evenly;
 }
+
+.image-eventos {
+	height: 326px;
+	background-repeat: no-repeat!important;
+    background-position: center!important;
+    background-size: contain!important;
+    background-repeat: no-repeat!important;
+}
+
+.SNCT {
+	background: url(/wp-content/uploads/2021/09/18SNCT.jpg);
+}
+
+.curso-github {
+	background: url(/wp-content/uploads/2021/09/curso-github.jpg);
+}
+
+.LSST-bolsas-encerradas{
+    background: url(/wp-content/uploads/2021/09/LSST-bolsas-encerradas.jpg);
+}
+
 .page-link-container {
     padding: 1% 1%;
 }

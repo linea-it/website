@@ -22,6 +22,6 @@ define (APRESENTACAO_URL, $apresentacao_url);
 define (WEBINAR_DEFAULT_TITLE, 'Title: to be Announced');
 define (FOTO_DEFAULT, 'male-avatar.jpg');
 define (MAILCHIMP_SUBS, 'http://eepurl.com/O_UR1');
-define (WEBINAR_GTM_LINK, 'https://zoom.us/j/596761139');
+define (WEBINAR_GTM_LINK, 'https://us02web.zoom.us/j/83208086786?pwd=RmkzK09WdFRhTWVKVFc2eCt4VlNMZz09');
 define (AT_IMG_URL, $at_img_url);
 ?>

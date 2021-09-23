@@ -77,7 +77,6 @@ Template Name: Afiliados
 		    	echo '<th>Nome <span class="countnum card">' . sprintf("%02d", count($lista)) . '</span></th>';
 					echo '<th>Projetos</th>';
 		    	echo '<th>Instituição</th>';
-		    	echo '<th>e-mail</th>';
 					echo '</tr>';
 					echo '</thead>';
 					echo '<tbody>';
@@ -88,7 +87,6 @@ Template Name: Afiliados
 		    		echo '<td class="afiliados-nome-td">' . $row['nome'] . '<a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_read.php?id='. $row['id'] .'" title="Descrição"><img src="' . get_bloginfo('template_url') . '/imagens/ic_description_white_24dp_2x.png" alt="Read icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_update.php?id='. $row['id'] .'" title="Editar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_create_white_24dp_2x.png" alt="Edit icon"/></a><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .'/afiliados_delete.php?id='. $row['id'] .'" title="Apagar"><img src="' . get_bloginfo('template_url') . '/imagens/ic_remove_circle_outline_white_24dp_2x.png" alt="Remove icon"/></a></td>';
 		    		echo '<td class="afiliados-projetos-td">' . $projetos_string . '</td>';
 		    		echo '<td class="afiliados-instituicao-td">' . $row['instituicao'] . '</td>';
-                    echo '<td>' . esconde_email(get_pref_email($row)) . '</td>';
 		    		echo '</tr>';
 					}
 		    	echo '</tbody>';
