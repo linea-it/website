@@ -151,44 +151,23 @@ require 'home_functions.php';
     </div><!--LEFT COLUMN-->
 
     <div class="home-right-column">
-        <div class="home-card news-card">
-            <h2 class="home-card-title">Notícias</h2>
-            <a href="/noticias/" title="+ mais blogs">
-                <div class="card-more"></div>
-                <span class="card-more-plus">+</span>
-            </a>
+		<div class="home-card anuncios-card">
+            <h2 class="home-card-title">Anúncios</h2>
             <?php
-            $num_max_news = 5;
-
-            $twitter_screen_name='LIneA_mcti';
-            $twitter_base_url='https://twitter.com/';
-            $twitter_news_tag='#LIneANewsfeed';
-            $twitter_url=$twitter_base_url.$twitter_screen_name;
-
-            $num_of_tweets=100;
-            $twitter_logo_slug='twitter-logo-small-fade-100x100';
-            $tweets = get_tweets($twitter_screen_name, $num_of_tweets, $twitter_news_tag);
-
-            $blogs = get_blogs($num_max_news);
-            
-            $news_list = merge_tweets_and_blogs($tweets, $blogs, $num_max_news);
-
+            $num_max_news = 4;           
+            $news_list = ["SNCT", "LSST-bolsas-encerradas", "curso-github", "vera-rubin"];
             ?>
             <div class="owl-carousel owl-theme">
                 <?php
-                foreach($news_list as $news){
-                    if ($news['type'] == 'tweet'){
-                        show_tweet($news['obj'], $twitter_base_url, $twitter_logo_slug, $twitter_news_tag);
-                    }
-                    else if ($news['type'] == 'blog'){
-                        show_blog($news['obj']);
-                    }
-                }
-                ?>
-            </div><!--OWL-CAROUSEL-->
-        </div><!--BLOGS CARD-->
-
-        <div class="home-card webinar-card">
+               foreach($news_list as $news){
+                   show_event($news);
+               }
+               ?>
+            </div>
+            <!--OWL-CAROUSEL-->
+        </div>
+		
+		<div class="home-card webinar-card">
             <h2 class="home-card-title">Webinars</h2>
             <a href="/seminarios/" title="+ mais webinars">
                 <div class="card-more"></div>
@@ -246,17 +225,87 @@ require 'home_functions.php';
             </div><!--WEBINAR-CARD-CONTAINER-->
         </div><!--WEBINAR CARD-->
 
-        <div class="home-card gallery-card">
-            <h2 class="home-card-title">Galerias</h2>
-            <div class="card-links-container">
-                <?php echo page_link_container(6039, 'Fotos'); ?> <!--AFILIADOS-->
-                
-                <?php echo page_link_container(2547, 'Imagens'); ?> <!--IMAGENS-->
+        <div class="home-card news-card">
+            <h2 class="home-card-title">Blogs</h2>
+            <a href="/noticias/" title="+ mais blogs">
+                <div class="card-more"></div>
+                <span class="card-more-plus">+</span>
+            </a>
+            <?php
+            $num_max_news = 5;
 
-                <?php echo page_link_container(5016, 'Vídeos'); ?> <!--VIDEOS-->
+            $twitter_screen_name='LIneA_mcti';
+            $twitter_base_url='https://twitter.com/';
+            $twitter_news_tag='#LIneANewsfeed';
+            $twitter_url=$twitter_base_url.$twitter_screen_name;
 
-            </div><!--GALLERIES CONTAINER-->
-        </div><!--GALLERY CARD-->
+            $num_of_tweets=0;
+            $twitter_logo_slug='twitter-logo-small-fade-100x100';
+            $tweets = array();
+
+            $blogs = get_blogs($num_max_news);
+            
+            $news_list = merge_tweets_and_blogs($tweets, $blogs, $num_max_news);
+
+            ?>
+            <div class="owl-carousel owl-theme">
+                <?php
+                foreach($news_list as $news){
+                    if ($news['type'] == 'tweet'){
+                        show_tweet($news['obj'], $twitter_base_url, $twitter_logo_slug, $twitter_news_tag);
+                    }
+                    else if ($news['type'] == 'blog'){
+                        show_blog($news['obj']);
+                    }
+                }
+                ?>
+            </div><!--OWL-CAROUSEL-->
+        </div><!--BLOGS CARD-->
+		
+		<div class="home-card news-card">
+            <h2 class="home-card-title">Tweets</h2>
+            <a href="https://twitter.com/LIneA_mcti" title="+ mais blogs">
+                <div class="card-more"></div>
+                <span class="card-more-plus">+</span>
+            </a>
+            <?php
+            $num_max_news = 5;
+
+            $twitter_screen_name='LIneA_mcti';
+            $twitter_base_url='https://twitter.com/';
+            $twitter_news_tag='#LIneANewsfeed';
+            $twitter_url=$twitter_base_url.$twitter_screen_name;
+
+            $num_of_tweets=100;
+            $twitter_logo_slug='twitter-logo-small-fade-100x100';
+            $tweets = get_tweets($twitter_screen_name, $num_of_tweets, $twitter_news_tag);
+
+            $blogs = array();
+            
+            $news_list = merge_tweets_and_blogs($tweets, $blogs, $num_max_news);
+
+            ?>
+            <div class="owl-carousel owl-theme">
+                <?php
+                foreach($news_list as $news){
+                    if ($news['type'] == 'tweet'){
+                        show_tweet($news['obj'], $twitter_base_url, $twitter_logo_slug, $twitter_news_tag);
+                    }
+                    else if ($news['type'] == 'blog'){
+                        show_blog($news['obj']);
+                    }
+                }
+                ?>
+            </div><!--OWL-CAROUSEL-->
+        </div><!--BLOGS CARD-->
+		
+		<div class="home-card">
+            <h2 class="home-card-title">Calendar</h2>
+            <div class="responsive-iframe-container small-container">
+				<iframe src="https://calendar.google.com/calendar/embed?src=1bq055k622gl2cmto4i546p5ck%40group.calendar.google.com&amp;ctz=America%2FSao_Paulo&mode=AGENDA&showTitle=0" style="border: 0" scrolling="no" width="100%" height="200" frameborder="0"></iframe>
+			</div>
+            <!--WEBINAR-CARD-CONTAINER-->
+        </div>
 
     </div><!--RIGHT COLUMN-->
 

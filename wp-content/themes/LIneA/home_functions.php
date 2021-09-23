@@ -81,6 +81,35 @@ function show_tweet($tweet, $twitter_base_url, $twitter_logo_slug, $twitter_news
     echo $str;
 }
 
+function show_event($event){
+	
+	if($event == "vera-rubin") {
+		$str = '';
+		$str .= '<a href="https://cdn2.webdamdb.com/md_sYBHX76kUC58gfV5.mp4">';
+		$str .= '	<iframe width="685" height="324" src="https://www.youtube.com/embed/xnvTT_IZYcY?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=xnvTT_IZYcY" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';	
+		$str .= '</a>';
+		echo $str;
+	} else {
+		$str = '';
+		
+		if ($event == "curso-github") {
+			$str .= '<a href="/2021/09/edicao-piloto-curso-git-github/">';
+		} else if ($event == "SNCT") {
+			$str .= '<a href="/wp-content/uploads/2021/09/SNCT.jpg">';
+		} else {
+			$str .= '<a href="#">';
+		}
+
+		$str .= '   <div>';
+		$str .= '        <div class="image-eventos card-links-container image-eventos '.$event.'">';
+		$str .= '        </div>';
+		$str .= '   </div>';
+		$str .= '</a>';
+		echo $str;
+	
+	}
+}
+
 function get_tweet_date($tweet){
     // Twitter format "Thu Apr 06 15:28:43 +0000 2017"
     return DateTime::createFromFormat('D M d H:i:s O Y', $tweet->created_at);
