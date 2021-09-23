@@ -101,7 +101,7 @@ Template Name: Webinars
             ?>
             <h1>Webinars <span class="countnum card"><?php echo sprintf("%02d", count($result)) ?></span></h1>
             <?php
-	    	if (current_user_can('administrator')) {
+	    	if (current_user_can('administrator') || current_user_can('editor')) {
 	       		$login = 'ativado';
 	       	} else {
 	       		$login = 'desativado';
@@ -111,8 +111,8 @@ Template Name: Webinars
 
 	    	</p>';
 
-	       	echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/webinars_create.php"> Adicionar </a>' : '');
-	       	echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/log_view.php"> Exibir Log </a>' : '');
+	       	echo ((current_user_can('administrator') || current_user_can('editor')) ? '<a class="btn" href="'. get_bloginfo('template_url') .'/webinars_create.php"> Adicionar </a>' : '');
+	       	echo ((current_user_can('administrator') || current_user_can('editor')) ? '<a class="btn" href="'. get_bloginfo('template_url') .'/log_view.php"> Exibir Log </a>' : '');
 
 	        // Select
 
@@ -174,7 +174,7 @@ Template Name: Webinars
 	        echo '</div>';
 
 	        // Show All Button
-            
+
             ?>
             <a class="btn showall" href="#" onclick="showAllWebinars(event)"> Mostrar </a>
             <a class="btn" onclick="hideAll('webinar-year-container')"> Esconder </a>

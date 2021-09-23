@@ -19,7 +19,7 @@ Template Name: Teses
 	    	$prep = $pdo->prepare($sql);
 	    	$prep->execute();
 	    	$result = $prep->fetchAll();
-	    	
+
 	    	$teses_doutorado = array();
 			$teses_mestrado = array();
 
@@ -34,13 +34,13 @@ Template Name: Teses
             <h1>Teses e Dissertações <span class="countnum card"><?php printf("%02d", count($result)) ?></span></h1>
 
             <?php
-	    	if (current_user_can('administrator')) {
+	    	if (current_user_can('administrator') || current_user_can('editor')) {
 	       		$login = 'ativado';
 	       	} else {
 	       		$login = 'desativado';
 	       	}
 
-	       	echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/teses_create.php"> Adicionar </a>' : '');
+	       	echo ((current_user_can('administrator') || current_user_can('editor')) ? '<a class="btn" href="'. get_bloginfo('template_url') .'/teses_create.php"> Adicionar </a>' : '');
 
 
             function gera_tabela($con, $lista, $titulo, $login) {

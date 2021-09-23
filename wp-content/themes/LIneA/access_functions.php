@@ -8,15 +8,15 @@ Class AuthLIneA {
     );
 
     private $lpaccess_taxonomy = 'lpaccess';
-    
+
     private $user_auth_terms = array();
 
     function __construct(){
         $this->user_auth();
     }
-    
+
     public function user_auth(){
-        if (current_user_can('administrator')){
+        if (current_user_can('administrator') || current_user_can('editor')){
             $this->user_auth_terms = $this->auth_groups['LIneA Admin'];
         } else if (is_user_logged_in()){
             $this->user_auth_terms = $this->auth_groups['LIneA User'];
@@ -24,7 +24,7 @@ Class AuthLIneA {
             $this->user_auth_terms = $this->auth_groups['Public'];
         }
     }
-    
+
     public function get_user_auth_terms(){
         return $this->user_auth_terms;
     }

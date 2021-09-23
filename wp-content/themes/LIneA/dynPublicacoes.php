@@ -33,14 +33,14 @@ Template Name: Publicacoes
             }
 
 	    	Database::disconnect();
-	    	if (current_user_can('administrator')) {
+	    	if (current_user_can('administrator') || current_user_can('editor')) {
 	       		$login = 'ativado';
 	       	} else {
 	       		$login = 'desativado';
 	       	}
-	    	echo '<h3>Publicações com participação de afiliados ao LIneA (2008 – Presente) <span class="countnum card">' . sprintf("%02d", count($result)) . '</h3>'; 
-	       	
-	       	echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/public_create.php"> Adicionar </a>' : '');
+	    	echo '<h3>Publicações com participação de afiliados ao LIneA (2008 – Presente) <span class="countnum card">' . sprintf("%02d", count($result)) . '</h3>';
+
+	       	echo ((current_user_can('administrator') || current_user_can('editor')) ? '<a class="btn" href="'. get_bloginfo('template_url') .'/public_create.php"> Adicionar </a>' : '');
             echo '<a class="btn" onclick="showAll(\'ano-container\')"> Mostrar </a>';
             echo '<a class="btn" onclick="hideAll(\'ano-container\')"> Esconder </a>';
 
@@ -57,7 +57,7 @@ Template Name: Publicacoes
 	    	// Submetidos
 
 	    	echo '<h3>Submetidos <span class="countnum card">' . sprintf("%02d", count($submetidos)) . '</span></h3>';
-            
+
             $ano = '';
 	    	foreach ($submetidos as $row) {
 	    		if ($row['link'] == ''){
@@ -85,7 +85,7 @@ Template Name: Publicacoes
             }
             echo '</ol>';
             echo '</div>';
-	    		    	
+
 
 	    	// Aceitos
 
@@ -145,17 +145,17 @@ Template Name: Publicacoes
                 }
                 echo '<li><em>' . $row['titulo'] . ' ' . $row['autor'] . ' <strong>' . $row['ano'] . '</strong>, <strong><a class=' . $link_class . ' href=' . $link .
                 '>'. $row['revista'] . '</a></strong>, ' . $row['numpagina'] . '.</em><a class="icon ' . $login . '" href="'. get_bloginfo('template_url') .
-                '/public_update.php?id='. $row['id'] .'"><img src="' . get_bloginfo('template_url') . 
-                '/imagens/ic_create_white_24dp_2x.png" alt="Edit icon"/></a><a class="icon ' . $login . 
-                '" href="'. get_bloginfo('template_url') .'/public_delete.php?id='. $row['id'] .'"><img src="' . get_bloginfo('template_url') . 
+                '/public_update.php?id='. $row['id'] .'"><img src="' . get_bloginfo('template_url') .
+                '/imagens/ic_create_white_24dp_2x.png" alt="Edit icon"/></a><a class="icon ' . $login .
+                '" href="'. get_bloginfo('template_url') .'/public_delete.php?id='. $row['id'] .'"><img src="' . get_bloginfo('template_url') .
                 '/imagens/ic_remove_circle_outline_white_24dp_2x.png" alt="Remove icon"/></a></li>';
             }
             echo '</ol>';
             echo '</div>';
-	           
+
         ?>
 
-	
-				
+
+
 	</div><div class="clearboth"></div>
 <?php get_footer(); ?>

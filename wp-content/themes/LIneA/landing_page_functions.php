@@ -23,7 +23,7 @@ function the_breadcrumb($grupo_id){
         $output .= '</p>';
         echo $output;
     }
-    
+
 }
 
 function get_lpcards_por_subgrupo($subgrupo) {
@@ -82,7 +82,7 @@ function lpcard($row, $post_id, $auth) {
         }
         $str .= '<span class="lpcard-desativado"><img src="' . get_bloginfo('template_url') . '/imagens/round_lock_black_24dp.png" alt="lock icon"/></span>';
     }
-    if (current_user_can('administrator')){
+    if (current_user_can('administrator') || current_user_can('editor')){
         $str .= '<a class="lpcard-edit" href="' . get_edit_post_link() . '">Edit</a>';
     }
     $str .= '</div>';
@@ -132,7 +132,7 @@ function main_lpcard($row, $post_id, $auth) {
         }
         $str .= '<span class="lpcard-desativado"><img src="' . get_bloginfo('template_url') . '/imagens/round_lock_black_24dp.png" alt="lock icon"/></span>';
     }
-    if (current_user_can('administrator')){
+    if (current_user_can('administrator') || current_user_can('editor')){
         $str .= '<a class="lpcard-edit" href="' . get_edit_post_link() . '">Edit</a>';
     }
     $str .= '</div>';

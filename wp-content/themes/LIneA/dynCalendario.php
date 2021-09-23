@@ -26,16 +26,16 @@ Template Name: calendario
 
             $calendario = array_reverse(get_eventos($pdo, 'Calendario', $login));
             $calendario_por_ano = get_eventos_por_ano($calendario);
-            
-            if (current_user_can('administrator')) {
+
+            if (current_user_can('administrator') || current_user_can('editor')) {
                 $login_adm = 'ativado';
             } else {
                 $login_adm = 'desativado';
             }
 
-            echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/eventos_create.php?last_page=' . get_page_uri() . '"> Adicionar </a>' : '');
+            echo ((current_user_can('administrator') || current_user_can('editor')) ? '<a class="btn" href="'. get_bloginfo('template_url') .'/eventos_create.php?last_page=' . get_page_uri() . '"> Adicionar </a>' : '');
             ?>
-            
+
             <div class="content">
             <div class="tabs-content">
                 <div class="tabs-menu">
@@ -117,7 +117,7 @@ Template Name: calendario
             </div>
             <?php
 
-            
+
 
         ?>
     </div>

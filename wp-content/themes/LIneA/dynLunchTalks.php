@@ -23,14 +23,14 @@ Template Name: LunchTalks
 
 	    	Database::disconnect();
 
-	    	if (current_user_can('administrator')) {
+	    	if (current_user_can('administrator') || current_user_can('editor')) {
 	       		$login = 'ativado';
 	       	} else {
 	       		$login = 'desativado';
 	       	}
 	    	echo '<p></p>';
 
-	       	echo (current_user_can('administrator') ? '<a class="btn" href="'. get_bloginfo('template_url') .'/lunchtalks_create.php"> Adicionar </a>' : '');
+	       	echo ((current_user_can('administrator') || current_user_can('editor')) ? '<a class="btn" href="'. get_bloginfo('template_url') .'/lunchtalks_create.php"> Adicionar </a>' : '');
 
 	       	function showWebinarSumary($row, $login) {
 	       		$data = date('d/m', strtotime($row['data']));
@@ -48,7 +48,7 @@ Template Name: LunchTalks
 	       		echo '<p class="titulo">' . $row['titulo'] . '</p>';
 	       		echo '<div class="clearboth"></div>';
                 // Tabs
-                
+
                 if (is_user_logged_in()){
                     echo '<ul class="tab">';
                     echo '<li><a class="tablinks" onclick="openTab(event, \'resumo\')">Abstract</a></li>';
@@ -56,7 +56,7 @@ Template Name: LunchTalks
                     echo '<li><a class="tablinks" onclick="openTab(event, \'video\')">Video</a></li>';
                     echo '</ul>';
                 }
-                   
+
 	       		// div apresentacao
 	       		echo '<div id="apresentacao" class="tabcontent hide">';
 	       		if ( !empty($row['apresentacao']) ) {
