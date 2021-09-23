@@ -6,6 +6,7 @@ wp-content/wflogs
 wp-content/gallery
 wp-content/plugins
 wp-content/*.sql.gz
+wp-content/cache
 movefile.yml
 wp-includes/
 wp-admin/
