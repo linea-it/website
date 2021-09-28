@@ -96,6 +96,8 @@ function show_event($event){
 			$str .= '<a href="/2021/09/edicao-piloto-curso-git-github/">';
 		} else if ($event == "SNCT") {
 			$str .= '<a href="/wp-content/uploads/2021/09/SNCT.jpg">';
+		} else if ($event == "Conheca-o-LIneA") {
+			$str .= '<a href="https://youtu.be/jC-k85tfd0Y">';
 		} else {
 			$str .= '<a href="#">';
 		}
