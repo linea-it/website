@@ -2077,20 +2077,12 @@ h3.webinar-card-title {
     background-repeat: no-repeat!important;
 }
 
+.boas-vinda-bolsistas {
+	background: url(/wp-content/uploads/2021/10/boas-vinda-bolsistas.jpg);
+}
+
 .Conheca-o-LIneA {
 	background: url(/wp-content/uploads/2021/09/Conheca-o-LIneA.jpg);
-}
-
-.SNCT {
-	background: url(/wp-content/uploads/2021/09/18SNCT.jpg);
-}
-
-.curso-github {
-	background: url(/wp-content/uploads/2021/09/curso-github.jpg);
-}
-
-.LSST-bolsas-encerradas{
-    background: url(/wp-content/uploads/2021/09/LSST-bolsas-encerradas.jpg);
 }
 
 .page-link-container {

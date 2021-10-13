@@ -92,10 +92,8 @@ function show_event($event){
 	} else {
 		$str = '';
 		
-		if ($event == "curso-github") {
-			$str .= '<a href="/2021/09/edicao-piloto-curso-git-github/">';
-		} else if ($event == "SNCT") {
-			$str .= '<a href="/wp-content/uploads/2021/09/SNCT.jpg">';
+		if ($event == "boas-vinda-bolsistas") {
+			$str .= '<a href="/2021/10/o-linea-da-as-boas-vindas-aos-bolsistas-andressa-e-gabriel/">';
 		} else if ($event == "Conheca-o-LIneA") {
 			$str .= '<a href="https://youtu.be/jC-k85tfd0Y">';
 		} else {
