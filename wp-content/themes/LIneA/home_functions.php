@@ -92,7 +92,9 @@ function show_event($event){
 	} else {
 		$str = '';
 		
-		if ($event == "boas-vinda-bolsistas") {
+		if ($event == "linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst") {
+			$str .= '<a href="/2021/10/linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst/">';
+		} else if ($event == "boas-vinda-bolsistas") {
 			$str .= '<a href="/2021/10/o-linea-da-as-boas-vindas-aos-bolsistas-andressa-e-gabriel/">';
 		} else if ($event == "Conheca-o-LIneA") {
 			$str .= '<a href="https://youtu.be/jC-k85tfd0Y">';
