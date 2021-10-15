@@ -155,7 +155,7 @@ require 'home_functions.php';
             <h2 class="home-card-title">Anúncios</h2>
             <?php
             $num_max_news = 4;           
-            $news_list = ["boas-vinda-bolsistas", "Conheca-o-LIneA", "vera-rubin"];
+            $news_list = ["linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst", "boas-vinda-bolsistas", "Conheca-o-LIneA", "vera-rubin"];
             ?>
             <div class="owl-carousel owl-theme">
                 <?php
