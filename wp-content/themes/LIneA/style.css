@@ -268,7 +268,7 @@ div.ngg-navigation {
     text-align: left;
     padding: 1% 2%;
     margin: 0;
-    background-color: #616161;
+    background-color: #ebebeb;
     box-shadow: 2px 2px 1px -1px #444;
 }
 .wp-caption-text {
@@ -293,8 +293,9 @@ img.attachment-thumbnail {
 }
 figure {
 	border-radius: 3px;
-	background: #616161;
+	background: #ebebeb;
 	box-shadow: 2px 2px 1px -1px #444;
+	width: max-content;
 }
 figure img {
 	border-top-right-radius: 3px;
@@ -2712,13 +2713,4 @@ span.lpcard-desativado img {
     .lpcard:nth-child(3n) {
         margin-right: 0;
     }
-}
-
-figure {
-    background: #ebebeb;
-	width: max-content;
-}
-
-.wp-block-image {
-    background-color: #ebebeb!important;
 }
