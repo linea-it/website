@@ -2713,3 +2713,12 @@ span.lpcard-desativado img {
         margin-right: 0;
     }
 }
+
+figure {
+    background: #ebebeb;
+	width: max-content;
+}
+
+.wp-block-image {
+    background-color: #ebebeb!important;
+}
