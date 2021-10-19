@@ -86,7 +86,7 @@ function show_event($event){
 	if($event == "vera-rubin") {
 		$str = '';
 		$str .= '<a href="https://cdn2.webdamdb.com/md_sYBHX76kUC58gfV5.mp4">';
-		$str .= '	<iframe width="685" height="324" src="https://www.youtube.com/embed/xnvTT_IZYcY?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=xnvTT_IZYcY" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';	
+		$str .= '	<iframe width="100%" height="324" src="https://www.youtube.com/embed/xnvTT_IZYcY?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=xnvTT_IZYcY" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';	
 		$str .= '</a>';
 		echo $str;
 	} else {
