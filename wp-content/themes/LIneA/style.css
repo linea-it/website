@@ -263,12 +263,12 @@ div.ngg-navigation {
 .wp-block-image .alignleft>figcaption, 
 .wp-block-image .alignright>figcaption, 
 .wp-block-image.is-resized>figcaption{
-    display: table-caption;
-    color: #fff;
+	display: table-caption;
+    color: #000;
     text-align: left;
     padding: 1% 2%;
     margin: 0;
-    background-color: #ebebeb;
+    background-color: #616161;
     box-shadow: 2px 2px 1px -1px #444;
 }
 .wp-caption-text {
@@ -292,10 +292,9 @@ img.attachment-thumbnail {
 	border-bottom-left-radius: 3px;
 }
 figure {
-	border-radius: 3px;
-	background: #ebebeb;
-	box-shadow: 2px 2px 1px -1px #444;
-	width: max-content;
+    border-radius: 3px;
+    background: #616161;
+    box-shadow: 2px 2px 1px -1px #444;
 }
 figure img {
 	border-top-right-radius: 3px;
@@ -2076,6 +2075,10 @@ h3.webinar-card-title {
     background-position: center!important;
     background-size: contain!important;
     background-repeat: no-repeat!important;
+}
+
+.Preparando-para-o-LSST {
+	background: url(/wp-content/uploads/2021/10/Preparando-para-o-LSST-1.png);
 }
 
 .linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst {

@@ -86,13 +86,15 @@ function show_event($event){
 	if($event == "vera-rubin") {
 		$str = '';
 		$str .= '<a href="https://cdn2.webdamdb.com/md_sYBHX76kUC58gfV5.mp4">';
-		$str .= '	<iframe width="685" height="324" src="https://www.youtube.com/embed/xnvTT_IZYcY?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=xnvTT_IZYcY" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';	
+		$str .= '	<iframe width="100%" height="324" src="https://www.youtube.com/embed/xnvTT_IZYcY?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=xnvTT_IZYcY" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';	
 		$str .= '</a>';
 		echo $str;
 	} else {
 		$str = '';
 		
-		if ($event == "linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst") {
+		if ($event == "Preparando-para-o-LSST") {
+			$str .= '<a href="/2021/10/preparando-para-o-lsst/">';
+		} else if ($event == "linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst") {
 			$str .= '<a href="/2021/10/linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst/">';
 		} else if ($event == "boas-vinda-bolsistas") {
 			$str .= '<a href="/2021/10/o-linea-da-as-boas-vindas-aos-bolsistas-andressa-e-gabriel/">';
