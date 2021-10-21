@@ -92,7 +92,9 @@ function show_event($event){
 	} else {
 		$str = '';
 		
-		if ($event == "Preparando-para-o-LSST") {
+		if ($event == "LIneA-oferece-Curso-de-Git-basico") {
+			$str .= '<a href="/2021/10/curso-git-basico/">';
+		} else if ($event == "Preparando-para-o-LSST") {
 			$str .= '<a href="/2021/10/preparando-para-o-lsst/">';
 		} else if ($event == "linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst") {
 			$str .= '<a href="/2021/10/linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst/">';
