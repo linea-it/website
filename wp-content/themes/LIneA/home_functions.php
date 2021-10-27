@@ -92,7 +92,9 @@ function show_event($event){
 	} else {
 		$str = '';
 		
-		if ($event == "LIneA-oferece-Curso-de-Git-basico") {
+        if ($event == "LSSTC-Catalyst-Fellowship-Inscricoes") {
+			$str .= '<a href="/2021/10/lsstc-catalyst-fellowship-inicio-do-periodo-de-inscricoes/">';
+		} else if ($event == "LIneA-oferece-Curso-de-Git-basico") {
 			$str .= '<a href="/2021/10/curso-git-basico/">';
 		} else if ($event == "Preparando-para-o-LSST") {
 			$str .= '<a href="/2021/10/preparando-para-o-lsst/">';
