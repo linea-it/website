@@ -116,14 +116,10 @@ require 'home_functions.php';
             </div>
         </div><!--DATA-ACCESS CARD-->
 
-        <!--div class="home-card">
-            <div class="card-links-container">-->
-                <?php echo page_link_container(4230); ?>  <!--PUBLICACOES>-->
 
-                <?php echo page_link_container(4865); ?> <!--ACESSO A DADOS>-->
+        <?php echo page_link_container(4230); ?>  <!--PUBLICACOES>-->
 
-            </div><!--GENERAL CONTAINER>-->
-        </div><!--GENERAL CARD-->
+        <?php echo page_link_container(4865); ?> <!--ACESSO A DADOS>-->
 
     </div><!--LEFT COLUMN-->
 
