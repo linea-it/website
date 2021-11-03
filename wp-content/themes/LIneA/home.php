@@ -10,6 +10,7 @@ require 'home_functions.php';
 ?>
 
 <div class="home-container">
+
     <div class="home-left-column">
         <div class="home-card main-card">
             <div class="main-card-linea">
@@ -116,12 +117,12 @@ require 'home_functions.php';
         </div><!--DATA-ACCESS CARD-->
 
         <!--div class="home-card">
-            <div class="card-links-container">
-                <?php echo page_link_container(4230); ?> <!--PUBLICACOES>
+            <div class="card-links-container">-->
+                <?php echo page_link_container(4230); ?>  <!--PUBLICACOES>-->
 
-                <?php echo page_link_container(4865); ?> <!--ACESSO A DADOS>
+                <?php echo page_link_container(4865); ?> <!--ACESSO A DADOS>-->
 
-            </div><!--GENERAL CONTAINER>
+            </div><!--GENERAL CONTAINER>-->
         </div><!--GENERAL CARD-->
 
     </div><!--LEFT COLUMN-->
