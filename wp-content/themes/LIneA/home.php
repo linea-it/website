@@ -117,9 +117,9 @@ require 'home_functions.php';
         </div><!--DATA-ACCESS CARD-->
 
 
-        <?php echo page_link_container(4230); ?>  <!--PUBLICACOES>-->
+        <?php /* echo page_link_container(4230);*/ ?>  <!--PUBLICACOES>-->
 
-        <?php echo page_link_container(4865); ?> <!--ACESSO A DADOS>-->
+        <?php /* echo page_link_container(4865); */ ?> <!--ACESSO A DADOS>-->
 
     </div><!--LEFT COLUMN-->
 
