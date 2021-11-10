@@ -98,7 +98,9 @@ function show_event($event){
 	} else {
 		$str = '';
 		
-        if ($event == "LSSTC-Catalyst-Fellowship-Inscricoes") {
+        if ($event == "LSST-Brazil") {
+			$str .= '<a href="/2021/11/save-the-date-lsst-brazil-2021/">';
+		} else if ($event == "LSSTC-Catalyst-Fellowship-Inscricoes") {
 			$str .= '<a href="/2021/10/lsstc-catalyst-fellowship-inicio-do-periodo-de-inscricoes/">';
 		} else if ($event == "Preparando-para-o-LSST") {
 			$str .= '<a href="/2021/10/preparando-para-o-lsst/">';
