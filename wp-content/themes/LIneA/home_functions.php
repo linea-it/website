@@ -83,10 +83,16 @@ function show_tweet($tweet, $twitter_base_url, $twitter_logo_slug, $twitter_news
 
 function show_event($event){
 	
-	if($event == "vera-rubin") {
+	if($event == "LSST-Camera") {
 		$str = '';
-		$str .= '<a href="https://cdn2.webdamdb.com/md_sYBHX76kUC58gfV5.mp4">';
-		$str .= '	<iframe width="100%" height="324" src="https://www.youtube.com/embed/xnvTT_IZYcY?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=xnvTT_IZYcY" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';	
+		$str .= '<a href="https://youtu.be/97TasD-REMo">';
+		$str .= '	<iframe width="100%" height="324" src="https://www.youtube.com/embed/qZXXaX8nEwI?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=qZXXaX8nEwI" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';	
+		$str .= '</a>';
+		echo $str;
+	} else if($event == "vera-rubin") {
+		$str = '';
+		$str .= '<a href="https://youtu.be/brFt7hBmt4s">';
+		$str .= '	<iframe width="100%" height="324" src="https://www.youtube.com/embed/avccw7bC0uk?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=avccw7bC0uk" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';	
 		$str .= '</a>';
 		echo $str;
 	} else {
@@ -94,14 +100,10 @@ function show_event($event){
 		
         if ($event == "LSSTC-Catalyst-Fellowship-Inscricoes") {
 			$str .= '<a href="/2021/10/lsstc-catalyst-fellowship-inicio-do-periodo-de-inscricoes/">';
-		} else if ($event == "LIneA-oferece-Curso-de-Git-basico") {
-			$str .= '<a href="/2021/10/curso-git-basico/">';
 		} else if ($event == "Preparando-para-o-LSST") {
 			$str .= '<a href="/2021/10/preparando-para-o-lsst/">';
 		} else if ($event == "linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst") {
 			$str .= '<a href="/2021/10/linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst/">';
-		} else if ($event == "boas-vinda-bolsistas") {
-			$str .= '<a href="/2021/10/o-linea-da-as-boas-vindas-aos-bolsistas-andressa-e-gabriel/">';
 		} else if ($event == "Conheca-o-LIneA") {
 			$str .= '<a href="https://youtu.be/jC-k85tfd0Y">';
 		} else {
