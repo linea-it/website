@@ -463,7 +463,7 @@ div.logo-euniverso-header-container img {
 }
 .header .sociais {
     display: inline-block;
-	/* width: 20%; */
+	width: 20%;
 	align-self: flex-end;
 }
 .header .sociais img{
@@ -472,7 +472,7 @@ div.logo-euniverso-header-container img {
 }
 .header .sociais a{
     display: inline-block;
-    width: 40%;
+    width: 30%;
 }
 
 @media (max-width:768px) {
