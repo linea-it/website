@@ -70,6 +70,7 @@
 					<div class="sociais">
 						<a href="https://www.facebook.com/linea.mcti"><img src="<?php bloginfo('template_url'); ?>/imagens/facebook_circle.png" /></a>
 						<a href="https://twitter.com/LIneA_mcti"><img src="<?php bloginfo('template_url'); ?>/imagens/twitter_circle.png" /></a>
+						<a href="https://www.instagram.com/linea_mcti/"><img src="<?php bloginfo('template_url'); ?>/imagens/instagram_circle.png.png" /></a>
 					</div>
 				</div>
 			</div>
