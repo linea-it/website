@@ -99,7 +99,7 @@ function show_event($event){
 		$str = '';
 		
         if ($event == "LSST-Brazil") {
-			$str .= '<a href="/2021/11/save-the-date-lsst-brazil-2021/">';
+			$str .= '<a href="https://lsst-brazil2021.linea.gov.br/">';
 		} else if ($event == "LSSTC-Catalyst-Fellowship-Inscricoes") {
 			$str .= '<a href="/2021/10/lsstc-catalyst-fellowship-inicio-do-periodo-de-inscricoes/">';
 		} else if ($event == "Preparando-para-o-LSST") {
