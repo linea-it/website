@@ -259,9 +259,9 @@ div.ngg-navigation {
     text-align: center;
     font-size: 13px;
 }
-.wp-block-image .aligncenter>figcaption, 
-.wp-block-image .alignleft>figcaption, 
-.wp-block-image .alignright>figcaption, 
+.wp-block-image .aligncenter>figcaption,
+.wp-block-image .alignleft>figcaption,
+.wp-block-image .alignright>figcaption,
 .wp-block-image.is-resized>figcaption{
 	display: table-caption;
     color: #000;
@@ -436,12 +436,12 @@ div.logo-euniverso-header-container {
 div.logo-linea-header-container {
     margin: 0 1% .5% 2%;
 }
-div.logo-linea-header-container, 
+div.logo-linea-header-container,
 div.logo-inct-header-container,
 div.logo-euniverso-header-container {
     display: inline-block;
 }
-div.logo-linea-header-container img, 
+div.logo-linea-header-container img,
 div.logo-inct-header-container img,
 div.logo-euniverso-header-container img {
     width: 100%;
@@ -765,7 +765,7 @@ div.conteudo table.center-table {
 /*Table Afiliados*/
 
 .table-afiliados-container {
-    overflow-x: auto; 
+    overflow-x: auto;
 }
 .afiliados-foto-container {
     width: 50px;
@@ -1768,7 +1768,7 @@ a:focus {
 }
 
 
-div.tabs iframe { 
+div.tabs iframe {
     width: 100%;
 }
 
@@ -1801,7 +1801,7 @@ table td.data {
  table td.nome {
 	 width: 60%;
  }
- 
+
  table td.local {
 	 width: 30%;
  }
@@ -2079,7 +2079,12 @@ h3.webinar-card-title {
 
 .LSST-Brazil {
 	background: url(/wp-content/uploads/2021/11/LSST-BRAZIL-SITE.jpg);
-} 
+}
+
+
+.lsst-brazil-live {
+	background: url(/wp-content/uploads/2021/12/lsst-brazil-2021.jpeg);
+}
 
 .Preparando-para-o-LSST {
 	background: url(/wp-content/uploads/2021/10/Preparando-para-o-LSST-1.png);
@@ -2291,7 +2296,7 @@ ul.grid-afiliados-filters li.title {
 .grid-imagens {
     max-width: 1200px;
     margin: auto;
-} 
+}
 .grid-imagens.are-images-unloaded {
     opacity: 0;
 }
@@ -2560,7 +2565,7 @@ p.lrm-form-bottom-message {
 /*Table Teses*/
 
 .table-teses-container {
-    overflow-x: auto; 
+    overflow-x: auto;
 }
 td.teses-autor-td {
     width: 20%;

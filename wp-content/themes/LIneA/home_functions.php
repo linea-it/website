@@ -82,25 +82,27 @@ function show_tweet($tweet, $twitter_base_url, $twitter_logo_slug, $twitter_news
 }
 
 function show_event($event){
-	
+
 	if($event == "LSST-Camera") {
 		$str = '';
 		$str .= '<a href="https://youtu.be/97TasD-REMo">';
-		$str .= '	<iframe width="100%" height="324" src="https://www.youtube.com/embed/qZXXaX8nEwI?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=qZXXaX8nEwI" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';	
+		$str .= '	<iframe width="100%" height="324" src="https://www.youtube.com/embed/qZXXaX8nEwI?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=qZXXaX8nEwI" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';
 		$str .= '</a>';
 		echo $str;
 	} else if($event == "vera-rubin") {
 		$str = '';
 		$str .= '<a href="https://youtu.be/brFt7hBmt4s">';
-		$str .= '	<iframe width="100%" height="324" src="https://www.youtube.com/embed/avccw7bC0uk?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=avccw7bC0uk" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';	
+		$str .= '	<iframe width="100%" height="324" src="https://www.youtube.com/embed/avccw7bC0uk?controls=0&autoplay=1&mute=1&fs=0&loop=1&showinfo=0&playlist=avccw7bC0uk" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>';
 		$str .= '</a>';
 		echo $str;
 	} else {
 		$str = '';
-		
+
         if ($event == "LSST-Brazil") {
 			$str .= '<a href="https://lsst-brazil2021.linea.gov.br/">';
-		} else if ($event == "Preparando-para-o-LSST") {
+		} else if ($event == "lsst-brazil-live") {
+            $str .= '<a href="http://youtu.be/KUtDAj_d_X0">';
+        } else if ($event == "Preparando-para-o-LSST") {
 			$str .= '<a href="/2021/10/preparando-para-o-lsst/">';
 		} else if ($event == "linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst") {
 			$str .= '<a href="/2021/10/linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst/">';
@@ -116,7 +118,7 @@ function show_event($event){
 		$str .= '   </div>';
 		$str .= '</a>';
 		echo $str;
-	
+
 	}
 }
 
@@ -147,7 +149,7 @@ function get_image_url_by_slug($slug){
 }
 
 function get_blogs($num_posts){
-    $args = array( 
+    $args = array(
         'posts_per_page' => $num_posts,
         'order'=> 'DESC',
         'orderby' => 'date',

@@ -127,8 +127,8 @@ require 'home_functions.php';
 		<div class="home-card anuncios-card">
             <h2 class="home-card-title">Anúncios</h2>
             <?php
-            $num_max_news = 4;           
-            $news_list = ["LSST-Brazil", "vera-rubin", "LSST-Camera", "Preparando-para-o-LSST", "linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst", "Conheca-o-LIneA"];
+            $num_max_news = 4;
+            $news_list = ["lsst-brazil-live", "LSST-Brazil", "vera-rubin", "LSST-Camera", "Preparando-para-o-LSST", "linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst", "Conheca-o-LIneA"];
             ?>
             <div class="owl-carousel owl-theme">
                 <?php
@@ -139,7 +139,7 @@ require 'home_functions.php';
             </div>
             <!--OWL-CAROUSEL-->
         </div>
-		
+
 		<div class="home-card webinar-card">
             <h2 class="home-card-title">Webinars</h2>
             <a href="/seminarios/" title="+ mais webinars">
@@ -184,8 +184,8 @@ require 'home_functions.php';
                     </div>
                     <div class="webinar-card-info">
                         <div class="webinar-card-first-line">
-                            <span class="webinar-card-date"><?php echo $webinar_date; ?></span> - 
-                            <span class="webinar-card-hour"><?php echo $webinar_hour;?></span> - 
+                            <span class="webinar-card-date"><?php echo $webinar_date; ?></span> -
+                            <span class="webinar-card-hour"><?php echo $webinar_hour;?></span> -
                             <span class="webinar-card-author"><?php echo $webinar_author; ?></span>
                             <span class="webinar-card-institution">(<?php echo $next_webinar["instituicao"]; ?>)</span>
                         </div>
@@ -217,7 +217,7 @@ require 'home_functions.php';
             $tweets = array();
 
             $blogs = get_blogs($num_max_news);
-            
+
             $news_list = merge_tweets_and_blogs($tweets, $blogs, $num_max_news);
 
             ?>
@@ -234,7 +234,7 @@ require 'home_functions.php';
                 ?>
             </div><!--OWL-CAROUSEL-->
         </div><!--BLOGS CARD-->
-		
+
 		<div class="home-card news-card">
             <h2 class="home-card-title">Tweets</h2>
             <a href="https://twitter.com/LIneA_mcti" title="+ mais blogs">
@@ -254,7 +254,7 @@ require 'home_functions.php';
             $tweets = get_tweets($twitter_screen_name, $num_of_tweets, $twitter_news_tag);
 
             $blogs = array();
-            
+
             $news_list = merge_tweets_and_blogs($tweets, $blogs, $num_max_news);
 
             ?>
@@ -271,7 +271,7 @@ require 'home_functions.php';
                 ?>
             </div><!--OWL-CAROUSEL-->
         </div><!--BLOGS CARD-->
-		
+
 		<div class="home-card">
             <h2 class="home-card-title">Calendar</h2>
             <div class="responsive-iframe-container small-container">
