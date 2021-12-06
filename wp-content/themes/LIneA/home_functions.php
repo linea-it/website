@@ -98,7 +98,9 @@ function show_event($event){
 	} else {
 		$str = '';
 
-        if ($event == "LSST-Brazil") {
+        if ($event == "LSST-Brazil-2021") {
+			$str .= '<a href="https://youtu.be/GpbDKHAWrS8">';
+		} else if ($event == "LSST-Brazil") {
 			$str .= '<a href="https://lsst-brazil2021.linea.gov.br/">';
 		} else if ($event == "lsst-brazil-live") {
             $str .= '<a href="http://youtu.be/KUtDAj_d_X0">';
