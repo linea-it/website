@@ -128,7 +128,7 @@ require 'home_functions.php';
             <h2 class="home-card-title">Anúncios</h2>
             <?php
             $num_max_news = 4;
-            $news_list = ["LSST-Brazil-2021", "lsst-brazil-live", "LSST-Brazil", "vera-rubin", "LSST-Camera", "Preparando-para-o-LSST", "linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst", "Conheca-o-LIneA"];
+            $news_list = ["LSST-Brazil-2021-2", "lsst-brazil-live", "LSST-Brazil", "vera-rubin", "LSST-Camera", "Preparando-para-o-LSST", "linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst", "Conheca-o-LIneA"];
             ?>
             <div class="owl-carousel owl-theme">
                 <?php
