@@ -2077,7 +2077,9 @@ h3.webinar-card-title {
     background-repeat: no-repeat!important;
 }
 
-
+.LSST-Brazil-2021-2 {
+	background: url(/wp-content/uploads/2021/12/Assista-aqui-ao-segundo-dia-do-evento.jpg);
+}
 
 .LSST-Brazil-2021 {
 	background: url(/wp-content/uploads/2021/12/Assista-aqui-ao-primeiro-dia-do-evento.jpg);
