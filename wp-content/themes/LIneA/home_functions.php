@@ -102,14 +102,6 @@ function show_event($event){
 			$str .= '<a href="https://youtu.be/GpbDKHAWrS8">';
 		} else if ($event == "LSST-Brazil") {
 			$str .= '<a href="https://lsst-brazil2021.linea.gov.br/">';
-		} else if ($event == "lsst-brazil-live") {
-            $str .= '<a href="http://youtu.be/KUtDAj_d_X0">';
-        } else if ($event == "Preparando-para-o-LSST") {
-			$str .= '<a href="/2021/10/preparando-para-o-lsst/">';
-		} else if ($event == "linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst") {
-			$str .= '<a href="/2021/10/linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst/">';
-		} else if ($event == "Conheca-o-LIneA") {
-			$str .= '<a href="https://youtu.be/jC-k85tfd0Y">';
 		} else {
 			$str .= '<a href="#">';
 		}
