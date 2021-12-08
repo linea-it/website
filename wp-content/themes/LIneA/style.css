@@ -448,11 +448,10 @@ div.logo-euniverso-header-container img {
     border-radius: 3px;
 }
 .header .busca {
-    /* width: 67%; */
     display: inline-block;
     text-align: right;
-	margin-right: 3%;
-	align-self: flex-end;
+    margin-right: 2%;
+    align-self: flex-end;
 }
 .header .campo-busca {
     display: inline-block;
@@ -2079,30 +2078,6 @@ h3.webinar-card-title {
 
 .LSST-Brazil-2021-2 {
 	background: url(/wp-content/uploads/2021/12/Assista-aqui-ao-segundo-dia-do-evento.jpg);
-}
-
-.LSST-Brazil-2021 {
-	background: url(/wp-content/uploads/2021/12/Assista-aqui-ao-primeiro-dia-do-evento.jpg);
-}
-
-.LSST-Brazil {
-	background: url(/wp-content/uploads/2021/11/LSST-BRAZIL-SITE.jpg);
-}
-
-.lsst-brazil-live {
-	background: url(/wp-content/uploads/2021/12/lsst-brazil-2021.jpeg);
-}
-
-.Preparando-para-o-LSST {
-	background: url(/wp-content/uploads/2021/10/Preparando-para-o-LSST-1.png);
-}
-
-.linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst {
-	background: url(/wp-content/uploads/2021/10/linea-e-inct-do-e-universo-anunciam-posicoes-no-lsst.jpg);
-}
-
-.Conheca-o-LIneA {
-	background: url(/wp-content/uploads/2021/09/Conheca-o-LIneA.jpg);
 }
 
 .page-link-container {
