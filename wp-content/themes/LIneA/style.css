@@ -448,11 +448,10 @@ div.logo-euniverso-header-container img {
     border-radius: 3px;
 }
 .header .busca {
-    /* width: 67%; */
     display: inline-block;
     text-align: right;
-	margin-right: 3%;
-	align-self: flex-end;
+    margin-right: 2%;
+    align-self: flex-end;
 }
 .header .campo-busca {
     display: inline-block;
