@@ -127,8 +127,8 @@ require 'home_functions.php';
 		<div class="home-card anuncios-card">
             <h2 class="home-card-title">Anúncios</h2>
             <?php
-            $num_max_news = 4;
-            $news_list = ["LSST-Brazil-2021-2", "vera-rubin", "LSST-Camera"];
+            // $num_max_news = 4;
+            $news_list = ["highlight-lsst-brazil", "vera-rubin", "LSST-Camera"];
             ?>
             <div class="owl-carousel owl-theme">
                 <?php
