@@ -98,10 +98,8 @@ function show_event($event){
 	} else {
 		$str = '';
 
-        if ($event == "LSST-Brazil-2021-2") {
-			$str .= '<a href="https://youtu.be/GpbDKHAWrS8">';
-		} else if ($event == "LSST-Brazil") {
-			$str .= '<a href="https://lsst-brazil2021.linea.gov.br/">';
+        if ($event == "highlight-lsst-brazil") {
+			$str .= '<a href="/2021/12/highlights-do-evento-lsst-brazil-2021/">';
 		} else {
 			$str .= '<a href="#">';
 		}
