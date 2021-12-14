@@ -2076,6 +2076,10 @@ h3.webinar-card-title {
     background-repeat: no-repeat!important;
 }
 
+.chamada-publica-bpg {
+	background: url(/wp-content/uploads/2021/12/chamada-publica-bpg.jpg);
+}
+
 .highlight-lsst-brazil {
 	background: url(/wp-content/uploads/2021/12/highlight-lsst-brazil.jpg);
 }
