@@ -98,7 +98,9 @@ function show_event($event){
 	} else {
 		$str = '';
 
-        if ($event == "highlight-lsst-brazil") {
+        if ($event == "chamada-publica-bpg") {
+			$str .= '<a href="/2021/12/linea-se-prepara-para-lancar-chamada-publica-do-bpg/">';
+		} else if ($event == "highlight-lsst-brazil") {
 			$str .= '<a href="/2021/12/highlights-do-evento-lsst-brazil-2021/">';
 		} else {
 			$str .= '<a href="#">';
