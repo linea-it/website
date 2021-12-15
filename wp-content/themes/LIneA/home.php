@@ -128,7 +128,7 @@ require 'home_functions.php';
             <h2 class="home-card-title">Anúncios</h2>
             <?php
             // $num_max_news = 4;
-            $news_list = ["chamada-publica-bpg", "highlight-lsst-brazil", "vera-rubin", "LSST-Camera"];
+            $news_list = ["teste-jupyterhub", "chamada-publica-bpg", "highlight-lsst-brazil", "vera-rubin", "LSST-Camera"];
             ?>
             <div class="owl-carousel owl-theme">
                 <?php
