@@ -2076,6 +2076,10 @@ h3.webinar-card-title {
     background-repeat: no-repeat!important;
 }
 
+.recesso {
+	background: url(/wp-content/uploads/2021/12/recesso.jpg);
+}
+
 .teste-jupyterhub {
 	background: url(/wp-content/uploads/2021/12/teste-jupyterhub.jpg);
 }
