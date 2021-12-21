@@ -2076,6 +2076,14 @@ h3.webinar-card-title {
     background-repeat: no-repeat!important;
 }
 
+.maquinas-lncc {
+	background: url(/wp-content/uploads/2021/12/maquinas-lncc.jpg);
+}
+
+.manutencao-sdumon {
+	background: url(/wp-content/uploads/2021/12/manutencao-sdumon.jpg);
+}
+
 .recesso {
 	background: url(/wp-content/uploads/2021/12/recesso.jpg);
 }
