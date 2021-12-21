@@ -127,7 +127,7 @@ require 'home_functions.php';
 		<div class="home-card anuncios-card">
             <h2 class="home-card-title">Anúncios</h2>
             <?php
-            $news_list = ["recesso", "teste-jupyterhub", "chamada-publica-bpg", "highlight-lsst-brazil", "vera-rubin", "LSST-Camera"];
+            $news_list = ["maquinas-lncc", "manutencao-sdumon", "recesso", "teste-jupyterhub", "chamada-publica-bpg", "highlight-lsst-brazil", "vera-rubin", "LSST-Camera"];
             ?>
             <div class="owl-carousel owl-theme">
                 <?php
