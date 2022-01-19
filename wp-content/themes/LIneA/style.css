@@ -2076,6 +2076,10 @@ h3.webinar-card-title {
     background-repeat: no-repeat!important;
 }
 
+.novidade-linea {
+	background: url(/wp-content/uploads/2022/01/novidade-linea.jpg);
+}
+
 .maquinas-lncc {
 	background: url(/wp-content/uploads/2021/12/maquinas-lncc.jpg);
 }
