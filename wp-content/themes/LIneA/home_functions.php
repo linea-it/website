@@ -98,15 +98,15 @@ function show_event($event){
 	} else {
 		$str = '';
 
-        if ($event == "teste-jupyterhub") {
-			$str .= '<a href="/2021/12/linea-anuncia-novo-servico-de-jupyter-hub-e-convida-voluntarios-para-testes-do-sistema/">';
-		} else if ($event == "chamada-publica-bpg") {
-			$str .= '<a href="/2021/12/linea-se-prepara-para-lancar-chamada-publica-do-bpg/">';
-		} else if ($event == "highlight-lsst-brazil") {
-			$str .= '<a href="/2021/12/highlights-do-evento-lsst-brazil-2021/">';
-		} else {
+        // if ($event == "teste-jupyterhub") {
+		// 	$str .= '<a href="/2021/12/linea-anuncia-novo-servico-de-jupyter-hub-e-convida-voluntarios-para-testes-do-sistema/">';
+		// } else if ($event == "chamada-publica-bpg") {
+		// 	$str .= '<a href="/2021/12/linea-se-prepara-para-lancar-chamada-publica-do-bpg/">';
+		// } else if ($event == "highlight-lsst-brazil") {
+		// 	$str .= '<a href="/2021/12/highlights-do-evento-lsst-brazil-2021/">';
+		// } else {
 			$str .= '<a href="#">';
-		}
+		// }
 
 		$str .= '   <div>';
 		$str .= '        <div class="image-eventos card-links-container image-eventos '.$event.'">';
